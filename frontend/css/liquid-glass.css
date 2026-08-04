@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Al Deafah International Group — Liquid Glass (Glassmorphism)
+   Ambient background blobs, glass surface tiers, shimmer borders,
+   reflections, and glass-lite fallback for low-end devices.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Ambient liquid blobs
+   ------------------------------------------------------------------------- */
+
+.blob {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+  opacity: 0.16;
+}
+
+.blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  left: -8%;
+  background: radial-gradient(circle at 30% 30%, var(--color-accent), transparent 70%);
+  animation: drift-1 26s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 420px;
+  height: 420px;
+  top: 10%;
+  right: -10%;
+  background: radial-gradient(circle at 60% 40%, var(--color-accent-secondary), transparent 70%);
+  opacity: 0.14;
+  animation: drift-2 32s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 380px;
+  height: 380px;
+  bottom: -8%;
+  left: 8%;
+  background: radial-gradient(circle at 50% 50%, var(--color-error), transparent 70%);
+  opacity: 0.1;
+  animation: drift-3 24s ease-in-out infinite;
+}
+
+.blob-4 {
+  width: 560px;
+  height: 560px;
+  bottom: -14%;
+  right: -12%;
+  background: radial-gradient(circle at 40% 60%, var(--color-accent-light), transparent 70%);
+  opacity: 0.14;
+  animation: drift-4 30s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.08); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, 6%) scale(1.05); }
+}
+
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -6%) scale(1.1); }
+}
+
+@keyframes drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6%, -8%) scale(1.06); }
+}
+
+@media (max-width: 767px) {
+  .blob-2, .blob-3 { display: none; }
+  .blob { filter: blur(90px); }
+}
+
+/* -------------------------------------------------------------------------
+   Glass surface tiers
+   ------------------------------------------------------------------------- */
+
+.glass {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  isolation: isolate;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  z-index: 1;
+}
+
+/* Tier 1 — ambient: header, filter bar, footer panels */
+.glass--1 {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Tier 2 — content: cards, tiles */
+.glass--2 {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.5));
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 18px 40px rgba(32, 26, 19, 0.1);
+}
+
+/* Tier 3 — focal: booking widget, modals, drawer, toasts */
+.glass--3 {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.74));
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border-color: var(--glass-border-strong);
+  box-shadow: 0 24px 50px rgba(32, 26, 19, 0.14);
+}
+
+:root[data-theme="dark"] .glass--1 {
+  background: rgba(35, 30, 27, 0.42);
+}
+
+:root[data-theme="dark"] .glass--2 {
+  background: linear-gradient(160deg, rgba(35, 30, 27, 0.6), rgba(35, 30, 27, 0.42));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .glass--3 {
+  background: linear-gradient(160deg, rgba(35, 30, 27, 0.78), rgba(35, 30, 27, 0.66));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile menu dropdown — floats directly over page content (the hero
+   heading behind it) rather than beside it, so it needs a heavier
+   blur/opacity than the standard glass--2 tier to stay legible. */
+.mobile-menu-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+}
+
+:root[data-theme="dark"] .mobile-menu-panel {
+  background: rgba(35, 30, 27, 0.92);
+}
+
+/* Edge glow on hover — cards and interactive panels only */
+.why-card.glass:hover,
+.hotel-card.glass:hover {
+  border-color: rgba(184, 144, 71, 0.4);
+}
+
+/* Shimmer sweep — a slow diagonal light pass across focal glass */
+.glass--3::after,
+.hotel-card.glass::after {
+  content: "";
+  position: absolute;
+  inset: -60% -20%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 48%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.06) 52%,
+    transparent 60%
+  );
+  transform: translateX(-30%);
+  animation: shimmer-sweep 9s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0%, 100% { transform: translateX(-30%); }
+  50% { transform: translateX(30%); }
+}
+
+/* Ensure inner content stacks above the shimmer/highlight pseudo layers */
+.glass > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* -------------------------------------------------------------------------
+   Interactive tilt (JS-driven via effects.js — CSS provides the transition)
+   ------------------------------------------------------------------------- */
+
+.tilt-target {
+  transition: transform 120ms ease-out;
+  transform-style: preserve-3d;
+}
+
+/* -------------------------------------------------------------------------
+   glass-lite fallback
+   Applied to <html> via JS when backdrop-filter is unsupported,
+   Save-Data is on, or the device reports low memory/cores.
+   ------------------------------------------------------------------------- */
+
+html.glass-lite .glass {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.glass-lite .glass--1 { background: var(--color-bg-alt); }
+html.glass-lite .glass--2,
+html.glass-lite .glass--3 { background: var(--color-surface); }
+
+html.glass-lite .glass--3::after,
+html.glass-lite .hotel-card.glass::after {
+  display: none;
+}
+
+html.glass-lite .ambient-background {
+  display: none;
+}
+
+/* Respect reduced motion for ambient/shimmer motion specifically */
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none !important;
+  }
+
+  .glass--3::after,
+  .hotel-card.glass::after {
+    animation: none !important;
+    display: none;
+  }
+}

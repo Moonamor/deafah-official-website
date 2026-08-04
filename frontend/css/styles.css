@@ -1,0 +1,1088 @@
+/* ==========================================================================
+   Al Deafah International Group — Base Styles
+   Reset, tokens, typography, layout primitives, utilities.
+   Glass-specific rules live in liquid-glass.css.
+   ========================================================================== */
+
+:root {
+  /* Palette — Al Deafah luxury identity.
+     Light is the default theme, drawn from the brand mark itself:
+     crisp white card stock, near-black calligraphy ink, antique-gold
+     horse mark and rule. Dark mode lives under [data-theme="dark"]. */
+  --color-bg: #fcfaf6;
+  --color-bg-alt: #f2ece0;
+  --color-surface: #ffffff;
+  --color-on-surface: #201a13;
+  --color-on-surface-muted: rgba(32, 26, 19, 0.68);
+  --color-on-surface-faint: rgba(32, 26, 19, 0.46);
+
+  --color-accent: #b89047;
+  --color-accent-light: #8a6a30;
+  --color-accent-secondary: #e3c598;
+  --color-error: #d9534f;
+  --color-success: #6b8e23;
+
+  --glass-border: rgba(32, 26, 19, 0.08);
+  --glass-border-strong: rgba(32, 26, 19, 0.14);
+  --glass-highlight: rgba(255, 255, 255, 0.75);
+
+  color-scheme: light;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 220ms;
+  --duration-base: 380ms;
+  --duration-slow: 620ms;
+
+  /* Layout */
+  --container-max: 1320px;
+  --header-height: 84px;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #161311;
+  --color-bg-alt: #1c1815;
+  --color-surface: #231e1b;
+  --color-on-surface: #eae3d9;
+  --color-on-surface-muted: rgba(234, 227, 217, 0.68);
+  --color-on-surface-faint: rgba(234, 227, 217, 0.44);
+
+  /* Lighter gold reads against a dark background; the base :root
+     value above is a darker gold instead, for contrast on white. */
+  --color-accent-light: #d4b06a;
+
+  --glass-border: rgba(234, 227, 217, 0.14);
+  --glass-border-strong: rgba(234, 227, 217, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.14);
+
+  color-scheme: dark;
+}
+
+/* -------------------------------------------------------------------------
+   Reset
+   ------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-on-surface);
+  font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--duration-base) var(--ease-out),
+              color var(--duration-base) var(--ease-out);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+input, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------------------
+   Bilingual (ar/en) visibility — driven by [data-lang] on <html>.
+   Every translatable element is duplicated with .lang-ar/.lang-en;
+   only the one matching the active language renders.
+   ------------------------------------------------------------------------- */
+
+[data-lang="ar"] .lang-en {
+  display: none !important;
+}
+
+[data-lang="en"] .lang-ar {
+  display: none !important;
+}
+
+/* Arabic never takes letter-spacing — it breaks cursive joining —
+   regardless of which element's tracking rule it inherits into. */
+.lang-ar {
+  letter-spacing: normal !important;
+}
+
+/* -------------------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-3);
+}
+
+.hero-title {
+  font-size: clamp(30px, 6vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-on-surface);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--color-on-surface-muted);
+  max-width: 46ch;
+  margin-top: var(--space-4);
+}
+
+.section-title {
+  font-size: clamp(24px, 4vw, 44px);
+  max-width: 20ch;
+  margin-bottom: var(--space-8);
+}
+
+/* -------------------------------------------------------------------------
+   Layout primitives
+   ------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container { padding-inline: var(--space-6); }
+}
+
+@media (min-width: 1200px) {
+  .container { padding-inline: var(--space-8); }
+}
+
+.section {
+  padding-block: var(--space-16);
+  position: relative;
+  /* border: 1px solid var(--color-accent-light); */
+}
+
+/* :root[data-theme="dark"] .section {
+  border-color: var(--color-accent);
+  animation: section-shine 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes section-shine {
+  from { box-shadow: 0 0 8px rgba(184, 144, 71, 0.25), inset 0 0 6px rgba(184, 144, 71, 0.1); }
+  to   { box-shadow: 0 0 20px rgba(184, 144, 71, 0.55), inset 0 0 10px rgba(184, 144, 71, 0.2); }
+} */
+
+.ambient-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* -------------------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-pill {
+  border-radius: var(--radius-pill);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  color: #201a12;
+  box-shadow: 0 8px 24px rgba(184, 144, 71, 0.28);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 30px rgba(184, 144, 71, 0.42);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--glass-border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+.btn-ghost {
+  background: rgba(184, 144, 71, 0.1);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(184, 144, 71, 0.24);
+}
+
+.btn-ghost:hover {
+  background: rgba(184, 144, 71, 0.2);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-on-surface);
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.icon-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+/* -------------------------------------------------------------------------
+   Header
+   ------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  transition: height var(--duration-base) var(--ease-out);
+  /* Forces its own compositing layer. Without this, backdrop-filter on a
+     sticky element can fail to repaint fully when a child's layout changes
+     (e.g. the #mobileMenu collapse opening) — leaving a stale half-painted
+     frame until something forces a full repaint, like a page refresh.
+     translateZ(0) alone is a weak/old hint in Safari; will-change plus
+     an explicit isolating layer is the more reliable combination. */
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
+}
+
+.site-header.is-condensed {
+  height: 64px;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.brand-mark {
+  color: var(--color-accent);
+  display: inline-flex;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-text strong {
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
+.brand-text small {
+  font-size: 11px;
+  color: var(--color-on-surface-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.primary-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+@media (min-width: 992px) {
+  .primary-nav { display: flex; }
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface-muted);
+  position: relative;
+  padding-block: var(--space-2);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--color-on-surface);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.header-cta {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .header-cta { display: inline-flex; }
+}
+
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+@media (min-width: 992px) {
+  .nav-toggle { display: none; }
+}
+
+.nav-toggle span {
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+}
+
+/* Mobile dropdown menu — Bootstrap's Collapse supplies the show/hide
+   height animation; docking it under the header and its panel look
+   are ours. .site-header (position:sticky) is the containing block
+   for #mobileMenu's position:absolute. */
+
+#mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@media (min-width: 992px) {
+  /* Primary nav is visible at lg+; force the dropdown closed so a
+     leftover .show class from a narrower viewport can't linger. */
+  #mobileMenu { display: none !important; }
+}
+
+.mobile-menu-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0 var(--space-4) var(--space-4);
+  padding: var(--space-4);
+}
+
+.mobile-menu-panel .nav-link {
+  padding-block: var(--space-3);
+}
+
+/* -------------------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------------------- */
+
+.hero {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 900px;
+}
+
+.booking-widget-wrap {
+  margin-top: var(--space-16);
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .booking-widget-wrap { padding-inline: var(--space-6); }
+}
+
+.booking-widget {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  /* Contains the .glass--3::after shimmer sweep, which is intentionally
+     positioned outside this element's box (inset: -60% -20%) and animates
+     via translateX. Without clipping, that adds real scrollable width to
+     the page — a fixed pixel amount that's negligible on a wide desktop
+     viewport but can nearly double the scrollable width on a narrow
+     phone screen. .hotel-card already has this; this was the one glass--3
+     surface missing it. */
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .booking-widget {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-6);
+  }
+}
+
+.field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-on-surface-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.field select,
+.field input {
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface);
+  font-size: 15px;
+  font-weight: 600;
+  padding: var(--space-1) 0;
+}
+
+.field select:focus,
+.field input:focus {
+  outline: none;
+}
+
+.field-divider {
+  display: none;
+  width: 1px;
+  align-self: stretch;
+  background: var(--glass-border-strong);
+}
+
+@media (min-width: 992px) {
+  .field-divider { display: block; }
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.stepper-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border-strong);
+  background: transparent;
+  color: var(--color-on-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.stepper-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+.stepper-value {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: center;
+}
+
+.booking-submit {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 992px) {
+  .booking-submit {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Why Deafah
+   ------------------------------------------------------------------------- */
+
+/* Card arrangement for this grid now comes from Bootstrap's
+   .row.row-cols-*.g-4 utilities in the markup (see index.html). */
+
+.why-card {
+  padding: var(--space-8) var(--space-6);
+  transition: transform var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+}
+
+.why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(184, 144, 71, 0.14);
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-4);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.why-card:hover .why-icon {
+  transform: rotate(8deg);
+}
+
+.why-card h3 {
+  font-size: 18px;
+  margin-bottom: var(--space-2);
+}
+
+.why-card p {
+  font-size: 14px;
+  color: var(--color-on-surface-muted);
+  line-height: 1.7;
+}
+
+/* -------------------------------------------------------------------------
+   Stats
+   ------------------------------------------------------------------------- */
+
+/* Column arrangement comes from Bootstrap's .row.row-cols-3.g-3
+   utilities in the markup; this class only supplies padding/alignment. */
+.stats-grid {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-grid { padding: var(--space-12) var(--space-8); }
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 800;
+  color: var(--color-accent-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: clamp(12px, 2vw, 14px);
+  color: var(--color-on-surface-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Filter bar
+   ------------------------------------------------------------------------- */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-8);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-on-surface-muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.chip:hover {
+  border-color: var(--glass-border-strong);
+  color: var(--color-on-surface);
+}
+
+.chip.is-active {
+  background: var(--color-accent);
+  color: #201a12;
+}
+
+.filter-divider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 20px;
+  background: var(--glass-border-strong);
+  margin-inline: var(--space-2);
+}
+
+/* -------------------------------------------------------------------------
+   Hotel grid
+   ------------------------------------------------------------------------- */
+
+/* Card arrangement for this grid now comes from Bootstrap's
+   .row.row-cols-*.g-4 utilities in the markup (see index.html). */
+
+.hotel-card {
+  overflow: hidden;
+  transition: transform var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+}
+
+.hotel-card:hover {
+  transform: translateY(-6px);
+}
+
+.hotel-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.hotel-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(22, 19, 17, 0.55) 100%);
+}
+
+.hotel-media--1 { background: linear-gradient(135deg, #3a2f22, #8a6a38); }
+.hotel-media--2 { background: linear-gradient(135deg, #2c2420, #b89047); }
+.hotel-media--3 { background: linear-gradient(135deg, #402f1e, #e3c598); }
+.hotel-media--4 { background: linear-gradient(135deg, #1f1b17, #6b5636); }
+.hotel-media--5 { background: linear-gradient(135deg, #362a1c, #a67c3d); }
+.hotel-media--6 { background: linear-gradient(135deg, #241f1a, #7d6237); }
+
+.hotel-card:hover .hotel-media {
+  transform: scale(1.02);
+}
+
+.hotel-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.hotel-card:hover .hotel-media img {
+  transform: scale(1.08);
+}
+
+.hotel-badge {
+  position: absolute;
+  top: var(--space-3);
+  inset-inline-start: var(--space-3);
+  z-index: 1;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(22, 19, 17, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hotel-body {
+  padding: var(--space-6);
+}
+
+.hotel-body h3 {
+  font-size: 17px;
+  margin-bottom: var(--space-2);
+}
+
+.hotel-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--color-on-surface-muted);
+  margin-bottom: var(--space-4);
+}
+
+.stars {
+  color: var(--color-accent-light);
+  letter-spacing: 1px;
+}
+
+.star-dim {
+  color: var(--color-on-surface-faint);
+  opacity: 0.5;
+}
+
+.dot { opacity: 0.5; }
+
+.hotel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.price small {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-on-surface-faint);
+}
+
+.grid-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+/* -------------------------------------------------------------------------
+   CTA band
+   ------------------------------------------------------------------------- */
+
+.cta-band {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: flex-start;
+  padding: var(--space-12) var(--space-8);
+  background-size: 200% 200%;
+}
+
+@media (min-width: 992px) {
+  .cta-band {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.cta-text h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  margin-block: var(--space-2) var(--space-3);
+  max-width: 26ch;
+}
+
+.cta-text p {
+  color: var(--color-on-surface-muted);
+  max-width: 48ch;
+}
+
+/* -------------------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------------------- */
+
+.site-footer {
+  padding-top: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+/* Column arrangement comes from Bootstrap's .row.g-4 + col-* utilities
+   in the markup; this class only supplies the bottom padding. */
+.footer-grid {
+  padding-bottom: var(--space-12);
+}
+
+.footer-brand p {
+  margin-top: var(--space-4);
+  color: var(--color-on-surface-muted);
+  font-size: 14px;
+  max-width: 32ch;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-on-surface-faint);
+  margin-bottom: var(--space-4);
+}
+
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 14px;
+  color: var(--color-on-surface-muted);
+  margin-bottom: var(--space-3);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-col a:hover {
+  color: var(--color-accent-light);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-on-surface);
+  font-size: 14px;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.newsletter-form input.is-invalid {
+  border-color: var(--color-error);
+}
+
+.form-hint {
+  font-size: 12px;
+  margin-top: var(--space-2);
+  min-height: 16px;
+  color: var(--color-on-surface-faint);
+}
+
+.form-hint.is-error { color: var(--color-error); }
+.form-hint.is-success { color: var(--color-success); }
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--glass-border);
+  font-size: 13px;
+  color: var(--color-on-surface-faint);
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-legal a:hover {
+  color: var(--color-accent-light);
+}
+
+/* -------------------------------------------------------------------------
+   Toast
+   ------------------------------------------------------------------------- */
+
+.toast {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translate(-50%, 16px);
+  z-index: 300;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--glass-border-strong);
+  color: var(--color-on-surface);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* -------------------------------------------------------------------------
+   Scroll reveal
+   ------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

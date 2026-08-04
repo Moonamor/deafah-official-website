@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light" data-lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Deafah International Group — Hospitality Around the Haram</title>
+  <meta name="description" content="Al Deafah International Group — 14 hotels around Masjid Al Haram, Makkah. Book your Hajj and Umrah stay.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/liquid-glass.css">
+</head>
+<body>
+
+  <!-- Ambient liquid background layer -->
+  <div class="ambient-background" id="ambientBg" aria-hidden="true">
+    <div class="blob blob-1"><img src="imgs/4.jpg" alt=""></div>
+    <div class="blob blob-2"><img src="imgs/2.jpg" alt=""></div>
+    <div class="blob blob-3"><img src="imgs/3.jpg" alt=""></div>
+    <div class="blob blob-4"><img src="imgs/1.jpg" alt=""></div>
+    <div class="grain-overlay"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="nav site-header glass glass--1" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img class="nav-logo" aria-hidden="true" src="imgs/deafahLogo.png" alt="Al Deafah International Group" width="146" height="44">
+      </a>
+
+      <nav class="primary-nav" id="primaryNav">
+
+        <a href="#top" class="nav-link is-active">
+          <span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span>
+        </a>
+        <a href="#hotels" class="nav-link">
+          <span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span>
+        </a>
+        <a href="#why" class="nav-link">
+          <span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span>
+        </a>
+        <a href="#services" class="nav-link">
+          <span class="lang-ar">الخدمات</span><span class="lang-en">Services</span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3 7 7 0 0 0 21 12.5Z"/>
+          </svg>
+        </button>
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-ar">EN</span><span class="lang-en">AR</span>
+        </button>
+        <button class="btn btn-primary btn-pill header-cta" type="button">
+          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button"
+          data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu"
+          aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu (Bootstrap Collapse) -->
+    <div class="collapse" id="mobileMenu">
+      <nav class="mobile-menu-panel glass glass--2">
+        <a href="#top" class="nav-link is-active" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span>
+        </a>
+        <a href="#hotels" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span>
+        </a>
+        <a href="#why" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span>
+        </a>
+        <a href="#services" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">الخدمات</span><span class="lang-en">Services</span>
+        </a>
+        <a href="#contact" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span>
+        </a>
+        <button class="btn btn-primary btn-pill" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">
+          <span class="lang-ar">مجموعة الضيافة العالمية</span><span class="lang-en">Global Hospitality Group</span>
+        </p>
+        <h1 class="hero-title reveal">
+          <span class="lang-ar">حول الحرم<br>على مدار الساعة</span>
+          <span class="lang-en">Around the Haram<br>Around the Clock</span>
+        </h1>
+        <p class="hero-sub reveal">
+          <span class="lang-ar">اكتشف أفضل فنادق مكة المكرمة القريبة من الحرم — مُنتقاة خصيصًا لضيوف الحج والعمرة.</span>
+          <span class="lang-en">Discover Makkah's finest hotels, steps from Masjid Al Haram — curated for pilgrims of Hajj and Umrah.</span>
+        </p>
+      </div>
+
+      <!-- Booking widget -->
+      <div class="booking-widget-wrap reveal">
+        <form class="booking-widget glass glass--3" id="bookingWidget">
+          <div class="field">
+            <label for="destination-ar" class="lang-ar">الوجهة</label>
+            <label for="destination-en" class="lang-en">Destination</label>
+            <select id="destination-ar" name="destination" class="lang-ar">
+              <option>مكة المكرمة — جميع الفنادق</option>
+              <option>بالقرب من المسجد الحرام (أقل من 5 دقائق)</option>
+              <option>حي جرول</option>
+              <option>حي التيسير</option>
+            </select>
+            <select id="destination-en" name="destination" class="lang-en">
+              <option>Makkah — All Hotels</option>
+              <option>Near Masjid Al Haram (&lt; 5 min)</option>
+              <option>Jarwal District</option>
+              <option>Al Taysir District</option>
+            </select>
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field">
+            <label for="checkin"><span class="lang-ar">تاريخ الوصول</span><span class="lang-en">Check-in</span></label>
+            <input type="date" id="checkin" name="checkin">
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field">
+            <label for="checkout"><span class="lang-ar">تاريخ المغادرة</span><span class="lang-en">Check-out</span></label>
+            <input type="date" id="checkout" name="checkout">
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field field-guests">
+            <label for="guests"><span class="lang-ar">الضيوف والغرف</span><span class="lang-en">Guests &amp; Rooms</span></label>
+            <div class="stepper" id="guestStepper">
+              <button type="button" class="stepper-btn" data-action="decrement">−</button>
+              <span class="stepper-value" id="guestCount">
+                <span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span>
+              </span>
+              <button type="button" class="stepper-btn" data-action="increment">+</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-pill booking-submit">
+            <span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Why Deafah -->
+    <section class="section" id="why">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></p>
+        <h2 class="section-title reveal">
+          <span class="lang-ar">تميّز المجموعة في أربع نقاط</span>
+          <span class="lang-en">The group's difference, in four moves</span>
+        </h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
+          <div class="col">
+          <article class="why-card glass glass--2 reveal">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M12 21s-7-5.4-9.5-9.8C.7 7.4 2.9 3.5 6.7 3.1c2-.2 3.8.8 5.3 2.6 1.5-1.8 3.3-2.8 5.3-2.6 3.8.4 6 4.3 4.2 8.1C19 15.6 12 21 12 21Z" opacity="0"/>
+                <path d="M12 3.5 20 12l-8 8.5L4 12z"/>
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" opacity="0.8"/>
+              </svg>
+            </span>
+            <h3><span class="lang-ar">خطوات من الحرم</span><span class="lang-en">Steps from the Haram</span></h3>
+            <p>
+              <span class="lang-ar">تقع جميع فنادقنا على مسافة قريبة يمكن الوصول إليها سيرًا من المسجد الحرام — وهذا هو المعيار الذي نلتزم به.</span>
+              <span class="lang-en">Every property is walking distance from Masjid Al Haram — our defining metric, not an afterthought.</span>
+            </p>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="why-card glass glass--2 reveal">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="3" width="8" height="8" rx="1.5"/>
+                <rect x="13" y="3" width="8" height="8" rx="1.5"/>
+                <rect x="3" y="13" width="8" height="8" rx="1.5"/>
+                <rect x="13" y="13" width="8" height="8" rx="1.5"/>
+              </svg>
+            </span>
+            <h3><span class="lang-ar">14 فندقًا، مجموعة واحدة</span><span class="lang-en">14 Hotels, One Group</span></h3>
+            <p>
+              <span class="lang-ar">مجموعة مختارة من الفنادق في مكة المكرمة، من الإقامات الاقتصادية إلى الأجنحة الفاخرة — بإدارة موثوقة واحدة.</span>
+              <span class="lang-en">A curated portfolio across Makkah, from economy stays to premium suites — one trusted operator.</span>
+            </p>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="why-card glass glass--2 reveal">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M4 18V9l8-5 8 5v9"/>
+                <path d="M9 18v-5h6v5"/>
+              </svg>
+            </span>
+            <h3><span class="lang-ar">أسعار تنافسية</span><span class="lang-en">Competitive Pricing</span></h3>
+            <p>
+              <span class="lang-ar">أسعار شفافة ومتدرجة حسب مستوى الفندق، دون أي تلاعب في العملة أو الوحدات.</span>
+              <span class="lang-en">Transparent, tiered rates across star levels — with no hidden currency or unit conversion tricks.</span>
+            </p>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="why-card glass glass--2 reveal">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2"/>
+              </svg>
+            </span>
+            <h3><span class="lang-ar">خدمة على مدار 24 ساعة</span><span class="lang-en">24-Hour Service</span></h3>
+            <p>
+              <span class="lang-ar">استقبال ودعم للضيوف على مدار الساعة، طوال أيام السنة.</span>
+              <span class="lang-en">Front desk, prayer wake calls, and guest support around the clock, every day of the year.</span>
+            </p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group stats -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="stats-grid glass glass--1 row row-cols-1 row-cols-sm-3 g-3">
+          <div class="stat reveal col">
+            <span class="stat-number" data-count-to="15" data-suffix="+">0</span>
+            <span class="stat-label"><span class="lang-ar">سنوات من الخبرة</span><span class="lang-en">Years of Experience</span></span>
+          </div>
+          <div class="stat reveal col">
+            <span class="stat-number" data-count-to="10" data-suffix="M+">0</span>
+            <span class="stat-label"><span class="lang-ar">ضيف تمت استضافتهم</span><span class="lang-en">Guests Hosted</span></span>
+          </div>
+          <div class="stat reveal col">
+            <span class="stat-number" data-count-to="5" data-suffix="K+">0</span>
+            <span class="stat-label"><span class="lang-ar">غرفة في مكة المكرمة</span><span class="lang-en">Rooms Across Makkah</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotels grid -->
+    <section class="section" id="hotels">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="lang-ar">فنادقنا</span><span class="lang-en">Our Hotels</span></p>
+        <h2 class="section-title reveal">
+          <span class="lang-ar">اختر إقامتك بالقرب من الحرم</span>
+          <span class="lang-en">Find your stay near the Haram</span>
+        </h2>
+
+        <div class="filter-bar glass glass--1 reveal">
+          <button class="chip is-active" type="button"><span class="lang-ar">الكل</span><span class="lang-en">All</span></button>
+          <button class="chip" type="button"><span class="lang-ar">★ اقتصادي</span><span class="lang-en">★ Economy</span></button>
+          <button class="chip" type="button"><span class="lang-ar">★★ متوسط</span><span class="lang-en">★★ Standard</span></button>
+          <button class="chip" type="button"><span class="lang-ar">★★★ مميز</span><span class="lang-en">★★★ Premium</span></button>
+          <span class="filter-divider" aria-hidden="true"></span>
+          <button class="chip" type="button"><span class="lang-ar">أقل من 5 دقائق سيرًا</span><span class="lang-en">&lt; 5 min walk</span></button>
+          <button class="chip" type="button"><span class="lang-ar">5–15 دقيقة</span><span class="lang-en">5–15 min</span></button>
+          <button class="chip" type="button"><span class="lang-ar">أكثر من 15 دقيقة</span><span class="lang-en">&gt; 15 min</span></button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="hotelGrid">
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--1">
+              <span class="hotel-badge"><span class="lang-ar">5 دقائق سيرًا</span><span class="lang-en">5 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Lavender/DSC_9467.JPG" alt="">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق زهرة اللافندر</span><span class="lang-en">Zahrat Al Lavender Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="2 out of 5 stars">★★<span class="star-dim">★★★</span></span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">طريق أم القرى، جرول</span><span class="lang-en">Umm Al Qura Rd, Jarwal</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 240<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--2">
+              <span class="hotel-badge"><span class="lang-ar">12 دقيقة سيرًا</span><span class="lang-en">12 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Anwar/DSC_9772.JPG" alt="Anwar Al Deafah Hotel">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق أنوار الضيافة</span><span class="lang-en">Anwar Al Deafah Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="2 out of 5 stars">★★<span class="star-dim">★★★</span></span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">طريق غزة</span><span class="lang-en">Gaza Rd</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 200<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--3">
+              <span class="hotel-badge"><span class="lang-ar">8 دقائق سيرًا</span><span class="lang-en">8 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Saraya/DSC_9452.JPG" alt="">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق سرايا الضيافة</span><span class="lang-en">Saraya Al Deafah Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="3 out of 5 stars">★★★</span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">منطقة إبراهيم الخليل</span><span class="lang-en">Ibrahim Al Khalil Area</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 320<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--4">
+              <span class="hotel-badge"><span class="lang-ar">18 دقيقة سيرًا</span><span class="lang-en">18 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Diar/DSC_9670.JPG" alt="Diyar Al Diyafah Hotel">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق ديار الضيافة</span><span class="lang-en">Diyar Al Diyafah Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="1 out of 5 stars">★<span class="star-dim">★★★★</span></span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">نفق جرول</span><span class="lang-en">Jarwal Tunnel</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 160<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--5">
+              <span class="hotel-badge"><span class="lang-ar">10 دقائق سيرًا</span><span class="lang-en">10 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Taj park/DSC_0737.JPG" alt="">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق تاج بارك</span><span class="lang-en">Taj Park Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="rating pending"><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">مكة المكرمة</span><span class="lang-en">Makkah</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 180<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="col">
+          <article class="hotel-card glass glass--2 reveal">
+            <div class="hotel-media hotel-media--6">
+              <span class="hotel-badge"><span class="lang-ar">15 دقيقة سيرًا</span><span class="lang-en">15 min walk</span></span>
+              <img src="imgs/Hotels Pictures/Bustan/DSC_9565.JPG" alt="">
+            </div>
+            <div class="hotel-body">
+              <h3><span class="lang-ar">فندق البستان الماسي</span><span class="lang-en">Al Bostan Al Masi Hotel</span></h3>
+              <div class="hotel-meta">
+                <span class="stars" aria-label="1 out of 5 stars">★<span class="star-dim">★★★★</span></span>
+                <span class="dot">•</span>
+                <span><span class="lang-ar">التندباوي</span><span class="lang-en">At Tandabawi</span></span>
+              </div>
+              <div class="hotel-foot">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 150<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
+              </div>
+            </div>
+          </article>
+          </div>
+
+        </div>
+
+        <div class="grid-footer">
+          <button class="btn btn-secondary btn-pill" type="button">
+            <span class="lang-ar">عرض جميع الفنادق (14)</span><span class="lang-en">View All 14 Hotels</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services strip -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="cta-band glass glass--2 reveal">
+          <div class="cta-text">
+            <p class="eyebrow"><span class="lang-ar">خدمات الحج والعمرة</span><span class="lang-en">Hajj &amp; Umrah Services</span></p>
+            <h2>
+              <span class="lang-ar">النقل والباقات وحجوزات وفود الحجاج</span>
+              <span class="lang-en">Transport, packages, and pilgrim-delegation booking</span>
+            </h2>
+            <p>
+              <span class="lang-ar">النقل من وإلى المطار، خدمة الغسيل، الحجوزات الجماعية، ومكتب استقبال على مدار الساعة — كل ذلك تديره المجموعة من البداية للنهاية.</span>
+              <span class="lang-en">Airport transfer, laundry, group booking, and a 24-hour desk — arranged end to end by the group.</span>
+            </p>
+          </div>
+          <button class="btn btn-primary btn-pill btn-lg" type="button">
+            <span class="lang-ar">استكشف الخدمات</span><span class="lang-en">Explore Services</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer glass glass--1" id="contact">
+    <div class="container footer-grid row g-4">
+      <div class="footer-col footer-brand col-12 col-md-5">
+        <a href="#top" class="brand">
+        <img class="brand-mark" aria-hidden="true" src="imgs/deafahLogo.png" alt="Al Deafah International Group" width="146" height="44">
+        </a>
+        <p>
+          <span class="lang-ar">ضيافة حول المسجد الحرام، مكة المكرمة — 14 فندقًا بمعيار واحد من الرعاية.</span>
+          <span class="lang-en">Hospitality around Masjid Al Haram, Makkah — 14 hotels, one standard of care.</span>
+        </p>
+      </div>
+
+      <div class="footer-col col-6 col-md-2">
+        <h4><span class="lang-ar">استكشف</span><span class="lang-en">Explore</span></h4>
+        <a href="#hotels"><span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span></a>
+        <a href="#why"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
+        <a href="#services"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
+        <a href="#top"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
+      </div>
+
+      <div class="footer-col col-6 col-md-2">
+        <h4><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></h4>
+        <p>
+          <span class="lang-ar">حي التيسير، مبنى 3039<br>مكة المكرمة، المملكة العربية السعودية</span>
+          <span class="lang-en">Al Taysir District, Building 3039<br>Makkah, Saudi Arabia</span>
+        </p>
+        <p><a href="mailto:info@deafahgroup.com">info@deafahgroup.com</a></p>
+        <p><a href="tel:+966125911110">+966 12 591 11 10</a></p>
+      </div>
+
+      <div class="footer-col footer-newsletter col-12 col-md-3">
+        <h4><span class="lang-ar">ابقَ على اطلاع</span><span class="lang-en">Stay Updated</span></h4>
+        <p>
+          <span class="lang-ar">العروض والتوفر مباشرة إلى بريدك الإلكتروني.</span>
+          <span class="lang-en">Offers and availability, straight to your inbox.</span>
+        </p>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail-ar" name="email" class="lang-ar" placeholder="بريدك الإلكتروني" required>
+          <input type="email" id="newsletterEmail-en" name="email" class="lang-en" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </form>
+        <p class="form-hint" id="newsletterHint" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        <span class="lang-ar">&copy; جميع الحقوق محفوظة <span id="currentYear-ar"></span> مجموعة الضيافة العالمية.</span>
+        <span class="lang-en">&copy; <span id="currentYear-en"></span> Al Deafah International Group. All rights reserved.</span>
+      </p>
+      <div class="footer-legal">
+        <a href="#"><span class="lang-ar">الخصوصية</span><span class="lang-en">Privacy</span></a>
+        <a href="#"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></a>
+        <a href="#"><span class="lang-ar">السياسات</span><span class="lang-en">Policies</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>
