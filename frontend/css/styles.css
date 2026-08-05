@@ -13,6 +13,7 @@
   --color-bg-alt: #f2ece0;
   --color-surface: #ffffff;
   --color-on-surface: #201a13;
+  --color-img-background-overly: rgba(255, 255, 255, 0.7);
   --color-on-surface-muted: rgba(32, 26, 19, 0.68);
   --color-on-surface-faint: rgba(32, 26, 19, 0.46);
 
@@ -64,6 +65,7 @@
   --color-bg-alt: #1c1815;
   --color-surface: #231e1b;
   --color-on-surface: #eae3d9;
+  --color-img-background-overly: rgba(0, 0, 0, 0.7);
   --color-on-surface-muted: rgba(234, 227, 217, 0.68);
   --color-on-surface-faint: rgba(234, 227, 217, 0.44);
 
@@ -1086,3 +1088,29 @@ h1, h2, h3, h4 {
     transform: none;
   }
 }
+
+
+/* Custom styles. */
+/* إعادة ضبط أولية */
+
+/* 1. قسم الواجهة الأساسية (الصورة) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* يغطي ارتفاع الشاشة بالكامل */
+  background-image: url('../imgs/haram.jpg'); /* ضع مسار الصورة الخاصة بك هنا */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* طبقة تغطية شفافة (اختيارية لتوضيح النصوص) */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-img-background-overly);
+}
+

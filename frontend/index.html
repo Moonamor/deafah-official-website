@@ -104,10 +104,13 @@
       </nav>
     </div>
   </header>
+<!-- الواجهة الأساسية (Hero Section) -->
+<header class="hero-section">
+  <!-- طبقة تظليل خفيفة اختياري لزيادة وضوح النص -->
+  <div class="hero-overlay"></div>
 
-  <main id="top">
-
-    <!-- Hero -->
+  <!-- السكشن العلوي للكتابة (في الثلثين العلويين) -->
+  <div class="hero-content">
     <section class="hero">
       <div class="container hero-inner">
         <p class="eyebrow reveal">
@@ -122,56 +125,11 @@
           <span class="lang-en">Discover Makkah's finest hotels, steps from Masjid Al Haram — curated for pilgrims of Hajj and Umrah.</span>
         </p>
       </div>
+  </div>
+</header>
 
-      <!-- Booking widget -->
-      <div class="booking-widget-wrap reveal">
-        <form class="booking-widget glass glass--3" id="bookingWidget">
-          <div class="field">
-            <label for="destination-ar" class="lang-ar">الوجهة</label>
-            <label for="destination-en" class="lang-en">Destination</label>
-            <select id="destination-ar" name="destination" class="lang-ar">
-              <option>مكة المكرمة — جميع الفنادق</option>
-              <option>بالقرب من المسجد الحرام (أقل من 5 دقائق)</option>
-              <option>حي جرول</option>
-              <option>حي التيسير</option>
-            </select>
-            <select id="destination-en" name="destination" class="lang-en">
-              <option>Makkah — All Hotels</option>
-              <option>Near Masjid Al Haram (&lt; 5 min)</option>
-              <option>Jarwal District</option>
-              <option>Al Taysir District</option>
-            </select>
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field">
-            <label for="checkin"><span class="lang-ar">تاريخ الوصول</span><span class="lang-en">Check-in</span></label>
-            <input type="date" id="checkin" name="checkin">
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field">
-            <label for="checkout"><span class="lang-ar">تاريخ المغادرة</span><span class="lang-en">Check-out</span></label>
-            <input type="date" id="checkout" name="checkout">
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field field-guests">
-            <label for="guests"><span class="lang-ar">الضيوف والغرف</span><span class="lang-en">Guests &amp; Rooms</span></label>
-            <div class="stepper" id="guestStepper">
-              <button type="button" class="stepper-btn" data-action="decrement">−</button>
-              <span class="stepper-value" id="guestCount">
-                <span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span>
-              </span>
-              <button type="button" class="stepper-btn" data-action="increment">+</button>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-pill booking-submit">
-            <span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M9 6l6 6-6 6"/>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </section>
+
+  <main id="top">
 
     <!-- Why Deafah -->
     <section class="section" id="why">
