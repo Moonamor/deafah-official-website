@@ -125,6 +125,55 @@
           <span class="lang-en">Discover Makkah's finest hotels, steps from Masjid Al Haram — curated for pilgrims of Hajj and Umrah.</span>
         </p>
       </div>
+            <!-- Booking widget -->
+      <div class="booking-widget-wrap reveal">
+        <form class="booking-widget glass glass--3" id="bookingWidget">
+          <div class="field">
+            <label for="destination-ar" class="lang-ar">الوجهة</label>
+            <label for="destination-en" class="lang-en">Destination</label>
+            <select id="destination-ar" name="destination" class="lang-ar">
+              <option>مكة المكرمة — جميع الفنادق</option>
+              <option>بالقرب من المسجد الحرام (أقل من 5 دقائق)</option>
+              <option>حي جرول</option>
+              <option>حي التيسير</option>
+            </select>
+            <select id="destination-en" name="destination" class="lang-en">
+              <option>Makkah — All Hotels</option>
+              <option>Near Masjid Al Haram (&lt; 5 min)</option>
+              <option>Jarwal District</option>
+              <option>Al Taysir District</option>
+            </select>
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field">
+            <label for="checkin"><span class="lang-ar">تاريخ الوصول</span><span class="lang-en">Check-in</span></label>
+            <input type="date" id="checkin" name="checkin">
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field">
+            <label for="checkout"><span class="lang-ar">تاريخ المغادرة</span><span class="lang-en">Check-out</span></label>
+            <input type="date" id="checkout" name="checkout">
+          </div>
+          <div class="field-divider" aria-hidden="true"></div>
+          <div class="field field-guests">
+            <label for="guests"><span class="lang-ar">الضيوف والغرف</span><span class="lang-en">Guests &amp; Rooms</span></label>
+            <div class="stepper" id="guestStepper">
+              <button type="button" class="stepper-btn" data-action="decrement">−</button>
+              <span class="stepper-value" id="guestCount">
+                <span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span>
+              </span>
+              <button type="button" class="stepper-btn" data-action="increment">+</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-pill booking-submit">
+            <span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
   </div>
 </header>
 
@@ -257,7 +306,7 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--1">
               <span class="hotel-badge"><span class="lang-ar">5 دقائق سيرًا</span><span class="lang-en">5 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Lavender/DSC_9467.JPG" alt="">
+              <img src="imgs/hotel-pics/lav.jpg" alt="Zahrat Al Lavender Hotel">
             </div>
             <div class="hotel-body">
               <h3><span class="lang-ar">فندق زهرة اللافندر</span><span class="lang-en">Zahrat Al Lavender Hotel</span></h3>
@@ -278,14 +327,14 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--2">
               <span class="hotel-badge"><span class="lang-ar">12 دقيقة سيرًا</span><span class="lang-en">12 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Anwar/DSC_9772.JPG" alt="Anwar Al Deafah Hotel">
+              <img src="imgs/hotel-pics/Amjad.JPG" alt="Amjad Al Deafah Hotel">
             </div>
             <div class="hotel-body">
-              <h3><span class="lang-ar">فندق أنوار الضيافة</span><span class="lang-en">Anwar Al Deafah Hotel</span></h3>
+              <h3><span class="lang-ar">فندق أمجاد الضيافة</span><span class="lang-en">Amjad Al Deafah Hotel</span></h3>
               <div class="hotel-meta">
                 <span class="stars" aria-label="2 out of 5 stars">★★<span class="star-dim">★★★</span></span>
                 <span class="dot">•</span>
-                <span><span class="lang-ar">طريق غزة</span><span class="lang-en">Gaza Rd</span></span>
+                <span><span class="lang-ar">طريق االتيسير</span><span class="lang-en">AL Tiseer Rd</span></span>
               </div>
               <div class="hotel-foot">
                 <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 200<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
@@ -299,7 +348,7 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--3">
               <span class="hotel-badge"><span class="lang-ar">8 دقائق سيرًا</span><span class="lang-en">8 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Saraya/DSC_9452.JPG" alt="">
+              <img src="imgs/hotel-pics/Saraya.JPG" alt="Saraya Al Deafah Hotel">
             </div>
             <div class="hotel-body">
               <h3><span class="lang-ar">فندق سرايا الضيافة</span><span class="lang-en">Saraya Al Deafah Hotel</span></h3>
@@ -320,7 +369,7 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--4">
               <span class="hotel-badge"><span class="lang-ar">18 دقيقة سيرًا</span><span class="lang-en">18 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Diar/DSC_9670.JPG" alt="Diyar Al Diyafah Hotel">
+              <img src="imgs/hotel-pics/Diar.JPG" alt="Diyar Al Diyafah Hotel">
             </div>
             <div class="hotel-body">
               <h3><span class="lang-ar">فندق ديار الضيافة</span><span class="lang-en">Diyar Al Diyafah Hotel</span></h3>
@@ -341,7 +390,7 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--5">
               <span class="hotel-badge"><span class="lang-ar">10 دقائق سيرًا</span><span class="lang-en">10 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Taj park/DSC_0737.JPG" alt="">
+              <img src="imgs/hotel-pics/taj.JPG" alt="Taj Park Hotel">
             </div>
             <div class="hotel-body">
               <h3><span class="lang-ar">فندق تاج بارك</span><span class="lang-en">Taj Park Hotel</span></h3>
@@ -362,7 +411,7 @@
           <article class="hotel-card glass glass--2 reveal">
             <div class="hotel-media hotel-media--6">
               <span class="hotel-badge"><span class="lang-ar">15 دقيقة سيرًا</span><span class="lang-en">15 min walk</span></span>
-              <img src="imgs/Hotels Pictures/Bustan/DSC_9565.JPG" alt="">
+              <img src="imgs/hotel-pics/Bustan.JPG" alt="Al Bostan Al Masi Hotel">
             </div>
             <div class="hotel-body">
               <h3><span class="lang-ar">فندق البستان الماسي</span><span class="lang-en">Al Bostan Al Masi Hotel</span></h3>
