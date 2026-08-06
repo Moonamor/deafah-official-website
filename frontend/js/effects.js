@@ -69,33 +69,10 @@ window.DeafahEffects = (function ($) {
   }
 
   /* -----------------------------------------------------------------------
-     Scroll reveal — fade/slide elements into view once, on entry
+     Scroll reveal — now owned by js/animations.js (GSAP + ScrollTrigger).
+     Removed here to avoid two engines fighting over the same elements'
+     opacity/transform. See js/animations.js "SCROLL-TRIGGERED REVEALS".
      ------------------------------------------------------------------- */
-  function initScrollReveal() {
-    var $targets = $(".reveal");
-    if (!$targets.length) return;
-
-    if (reducedMotion || !("IntersectionObserver" in window)) {
-      $targets.addClass("is-visible");
-      return;
-    }
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            $(entry.target).addClass("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    $targets.each(function () {
-      observer.observe(this);
-    });
-  }
 
   /* -----------------------------------------------------------------------
      Stat counters — count up once, on entering the viewport
@@ -169,7 +146,6 @@ window.DeafahEffects = (function ($) {
   $(function () {
     initBlobParallax();
     initCardTilt();
-    initScrollReveal();
     initStatCounters();
   });
 

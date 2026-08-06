@@ -147,19 +147,6 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile menu dropdown — floats directly over page content (the hero
-   heading behind it) rather than beside it, so it needs a heavier
-   blur/opacity than the standard glass--2 tier to stay legible. */
-.mobile-menu-panel {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
-}
-
-:root[data-theme="dark"] .mobile-menu-panel {
-  background: rgba(35, 30, 27, 0.92);
-}
-
 /* Edge glow on hover — cards and interactive panels only */
 .why-card.glass:hover,
 .hotel-card.glass:hover {

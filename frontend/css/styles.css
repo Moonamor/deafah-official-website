@@ -9,11 +9,13 @@
      Light is the default theme, drawn from the brand mark itself:
      crisp white card stock, near-black calligraphy ink, antique-gold
      horse mark and rule. Dark mode lives under [data-theme="dark"]. */
+  --deafah-logo: url('../imgs/deafahLogo.png');
+  --background-img-panner: url('../imgs/deafahpanner.png');
   --color-bg: #fcfaf6;
   --color-bg-alt: #f2ece0;
   --color-surface: #ffffff;
   --color-on-surface: #201a13;
-  --color-img-background-overly: rgba(255, 255, 255, 0.5);
+  --color-img-background-overly: rgba(255, 255, 255, 0.1);
   --color-on-surface-muted: rgba(32, 26, 19, 0.68);
   --color-on-surface-faint: rgba(32, 26, 19, 0.46);
 
@@ -61,6 +63,8 @@
 }
 
 :root[data-theme="dark"] {
+  --deafah-logo: url('../imgs/deafahLogo-dark.png');
+  --background-img-panner: url('../imgs/deafahpanner-dark.png');
   --color-bg: #161311;
   --color-bg-alt: #1c1815;
   --color-surface: #231e1b;
@@ -99,7 +103,7 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg);
   color: var(--color-on-surface);
-  font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Cairo", "Segoe UI", system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -192,8 +196,8 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-  font-size: clamp(24px, 4vw, 44px);
-  max-width: 20ch;
+  font-size: clamp(24px, 2vw, 44px);
+  max-width: 30ch;
   margin-bottom: var(--space-8);
 }
 
@@ -287,6 +291,16 @@ h1, h2, h3, h4 {
   font-size: 16px;
 }
 
+.btn-chevron {
+  font-size: 13px;
+}
+
+/* fa-chevron-right points toward LTR "forward"; mirror it in RTL so it
+   still points toward the reading-end direction. */
+[dir="rtl"] .btn-chevron {
+  transform: scaleX(-1);
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
   color: #201a12;
@@ -337,6 +351,10 @@ h1, h2, h3, h4 {
   color: var(--color-accent-light);
 }
 
+.icon-btn i {
+  font-size: 16px;
+}
+
 /* -------------------------------------------------------------------------
    Header
    ------------------------------------------------------------------------- */
@@ -349,7 +367,7 @@ h1, h2, h3, h4 {
   transition: height var(--duration-base) var(--ease-out);
   /* Forces its own compositing layer. Without this, backdrop-filter on a
      sticky element can fail to repaint fully when a child's layout changes
-     (e.g. the #mobileMenu collapse opening) — leaving a stale half-painted
+     (e.g. the #primaryNav collapse opening) — leaving a stale half-painted
      frame until something forces a full repaint, like a page refresh.
      translateZ(0) alone is a weak/old hint in Safari; will-change plus
      an explicit isolating layer is the more reliable combination. */
@@ -376,10 +394,6 @@ h1, h2, h3, h4 {
   gap: var(--space-3);
 }
 
-.brand-mark {
-  color: var(--color-accent);
-  display: inline-flex;
-}
 
 .brand-text {
   display: flex;
@@ -399,47 +413,93 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
+/* Show/hide + the row-vs-dropdown layout switch are handled by
+   Bootstrap's .collapse/.navbar-collapse/.navbar-expand-lg classes
+   (see index.html) — this rule only supplies OUR visual spacing,
+   identical at every breakpoint. The mobile-only dropdown "panel"
+   look lives in the @media (max-width: 991.98px) block further down. */
 .primary-nav {
-  display: none;
   align-items: center;
   gap: var(--space-6);
 }
 
-@media (min-width: 992px) {
-  .primary-nav { display: flex; }
-}
-
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: var(--color-bg-alt);
   font-size: 14px;
   font-weight: 600;
   color: var(--color-on-surface-muted);
-  position: relative;
-  padding-block: var(--space-2);
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
 }
 
+/* Gold fill that grows in behind the label on hover */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+}
+
+/* Diagonal shine that sweeps across on hover */
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 2px;
-  border-radius: var(--radius-pill);
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform var(--duration-fast) var(--ease-out);
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+  transform: translateX(-130%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
 }
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--color-on-surface);
+  color: #201a12;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(184, 144, 71, 0.35);
 }
 
-.nav-link:hover::after,
-.nav-link.is-active::after {
-  transform: scaleX(1);
+.nav-link:hover::before,
+.nav-link.is-active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-link:hover::after {
+  transform: translateX(130%);
+}
+
+/* Replace the browser's default blue focus ring with a brand-colored
+   one — and only show it for keyboard navigation, not mouse clicks,
+   so clicking a link doesn't leave a ring stuck on it. */
+.nav-link:focus {
+  outline: none;
+}
+
+.nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 144, 71, 0.4);
+}
+
+.nav-link.is-active {
+  transform: translateY(0);
 }
 
 .header-actions {
@@ -452,61 +512,76 @@ h1, h2, h3, h4 {
   display: none;
 }
 
-@media (min-width: 992px) {
+/* Breakpoint raised from lg (992px) to xl (1200px): 5 pill links + logo
+   + CTA + icon buttons genuinely don't fit comfortably in the 992-1200px
+   range without wrapping/overflow — matches .navbar-expand-xl below. */
+@media (min-width: 1200px) {
   .header-cta { display: inline-flex; }
 }
 
-.nav-toggle {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .nav-toggle { display: none; }
 }
 
-.nav-toggle span {
-  width: 16px;
-  height: 2px;
-  border-radius: 2px;
-  background: currentColor;
-  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+/* Mobile-only CTA inside #primaryNav — .header-cta already covers
+   desktop, so this one only needs to exist below the xl breakpoint. */
+.mobile-nav-cta {
+  display: none;
 }
 
-/* Mobile dropdown menu — Bootstrap's Collapse supplies the show/hide
-   height animation; docking it under the header and its panel look
-   are ours. .site-header (position:sticky) is the containing block
-   for #mobileMenu's position:absolute. */
+/* #primaryNav is ONE element used at every breakpoint (see index.html).
+   Bootstrap's .navbar-expand-xl .navbar-collapse rule forces it to
+   display:flex (row, inline in the header) at 1200px+ with no extra
+   CSS from us needed. Below 1200px, it's Bootstrap's plain .collapse
+   (hidden unless .show) — everything in this block is what turns it
+   into the glass dropdown panel in that state, and every property
+   here is scoped OUT at 1200px+ per the "only below xl" requirement. */
+@media (max-width: 1199.98px) {
+  .mobile-nav-cta {
+    display: inline-flex;
+  }
 
-#mobileMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 90;
-  transform: translateZ(0);
-  will-change: transform;
-}
+  #primaryNav.navbar-collapse {
+    /* Bootstrap's own .collapse.show sets display:block, which makes
+       flex-direction below inert — the links then wrap like loose
+       inline blocks instead of stacking, which read as a "grid" of
+       links rather than one-per-row. Reasserting display:flex here
+       (an ID selector always outranks Bootstrap's .collapse.show,
+       which is only two classes) is what actually fixes that. */
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    flex-direction: column;
+    /* Overrides .primary-nav's own align-items:center (meant for the
+       desktop inline row) — stretch makes each link/CTA fill the full
+       width of the panel instead of sizing to its own text. */
+    align-items: stretch;
+    gap: var(--space-2);
+    margin: 0 var(--space-4) var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border-strong);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(40px) saturate(160%);
+    -webkit-backdrop-filter: blur(40px) saturate(160%);
+    transform: translateZ(0);
+    will-change: transform;
+  }
 
-@media (min-width: 992px) {
-  /* Primary nav is visible at lg+; force the dropdown closed so a
-     leftover .show class from a narrower viewport can't linger. */
-  #mobileMenu { display: none !important; }
-}
+  :root[data-theme="dark"] #primaryNav.navbar-collapse {
+    background: rgba(35, 30, 27, 0.92);
+  }
 
-.mobile-menu-panel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  margin: 0 var(--space-4) var(--space-4);
-  padding: var(--space-4);
-}
-
-.mobile-menu-panel .nav-link {
-  padding-block: var(--space-3);
+  /* Now that the pill itself is full-width, center the label inside it
+     (.nav-link has no justify-content of its own, so it'd otherwise
+     sit at the RTL/LTR start edge instead of the middle). */
+  #primaryNav.navbar-collapse .nav-link {
+    justify-content: center;
+    padding-block: var(--space-3);
+  }
 }
 
 /* -------------------------------------------------------------------------
@@ -673,6 +748,10 @@ h1, h2, h3, h4 {
   color: var(--color-accent-light);
   margin-bottom: var(--space-4);
   transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.why-icon i {
+  font-size: 22px;
 }
 
 .why-card:hover .why-icon {
@@ -1029,6 +1108,101 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------------------------------------------------------------
+   Contact modal
+   Structural/positioning classes (.modal, .modal-dialog, .modal-content,
+   .modal-header/-body/-footer) are Bootstrap's — layout only. The glass
+   look comes from reusing our own .glass/.glass--3 tier (added directly
+   in the HTML), which already handles light/dark backgrounds, blur,
+   border, and shadow — no new theme-specific rules needed for the
+   panel itself. Only the form fields and header/footer borders below
+   are custom to this component.
+   ------------------------------------------------------------------------- */
+
+.contact-modal .modal-header,
+.contact-modal .modal-footer {
+  border-color: var(--glass-border);
+}
+
+/* justify-content:space-between is direction-aware — the title sits at
+   the reading-start side and the close button at the reading-end side,
+   automatically swapping sides when the language/dir toggle flips
+   between rtl and ltr. Reasserted explicitly (higher specificity than
+   Bootstrap's bare .modal-header) since the close button here is our
+   own .icon-btn, not Bootstrap's .btn-close, and shouldn't rely on
+   Bootstrap's own (LTR-only, non-mirroring) auto-margin trick. */
+.contact-modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.contact-modal .modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.contact-form .field {
+  margin-bottom: var(--space-4);
+}
+
+.contact-form .field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-on-surface-faint);
+  margin-bottom: var(--space-1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border-strong);
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--color-on-surface);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.contact-form input.is-invalid,
+.contact-form textarea.is-invalid {
+  border-color: var(--color-error);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.char-count {
+  margin: 0;
+  font-size: 12px;
+  text-align: end;
+  color: var(--color-on-surface-faint);
+}
+
+.char-count.is-invalid {
+  color: var(--color-error);
+}
+
+/* -------------------------------------------------------------------------
    Toast
    ------------------------------------------------------------------------- */
 
@@ -1061,15 +1235,13 @@ h1, h2, h3, h4 {
    Scroll reveal
    ------------------------------------------------------------------------- */
 
+/* No CSS transition here on purpose — js/animations.js (GSAP) now
+   owns the actual reveal timing/easing frame-by-frame. This is only
+   the pre-JS resting state (and the JS-failure fallback, see
+   animations.js's own top-of-file safety check). */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* -------------------------------------------------------------------------
@@ -1098,8 +1270,8 @@ h1, h2, h3, h4 {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh; /* يغطي ارتفاع الشاشة بالكامل */
-  background-image: url('../imgs/haram.jpg'); /* ضع مسار الصورة الخاصة بك هنا */
+  height: 60vh; /* يغطي ارتفاع الشاشة بالكامل */
+  background-image: var(--background-img-panner);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1115,3 +1287,14 @@ h1, h2, h3, h4 {
   background: var(--color-img-background-overly);
 }
 
+.nav-logo {
+  display: inline-block;
+  width: 250px; /* حجم الشعار */
+  aspect-ratio: 499 / 150;
+  height: auto;
+  background-image: var(--deafah-logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform var(--duration-fast) var(--ease-out);
+}

@@ -8,13 +8,14 @@
   <link rel="icon" href="imgs/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/liquid-glass.css">
 </head>
@@ -32,39 +33,44 @@
 
   <!-- Header -->
   <header class="nav site-header glass glass--1" id="siteHeader">
-    <div class="container header-inner">
+    <div class="container header-inner navbar-expand-xl">
       <a href="#top" class="brand">
-        <img class="nav-logo" aria-hidden="true" src="imgs/deafahLogo.png" alt="Al Deafah International Group" width="146" height="44">
+        <span class="nav-logo" role="img" aria-label="Al Deafah International Group"></span>
       </a>
 
-      <nav class="primary-nav" id="primaryNav">
-
-        <a href="#top" class="nav-link is-active">
+      <!-- Single source of truth for nav links: Bootstrap's .collapse +
+           .navbar-collapse (paired with .navbar-expand-xl on the row
+           above) handles ONLY the show/hide + breakpoint layout switch.
+           All visual styling stays in our own .primary-nav/.nav-link
+           classes — see the "@media (max-width: 1199.98px) #primaryNav"
+           block in styles.css for the mobile dropdown look. -->
+      <nav class="primary-nav collapse navbar-collapse" id="primaryNav">
+        <a href="#top" class="nav-link is-active" data-bs-toggle="collapse" data-bs-target="#primaryNav">
           <span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span>
         </a>
-        <a href="#hotels" class="nav-link">
+        <a href="#hotels" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
           <span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span>
         </a>
-        <a href="#why" class="nav-link">
+        <a href="#why" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
           <span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span>
         </a>
-        <a href="#services" class="nav-link">
+        <a href="#services" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
           <span class="lang-ar">الخدمات</span><span class="lang-en">Services</span>
         </a>
-        <a href="#contact" class="nav-link">
+        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
           <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span>
         </a>
+        <!-- Mobile-only CTA (hidden at lg+ via CSS): the .header-cta
+             button below already covers desktop. -->
+        <button class="btn btn-primary btn-pill mobile-nav-cta" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav">
+          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
+        </button>
       </nav>
 
       <div class="header-actions">
         <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3 7 7 0 0 0 21 12.5Z"/>
-          </svg>
+          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
+          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
         </button>
         <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">
           <span class="lang-ar">EN</span><span class="lang-en">AR</span>
@@ -73,35 +79,11 @@
           <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
         </button>
         <button class="icon-btn nav-toggle" id="navToggle" type="button"
-          data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu"
+          data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav"
           aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </div>
-    </div>
-
-    <!-- Mobile dropdown menu (Bootstrap Collapse) -->
-    <div class="collapse" id="mobileMenu">
-      <nav class="mobile-menu-panel glass glass--2">
-        <a href="#top" class="nav-link is-active" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span>
-        </a>
-        <a href="#hotels" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span>
-        </a>
-        <a href="#why" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span>
-        </a>
-        <a href="#services" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">الخدمات</span><span class="lang-en">Services</span>
-        </a>
-        <a href="#contact" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span>
-        </a>
-        <button class="btn btn-primary btn-pill" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
-        </button>
-      </nav>
     </div>
   </header>
 <!-- الواجهة الأساسية (Hero Section) -->
@@ -113,9 +95,9 @@
   <div class="hero-content">
     <section class="hero">
       <div class="container hero-inner">
-        <p class="eyebrow reveal">
+        <!-- <p class="eyebrow reveal">
           <span class="lang-ar">مجموعة الضيافة العالمية</span><span class="lang-en">Global Hospitality Group</span>
-        </p>
+        </p> 
         <h1 class="hero-title reveal">
           <span class="lang-ar">حول الحرم<br>على مدار الساعة</span>
           <span class="lang-en">Around the Haram<br>Around the Clock</span>
@@ -123,8 +105,14 @@
         <p class="hero-sub reveal">
           <span class="lang-ar">اكتشف أفضل فنادق مكة المكرمة القريبة من الحرم — مُنتقاة خصيصًا لضيوف الحج والعمرة.</span>
           <span class="lang-en">Discover Makkah's finest hotels, steps from Masjid Al Haram — curated for pilgrims of Hajj and Umrah.</span>
-        </p>
+        </p>-->
       </div>
+    </section>
+  </div>
+</header>
+
+
+  <main id="top">
             <!-- Booking widget -->
       <div class="booking-widget-wrap reveal">
         <form class="booking-widget glass glass--3" id="bookingWidget">
@@ -158,27 +146,19 @@
           <div class="field field-guests">
             <label for="guests"><span class="lang-ar">الضيوف والغرف</span><span class="lang-en">Guests &amp; Rooms</span></label>
             <div class="stepper" id="guestStepper">
-              <button type="button" class="stepper-btn" data-action="decrement">−</button>
+              <button type="button" class="stepper-btn" data-action="decrement"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
               <span class="stepper-value" id="guestCount">
                 <span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span>
               </span>
-              <button type="button" class="stepper-btn" data-action="increment">+</button>
+              <button type="button" class="stepper-btn" data-action="increment"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-pill booking-submit">
             <span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M9 6l6 6-6 6"/>
-            </svg>
+            <i class="fa-solid fa-chevron-right btn-chevron" aria-hidden="true"></i>
           </button>
         </form>
       </div>
-    </section>
-  </div>
-</header>
-
-
-  <main id="top">
 
     <!-- Why Deafah -->
     <section class="section" id="why">
@@ -193,11 +173,7 @@
           <div class="col">
           <article class="why-card glass glass--2 reveal">
             <span class="why-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path d="M12 21s-7-5.4-9.5-9.8C.7 7.4 2.9 3.5 6.7 3.1c2-.2 3.8.8 5.3 2.6 1.5-1.8 3.3-2.8 5.3-2.6 3.8.4 6 4.3 4.2 8.1C19 15.6 12 21 12 21Z" opacity="0"/>
-                <path d="M12 3.5 20 12l-8 8.5L4 12z"/>
-                <circle cx="12" cy="12" r="2.5" fill="currentColor" opacity="0.8"/>
-              </svg>
+              <i class="fa-solid fa-person-walking"></i>
             </span>
             <h3><span class="lang-ar">خطوات من الحرم</span><span class="lang-en">Steps from the Haram</span></h3>
             <p>
@@ -210,12 +186,7 @@
           <div class="col">
           <article class="why-card glass glass--2 reveal">
             <span class="why-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
-                <rect x="3" y="3" width="8" height="8" rx="1.5"/>
-                <rect x="13" y="3" width="8" height="8" rx="1.5"/>
-                <rect x="3" y="13" width="8" height="8" rx="1.5"/>
-                <rect x="13" y="13" width="8" height="8" rx="1.5"/>
-              </svg>
+              <i class="fa-solid fa-hotel"></i>
             </span>
             <h3><span class="lang-ar">14 فندقًا، مجموعة واحدة</span><span class="lang-en">14 Hotels, One Group</span></h3>
             <p>
@@ -228,10 +199,7 @@
           <div class="col">
           <article class="why-card glass glass--2 reveal">
             <span class="why-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path d="M4 18V9l8-5 8 5v9"/>
-                <path d="M9 18v-5h6v5"/>
-              </svg>
+              <i class="fa-solid fa-tag"></i>
             </span>
             <h3><span class="lang-ar">أسعار تنافسية</span><span class="lang-en">Competitive Pricing</span></h3>
             <p>
@@ -244,10 +212,7 @@
           <div class="col">
           <article class="why-card glass glass--2 reveal">
             <span class="why-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v5l3.5 2"/>
-              </svg>
+              <i class="fa-regular fa-clock"></i>
             </span>
             <h3><span class="lang-ar">خدمة على مدار 24 ساعة</span><span class="lang-en">24-Hour Service</span></h3>
             <p>
@@ -463,16 +428,15 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer glass glass--1" id="contact">
+  <footer class="site-footer glass glass--1" id="footer">
     <div class="container footer-grid row g-4">
       <div class="footer-col footer-brand col-12 col-md-5">
         <a href="#top" class="brand">
-        <img class="brand-mark" aria-hidden="true" src="imgs/deafahLogo.png" alt="Al Deafah International Group" width="146" height="44">
+        <span class="nav-logo" role="img" aria-label="Al Deafah International Group"></span>
         </a>
         <p>
-          <span class="lang-ar">شركة سعودية رائدة تتخذ من العاصمة المقدسة مقراً لها، ونختص في استثمار، إدارة، وتشغيل الفنادق، إلى جانب تقديم خدمات الضيافة المتكاملة لحجاج ومعتمري بيت الله الحرام.
-نسعى جاهدين لتقديم مفهوم عصري للضيافة الفندقية يجمع بين جودة الخدمة، الراحة.</span>
-          <span class="lang-en">Based in the Holy City of Makkah, our premier Saudi company excels in hotel investment, management, and operations, providing elevated hospitality experiences for Hajj and Umrah pilgrims. We strive to set a new benchmark in modern hotel hospitality, harmonizing premium service with refined comfort.</span>
+          <span class="lang-ar">نحن شركة رائدة في إدارة وتشغيل الفنادق، نقدم حلول ضيافة متكاملة بمعايير عالمية تشمل إدارة وتشغيل المنشآت الفندقية، وخدمات الإعاشة، والنقل، وتأشيرات العمرة، لنصنع تجربة استثنائية تواكب أعلى معايير الجودة والاحترافية ورضا العملاء.</span>
+          <span class="lang-en">We are a leading company in hotel management and operations, providing integrated hospitality solutions with global standards, including hotel management and operations, catering services, transportation, and Umrah visa services, to create an exceptional experience that meets the highest standards of quality, professionalism, and customer satisfaction.</span>
         </p>
       </div>
 
@@ -504,9 +468,7 @@
           <input type="email" id="newsletterEmail-ar" name="email" class="lang-ar" placeholder="بريدك الإلكتروني" required>
           <input type="email" id="newsletterEmail-en" name="email" class="lang-en" placeholder="Your email address" required>
           <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M9 6l6 6-6 6"/>
-            </svg>
+            <i class="fa-solid fa-chevron-right btn-chevron" aria-hidden="true"></i>
           </button>
         </form>
         <p class="form-hint" id="newsletterHint" role="status" aria-live="polite"></p>
@@ -526,12 +488,77 @@
     </div>
   </footer>
 
+  <!-- Contact modal -->
+  <div class="modal fade contact-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass glass--3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">
+            <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact Us</span>
+          </h5>
+          <button type="button" class="icon-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="contactName-ar" class="lang-ar">الاسم الكامل</label>
+              <label for="contactName-en" class="lang-en">Full Name</label>
+              <input type="text" id="contactName-ar" class="lang-ar" placeholder="اسمك الكامل" autocomplete="name" required>
+              <input type="text" id="contactName-en" class="lang-en" placeholder="Your full name" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="contactEmail-ar" class="lang-ar">البريد الإلكتروني</label>
+              <label for="contactEmail-en" class="lang-en">Email Address</label>
+              <input type="email" id="contactEmail-ar" class="lang-ar" placeholder="بريدك الإلكتروني" autocomplete="email" required>
+              <input type="email" id="contactEmail-en" class="lang-en" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="contactPhone-ar" class="lang-ar">رقم الجوال</label>
+              <label for="contactPhone-en" class="lang-en">Mobile Number</label>
+              <input type="tel" id="contactPhone-ar" class="lang-ar" placeholder="05xxxxxxxx" autocomplete="tel" required>
+              <input type="tel" id="contactPhone-en" class="lang-en" placeholder="+966 5x xxx xxxx" autocomplete="tel" required>
+            </div>
+
+            <div class="field">
+              <label for="contactMessage-ar" class="lang-ar">رسالة مختصرة</label>
+              <label for="contactMessage-en" class="lang-en">Short Message</label>
+              <textarea id="contactMessage-ar" class="lang-ar contact-message" rows="4" minlength="100" maxlength="200" placeholder="اكتب رسالتك هنا... (100–200 حرف)" required></textarea>
+              <textarea id="contactMessage-en" class="lang-en contact-message" rows="4" minlength="100" maxlength="200" placeholder="Write your message here... (100–200 characters)" required></textarea>
+            </div>
+            <p class="char-count" id="contactCharCount">
+              <span class="lang-ar"><span class="char-count-value" data-lang="ar">0</span> / 200 حرف (الحد الأدنى 100)</span>
+              <span class="lang-en"><span class="char-count-value" data-lang="en">0</span> / 200 characters (100 min)</span>
+            </p>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-pill" data-bs-dismiss="modal">
+            <span class="lang-ar">إلغاء</span><span class="lang-en">Cancel</span>
+          </button>
+          <button type="submit" form="contactForm" class="btn btn-primary btn-pill">
+            <span class="lang-ar">إرسال</span><span class="lang-en">Submit</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
+  <script src="js/auto-theme-manager.js"></script>
   <script src="js/effects.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

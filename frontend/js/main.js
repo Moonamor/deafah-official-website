@@ -181,6 +181,62 @@ $(function () {
   });
 
   /* -----------------------------------------------------------------------
+     Contact modal — live character count (100-200) + submit validation.
+     Two message textareas exist (#contactMessage-ar / -en); only the one
+     matching the active language is visible, so read/validate that one.
+     ------------------------------------------------------------------- */
+  var CONTACT_MSG_MIN = 100;
+  var CONTACT_MSG_MAX = 200;
+
+  function updateCharCount($textarea) {
+    var lang = $textarea.hasClass("lang-ar") ? "ar" : "en";
+    var length = $textarea.val().length;
+
+    $('.char-count-value[data-lang="' + lang + '"]').text(length);
+    $("#contactCharCount").toggleClass(
+      "is-invalid",
+      length > 0 && length < CONTACT_MSG_MIN
+    );
+  }
+
+  $(".contact-message").on("input", function () {
+    updateCharCount($(this));
+  });
+
+  $("#contactModal").on("show.bs.modal", function () {
+    $(this).find(".contact-message").val("");
+    $(this).find(".char-count-value").text("0");
+    $("#contactCharCount").removeClass("is-invalid");
+    $(this).find("input, textarea").removeClass("is-invalid");
+  });
+
+  $("#contactForm").on("submit", function (e) {
+    e.preventDefault();
+
+    var $message = isArabic() ? $("#contactMessage-ar") : $("#contactMessage-en");
+    var length = $message.val().trim().length;
+
+    if (length < CONTACT_MSG_MIN || length > CONTACT_MSG_MAX) {
+      $message.addClass("is-invalid");
+      $("#contactCharCount").addClass("is-invalid");
+      return;
+    }
+
+    $message.removeClass("is-invalid");
+
+    var modalEl = document.getElementById("contactModal");
+    var modalInstance = bootstrap.Modal.getInstance(modalEl);
+    if (modalInstance) {
+      modalInstance.hide();
+    }
+
+    this.reset();
+    window.DeafahEffects.showToast(
+      isArabic() ? "تم إرسال رسالتك بنجاح." : "Your message has been sent."
+    );
+  });
+
+  /* -----------------------------------------------------------------------
      Footer year
      ------------------------------------------------------------------- */
   $("#currentYear-ar, #currentYear-en").text(new Date().getFullYear());
