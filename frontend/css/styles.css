@@ -541,13 +541,16 @@ h1, h2, h3, h4 {
     display: inline-flex;
   }
 
-  #primaryNav.navbar-collapse {
-    /* Bootstrap's own .collapse.show sets display:block, which makes
-       flex-direction below inert — the links then wrap like loose
-       inline blocks instead of stacking, which read as a "grid" of
-       links rather than one-per-row. Reasserting display:flex here
-       (an ID selector always outranks Bootstrap's .collapse.show,
-       which is only two classes) is what actually fixes that. */
+  /* Scoped to .show/.collapsing specifically — NOT bare
+     #primaryNav.navbar-collapse. An ID selector outranks Bootstrap's
+     .collapse:not(.show){display:none} (two classes) regardless of
+     specificity tricks, so an unscoped display:flex here would force
+     the panel permanently visible and make the hamburger toggle inert
+     (clicking it flips .show on/off correctly, but this CSS ignored
+     that and showed the panel either way). Requiring .show/.collapsing
+     in the selector is what makes it actually respect the toggle. */
+  #primaryNav.navbar-collapse.show,
+  #primaryNav.navbar-collapse.collapsing {
     display: flex;
     position: absolute;
     top: 100%;
@@ -571,7 +574,8 @@ h1, h2, h3, h4 {
     will-change: transform;
   }
 
-  :root[data-theme="dark"] #primaryNav.navbar-collapse {
+  :root[data-theme="dark"] #primaryNav.navbar-collapse.show,
+  :root[data-theme="dark"] #primaryNav.navbar-collapse.collapsing {
     background: rgba(35, 30, 27, 0.92);
   }
 
@@ -1271,10 +1275,18 @@ h1, h2, h3, h4 {
   position: relative;
   width: 100%;
   height: 60vh; /* يغطي ارتفاع الشاشة بالكامل */
+  margin: 0;
   background-image: var(--background-img-panner);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* Forces its own compositing layer — the same fix .site-header needed
+     for a stale/partially-painted repaint bug. This element sits right
+     next to that sticky, backdrop-filter header, so it can suffer the
+     same class of glitch. */
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
 }
 
 /* طبقة تغطية شفافة (اختيارية لتوضيح النصوص) */
@@ -1289,7 +1301,12 @@ h1, h2, h3, h4 {
 
 .nav-logo {
   display: inline-block;
-  width: 250px; /* حجم الشعار */
+  /* Fluid instead of a fixed 250px — at mobile widths, 250px + the
+     header icon buttons genuinely don't fit (measured: 45px of real
+     horizontal overflow at 390px viewport, confirmed via headless
+     browser), which pushed .header-actions off-screen. Scales down to
+     120px on narrow screens, caps at the original 250px on desktop. */
+  width: clamp(120px, 32vw, 250px);
   aspect-ratio: 499 / 150;
   height: auto;
   background-image: var(--deafah-logo);
