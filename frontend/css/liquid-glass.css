@@ -1,12 +1,4 @@
-/* ==========================================================================
-   Al Deafah International Group — Liquid Glass (Glassmorphism)
-   Ambient background blobs, glass surface tiers, shimmer borders,
-   reflections, and glass-lite fallback for low-end devices.
-   ========================================================================== */
 
-/* -------------------------------------------------------------------------
-   Ambient liquid blobs
-   ------------------------------------------------------------------------- */
 
 .blob {
   position: absolute;
@@ -88,10 +80,6 @@
   .blob { filter: blur(90px); }
 }
 
-/* -------------------------------------------------------------------------
-   Glass surface tiers
-   ------------------------------------------------------------------------- */
-
 .glass {
   position: relative;
   border-radius: var(--radius-lg);
@@ -109,14 +97,19 @@
   z-index: 1;
 }
 
-/* Tier 1 — ambient: header, filter bar, footer panels */
+.glass--01 {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(4px) saturate(140%);
+  -webkit-backdrop-filter: blur(4px) saturate(140%);
+}
+
 .glass--1 {
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
-/* Tier 2 — content: cards, tiles */
+
 .glass--2 {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.5));
   backdrop-filter: blur(20px) saturate(150%);
@@ -124,13 +117,16 @@
   box-shadow: 0 18px 40px rgba(32, 26, 19, 0.1);
 }
 
-/* Tier 3 — focal: booking widget, modals, drawer, toasts */
 .glass--3 {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.74));
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
   border-color: var(--glass-border-strong);
   box-shadow: 0 24px 50px rgba(32, 26, 19, 0.14);
+}
+
+:root[data-theme="dark"] .glass--01 {
+  background: rgba(35, 30, 27, 0.253);
 }
 
 :root[data-theme="dark"] .glass--1 {
@@ -147,13 +143,11 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Edge glow on hover — cards and interactive panels only */
 .why-card.glass:hover,
 .hotel-card.glass:hover {
   border-color: rgba(184, 144, 71, 0.4);
 }
 
-/* Shimmer sweep — a slow diagonal light pass across focal glass */
 .glass--3::after,
 .hotel-card.glass::after {
   content: "";
@@ -178,32 +172,22 @@
   50% { transform: translateX(30%); }
 }
 
-/* Ensure inner content stacks above the shimmer/highlight pseudo layers */
 .glass > * {
   position: relative;
   z-index: 2;
 }
-
-/* -------------------------------------------------------------------------
-   Interactive tilt (JS-driven via effects.js — CSS provides the transition)
-   ------------------------------------------------------------------------- */
 
 .tilt-target {
   transition: transform 120ms ease-out;
   transform-style: preserve-3d;
 }
 
-/* -------------------------------------------------------------------------
-   glass-lite fallback
-   Applied to <html> via JS when backdrop-filter is unsupported,
-   Save-Data is on, or the device reports low memory/cores.
-   ------------------------------------------------------------------------- */
-
 html.glass-lite .glass {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
 
+html.glass-lite .glass--01 { background: var(--color-bg-alt); }
 html.glass-lite .glass--1 { background: var(--color-bg-alt); }
 html.glass-lite .glass--2,
 html.glass-lite .glass--3 { background: var(--color-surface); }
@@ -217,7 +201,6 @@ html.glass-lite .ambient-background {
   display: none;
 }
 
-/* Respect reduced motion for ambient/shimmer motion specifically */
 @media (prefers-reduced-motion: reduce) {
   .blob {
     animation: none !important;

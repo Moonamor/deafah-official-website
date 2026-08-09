@@ -1,14 +1,7 @@
-/* ==========================================================================
-   Al Deafah International Group — Base Styles
-   Reset, tokens, typography, layout primitives, utilities.
-   Glass-specific rules live in liquid-glass.css.
-   ========================================================================== */
+
 
 :root {
-  /* Palette — Al Deafah luxury identity.
-     Light is the default theme, drawn from the brand mark itself:
-     crisp white card stock, near-black calligraphy ink, antique-gold
-     horse mark and rule. Dark mode lives under [data-theme="dark"]. */
+
   --deafah-logo: url('../imgs/deafahLogo.png');
   --background-img-panner: url('../imgs/deafahpanner.png');
   --color-bg: #fcfaf6;
@@ -31,7 +24,6 @@
 
   color-scheme: light;
 
-  /* Spacing scale (4px base) */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -42,20 +34,17 @@
   --space-16: 64px;
   --space-24: 96px;
 
-  /* Radius */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
   --radius-pill: 999px;
 
-  /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 220ms;
   --duration-base: 380ms;
   --duration-slow: 620ms;
 
-  /* Layout */
   --container-max: 1320px;
   --header-height: 84px;
 
@@ -73,8 +62,6 @@
   --color-on-surface-muted: rgba(234, 227, 217, 0.68);
   --color-on-surface-faint: rgba(234, 227, 217, 0.44);
 
-  /* Lighter gold reads against a dark background; the base :root
-     value above is a darker gold instead, for contrast on white. */
   --color-accent-light: #d4b06a;
 
   --glass-border: rgba(234, 227, 217, 0.14);
@@ -83,10 +70,6 @@
 
   color-scheme: dark;
 }
-
-/* -------------------------------------------------------------------------
-   Reset
-   ------------------------------------------------------------------------- */
 
 *,
 *::before,
@@ -142,12 +125,6 @@ input, select {
   color: inherit;
 }
 
-/* -------------------------------------------------------------------------
-   Bilingual (ar/en) visibility — driven by [data-lang] on <html>.
-   Every translatable element is duplicated with .lang-ar/.lang-en;
-   only the one matching the active language renders.
-   ------------------------------------------------------------------------- */
-
 [data-lang="ar"] .lang-en {
   display: none !important;
 }
@@ -156,15 +133,9 @@ input, select {
   display: none !important;
 }
 
-/* Arabic never takes letter-spacing — it breaks cursive joining —
-   regardless of which element's tracking rule it inherits into. */
 .lang-ar {
   letter-spacing: normal !important;
 }
-
-/* -------------------------------------------------------------------------
-   Typography
-   ------------------------------------------------------------------------- */
 
 h1, h2, h3, h4 {
   font-weight: 700;
@@ -192,7 +163,6 @@ h1, h2, h3, h4 {
   color: var(--color-on-surface-muted);
   max-width: 46ch;
   margin-top: var(--space-4);
-  text-shadow: 9px 5px 5px var(--color-on-surface-muted);
 }
 
 .section-title {
@@ -200,10 +170,6 @@ h1, h2, h3, h4 {
   max-width: 30ch;
   margin-bottom: var(--space-8);
 }
-
-/* -------------------------------------------------------------------------
-   Layout primitives
-   ------------------------------------------------------------------------- */
 
 .container {
   width: 100%;
@@ -223,18 +189,8 @@ h1, h2, h3, h4 {
 .section {
   padding-block: var(--space-16);
   position: relative;
-  /* border: 1px solid var(--color-accent-light); */
-}
 
-/* :root[data-theme="dark"] .section {
-  border-color: var(--color-accent);
-  animation: section-shine 2.4s ease-in-out infinite alternate;
 }
-
-@keyframes section-shine {
-  from { box-shadow: 0 0 8px rgba(184, 144, 71, 0.25), inset 0 0 6px rgba(184, 144, 71, 0.1); }
-  to   { box-shadow: 0 0 20px rgba(184, 144, 71, 0.55), inset 0 0 10px rgba(184, 144, 71, 0.2); }
-} */
 
 .ambient-background {
   position: fixed;
@@ -251,10 +207,6 @@ h1, h2, h3, h4 {
   background-image: radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px);
   background-size: 3px 3px;
 }
-
-/* -------------------------------------------------------------------------
-   Buttons
-   ------------------------------------------------------------------------- */
 
 .btn {
   display: inline-flex;
@@ -295,8 +247,6 @@ h1, h2, h3, h4 {
   font-size: 13px;
 }
 
-/* fa-chevron-right points toward LTR "forward"; mirror it in RTL so it
-   still points toward the reading-end direction. */
 [dir="rtl"] .btn-chevron {
   transform: scaleX(-1);
 }
@@ -355,22 +305,13 @@ h1, h2, h3, h4 {
   font-size: 16px;
 }
 
-/* -------------------------------------------------------------------------
-   Header
-   ------------------------------------------------------------------------- */
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   height: var(--header-height);
   transition: height var(--duration-base) var(--ease-out);
-  /* Forces its own compositing layer. Without this, backdrop-filter on a
-     sticky element can fail to repaint fully when a child's layout changes
-     (e.g. the #primaryNav collapse opening) — leaving a stale half-painted
-     frame until something forces a full repaint, like a page refresh.
-     translateZ(0) alone is a weak/old hint in Safari; will-change plus
-     an explicit isolating layer is the more reliable combination. */
+
   transform: translateZ(0);
   will-change: transform;
   isolation: isolate;
@@ -394,7 +335,6 @@ h1, h2, h3, h4 {
   gap: var(--space-3);
 }
 
-
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -413,11 +353,6 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-/* Show/hide + the row-vs-dropdown layout switch are handled by
-   Bootstrap's .collapse/.navbar-collapse/.navbar-expand-lg classes
-   (see index.html) — this rule only supplies OUR visual spacing,
-   identical at every breakpoint. The mobile-only dropdown "panel"
-   look lives in the @media (max-width: 991.98px) block further down. */
 .primary-nav {
   align-items: center;
   gap: var(--space-6);
@@ -443,7 +378,6 @@ h1, h2, h3, h4 {
               box-shadow var(--duration-fast) var(--ease-out);
 }
 
-/* Gold fill that grows in behind the label on hover */
 .nav-link::before {
   content: "";
   position: absolute;
@@ -456,7 +390,6 @@ h1, h2, h3, h4 {
               transform var(--duration-fast) var(--ease-out);
 }
 
-/* Diagonal shine that sweeps across on hover */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -486,9 +419,6 @@ h1, h2, h3, h4 {
   transform: translateX(130%);
 }
 
-/* Replace the browser's default blue focus ring with a brand-colored
-   one — and only show it for keyboard navigation, not mouse clicks,
-   so clicking a link doesn't leave a ring stuck on it. */
 .nav-link:focus {
   outline: none;
 }
@@ -512,9 +442,6 @@ h1, h2, h3, h4 {
   display: none;
 }
 
-/* Breakpoint raised from lg (992px) to xl (1200px): 5 pill links + logo
-   + CTA + icon buttons genuinely don't fit comfortably in the 992-1200px
-   range without wrapping/overflow — matches .navbar-expand-xl below. */
 @media (min-width: 1200px) {
   .header-cta { display: inline-flex; }
 }
@@ -523,32 +450,15 @@ h1, h2, h3, h4 {
   .nav-toggle { display: none; }
 }
 
-/* Mobile-only CTA inside #primaryNav — .header-cta already covers
-   desktop, so this one only needs to exist below the xl breakpoint. */
 .mobile-nav-cta {
   display: none;
 }
 
-/* #primaryNav is ONE element used at every breakpoint (see index.html).
-   Bootstrap's .navbar-expand-xl .navbar-collapse rule forces it to
-   display:flex (row, inline in the header) at 1200px+ with no extra
-   CSS from us needed. Below 1200px, it's Bootstrap's plain .collapse
-   (hidden unless .show) — everything in this block is what turns it
-   into the glass dropdown panel in that state, and every property
-   here is scoped OUT at 1200px+ per the "only below xl" requirement. */
 @media (max-width: 1199.98px) {
   .mobile-nav-cta {
     display: inline-flex;
   }
 
-  /* Scoped to .show/.collapsing specifically — NOT bare
-     #primaryNav.navbar-collapse. An ID selector outranks Bootstrap's
-     .collapse:not(.show){display:none} (two classes) regardless of
-     specificity tricks, so an unscoped display:flex here would force
-     the panel permanently visible and make the hamburger toggle inert
-     (clicking it flips .show on/off correctly, but this CSS ignored
-     that and showed the panel either way). Requiring .show/.collapsing
-     in the selector is what makes it actually respect the toggle. */
   #primaryNav.navbar-collapse.show,
   #primaryNav.navbar-collapse.collapsing {
     display: flex;
@@ -558,9 +468,7 @@ h1, h2, h3, h4 {
     right: 0;
     z-index: 90;
     flex-direction: column;
-    /* Overrides .primary-nav's own align-items:center (meant for the
-       desktop inline row) — stretch makes each link/CTA fill the full
-       width of the panel instead of sizing to its own text. */
+
     align-items: stretch;
     gap: var(--space-2);
     margin: 0 var(--space-4) var(--space-4);
@@ -579,18 +487,11 @@ h1, h2, h3, h4 {
     background: rgba(35, 30, 27, 0.92);
   }
 
-  /* Now that the pill itself is full-width, center the label inside it
-     (.nav-link has no justify-content of its own, so it'd otherwise
-     sit at the RTL/LTR start edge instead of the middle). */
   #primaryNav.navbar-collapse .nav-link {
     justify-content: center;
     padding-block: var(--space-3);
   }
 }
-
-/* -------------------------------------------------------------------------
-   Hero
-   ------------------------------------------------------------------------- */
 
 .hero {
   padding-top: var(--space-24);
@@ -620,13 +521,7 @@ h1, h2, h3, h4 {
   flex-direction: column;
   gap: var(--space-4);
   padding: var(--space-6);
-  /* Contains the .glass--3::after shimmer sweep, which is intentionally
-     positioned outside this element's box (inset: -60% -20%) and animates
-     via translateX. Without clipping, that adds real scrollable width to
-     the page — a fixed pixel amount that's negligible on a wide desktop
-     viewport but can nearly double the scrollable width on a narrow
-     phone screen. .hotel-card already has this; this was the one glass--3
-     surface missing it. */
+
   overflow: hidden;
 }
 
@@ -725,13 +620,6 @@ h1, h2, h3, h4 {
   }
 }
 
-/* -------------------------------------------------------------------------
-   Why Deafah
-   ------------------------------------------------------------------------- */
-
-/* Card arrangement for this grid now comes from Bootstrap's
-   .row.row-cols-*.g-4 utilities in the markup (see index.html). */
-
 .why-card {
   padding: var(--space-8) var(--space-6);
   transition: transform var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
@@ -773,12 +661,6 @@ h1, h2, h3, h4 {
   line-height: 1.7;
 }
 
-/* -------------------------------------------------------------------------
-   Stats
-   ------------------------------------------------------------------------- */
-
-/* Column arrangement comes from Bootstrap's .row.row-cols-3.g-3
-   utilities in the markup; this class only supplies padding/alignment. */
 .stats-grid {
   padding: var(--space-8) var(--space-4);
   text-align: center;
@@ -802,10 +684,6 @@ h1, h2, h3, h4 {
   font-size: clamp(12px, 2vw, 14px);
   color: var(--color-on-surface-muted);
 }
-
-/* -------------------------------------------------------------------------
-   Filter bar
-   ------------------------------------------------------------------------- */
 
 .filter-bar {
   display: flex;
@@ -852,13 +730,6 @@ h1, h2, h3, h4 {
   background: var(--glass-border-strong);
   margin-inline: var(--space-2);
 }
-
-/* -------------------------------------------------------------------------
-   Hotel grid
-   ------------------------------------------------------------------------- */
-
-/* Card arrangement for this grid now comes from Bootstrap's
-   .row.row-cols-*.g-4 utilities in the markup (see index.html). */
 
 .hotel-card {
   overflow: hidden;
@@ -974,10 +845,6 @@ h1, h2, h3, h4 {
   margin-top: var(--space-12);
 }
 
-/* -------------------------------------------------------------------------
-   CTA band
-   ------------------------------------------------------------------------- */
-
 .cta-band {
   display: flex;
   flex-direction: column;
@@ -1006,17 +873,11 @@ h1, h2, h3, h4 {
   max-width: 48ch;
 }
 
-/* -------------------------------------------------------------------------
-   Footer
-   ------------------------------------------------------------------------- */
-
 .site-footer {
   padding-top: var(--space-16);
   margin-top: var(--space-16);
 }
 
-/* Column arrangement comes from Bootstrap's .row.g-4 + col-* utilities
-   in the markup; this class only supplies the bottom padding. */
 .footer-grid {
   padding-bottom: var(--space-12);
 }
@@ -1111,29 +972,11 @@ h1, h2, h3, h4 {
   color: var(--color-accent-light);
 }
 
-/* -------------------------------------------------------------------------
-   Contact modal
-   Structural/positioning classes (.modal, .modal-dialog, .modal-content,
-   .modal-header/-body/-footer) are Bootstrap's — layout only. The glass
-   look comes from reusing our own .glass/.glass--3 tier (added directly
-   in the HTML), which already handles light/dark backgrounds, blur,
-   border, and shadow — no new theme-specific rules needed for the
-   panel itself. Only the form fields and header/footer borders below
-   are custom to this component.
-   ------------------------------------------------------------------------- */
-
 .contact-modal .modal-header,
 .contact-modal .modal-footer {
   border-color: var(--glass-border);
 }
 
-/* justify-content:space-between is direction-aware — the title sits at
-   the reading-start side and the close button at the reading-end side,
-   automatically swapping sides when the language/dir toggle flips
-   between rtl and ltr. Reasserted explicitly (higher specificity than
-   Bootstrap's bare .modal-header) since the close button here is our
-   own .icon-btn, not Bootstrap's .btn-close, and shouldn't rely on
-   Bootstrap's own (LTR-only, non-mirroring) auto-margin trick. */
 .contact-modal .modal-header {
   display: flex;
   align-items: center;
@@ -1206,9 +1049,375 @@ h1, h2, h3, h4 {
   color: var(--color-error);
 }
 
-/* -------------------------------------------------------------------------
-   Toast
-   ------------------------------------------------------------------------- */
+.about-lead {
+  color: var(--color-on-surface-muted);
+  max-width: 52ch;
+  margin-block: var(--space-4) var(--space-6);
+}
+
+.about-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.about-stat {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+}
+
+.about-stat-number {
+  display: block;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  color: var(--color-accent-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.about-stat-label {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 13px;
+  color: var(--color-on-surface-muted);
+}
+
+.about-accordion .accordion-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.about-accordion .accordion-item:last-child {
+  border-bottom: none;
+}
+
+.about-accordion .accordion-button {
+  background: transparent;
+  color: var(--color-on-surface);
+  font-weight: 700;
+  font-size: 16px;
+  padding: var(--space-4) 0;
+  box-shadow: none;
+}
+
+.about-accordion .accordion-button::after {
+  filter: none;
+  background-image: none;
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 13px;
+  color: var(--color-accent-light);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.about-accordion .accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+.about-accordion .accordion-button:focus {
+  box-shadow: none;
+}
+
+.about-accordion .accordion-body {
+  padding: 0 0 var(--space-6);
+  color: var(--color-on-surface-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-accordion .accordion-body p + p {
+  margin-top: var(--space-3);
+}
+
+.about-values-list,
+.about-objectives-list,
+.about-partnerships-list,
+.about-advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-values-list li,
+.about-partnerships-list li {
+  padding-inline-start: var(--space-4);
+  border-inline-start: 2px solid var(--glass-border-strong);
+}
+
+.about-objectives-list li,
+.about-advantages-list li {
+  position: relative;
+  padding-inline-start: var(--space-4);
+}
+
+.about-objectives-list li::before,
+.about-advantages-list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--color-accent-light);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 3px;
+}
+
+.about-values-list strong,
+.about-partnerships-list strong {
+  color: var(--color-on-surface);
+}
+
+.chairman-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.chairman-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.chairman-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.chairman-hero {
+  position: relative;
+  max-width: 360px;
+  margin-inline: auto;
+  isolation: isolate;
+}
+
+.chairman-liquid {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.chairman-liquid-blob-a {
+  fill: var(--color-accent);
+  opacity: 0.16;
+  transform-origin: center;
+  animation: chairman-liquid-drift-a 14s ease-in-out infinite;
+}
+
+.chairman-liquid-blob-b {
+  fill: var(--color-accent-secondary);
+  opacity: 0.45;
+  transform-origin: center;
+  animation: chairman-liquid-drift-b 11s ease-in-out infinite;
+}
+
+@keyframes chairman-liquid-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(2%, -3%) scale(1.06) rotate(4deg); }
+}
+
+@keyframes chairman-liquid-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-3%, 3%) scale(1.1) rotate(-6deg); }
+}
+
+.chairman-cutout {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  height: auto;
+  margin-inline: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.22));
+}
+
+.chairman-float {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.chairman-float-star {
+  top: 6%;
+  inset-inline-end: 4%;
+  width: 34px;
+  height: 34px;
+  animation: chairman-float-a 7s ease-in-out infinite;
+}
+
+.chairman-float-star svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--color-accent-light);
+  stroke-width: 1.5;
+}
+
+.chairman-float-ring {
+  bottom: 10%;
+  inset-inline-start: 0%;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-light);
+  opacity: 0.6;
+  animation: chairman-float-b 9s ease-in-out infinite;
+}
+
+.chairman-float-dot {
+  top: 42%;
+  inset-inline-start: -2%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.7;
+  animation: chairman-float-c 6s ease-in-out infinite;
+}
+
+@keyframes chairman-float-a {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-6px, 8px) rotate(20deg); }
+}
+
+@keyframes chairman-float-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -10px); }
+}
+
+@keyframes chairman-float-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4px, 6px); }
+}
+
+.chairman-title {
+  margin-bottom: var(--space-4);
+}
+
+.chairman-quote {
+  color: var(--color-on-surface-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.chairman-quote p + p {
+  margin-top: var(--space-4);
+}
+
+.chairman-signoff {
+  margin-top: var(--space-6);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.hero-section.about-hero-section {
+  height: auto;
+  min-height: 40vh;
+}
+
+.hero.page-hero {
+  min-height: auto;
+  padding-block: var(--space-16);
+  justify-content: flex-end;
+}
+
+.hero-text-panel {
+  display: inline-block;
+  max-width: 640px;
+  padding: var(--space-6) var(--space-8);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-on-surface-muted);
+  margin-bottom: var(--space-4);
+}
+
+.breadcrumb a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent-light);
+}
+
+.breadcrumb-sep {
+  color: var(--color-on-surface-faint);
+  font-size: 11px;
+}
+
+.breadcrumb-current {
+  color: var(--color-accent-light);
+}
+
+.pillar-card {
+  padding: var(--space-8);
+}
+
+.pillar-card p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.list-panel {
+  padding: var(--space-8);
+}
+
+.list-panel-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.list-panel-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(184, 144, 71, 0.14);
+  color: var(--color-accent-light);
+  font-size: 20px;
+}
+
+.list-panel-head h2 {
+  font-size: clamp(20px, 2vw, 26px);
+  margin: 0;
+}
+
+.list-panel .about-objectives-list,
+.list-panel .about-advantages-list {
+  font-size: 15px;
+  color: var(--color-on-surface-muted);
+  line-height: 1.7;
+}
+
+.list-panel .about-objectives-list li,
+.list-panel .about-advantages-list li {
+  padding-inline-start: var(--space-6);
+}
+
+.list-panel .about-objectives-list li::before,
+.list-panel .about-advantages-list li::before {
+  font-size: 13px;
+  top: 4px;
+}
 
 .toast {
   position: fixed;
@@ -1235,22 +1444,10 @@ h1, h2, h3, h4 {
   transform: translate(-50%, 0);
 }
 
-/* -------------------------------------------------------------------------
-   Scroll reveal
-   ------------------------------------------------------------------------- */
-
-/* No CSS transition here on purpose — js/animations.js (GSAP) now
-   owns the actual reveal timing/easing frame-by-frame. This is only
-   the pre-JS resting state (and the JS-failure fallback, see
-   animations.js's own top-of-file safety check). */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
 }
-
-/* -------------------------------------------------------------------------
-   Reduced motion
-   ------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1266,30 +1463,21 @@ h1, h2, h3, h4 {
   }
 }
 
-
-/* Custom styles. */
-/* إعادة ضبط أولية */
-
-/* 1. قسم الواجهة الأساسية (الصورة) */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 60vh; /* يغطي ارتفاع الشاشة بالكامل */
+  height: 60vh;
   margin: 0;
   background-image: var(--background-img-panner);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Forces its own compositing layer — the same fix .site-header needed
-     for a stale/partially-painted repaint bug. This element sits right
-     next to that sticky, backdrop-filter header, so it can suffer the
-     same class of glitch. */
+
   transform: translateZ(0);
   will-change: transform;
   isolation: isolate;
 }
 
-/* طبقة تغطية شفافة (اختيارية لتوضيح النصوص) */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -1301,11 +1489,7 @@ h1, h2, h3, h4 {
 
 .nav-logo {
   display: inline-block;
-  /* Fluid instead of a fixed 250px — at mobile widths, 250px + the
-     header icon buttons genuinely don't fit (measured: 45px of real
-     horizontal overflow at 390px viewport, confirmed via headless
-     browser), which pushed .header-actions off-screen. Scales down to
-     120px on narrow screens, caps at the original 250px on desktop. */
+
   width: clamp(120px, 32vw, 250px);
   aspect-ratio: 499 / 150;
   height: auto;

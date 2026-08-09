@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Al Deafah International Group — Liquid Glass motion effects
-   Blob parallax, card tilt, scroll reveal, count-up stats, toast.
-   ========================================================================== */
+
 
 window.DeafahEffects = (function ($) {
   "use strict";
@@ -12,9 +9,6 @@ window.DeafahEffects = (function ($) {
 
   var isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-  /* -----------------------------------------------------------------------
-     Ambient blob parallax — blobs drift slightly toward the pointer
-     ------------------------------------------------------------------- */
   function initBlobParallax() {
     if (reducedMotion || isTouch) return;
 
@@ -37,9 +31,6 @@ window.DeafahEffects = (function ($) {
     });
   }
 
-  /* -----------------------------------------------------------------------
-     Glass card tilt — subtle 3D tilt following the cursor
-     ------------------------------------------------------------------- */
   function initCardTilt() {
     if (reducedMotion || isTouch) return;
 
@@ -68,15 +59,6 @@ window.DeafahEffects = (function ($) {
     });
   }
 
-  /* -----------------------------------------------------------------------
-     Scroll reveal — now owned by js/animations.js (GSAP + ScrollTrigger).
-     Removed here to avoid two engines fighting over the same elements'
-     opacity/transform. See js/animations.js "SCROLL-TRIGGERED REVEALS".
-     ------------------------------------------------------------------- */
-
-  /* -----------------------------------------------------------------------
-     Stat counters — count up once, on entering the viewport
-     ------------------------------------------------------------------- */
   function initStatCounters() {
     var $stats = $(".stat-number");
     if (!$stats.length) return;
@@ -125,9 +107,6 @@ window.DeafahEffects = (function ($) {
     });
   }
 
-  /* -----------------------------------------------------------------------
-     Toast notifications
-     ------------------------------------------------------------------- */
   var toastTimer = null;
 
   function showToast(message) {
@@ -140,9 +119,6 @@ window.DeafahEffects = (function ($) {
     }, 3200);
   }
 
-  /* -----------------------------------------------------------------------
-     Init
-     ------------------------------------------------------------------- */
   $(function () {
     initBlobParallax();
     initCardTilt();

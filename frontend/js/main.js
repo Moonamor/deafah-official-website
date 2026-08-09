@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Al Deafah International Group — Main interactions
-   Navigation, theme toggle, header condense, glass-lite capability check.
-   ========================================================================== */
+
 
 $(function () {
   "use strict";
@@ -17,9 +14,6 @@ $(function () {
     return $html.attr("data-lang") !== "en";
   }
 
-  /* -----------------------------------------------------------------------
-     Capability check — enable glass-lite fallback where needed
-     ------------------------------------------------------------------- */
   function supportsBackdropFilter() {
     return (
       window.CSS &&
@@ -39,9 +33,6 @@ $(function () {
     $html.addClass("glass-lite");
   }
 
-  /* -----------------------------------------------------------------------
-     Theme toggle (dark / light), persisted
-     ------------------------------------------------------------------- */
   function applyTheme(theme) {
     $html.attr("data-theme", theme);
     localStorage.setItem(THEME_KEY, theme);
@@ -57,11 +48,6 @@ $(function () {
     applyTheme(current === "light" ? "dark" : "light");
   });
 
-  /* -----------------------------------------------------------------------
-     Language toggle (ar / en), persisted. Arabic is the default; the
-     dir/lang attributes drive layout mirroring, [data-lang] drives which
-     .lang-ar/.lang-en element is visible (see styles.css).
-     ------------------------------------------------------------------- */
   function applyLang(lang) {
     $html.attr("data-lang", lang);
     $html.attr("lang", lang);
@@ -78,15 +64,6 @@ $(function () {
     applyLang(isArabic() ? "en" : "ar");
   });
 
-  /* -----------------------------------------------------------------------
-     Mobile drawer — handled by Bootstrap's Offcanvas component
-     (data-bs-toggle/data-bs-dismiss attributes in the markup); no
-     custom JS needed for open/close/backdrop/Esc/focus trap.
-     ------------------------------------------------------------------- */
-
-  /* -----------------------------------------------------------------------
-     Header condense on scroll
-     ------------------------------------------------------------------- */
   var lastScroll = 0;
 
   $(window).on("scroll", function () {
@@ -95,9 +72,6 @@ $(function () {
     lastScroll = current;
   });
 
-  /* -----------------------------------------------------------------------
-     Smooth-scroll anchor links (accounts for sticky header height)
-     ------------------------------------------------------------------- */
   $('a[href^="#"]').on("click", function (e) {
     var targetId = $(this).attr("href");
     if (targetId === "#" || targetId === "#top") {
@@ -114,9 +88,6 @@ $(function () {
     }
   });
 
-  /* -----------------------------------------------------------------------
-     Guest / room stepper
-     ------------------------------------------------------------------- */
   var guestCount = 2;
   var $guestCount = $("#guestCount");
 
@@ -136,16 +107,10 @@ $(function () {
     renderGuestCount();
   });
 
-  /* -----------------------------------------------------------------------
-     Filter chips (visual state only — this is a static prototype)
-     ------------------------------------------------------------------- */
   $(".filter-bar").on("click", ".chip", function () {
     $(this).addClass("is-active").siblings(".chip").removeClass("is-active");
   });
 
-  /* -----------------------------------------------------------------------
-     Booking widget submit — demo feedback, no backend
-     ------------------------------------------------------------------- */
   $("#bookingWidget").on("submit", function (e) {
     e.preventDefault();
     window.DeafahEffects.showToast(
@@ -153,11 +118,6 @@ $(function () {
     );
   });
 
-  /* -----------------------------------------------------------------------
-     Newsletter form — client-side validation only. Two inputs exist
-     (#newsletterEmail-ar / -en); only the one matching the active
-     language is visible, so read/validate that one.
-     ------------------------------------------------------------------- */
   $("#newsletterForm").on("submit", function (e) {
     e.preventDefault();
     var $input = isArabic() ? $("#newsletterEmail-ar") : $("#newsletterEmail-en");
@@ -180,11 +140,6 @@ $(function () {
     window.DeafahEffects.showToast(isArabic() ? "تم تسجيلك بنجاح." : "You're on the list.");
   });
 
-  /* -----------------------------------------------------------------------
-     Contact modal — live character count (100-200) + submit validation.
-     Two message textareas exist (#contactMessage-ar / -en); only the one
-     matching the active language is visible, so read/validate that one.
-     ------------------------------------------------------------------- */
   var CONTACT_MSG_MIN = 100;
   var CONTACT_MSG_MAX = 200;
 
@@ -236,8 +191,5 @@ $(function () {
     );
   });
 
-  /* -----------------------------------------------------------------------
-     Footer year
-     ------------------------------------------------------------------- */
   $("#currentYear-ar, #currentYear-en").text(new Date().getFullYear());
 });

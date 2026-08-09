@@ -1,31 +1,8 @@
-/* ==========================================================================
-   Al Deafah International Group — Scroll & Interaction Animations
-   ==========================================================================
-   Powered by GSAP + ScrollTrigger (CDN, see index.html <script> tags).
-   Fully isolated from main.js / effects.js: it does not modify either
-   file's behavior. It DOES take over the .reveal fade-in job that used
-   to live in effects.js (removed there) — two engines writing
-   opacity/transform on the same elements would visibly fight each
-   other, so this file is now the single owner of that concern.
 
-   Untouched, still owned by effects.js: blob mouse-parallax, the
-   hotel/why-card 3D tilt, stat count-up, and the toast helper.
-
-   To disable any one animation block below, comment out its call in
-   the INIT section near the bottom — each block is a standalone
-   function with no dependency on the others.
-   ========================================================================== */
 
 (function () {
   "use strict";
 
-  /* -----------------------------------------------------------------------
-     SAFETY GUARDS — must run before anything else touches .reveal
-     ------------------------------------------------------------------- */
-
-  // If the GSAP CDN failed to load (offline, blocked, etc.), reveal
-  // everything immediately so content is never stuck invisible — the
-  // .reveal base CSS state is opacity:0 by design (see styles.css).
   if (typeof window.gsap === "undefined") {
     document.querySelectorAll(".reveal").forEach(function (el) {
       el.style.opacity = "1";
@@ -44,8 +21,6 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  // Accessibility compliance: skip every animation below, snap
-  // everything to its resting/visible state instead.
   if (prefersReducedMotion) {
     gsap.set(".reveal", { opacity: 1, y: 0, scale: 1 });
     return;
@@ -53,12 +28,6 @@
 
   var isTouch = window.matchMedia("(hover: none)").matches;
 
-  /* -----------------------------------------------------------------------
-     HERO SECTION ANIMATIONS
-     Above-the-fold content, so it plays once immediately on load rather
-     than waiting on a scroll trigger: eyebrow -> title -> sub ->
-     booking widget, staggered in.
-     ------------------------------------------------------------------- */
   function initHeroEntrance() {
     var hero = document.querySelector(".hero");
     if (!hero) return;
@@ -78,18 +47,9 @@
     });
   }
 
-  /* -----------------------------------------------------------------------
-     SCROLL-TRIGGERED REVEALS
-     Every .reveal element outside the hero (Why-Deafah cards, filter
-     bar, hotel cards, stats, CTA band) fades/lifts/scales in once as
-     it enters the viewport. Elements that enter together (e.g. the
-     four Why-Deafah cards) are batched so they stagger as a group
-     instead of firing individually.
-     ------------------------------------------------------------------- */
   function initScrollReveals() {
     if (!ScrollTrigger) {
-      // No ScrollTrigger available for some reason — still reveal
-      // everything so content isn't permanently hidden.
+
       gsap.set(".reveal", { opacity: 1, y: 0, scale: 1 });
       return;
     }
@@ -120,15 +80,6 @@
     });
   }
 
-  /* -----------------------------------------------------------------------
-     MICRO-INTERACTIONS
-     A satisfying press-and-release bounce on click/tap for buttons,
-     icon buttons, filter chips, and the stepper +/- controls.
-     Deliberately excludes .hotel-card / .why-card — those already
-     have their own continuous 3D-tilt transform in effects.js, and a
-     second animation engine writing "transform" on the same elements
-     would fight it.
-     ------------------------------------------------------------------- */
   function initMicroInteractions() {
     var pressTargets = document.querySelectorAll(
       ".btn, .icon-btn, .chip, .stepper-btn"
@@ -147,13 +98,6 @@
     });
   }
 
-  /* -----------------------------------------------------------------------
-     MAGNETIC CTA BUTTONS
-     The primary calls-to-action (hero "Explore Services"-style buttons
-     and the header "Book Now") subtly pull toward the cursor within
-     their own bounds, then spring back on mouse-leave. Skipped on
-     touch devices, where hover has no meaning.
-     ------------------------------------------------------------------- */
   function initMagneticButtons() {
     if (isTouch) return;
 
@@ -173,13 +117,6 @@
     });
   }
 
-  /* -----------------------------------------------------------------------
-     HERO SCROLL PARALLAX
-     As the user scrolls past the hero, its content drifts upward at a
-     different rate than the page scroll — a classic depth cue. This is
-     scroll-linked and complements (not duplicates) the mouse-linked
-     ambient blob parallax already running in effects.js.
-     ------------------------------------------------------------------- */
   function initHeroParallax() {
     if (!ScrollTrigger || isTouch) return;
 
@@ -198,9 +135,6 @@
     });
   }
 
-  /* -----------------------------------------------------------------------
-     INIT — comment out any line here to disable that animation block
-     ------------------------------------------------------------------- */
   function init() {
     initHeroEntrance();
     initScrollReveals();
@@ -213,5 +147,11 @@
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
+  }
+
+  if (ScrollTrigger) {
+    window.addEventListener("load", function () {
+      ScrollTrigger.refresh();
+    });
   }
 })();
