@@ -1,0 +1,49 @@
+{
+  "contact": {
+    "destinationEmail": "deafahsocial@gmail.com",
+    "destinationName": "Al Deafah International Group"
+  },
+  "emailjs": {
+    "publicKey": "rRLKJlBg-E3PtlcvF",
+    "serviceId": "service_3n2dp37",
+    "templateId": "template_ib0wqjl"
+  },
+  "form": {
+    "formSelector": "#contactForm",
+    "modalSelector": "#contactModal",
+    "submitButtonSelector": "#contactModal button[type=\"submit\"][form=\"contactForm\"]",
+    "fields": {
+      "fullName": "contactName",
+      "email": "contactEmail",
+      "mobile": "contactPhone",
+      "message": "contactMessage"
+    },
+    "closeModalOnSuccess": true,
+    "closeDelayMs": 2200,
+    "minSecondsBetweenSends": 30
+  },
+  "messages": {
+    "ar": {
+      "sending": "جارٍ إرسال رسالتك...",
+      "success": "تم إرسال رسالتك بنجاح. سنتواصل معك في أقرب وقت ممكن.",
+      "error": "تعذّر إرسال رسالتك. يرجى المحاولة مرة أخرى بعد قليل.",
+      "configError": "تعذّر تحميل إعدادات الإرسال. يرجى المحاولة لاحقًا.",
+      "throttled": "يرجى الانتظار قليلًا قبل إرسال رسالة أخرى.",
+      "invalidName": "يرجى إدخال الاسم الكامل (حرفان على الأقل).",
+      "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح.",
+      "invalidMobile": "يرجى إدخال رقم جوال صحيح.",
+      "invalidMessage": "يرجى كتابة رسالة لا تقل عن 5 أحرف."
+    },
+    "en": {
+      "sending": "Sending your message…",
+      "success": "Your message has been sent. We'll be in touch shortly.",
+      "error": "We couldn't send your message. Please try again in a moment.",
+      "configError": "We couldn't load the contact settings. Please try again later.",
+      "throttled": "Please wait a moment before sending another message.",
+      "invalidName": "Please enter your full name (at least 2 characters).",
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidMobile": "Please enter a valid mobile number.",
+      "invalidMessage": "Please write a message of at least 5 characters."
+    }
+  }
+}
