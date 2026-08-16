@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/liquid-glass.css">
+  <link rel="stylesheet" href="css/phone-input.css">
 </head>
 <body>
 
@@ -569,10 +570,10 @@
             </div>
 
             <div class="field">
-              <label for="contactPhone-ar" class="lang-ar">رقم الجوال</label>
-              <label for="contactPhone-en" class="lang-en">Mobile Number</label>
-              <input type="tel" id="contactPhone-ar" class="lang-ar" placeholder="05xxxxxxxx" autocomplete="tel" required>
-              <input type="tel" id="contactPhone-en" class="lang-en" placeholder="+966 5x xxx xxxx" autocomplete="tel" required>
+              <label for="contactPhoneField-ar-number" class="lang-ar">رقم الجوال</label>
+              <label for="contactPhoneField-en-number" class="lang-en">Mobile Number</label>
+              <div class="lang-ar" id="contactPhoneField-ar"></div>
+              <div class="lang-en" id="contactPhoneField-en"></div>
             </div>
 
             <div class="field">
@@ -612,6 +613,8 @@
   <script src="js/animations.js"></script>
   <script src="js/chairman-canvas.js"></script>
   <script src="js/chairman-hero.js"></script>
+  <script src="js/countries-data.js" defer></script>
+  <script src="js/phone-input.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/contact-form.js" defer></script>
 </body>

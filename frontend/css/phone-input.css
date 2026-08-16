@@ -1,0 +1,270 @@
+/* New tokens, derived from existing theme tokens via color-mix(),
+   following this project's --color-*/--glass-* naming convention.
+   Definitions only — no visual effect until consumed under .pi-. */
+:root {
+  --pi-hover-bg: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --pi-active-bg: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  --pi-scrim: color-mix(in srgb, var(--color-bg) 55%, transparent);
+}
+
+.pi-root {
+  position: relative;
+}
+
+.pi-control {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+:root[data-theme="dark"] .pi-control {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pi-control:focus-within {
+  border-color: var(--color-accent);
+}
+
+.pi-root:has(.pi-number.is-invalid) .pi-control {
+  border-color: var(--color-error);
+}
+
+.pi-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding-inline: 12px;
+  border: none;
+  border-inline-end: 1px solid var(--glass-border-strong);
+  background: transparent;
+  color: var(--color-on-surface);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.pi-trigger:hover {
+  background: var(--pi-hover-bg);
+}
+
+.pi-trigger:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.pi-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.pi-caret {
+  font-size: 10px;
+  color: var(--color-on-surface-faint);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.pi-trigger[aria-expanded="true"] .pi-caret {
+  transform: rotate(180deg);
+}
+
+.pi-number {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-on-surface);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.pi-number:focus {
+  outline: none;
+}
+
+.pi-error {
+  margin: var(--space-1) 0 0;
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.pi-panel-wrap {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: calc(100% + 6px);
+  width: 100%;
+  z-index: 20;
+}
+
+.pi-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+}
+
+/* [hidden] and .pi-panel{display:flex} are equal specificity (0,1,0)
+   each, and this stylesheet loads after the UA sheet — without this
+   rule, "hidden" would silently lose the cascade and the panel would
+   stay flex-rendered (and click-interceptable) even when closed. */
+.pi-panel[hidden] {
+  display: none;
+}
+
+.pi-panel-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1);
+  margin-bottom: var(--space-1);
+}
+
+.pi-search {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border-strong);
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--color-on-surface);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+:root[data-theme="dark"] .pi-search {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pi-search:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.pi-panel-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-on-surface-muted);
+  cursor: pointer;
+}
+
+.pi-listbox {
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pi-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--color-on-surface);
+  cursor: pointer;
+}
+
+.pi-option .pi-flag {
+  font-size: 15px;
+}
+
+.pi-option-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pi-option-dial {
+  color: var(--color-on-surface-faint);
+  font-size: 12px;
+  direction: ltr;
+}
+
+.pi-option:hover,
+.pi-option.is-active {
+  background: var(--pi-hover-bg);
+}
+
+.pi-option[aria-selected="true"] {
+  background: var(--pi-active-bg);
+  font-weight: 600;
+}
+
+@media (max-width: 639.98px) {
+  .pi-panel-wrap {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    z-index: 1080;
+    display: flex;
+    align-items: flex-end;
+    background: var(--pi-scrim);
+  }
+
+  .pi-panel {
+    width: 100%;
+    max-height: 82vh;
+    height: 82vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: var(--space-4);
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .pi-panel-head {
+    padding-block: var(--space-2);
+  }
+
+  .pi-search {
+    padding: 12px 14px;
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .pi-panel-close {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+  }
+
+  .pi-option {
+    padding: 12px 10px;
+    min-height: 44px;
+  }
+}
+
+/* Belt-and-braces: guarantees the wrap is truly non-interactive/
+   invisible while closed regardless of the desktop position:absolute
+   default or the mobile display:flex override above — both of those
+   are equal-or-higher specificity than a bare [hidden], which would
+   otherwise silently lose the cascade (the same class-vs-attribute
+   gotcha fixed on .pi-panel itself). */
+.pi-panel-wrap[hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pi-caret,
+  .pi-trigger,
+  .pi-control {
+    transition: none !important;
+  }
+}
