@@ -329,6 +329,8 @@
   .panel { background: var(--panel); color: var(--on-panel); }
   .panel .muted { color: var(--panel-muted); }
   .chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 6px 14px; border: 1.5px solid var(--border); border-radius: 2px; font-size: 14px; font-weight: 600; color: var(--ink); background: transparent; white-space: nowrap; transition: border-color 200ms var(--ease-brand), color 200ms var(--ease-brand), background-color 200ms var(--ease-brand); }
+  .chip { max-width: 100%; }
+  .chip > span:not(.stars) { min-width: 0; overflow-wrap: break-word; }   /* long labels wrap inside the chip instead of widening the page */
   .chip:hover { border-color: var(--accent); color: var(--accent-ink); }
   .chip.is-active, .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
   .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 2px; background: var(--panel); color: var(--on-panel); font-size: 12px; font-weight: 700; line-height: 16px; }
@@ -558,6 +560,7 @@ html.no-motion .hp-pinned > .tp3d .tp3d__stage, .tp3d[data-3d="poster"] .tp3d__s
 .pkg__badge { position: absolute; top: 16px; inset-inline-end: 16px; }
 .pkg__price { font-size: 32px; line-height: 36px; font-weight: 700; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
 .card .pkg__price { color: var(--ink); }
+.pi-flag { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 20px; padding-inline: 4px; border: 1.5px solid var(--border); border-radius: 2px; font-size: 11px; line-height: 1; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); font-variant-numeric: tabular-nums; }
 .marquee { overflow: hidden; }
 .marquee__track { display: flex; gap: 16px; width: max-content; will-change: transform; }
 .marquee__track img { height: 220px; width: auto; display: block; object-fit: cover; }

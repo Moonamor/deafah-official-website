@@ -35,7 +35,20 @@
     }
   });
 
+  /* keep Tab inside the open dialog (native modal dialogs let focus leave to the browser UI) */
+  function focusables(dlg) {
+    return Array.prototype.slice.call(dlg.querySelectorAll('a[href], button:not([disabled]), input:not([type=hidden]):not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+      .filter(function (el) { return el.offsetParent !== null || el === document.activeElement; });
+  }
+
   document.querySelectorAll("dialog").forEach(function (dlg) {
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab" || !dlg.open) return;
+      var list = focusables(dlg); if (!list.length) return;
+      var first = list[0], last = list[list.length - 1];
+      if (e.shiftKey && (document.activeElement === first || !dlg.contains(document.activeElement))) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
     dlg.addEventListener("close", function () {
       document.body.style.overflow = "";
       if (opener && typeof opener.focus === "function") opener.focus();

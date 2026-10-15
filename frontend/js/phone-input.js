@@ -77,12 +77,9 @@
     return digits.length > 1 && digits.charAt(0) === "0" ? digits.slice(1) : digits;
   }
 
-  function flagEmoji(iso2) {
-    return iso2
-      .toUpperCase()
-      .replace(/./g, function (ch) {
-        return String.fromCodePoint(127397 + ch.charCodeAt(0));
-      });
+  /* country marker: the ISO 3166 code as text (no flag emoji — the brief bans emoji; Windows renders flags as letters anyway) */
+  function countryCode(iso2) {
+    return iso2.toUpperCase();
   }
 
   function findCountry(iso2) {
@@ -199,7 +196,7 @@
       li.setAttribute("aria-selected", "false");
       li.dataset.iso2 = c.iso2;
       li.innerHTML =
-        '<span class="pi-flag" aria-hidden="true">' + flagEmoji(c.iso2) + "</span>" +
+        '<span class="pi-flag" aria-hidden="true">' + countryCode(c.iso2) + "</span>" +
         '<span class="pi-option-name">' + (lang === "ar" ? c.arName : c.enName) + "</span>" +
         '<span class="pi-option-dial">' + c.dialCode + "</span>";
       listboxEl.appendChild(li);
@@ -244,7 +241,7 @@
     }
 
     function renderTrigger() {
-      flagEl.textContent = flagEmoji(state.country.iso2);
+      flagEl.textContent = countryCode(state.country.iso2);
       dialEl.textContent = state.country.dialCode;
       numberEl.placeholder = state.country.example;
       // +1 so a typed/pasted leading trunk zero isn't truncated by the

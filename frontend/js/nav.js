@@ -17,7 +17,11 @@
   mq.addEventListener("change", sync);
   sync();
 
-  btn.addEventListener("click", function () { setOpen(nav.hidden); });
+  btn.addEventListener("click", function (e) {
+    var opening = nav.hidden; setOpen(opening);
+    /* keyboard open (detail 0 = Enter/Space): move focus to the first link, since the nav precedes the button in DOM order */
+    if (opening && e.detail === 0) { var first = nav.querySelector("a[href], button"); if (first) first.focus(); }
+  });
   nav.addEventListener("click", function (e) { if (e.target.closest("a, button") && !mq.matches) setOpen(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !nav.hidden && !mq.matches) { setOpen(false); btn.focus(); } });
   document.addEventListener("click", function (e) { if (!mq.matches && !nav.hidden && !e.target.closest("#siteHeader")) setOpen(false); });

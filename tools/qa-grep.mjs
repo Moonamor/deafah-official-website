@@ -20,7 +20,7 @@ const checks = [
   { name: "no jQuery / Font Awesome / icon fonts", re: /jquery|font-?awesome|fa-solid|fa-regular|class="fa-|material-icons/i, ext: [".html", ".css", ".js"] },
   { name: "no physical-direction CSS in authored CSS", re: /(^|[^-\w])(left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|text-align\s*:\s*(left|right))\s*:/m, ext: [".css"], only: /src[\\/]styles/ },
   { name: "no hardcoded hex colours outside the token file", re: /(?<!\.svg|sprite)#[0-9a-fA-F]{3,8}\b/, ext: [".css", ".html", ".js"], not: /src[\\/]styles[\\/]site\.css$|assets[\\/]brand|assets[\\/]icons|hotels\.json$/, allow: /theme-color|mask-icon|url\("data:image\/svg\+xml|%23|canvas-kufic|taj-park-3d|theme-badge/ },
-  { name: "no emoji / dingbat / star glyphs (icons come from the sprite)", re: /[★☆✓✔✖➤→←▶◀]|[\u{1F300}-\u{1FAFF}]|[☀-⛿]/u, ext: [".html", ".js"] },
+  { name: "no emoji / dingbat / star glyphs (icons come from the sprite)", re: /[★☆✓✔✖➤→←▶◀]|[\u{1F300}-\u{1FAFF}]|[☀-⛿]|fromCodePoint\(\s*127397|\\u\{1F1|\\uD83C\\uDD/u, ext: [".html", ".js"] },
   { name: "arrow icons are RTL-aware (every arrow-start/arrow-end <use> sits in an .icon--flip svg)", re: /<svg(?![^>]*icon--flip)[^>]*>\s*<use[^>]*#arrow-(start|end)"/, ext: [".html", ".js"] },
   { name: "no inline SVG drawings outside the sprite (only <use> references)", re: /<svg[^>]*>\s*<(path|circle|rect|line|polyline|polygon|g)\b/, ext: [".html", ".js"], not: /assets[\\/]icons|assets[\\/]brand/ },
   { name: "no glass/blur/glow", re: /backdrop-filter|filter\s*:\s*blur|box-shadow\s*:\s*(?!none)/, ext: [".css"] },
