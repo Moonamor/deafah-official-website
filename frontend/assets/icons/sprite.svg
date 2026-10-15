@@ -3,7 +3,8 @@
        Geometry is derived from the brand's square-Kufic block (assets/brand/pattern/kufic-2x2.svg): that tile is drawn on a
        27-module grid where every stroke and every gap is exactly one module (3.016 units). Mapped onto 24 px, one module is
        1.5 px — the stroke width — so icons are built from orthogonal runs and right-angle steps on a 1.5 px module, and curves
-       are replaced by stepped outlines (marker, crescent, hat, dome, heart, shield, handset). Diagonals are kept only where the
+       are replaced by stepped outlines (marker, crescent, hat, dome, heart, shield, handset).
+       "whatsapp" is a generic chat glyph (speech square + handset), deliberately not the WhatsApp trademark. Diagonals are kept only where the
        sign cannot exist without them (arrows, check, close, chevron, star, plane).
        Direction: arrow-start / arrow-end are logical; site.css mirrors them under dir="rtl".
        Usage: <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#rooms"/></svg> -->
@@ -20,11 +21,11 @@
     <symbol id="family" viewBox="0 0 24 24"><path d="M6 7.5h3v3H6zM15 7.5h3v3h-3zM10.5 12h3v3h-3zM3 21v-6h7.5v6M13.5 21v-6H21v6M9 21v-3h6v3"/></symbol>
     <symbol id="elevator" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM12 3v18M6 10.5l1.5-1.5L9 10.5M15 13.5l1.5 1.5 1.5-1.5"/></symbol>
     <symbol id="kitchen" viewBox="0 0 24 24"><path d="M3 10.5h18V21H3zM3 10.5V4.5h18v6M7.5 7.5h1.5M15 7.5h1.5M7.5 15h9v3h-9z"/></symbol>
-    <symbol id="chef" viewBox="0 0 24 24"><path d="M9 10.5V7.5h1.5V6h3v1.5H15v3h1.5V15h-9v-4.5zM7.5 15v6h9v-6M10.5 18h3"/></symbol>
+    <symbol id="chef" viewBox="0 0 24 24"><path d="M7.5 15v-4.5h-3V6h3V4.5h3V3h3v1.5h3V6h3v4.5h-3V15zM7.5 15v6h9v-6M7.5 18h9M12 15V9"/></symbol>
     <symbol id="tray" viewBox="0 0 24 24"><path d="M3 18h18M4.5 18v-3H6v-3h3V9h6v3h3v3h1.5v3M12 9V6M10.5 6h3"/></symbol>
     <symbol id="calendar" viewBox="0 0 24 24"><path d="M3 4.5h18V21H3zM3 10.5h18M7.5 3v3M16.5 3v3M6 13.5h3v3H6zM10.5 13.5h3v3h-3zM15 13.5h3v3h-3z"/></symbol>
     <symbol id="phone" viewBox="0 0 24 24"><path d="M3 3h6v6H6v1.5h1.5V12H9v1.5h1.5V15H12v1.5h1.5V18H15v-3h6v6h-6v-1.5h-1.5V18H12v-1.5h-1.5V15H9v-1.5H7.5V12H6v-1.5H4.5V9H3z"/></symbol>
-    <symbol id="whatsapp" viewBox="0 0 24 24"><path d="M3 3h18v15H9v3H6v-3H3zM7.5 7.5h3v3H12v1.5h1.5v3h-3V13.5H9V12H7.5z"/></symbol>
+    <symbol id="whatsapp" viewBox="0 0 24 24"><path d="M3 3h18v13.5H10.5V18H9v1.5H7.5V21H6v-4.5H3zM7.5 6h3v3h-3zM13.5 10.5h3v3h-3zM9 9v3h4.5"/></symbol>
     <symbol id="location" viewBox="0 0 24 24"><path d="M4.5 3h15v9H18v3h-3v3h-1.5v3h-3v-3H9v-3H6v-3H4.5zM10.5 7.5h3v3h-3z"/></symbol>
     <symbol id="arrow-end" viewBox="0 0 24 24"><path d="M3 12h18M13.5 4.5 21 12l-7.5 7.5"/></symbol>
     <symbol id="arrow-start" viewBox="0 0 24 24"><path d="M21 12H3M10.5 4.5 3 12l7.5 7.5"/></symbol>

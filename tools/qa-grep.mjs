@@ -57,6 +57,28 @@ for (const c of checks) {
   if (bad.length || !tajOk) violations += bad.length || 1;
 }
 
+// publication switch (data/pages.json): unpublished pages are noindex, absent from the sitemap, and no rendered <a> links to them
+{
+  const { posix } = await import("node:path");
+  const man = JSON.parse(readFileSync(join(ROOT, "data", "pages.json"), "utf8")).pages;
+  const sitemap = readFileSync(join(ROOT, "sitemap.xml"), "utf8");
+  const htmls = files.filter((f) => f.endsWith(".html") && !/[\\/]dev[\\/]/.test(f));
+  const problems = [];
+  for (const p of man.filter((p) => !p.published)) {
+    if (sitemap.includes("/" + p.path)) problems.push(p.path + " in sitemap");
+    if (!/<meta name="robots" content="noindex"/.test(readFileSync(join(ROOT, p.path), "utf8"))) problems.push(p.path + " lacks noindex");
+    for (const f of htmls) {
+      const me = relative(ROOT, f).replace(/\\/g, "/");
+      const visible = readFileSync(f, "utf8").replace(/<template data-unpublished="[^"]*">[\s\S]*?<\/template>/g, "");
+      for (const m of visible.matchAll(/<a\b[^>]*\bhref="([^"#?]+)"/g)) if (posix.normalize(posix.join(posix.dirname(me), m[1])) === p.path) problems.push(`${me} links to ${p.path}`);
+    }
+  }
+  for (const p of man.filter((p) => p.published)) if (!sitemap.includes(p.path)) problems.push(p.path + " published but not in sitemap");
+  console.log(`${problems.length ? "FAIL" : "PASS"}  publication switch honoured (${man.map((p) => p.path + "=" + (p.published ? "published" : "hidden")).join(", ")})`);
+  problems.slice(0, 12).forEach((x) => console.log("      " + x));
+  violations += problems.length;
+}
+
 // inline pre-paint script must equal js/theme-boot.js (minus its leading comment)
 const boot = readFileSync(join(ROOT, "js", "theme-boot.js"), "utf8").replace(/^\/\*[\s\S]*?\*\/\s*/, "").trim();
 for (const f of files.filter((f) => f.endsWith(".html"))) {
