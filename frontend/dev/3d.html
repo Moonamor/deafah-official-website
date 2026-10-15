@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar" data-theme="default" data-scheme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <script id="theme-boot">(function () {
+  try {
+    var d = document.documentElement, ls = window.localStorage;
+    var scheme = ls.getItem("deafah-theme");            /* "light" | "dark" (existing key, owned by auto-theme-manager.js) */
+    var mode = ls.getItem("deafah-theme-mode");          /* "auto" | "manual" */
+    var palette = ls.getItem("deafah-palette");          /* "default" | "green" | "red" | "blue" (new) */
+    var lang = ls.getItem("deafah-lang");                /* "ar" | "en" (owned by main.js) */
+    if (!scheme || mode !== "manual") { var h = new Date().getHours(); scheme = h >= 6 && h < 18 ? "light" : "dark"; }
+    if (scheme !== "light" && scheme !== "dark") scheme = "light";
+    if (["default", "green", "red", "blue"].indexOf(palette) === -1) palette = "default";
+    if (lang !== "en") lang = "ar";
+    d.setAttribute("data-scheme", scheme);
+    d.setAttribute("data-theme", palette);
+    d.setAttribute("data-lang", lang);
+    d.setAttribute("lang", lang);
+    d.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("no-motion");
+  } catch (e) {}
+})();</script>
+  <title>مراجعة: تاج بارك ثلاثي الأبعاد (صفحة تطوير)</title>
+  <link rel="icon" href="../assets/brand/favicon/favicon.ico" sizes="48x48">
+  <link rel="stylesheet" href="../dist/site.css">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap relative">
+      <a href="../index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-width="200" data-logo-pad="outer" data-logo-mobile="symbol" data-logo-condensed="symbol" data-logo-size-symbol="40" data-logo-keep-box aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
+      <nav class="nav-links" id="primaryNav" aria-label="التنقل">
+        <a href="../index.html" class="nav-link"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
+        <span class="nav-link muted"><span class="lang-ar">صفحة تطوير — المرحلة 5</span><span class="lang-en">Dev page — Phase 5</span></span>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button class="btn btn--icon" id="themeToggle" data-theme-toggle type="button" aria-label="تبديل الوضع الفاتح والداكن">
+          <svg class="icon only-light" aria-hidden="true"><use href="../assets/icons/sprite.svg#moon"/></svg>
+          <svg class="icon only-dark" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+        </button>
+        <button class="btn btn--icon font-bold text-sm" id="langToggle" data-lang-toggle type="button" aria-label="Switch language / تبديل اللغة"><span class="lang-ar">EN</span><span class="lang-en">AR</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <div class="demo-ribbon mb-8" data-ribbon="dev3d" role="note">
+          <span><strong><span class="lang-ar">صفحة تطوير</span><span class="lang-en">Development page</span></strong> <span class="lang-ar">— معاينة مكوّن المبنى ثلاثي الأبعاد قبل وضعه في صفحة الفندق (المرحلة 6). غير مفهرسة.</span><span class="lang-en">— preview of the 3D building component before it is placed on the hotel page (Phase 6). Not indexed.</span></span>
+          <button type="button" class="btn btn--icon" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#close"/></svg></button>
+        </div>
+        <span class="eyebrow"><span class="lang-ar">فندق تاج بارك</span><span class="lang-en">Taj Park Hotel</span></span>
+        <h1 class="t-headline mb-4"><span class="lang-ar">نموذج إجرائي للمبنى — يدور مع التمرير</span><span class="lang-en">Procedural building model — orbits with scroll</span></h1>
+        <p class="muted max-w-2xl"><span class="lang-ar">مرّر للأسفل لتدوير الكاميرا. الوضع الداكن يضيء النوافذ بالذهب. اسحب داخل المشهد لتدوير محدود. يظهر الملصق الثابت عند تفعيل تقليل الحركة أو غياب WebGL أو وضع توفير البيانات.</span><span class="lang-en">Scroll down to orbit the camera. Dark mode lights the windows in gold. Drag inside the scene for a limited manual orbit. The static poster is shown under reduced motion, without WebGL, or with Save-Data on.</span></p>
+      </div>
+    </section>
+
+    <!-- reusable component: [data-scene="taj-park-3d"] -->
+    <section class="tp3d" data-scene="taj-park-3d" data-footprint="../data/taj-park-footprint.json" data-module="../js/taj-park-3d.js" data-tile="../assets/brand/pattern/kufic-2x2.svg" data-orbit="drag" aria-label="نموذج ثلاثي الأبعاد لفندق تاج بارك">
+      <div class="tp3d__stage">
+        <img class="tp3d__poster only-light" src="../assets/3d/taj-park-poster-light.webp" width="1600" height="1000" alt="نموذج ثلاثي الأبعاد لمبنى فندق تاج بارك نهارًا" decoding="async" loading="lazy">
+        <img class="tp3d__poster only-dark" src="../assets/3d/taj-park-poster-dark.webp" width="1600" height="1000" alt="نموذج ثلاثي الأبعاد لمبنى فندق تاج بارك ليلًا" decoding="async" loading="lazy">
+        <canvas class="tp3d__canvas" hidden aria-hidden="true"></canvas>
+        <p class="tp3d__attrib t-label"><span class="lang-ar">مخطط المبنى © مساهمو OpenStreetMap (ODbL)</span><span class="lang-en">Building outline © OpenStreetMap contributors (ODbL)</span></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid gap-8 md:grid-cols-3">
+        <div class="stat"><span class="stat-number" id="tp3dTti">—</span><span class="muted"><span class="lang-ar">مللي ثانية حتى أول إطار</span><span class="lang-en">ms to first frame</span></span></div>
+        <div class="stat"><span class="stat-number" id="tp3dAvg">—</span><span class="muted"><span class="lang-ar">متوسط مللي ثانية/إطار</span><span class="lang-en">avg ms / frame</span></span></div>
+        <div class="stat"><span class="stat-number" id="tp3dState">—</span><span class="muted"><span class="lang-ar">حالة المكوّن</span><span class="lang-en">component state</span></span></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../vendor/gsap/gsap.min.js"></script>
+  <script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="../vendor/lenis/lenis.min.js"></script>
+  <script src="../js/auto-theme-manager.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+  <script src="../js/brand-logo.js" data-base="../assets/brand/logo/"></script>
+  <script src="../js/theme-badge.js" data-sprite="../assets/icons/sprite.svg"></script>
+  <script src="../js/motion.js"></script>
+  <script src="../js/taj-park-3d-loader.js"></script>
+  <script>
+    (function () {
+      var ids = { tti: document.getElementById("tp3dTti"), avg: document.getElementById("tp3dAvg"), state: document.getElementById("tp3dState") };
+      setInterval(function () {
+        var s = document.querySelector('[data-scene="taj-park-3d"]'); ids.state.textContent = s.getAttribute("data-3d") + (s.getAttribute("data-3d-reason") ? " (" + s.getAttribute("data-3d-reason") + ")" : "");
+        var t = window.DeafahTajParkLoader && window.DeafahTajParkLoader.timings(); if (t && t.ttiMs !== null) ids.tti.textContent = t.ttiMs;
+        if (window.DeafahTajPark3D) ids.avg.textContent = window.DeafahTajPark3D.getStats().avgMs;
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

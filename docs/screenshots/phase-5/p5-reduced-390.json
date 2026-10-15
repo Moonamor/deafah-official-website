@@ -1,0 +1,18 @@
+{
+  "state": "poster",
+  "reason": "reduced-motion",
+  "timings": {
+    "near": null,
+    "importStart": null,
+    "moduleReady": null,
+    "firstFrame": null,
+    "ttiMs": null
+  },
+  "stats": null,
+  "canvasHidden": true,
+  "canvasSize": [
+    300,
+    150
+  ],
+  "webgl": true
+}

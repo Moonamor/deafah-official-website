@@ -8,7 +8,7 @@ const pages = [];
 function walk(dir) {
   for (const n of readdirSync(dir)) {
     const p = join(dir, n);
-    if (["vendor", "node_modules", "dist", "assets", "imgs", "src"].includes(n)) continue;
+    if (["vendor", "node_modules", "dist", "assets", "imgs", "src", "dev"].includes(n)) continue;
     if (statSync(p).isDirectory()) walk(p);
     else if (n.endsWith(".html")) pages.push(p);
   }
@@ -22,6 +22,6 @@ const urls = pages.map((p) => {
   return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority></url>`;
 });
 writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`);
-writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /vendor/\nDisallow: /data/mock/\nSitemap: ${SITE}/sitemap.xml\n`);
+writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /vendor/\nDisallow: /data/mock/\nDisallow: /dev/\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log(`sitemap: ${urls.length} pages →`, pages.map((p) => relative(ROOT, p)).join(", "));
 if (!existsSync(join(ROOT, "dist", "site.css"))) console.warn("warning: frontend/dist/site.css missing — run npm run build:css");

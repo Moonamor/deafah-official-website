@@ -507,8 +507,27 @@ html.lenis body, html.lenis-on body { height: auto; }
 html.no-motion [data-scene="sticky-media"] [data-step] { opacity: 1; }
 [data-media-for] { display: none; } [data-media-for].is-active { display: block; }
 .kufic-canvas { pointer-events: none; } /* display comes from the utilities (hidden md:block) */
+/* static Kufic field (phones, zero JS): the brand tile is a mask, the ink is the pattern token, mask-repeat: space lays
+   out WHOLE tiles only (never cut), the 24 px inset is the element's own inset, 25 % opacity (G22) */
+.kufic-static { position: absolute; inset: 24px; pointer-events: none; opacity: 0.25; background-color: var(--pattern-ink);
+  -webkit-mask-image: url("../assets/brand/pattern/kufic-2x2.svg"); mask-image: url("../assets/brand/pattern/kufic-2x2.svg");
+  -webkit-mask-size: 48px 48px; mask-size: 48px 48px; -webkit-mask-repeat: space; mask-repeat: space; -webkit-mask-position: top; mask-position: top; }
+.kufic-static--top { bottom: auto; height: 38%; } /* keeps the field clear of the hero copy (no text over the pattern) */
 .kufic-canvas--column { position: absolute; top: 0; inset-inline-end: 0; width: 200px; height: 100%; } /* replaced element: height must be explicit */
 [data-split] > .lang-ar, [data-split] > .lang-en { display: block; }
+
+/* Taj Park 3D component (Phase 5): a tall section whose stage is sticky, so scrolling through it scrubs the orbit */
+.tp3d { position: relative; height: 240vh; background: var(--surface); }
+.tp3d__stage { position: sticky; top: var(--header-h); height: calc(100vh - var(--header-h)); overflow: hidden; background: var(--surface); }
+.tp3d__poster, .tp3d__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.tp3d__poster { object-fit: cover; object-position: center bottom; transition: opacity 200ms var(--ease-brand); }
+.tp3d__canvas[hidden] { display: none; }
+.tp3d[data-3d="live"] .tp3d__poster { opacity: 0; }
+.tp3d__attrib { position: absolute; bottom: 16px; inset-inline-start: 24px; margin: 0; color: var(--muted); background: var(--surface); padding: 4px 8px; }
+.tp3d[data-dragging] .tp3d__canvas { cursor: grabbing; } .tp3d[data-orbit="drag"] .tp3d__canvas { cursor: grab; touch-action: pan-y; }
+@media (prefers-reduced-motion: reduce) { .tp3d { height: auto; } .tp3d__stage { position: relative; height: 70vh; } }
+html.no-motion .tp3d { height: auto; } html.no-motion .tp3d__stage { position: relative; height: 70vh; }
+.tp3d[data-3d="poster"] { height: auto; } .tp3d[data-3d="poster"] .tp3d__stage { position: relative; height: 70vh; }
 /* condensed header: transforms only (layout-shift API ignores transforms) → 96 px box shown as a 64 px band */
 @media (min-width: 640px) {
   .site-header.is-condensed { height: var(--header-h); transform: translateY(-32px); }

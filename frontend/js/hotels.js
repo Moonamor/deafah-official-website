@@ -54,7 +54,9 @@
       var card = node.querySelector(".hotel-card");
       card.setAttribute("data-slug", h.slug);
       var img = node.querySelector("img");
-      img.src = base + h.image; if (h.srcset) img.srcset = h.srcset.split(",").map(function (s) { return base + s.trim(); }).join(", ");
+      var dark = document.documentElement.getAttribute("data-scheme") === "dark";
+      img.src = base + (dark && h.image_dark ? h.image_dark : h.image); if (h.srcset) img.srcset = h.srcset.split(",").map(function (s) { return base + s.trim(); }).join(", ");
+      if (h.image_dark) { img.setAttribute("data-src-light", base + h.image); img.setAttribute("data-src-dark", base + h.image_dark); }
       img.sizes = "(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw";
       img.alt = h.name_en; img.loading = i < 3 ? "eager" : "lazy"; img.width = 640; img.height = 480;
       node.querySelector(".badge .lang-ar").textContent = arMinutes(h.walk_minutes);
@@ -73,6 +75,10 @@
     document.dispatchEvent(new CustomEvent("deafah:hotels", { detail: window.DeafahHotels }));
   }
 
+  document.addEventListener("deafah:themechange", function () {
+    var dark = document.documentElement.getAttribute("data-scheme") === "dark";
+    document.querySelectorAll("img[data-src-dark]").forEach(function (img) { var s = img.getAttribute(dark ? "data-src-dark" : "data-src-light"); if (img.getAttribute("src") !== s) img.setAttribute("src", s); });
+  });
   fetch(src, { cache: "no-cache" }).then(function (r) { return r.json(); }).then(render).catch(function (err) {
     console.error("[hotels] could not load " + src + (location.protocol === "file:" ? " — serve the site over http(s)" : ""), err);
   });
