@@ -23,6 +23,7 @@
     { id: "auto",  ar: "تلقائي", en: "Auto",  icon: "auto" }
   ];
   var SPRITE = (document.currentScript && document.currentScript.getAttribute("data-sprite")) || "assets/icons/sprite.svg";
+  window.__spriteHref = SPRITE;
 
   function bi(ar, en) { return '<span class="lang-ar">' + ar + '</span><span class="lang-en">' + en + "</span>"; }
   function icon(name, cls) { return '<svg class="icon ' + (cls || "icon--sm") + '" aria-hidden="true"><use href="' + SPRITE + "#" + name + '"></use></svg>'; }
@@ -75,7 +76,7 @@
       b.tabIndex = on ? 0 : -1;
     });
     if (!schemes.some(function (b) { return b.tabIndex === 0; })) schemes[0].tabIndex = 0;
-    badge.setAttribute("data-palette", palette);
+    badge.setAttribute("data-current-palette", palette);
     badge.setAttribute("data-mode", mode);
   }
 
@@ -107,9 +108,9 @@
 
   /* selection */
   badge.addEventListener("click", function (e) {
-    var sw = e.target.closest("[data-palette]");
+    var sw = e.target.closest(".theme-badge__swatch");
     if (sw) { withCrossfade(function () { T.setPalette(sw.getAttribute("data-palette")); }); sync(); return; }
-    var sc = e.target.closest("[data-scheme]");
+    var sc = e.target.closest(".theme-badge__scheme");
     if (sc) { withCrossfade(function () { T.setScheme(sc.getAttribute("data-scheme")); }); sync(); }
   });
 

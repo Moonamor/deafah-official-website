@@ -103,8 +103,10 @@ async function shootInner(opts) {
     for (let i = 0; i < 50; i++) { await cdp.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: 200 + (i % 10) * 90, y: 150 + (i % 7) * 80 }); if (i % 10 === 9) await cdp.send("Runtime.evaluate", { expression: `window.scrollBy({ top: ${i % 20 === 19 ? -120 : 60}, behavior: "instant" })` }); await sleep(50); }
     await sleep(300);
   }
+  let asyncExtra = null;
+  if (evalExpr && /^\s*\(async/.test(evalExpr)) { const r = await cdp.send("Runtime.evaluate", { expression: evalExpr, awaitPromise: true, returnByValue: true, timeout: 20000 }); asyncExtra = r.result.value; evalExpr = null; log("async eval done"); }
   log("inspect"); const info = (await cdp.send("Runtime.evaluate", { expression: `JSON.stringify({html: document.documentElement.outerHTML.slice(0,0), attrs: {lang: document.documentElement.lang, dir: document.documentElement.dir, scheme: document.documentElement.dataset.scheme, theme: document.documentElement.dataset.theme}, height: document.documentElement.scrollHeight, logos: [...document.querySelectorAll('[data-logo]')].map(e=>({lockup:e.dataset.logoLockup,file:e.dataset.logoFile,w:e.querySelector('img')?.getBoundingClientRect().width|0, h:e.querySelector('img')?.getBoundingClientRect().height|0, loaded: !!(e.querySelector('img')?.complete && e.querySelector('img')?.naturalWidth)})), hotels: document.querySelectorAll('.hotel-card').length, kufic: [...document.querySelectorAll('[data-kufic]')].map(e=>e.dataset.kuficCount||'-'), fonts: [...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family+' '+f.weight), bodyBg: getComputedStyle(document.body).backgroundColor, ink: getComputedStyle(document.body).color ${evalExpr ? `, extra: (${evalExpr})` : ""}})`, returnByValue: true })).result.value;
-  const data = JSON.parse(info);
+  const data = JSON.parse(info); if (asyncExtra !== null) data.extra = asyncExtra;
   const height = opts.viewport ? 900 : Math.min(data.height, 8000);
   log("capture"); const shot = await cdp.send("Page.captureScreenshot", opts.viewport ? { format: "png" } : { format: "png", captureBeyondViewport: true, clip: { x: 0, y: 0, width: +width, height, scale: 1 } });
   if (out) { mkdirSync(join(out, ".."), { recursive: true }); writeFileSync(out, Buffer.from(shot.data, "base64")); }

@@ -2,18 +2,19 @@
   "name": "deafah-official-website",
   "version": "2.0.0",
   "private": true,
-  "description": "Al Deafah International Group — static site (Tailwind v4 CLI build, no bundler)",
+  "description": "Al Deafah International Group \u2014 static site (Tailwind v4 CLI build, no bundler)",
   "scripts": {
     "build:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --minify",
     "watch:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --watch",
     "build:meta": "node tools/build-meta.mjs",
-    "build": "npm run build:css && npm run build:three && npm run build:meta",
+    "build": "npm run build:css && npm run build:three && npm run build:meta && npm run build:fingerprint",
     "qa:grep": "node tools/qa-grep.mjs",
     "qa:case": "node tools/qa-case.mjs",
     "qa:contrast": "node tools/contrast.mjs",
     "qa": "npm run qa:grep && npm run qa:case && npm run qa:contrast",
     "shoot": "node tools/shoot.mjs",
-    "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js"
+    "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js",
+    "build:fingerprint": "node tools/fingerprint.mjs"
   },
   "engines": {
     "node": ">=24"

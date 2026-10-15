@@ -157,7 +157,7 @@
       '<button type="button" class="pi-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="' + listboxId + '">' +
       '<span class="pi-flag" aria-hidden="true"></span>' +
       '<span class="pi-dial"></span>' +
-      '<svg class="icon icon--sm pi-caret" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>' +
+      '<svg class="icon icon--sm pi-caret" aria-hidden="true"><use href="' + (window.__spriteHref || "assets/icons/sprite.svg") + '#chevron-down"></use></svg>' +
       "</button>" +
       '<input type="tel" inputmode="numeric" autocomplete="tel-national" dir="ltr" class="pi-number" id="' + idBase + '-number" aria-describedby="' + errorId + '">' +
       "</div>" +
@@ -167,7 +167,7 @@
       '<div class="pi-panel-head">' +
       '<input type="text" class="pi-search" role="combobox" aria-expanded="false" aria-controls="' + listboxId + '" aria-activedescendant="" autocomplete="off">' +
       '<button type="button" class="pi-panel-close" aria-label="Close">' +
-      '<svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#close"></use></svg>' +
+      '<svg class="icon icon--sm" aria-hidden="true"><use href="' + (window.__spriteHref || "assets/icons/sprite.svg") + '#close"></use></svg>' +
       "</button>" +
       "</div>" +
       '<ul class="pi-listbox" role="listbox" id="' + listboxId + '"></ul>' +

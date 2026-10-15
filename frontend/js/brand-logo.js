@@ -82,7 +82,7 @@
 
     var img = el.querySelector("img");
     if (!img) { img = document.createElement("img"); img.decoding = "async"; el.appendChild(img); }
-    var src = BASE + r.spec.file;
+    var src = window.__asset ? window.__asset(BASE + r.spec.file) : BASE + r.spec.file;
     if (img.getAttribute("src") !== src) img.setAttribute("src", src);
     img.alt = ALT;
 

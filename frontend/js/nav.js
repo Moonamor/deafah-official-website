@@ -11,7 +11,7 @@
     btn.setAttribute("aria-expanded", open ? "true" : "false");
     btn.setAttribute("aria-label", open ? btn.getAttribute("data-label-close") : btn.getAttribute("data-label-open"));
     var useEl = btn.querySelector("use");
-    if (useEl) useEl.setAttribute("href", "assets/icons/sprite.svg#" + (open ? "close" : "menu"));
+    if (useEl) useEl.setAttribute("href", (useEl.getAttribute("href") || "").split("#")[0] + "#" + (open ? "close" : "menu"));
   }
   function sync() { setOpen(false); }
   mq.addEventListener("change", sync);
