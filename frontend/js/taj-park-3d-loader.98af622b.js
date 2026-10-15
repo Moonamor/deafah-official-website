@@ -36,6 +36,29 @@
     } else boot();
   });
 
+  /* Pin scope (Phase 6 approval): inside .hp-pinned the scene stays pinned through the rooms section at ≥ 1024 px and full
+     quality; below 1024 px or under data-quality="reduced" it is released after the facts strip. The section's own
+     data-pin-release="#rooms" names the first content section the scene must NOT sit behind; the box height is set to
+     that section's offset so the sticky stage scrolls away with the facts. data-pin reflects the current scope. */
+  sections.forEach(function (section) {
+    var wrap = section.parentElement, sel = section.getAttribute("data-pin-release");
+    if (!wrap || !wrap.classList.contains("hp-pinned") || !sel) return;
+    var mq = window.matchMedia("(min-width: 1024px)");
+    function apply() {
+      var release = wrap.querySelector(sel);
+      var facts = !mq.matches || section.getAttribute("data-quality") === "reduced";
+      if (facts && release) { section.style.height = Math.max(0, Math.round(release.getBoundingClientRect().top - wrap.getBoundingClientRect().top)) + "px"; section.setAttribute("data-pin", "facts"); }
+      else { section.style.height = ""; section.setAttribute("data-pin", "rooms"); }
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+    }
+    apply();
+    mq.addEventListener("change", apply);
+    new MutationObserver(apply).observe(section, { attributes: true, attributeFilter: ["data-quality"] });
+    var content = wrap.querySelector(".hp-content");
+    if (content && "ResizeObserver" in window) new ResizeObserver(function () { if (section.getAttribute("data-pin") === "facts") apply(); }).observe(content);
+    document.addEventListener("deafah:page-rendered", apply);
+  });
+
   window.DeafahTajParkLoader = {
     timings: function () {
       var get = function (n) { var m = performance.getEntriesByName(n)[0]; return m ? +m.startTime.toFixed(1) : null; };

@@ -26,8 +26,9 @@
     if (stars === null || stars === undefined) {
       return '<span class="stars" aria-label="rating pending"><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>';
     }
-    var full = "★★★★★".slice(0, stars), dim = "★★★★★".slice(stars);
-    return '<span class="stars" aria-label="' + stars + ' out of 5 stars">' + full + (dim ? '<span class="star-dim">' + dim + "</span>" : "") + "</span>";
+    var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg"), out = "";
+    for (var i = 0; i < 5; i++) out += '<svg class="icon' + (i < stars ? "" : " star-dim") + '" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>';
+    return '<span class="stars" aria-label="' + stars + ' out of 5 stars">' + out + "</span>";
   }
 
   function fillCopy(data) {

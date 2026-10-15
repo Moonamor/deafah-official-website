@@ -19,7 +19,10 @@ const checks = [
   { name: "no CDN runtime dependencies", re: /https?:\/\/(cdn\.jsdelivr\.net|cdnjs\.cloudflare\.com|code\.jquery\.com|unpkg\.com|fonts\.googleapis\.com|fonts\.gstatic\.com)/, ext: [".html", ".css", ".js"] },
   { name: "no jQuery / Font Awesome / icon fonts", re: /jquery|font-?awesome|fa-solid|fa-regular|class="fa-|material-icons/i, ext: [".html", ".css", ".js"] },
   { name: "no physical-direction CSS in authored CSS", re: /(^|[^-\w])(left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|text-align\s*:\s*(left|right))\s*:/m, ext: [".css"], only: /src[\\/]styles/ },
-  { name: "no hardcoded hex colours outside the token file", re: /#[0-9a-fA-F]{3,8}\b/, ext: [".css", ".html", ".js"], not: /src[\\/]styles[\\/]site\.css$|assets[\\/]brand|assets[\\/]icons|hotels\.json$/, allow: /theme-color|mask-icon|url\("data:image\/svg\+xml|%23|canvas-kufic|taj-park-3d|theme-badge/ },
+  { name: "no hardcoded hex colours outside the token file", re: /(?<!\.svg|sprite)#[0-9a-fA-F]{3,8}\b/, ext: [".css", ".html", ".js"], not: /src[\\/]styles[\\/]site\.css$|assets[\\/]brand|assets[\\/]icons|hotels\.json$/, allow: /theme-color|mask-icon|url\("data:image\/svg\+xml|%23|canvas-kufic|taj-park-3d|theme-badge/ },
+  { name: "no emoji / dingbat / star glyphs (icons come from the sprite)", re: /[★☆✓✔✖➤→←▶◀]|[\u{1F300}-\u{1FAFF}]|[☀-⛿]/u, ext: [".html", ".js"] },
+  { name: "arrow icons are RTL-aware (every arrow-start/arrow-end <use> sits in an .icon--flip svg)", re: /<svg(?![^>]*icon--flip)[^>]*>\s*<use[^>]*#arrow-(start|end)"/, ext: [".html", ".js"] },
+  { name: "no inline SVG drawings outside the sprite (only <use> references)", re: /<svg[^>]*>\s*<(path|circle|rect|line|polyline|polygon|g)\b/, ext: [".html", ".js"], not: /assets[\\/]icons|assets[\\/]brand/ },
   { name: "no glass/blur/glow", re: /backdrop-filter|filter\s*:\s*blur|box-shadow\s*:\s*(?!none)/, ext: [".css"] },
   { name: "no border-radius above 2px", re: /border-radius\s*:(?!\s*(0|0px|2px|inherit|var\(--radius-(none|chip)\))\s*[;}])/, ext: [".css"], only: /src[\\/]styles/ },
 ];
@@ -31,8 +34,9 @@ for (const c of checks) {
     if (!c.ext.includes(extname(f))) continue;
     if (c.only && !c.only.test(f)) continue;
     if (c.not && c.not.test(f)) continue;
-    // comments are not code: blank out block comments and line comments before testing
+    // comments are not code: blank out HTML comments, block comments and line comments before testing
     const lines = readFileSync(f, "utf8")
+      .replace(/<!--[\s\S]*?-->/g, (m) => m.replace(/[^\n]/g, " "))
       .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " "))
       .replace(/(^|[^:"'\\])\/\/.*$/gm, "$1")
       .split("\n");
@@ -41,6 +45,16 @@ for (const c of checks) {
   console.log(`${hits.length === 0 ? "PASS" : "FAIL"}  ${c.name} (${hits.length})`);
   hits.slice(0, 12).forEach((h) => console.log("      " + h));
   violations += hits.length;
+}
+
+// hotel cards use photographs (Phase 5 approval): the 3D poster is only for pages that mount the scene
+{
+  const roster = JSON.parse(readFileSync(join(ROOT, "data", "hotels.json"), "utf8")).hotels;
+  const bad = roster.filter((h) => /assets[\/]3d[\/]/.test([h.image, h.image_dark, h.srcset].join(" ")) || !/^imgs\/hotel-pics\//.test(h.image || ""));
+  const taj = roster.find((h) => h.slug === "taj-park");
+  const tajOk = taj && /^imgs\/hotel-pics\/taj-park-640(\.[0-9a-f]{8})?\.webp$/.test(taj.image) && !taj.image_dark;
+  console.log(`${bad.length === 0 && tajOk ? "PASS" : "FAIL"}  hotel card images are photographs, Taj Park card = taj-park-640 photo (${bad.map((h) => h.slug).join(", ") || "none"})`);
+  if (bad.length || !tajOk) violations += bad.length || 1;
 }
 
 // inline pre-paint script must equal js/theme-boot.js (minus its leading comment)

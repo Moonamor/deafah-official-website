@@ -74,17 +74,15 @@
       "slug": "taj-park",
       "name_ar": "فندق تاج بارك",
       "name_en": "Taj Park Hotel",
-      "image": "assets/3d/taj-park-poster-light.11649229.webp",
-      "srcset": "",
+      "image": "imgs/hotel-pics/taj-park-640.5000fe08.webp",
+      "srcset": "imgs/hotel-pics/taj-park-640.5000fe08.webp 640w, imgs/hotel-pics/taj-park-1280.23c69761.webp 1280w, imgs/hotel-pics/taj-park-1920.d69c2e45.webp 1920w",
       "walk_minutes": 10,
       "area_ar": "مكة المكرمة",
       "area_en": "Makkah",
       "stars": null,
       "price_from_sar": 180,
       "details_url": "hotels/taj-park.html",
-      "image_dark": "assets/3d/taj-park-poster-dark.9bca4cb3.webp",
-      "photo": "imgs/hotel-pics/taj-park-640.5000fe08.webp",
-      "_image_note": "poster of the 3D model (Phase 5); the photograph stays in \"photo\" for the Phase 6 page"
+      "_image_note": "photograph on the home card (Phase 5 approval); the 3D poster is used only where the scene mounts"
     },
     {
       "slug": "al-bostan-al-masi",

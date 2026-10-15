@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar" data-theme="default" data-scheme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <script id="theme-boot">(function () {
+  try {
+    var d = document.documentElement, ls = window.localStorage;
+    var scheme = ls.getItem("deafah-theme");            /* "light" | "dark" (existing key, owned by auto-theme-manager.js) */
+    var mode = ls.getItem("deafah-theme-mode");          /* "auto" | "manual" */
+    var palette = ls.getItem("deafah-palette");          /* "default" | "green" | "red" | "blue" (new) */
+    var lang = ls.getItem("deafah-lang");                /* "ar" | "en" (owned by main.js) */
+    if (!scheme || mode !== "manual") { var h = new Date().getHours(); scheme = h >= 6 && h < 18 ? "light" : "dark"; }
+    if (scheme !== "light" && scheme !== "dark") scheme = "light";
+    if (["default", "green", "red", "blue"].indexOf(palette) === -1) palette = "default";
+    if (lang !== "en") lang = "ar";
+    d.setAttribute("data-scheme", scheme);
+    d.setAttribute("data-theme", palette);
+    d.setAttribute("data-lang", lang);
+    d.setAttribute("lang", lang);
+    d.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("no-motion");
+  } catch (e) {}
+})();</script>
+  <title>مراجعة: مجموعة الأيقونات (صفحة تطوير)</title>
+  <link rel="icon" href="../assets/brand/favicon/favicon.ico" sizes="48x48">
+  <link rel="stylesheet" href="../dist/site.css">
+  <style>
+    /* contact-sheet only: module grid behind each icon (border token at low opacity, lines not gradients) */
+    .icon-module { position: relative; display: inline-block; width: 48px; height: 48px; border: 1.5px solid var(--border); }
+    .icon-module__grid { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--border); stroke-width: 0.15; }
+    .icon-module__icon { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .icon-cell code { font-family: ui-monospace, Consolas, monospace; font-size: 13px; }
+    .kufic-ref { border: 1.5px solid var(--border); padding: 16px; background: var(--surface); }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap relative">
+      <a href="../index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-width="200" data-logo-pad="outer" data-logo-mobile="symbol" data-logo-condensed="symbol" data-logo-size-symbol="40" data-logo-keep-box aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
+      <nav class="nav-links" id="primaryNav" aria-label="التنقل">
+        <a href="../index.html" class="nav-link"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
+        <span class="nav-link muted"><span class="lang-ar">صفحة تطوير — المرحلة 7</span><span class="lang-en">Dev page — Phase 7</span></span>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button class="btn btn--icon" id="themeToggle" data-theme-toggle type="button" aria-label="تبديل الوضع الفاتح والداكن">
+          <svg class="icon only-light" aria-hidden="true"><use href="../assets/icons/sprite.svg#moon"/></svg>
+          <svg class="icon only-dark" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+        </button>
+        <button class="btn btn--icon font-bold text-sm" id="langToggle" data-lang-toggle type="button" aria-label="Switch language / تبديل اللغة"><span class="lang-ar">EN</span><span class="lang-en">AR</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <div class="demo-ribbon mb-8" data-ribbon="devicons" role="note">
+          <span><strong><span class="lang-ar">صفحة تطوير</span><span class="lang-en">Development page</span></strong> <span class="lang-ar">— لوحة مراجعة مجموعة الأيقونات (المرحلة 7). غير مفهرسة.</span><span class="lang-en">— icon set review sheet (Phase 7). Not indexed.</span></span>
+          <button type="button" class="btn btn--icon" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#close"/></svg></button>
+        </div>
+        <span class="eyebrow"><span class="lang-ar">نظام الأيقونات</span><span class="lang-en">Icon system</span></span>
+        <h1 class="t-headline mb-4"><span class="lang-ar">48 رمزًا من شبكة الكوفي المربع</span><span class="lang-en">48 symbols on the square-Kufic module</span></h1>
+        <p class="muted max-w-2xl mb-4"><span class="lang-ar">شبكة 24 بكسل، وحدة 1.5 بكسل مشتقة من بلاطة النقش الكوفي (27 وحدة لكل كتلة 2×2، كل ضربة وكل فراغ وحدة واحدة). سماكة الخط 1.5 بكسل، نهايات مربعة، زوايا قائمة، نصف قطر 0، اللون من <code>currentColor</code>. كل خلية تعرض الرمز بأحجام 32/24/20 بكسل، داخل صندوق الأيقونة، وفوق شبكة الوحدات.</span><span class="lang-en">24 px grid with a 1.5 px module taken from the Kufic tile (27 modules per 2×2 block; every stroke and gap is one module). 1.5 px stroke, square caps, mitre joins, radius 0, <code>currentColor</code>. Each cell shows the symbol at 32/24/20 px, inside the icon box, and over the module grid.</span></p>
+        <p class="muted max-w-2xl"><span class="lang-ar">الأسهم منطقية: <code>arrow-end</code> يشير إلى نهاية السطر في الاتجاه الحالي (بدّل اللغة لرؤية الانعكاس).</span><span class="lang-en">Arrows are logical: <code>arrow-end</code> points to the inline end of the current direction (switch the language to see them mirror).</span></p>
+      </div>
+    </section>
+    <section class="section" aria-label="lodging">
+      <div class="wrap">
+        <h2 class="t-title mb-6">lodging <span class="muted">· 22</span></h2>
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none p-0 m-0">
+        <li class="icon-cell card bg-surface p-4" id="icon-rooms">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#rooms"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#rooms"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#rooms"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#rooms"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#rooms"/></svg></span>
+          </div>
+          <code class="t-label">rooms</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json · js/hotel-page.js · js/taj-park-3d-loader.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-bed">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#bed"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#bed"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#bed"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#bed"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#bed"/></svg></span>
+          </div>
+          <code class="t-label">bed</code>
+          <p class="muted text-sm mt-1">js/hotel-page.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-haram-distance">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#haram-distance"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#haram-distance"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#haram-distance"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#haram-distance"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#haram-distance"/></svg></span>
+          </div>
+          <code class="t-label">haram-distance</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-shuttle">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#shuttle"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#shuttle"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#shuttle"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#shuttle"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#shuttle"/></svg></span>
+          </div>
+          <code class="t-label">shuttle</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-restaurant">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#restaurant"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#restaurant"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#restaurant"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#restaurant"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#restaurant"/></svg></span>
+          </div>
+          <code class="t-label">restaurant</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-prayer-time">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#prayer-time"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#prayer-time"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#prayer-time"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#prayer-time"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#prayer-time"/></svg></span>
+          </div>
+          <code class="t-label">prayer-time</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-wifi">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#wifi"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#wifi"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#wifi"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#wifi"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#wifi"/></svg></span>
+          </div>
+          <code class="t-label">wifi</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-parking">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#parking"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#parking"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#parking"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#parking"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#parking"/></svg></span>
+          </div>
+          <code class="t-label">parking</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-family">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#family"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#family"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#family"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#family"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#family"/></svg></span>
+          </div>
+          <code class="t-label">family</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-elevator">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#elevator"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#elevator"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#elevator"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#elevator"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#elevator"/></svg></span>
+          </div>
+          <code class="t-label">elevator</code>
+          <p class="muted text-sm mt-1">data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-kitchen">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#kitchen"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#kitchen"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#kitchen"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#kitchen"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#kitchen"/></svg></span>
+          </div>
+          <code class="t-label">kitchen</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-chef">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#chef"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#chef"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#chef"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#chef"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#chef"/></svg></span>
+          </div>
+          <code class="t-label">chef</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-tray">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#tray"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#tray"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#tray"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#tray"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#tray"/></svg></span>
+          </div>
+          <code class="t-label">tray</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-calendar">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#calendar"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#calendar"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#calendar"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#calendar"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#calendar"/></svg></span>
+          </div>
+          <code class="t-label">calendar</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-phone">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#phone"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#phone"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#phone"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#phone"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#phone"/></svg></span>
+          </div>
+          <code class="t-label">phone</code>
+          <p class="muted text-sm mt-1">catering.html · hotels/taj-park.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-whatsapp">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#whatsapp"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#whatsapp"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#whatsapp"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#whatsapp"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#whatsapp"/></svg></span>
+          </div>
+          <code class="t-label">whatsapp</code>
+          <p class="muted text-sm mt-1">catering.html · hotels/taj-park.html · js/hotel-page.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-location">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#location"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#location"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#location"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#location"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#location"/></svg></span>
+          </div>
+          <code class="t-label">location</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-arrow-end">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-end"/></svg>
+            <svg class="icon icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-end"/></svg>
+            <svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-end"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon icon--flip"><use href="../assets/icons/sprite.svg#arrow-end"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon icon--flip"><use href="../assets/icons/sprite.svg#arrow-end"/></svg></span>
+          </div>
+          <code class="t-label">arrow-end</code>
+          <p class="muted text-sm mt-1">about.html · catering.html · hotels/taj-park.html · index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-arrow-start">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-start"/></svg>
+            <svg class="icon icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-start"/></svg>
+            <svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="../assets/icons/sprite.svg#arrow-start"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon icon--flip"><use href="../assets/icons/sprite.svg#arrow-start"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon icon--flip"><use href="../assets/icons/sprite.svg#arrow-start"/></svg></span>
+          </div>
+          <code class="t-label">arrow-start</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-moon">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#moon"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#moon"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#moon"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#moon"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#moon"/></svg></span>
+          </div>
+          <code class="t-label">moon</code>
+          <p class="muted text-sm mt-1">about.html · catering.html · dev/3d.html · hotels/taj-park.html · index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-sun">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#sun"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#sun"/></svg></span>
+          </div>
+          <code class="t-label">sun</code>
+          <p class="muted text-sm mt-1">about.html · catering.html · dev/3d.html · hotels/taj-park.html · index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-palette">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#palette"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#palette"/></svg></span>
+          </div>
+          <code class="t-label">palette</code>
+          <p class="muted text-sm mt-1">js/theme-badge.js</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section bg-raised" aria-label="interface">
+      <div class="wrap">
+        <h2 class="t-title mb-6">interface <span class="muted">· 10</span></h2>
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none p-0 m-0">
+        <li class="icon-cell card bg-surface p-4" id="icon-menu">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#menu"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#menu"/></svg></span>
+          </div>
+          <code class="t-label">menu</code>
+          <p class="muted text-sm mt-1">about.html · catering.html · hotels/taj-park.html · index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-close">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#close"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#close"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#close"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#close"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#close"/></svg></span>
+          </div>
+          <code class="t-label">close</code>
+          <p class="muted text-sm mt-1">about.html · catering.html · dev/3d.html · hotels/taj-park.html · index.html · js/phone-input.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-chevron-down">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-down"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-down"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-down"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#chevron-down"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#chevron-down"/></svg></span>
+          </div>
+          <code class="t-label">chevron-down</code>
+          <p class="muted text-sm mt-1">js/hotel-page.js · js/phone-input.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-plus">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#plus"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#plus"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#plus"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#plus"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#plus"/></svg></span>
+          </div>
+          <code class="t-label">plus</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-minus">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#minus"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#minus"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#minus"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#minus"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#minus"/></svg></span>
+          </div>
+          <code class="t-label">minus</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-check">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#check"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#check"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#check"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#check"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#check"/></svg></span>
+          </div>
+          <code class="t-label">check</code>
+          <p class="muted text-sm mt-1">js/catering-page.js</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-auto">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#auto"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#auto"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#auto"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#auto"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#auto"/></svg></span>
+          </div>
+          <code class="t-label">auto</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-language">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#language"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#language"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#language"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#language"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#language"/></svg></span>
+          </div>
+          <code class="t-label">language</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-info">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#info"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#info"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#info"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#info"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#info"/></svg></span>
+          </div>
+          <code class="t-label">info</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-star">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#star"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#star"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#star"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#star"/></svg></span>
+          </div>
+          <code class="t-label">star</code>
+          <p class="muted text-sm mt-1">index.html · js/hotels.js</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section" aria-label="content">
+      <div class="wrap">
+        <h2 class="t-title mb-6">content <span class="muted">· 16</span></h2>
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none p-0 m-0">
+        <li class="icon-cell card bg-surface p-4" id="icon-walk">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#walk"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#walk"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#walk"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#walk"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#walk"/></svg></span>
+          </div>
+          <code class="t-label">walk</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-hotel">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#hotel"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#hotel"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#hotel"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#hotel"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#hotel"/></svg></span>
+          </div>
+          <code class="t-label">hotel</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-tag">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#tag"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#tag"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#tag"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#tag"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#tag"/></svg></span>
+          </div>
+          <code class="t-label">tag</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-clock">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#clock"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#clock"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#clock"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#clock"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#clock"/></svg></span>
+          </div>
+          <code class="t-label">clock</code>
+          <p class="muted text-sm mt-1">index.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-eye">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#eye"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#eye"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#eye"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#eye"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#eye"/></svg></span>
+          </div>
+          <code class="t-label">eye</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-target">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#target"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#target"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#target"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#target"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#target"/></svg></span>
+          </div>
+          <code class="t-label">target</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-care">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#care"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#care"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#care"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#care"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#care"/></svg></span>
+          </div>
+          <code class="t-label">care</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-shield">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#shield"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#shield"/></svg></span>
+          </div>
+          <code class="t-label">shield</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-value">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#value"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#value"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#value"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#value"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#value"/></svg></span>
+          </div>
+          <code class="t-label">value</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-growth">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#growth"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#growth"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#growth"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#growth"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#growth"/></svg></span>
+          </div>
+          <code class="t-label">growth</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-route">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#route"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#route"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#route"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#route"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#route"/></svg></span>
+          </div>
+          <code class="t-label">route</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-handshake">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#handshake"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#handshake"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#handshake"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#handshake"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#handshake"/></svg></span>
+          </div>
+          <code class="t-label">handshake</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-globe">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#globe"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#globe"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#globe"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#globe"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#globe"/></svg></span>
+          </div>
+          <code class="t-label">globe</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-plane">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#plane"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#plane"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#plane"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#plane"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#plane"/></svg></span>
+          </div>
+          <code class="t-label">plane</code>
+          <p class="muted text-sm mt-1">about.html · data/mock/taj-park.json</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-award">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#award"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#award"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#award"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#award"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#award"/></svg></span>
+          </div>
+          <code class="t-label">award</code>
+          <p class="muted text-sm mt-1">about.html</p>
+        </li>
+        <li class="icon-cell card bg-surface p-4" id="icon-mail">
+          <div class="flex items-center gap-4 mb-3">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"/></svg>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"/></svg>
+            <span class="icon-box !mb-0 shrink-0" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#mail"/></svg></span>
+            <span class="icon-module" aria-hidden="true"><svg class="icon-module__grid"><use href="module-grid.svg#grid"/></svg><svg class="icon icon-module__icon"><use href="../assets/icons/sprite.svg#mail"/></svg></span>
+          </div>
+          <code class="t-label">mail</code>
+          <p class="muted text-sm mt-1"><span class="lang-ar">غير مستخدم بعد</span><span class="lang-en">not used yet</span></p>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <h2 class="t-title mb-6"><span class="lang-ar">الاشتقاق من البلاطة</span><span class="lang-en">Derivation from the tile</span></h2>
+        <div class="flex flex-wrap items-center gap-8">
+          <img class="kufic-ref" src="../assets/brand/pattern/kufic-2x2.svg" width="162" height="162" alt="Kufic 2×2 block" decoding="async">
+          <p class="muted max-w-xl"><span class="lang-ar">الكتلة 2×2 مرسومة على 27 وحدة (3.016 من 81.553). عند إسقاط كتلة واحدة على 24 بكسل تصبح الوحدة 1.5 بكسل، وهي سماكة الخط نفسها، فتُبنى الرموز من امتدادات متعامدة ودرجات قائمة على هذه الوحدة. تبقى الخطوط المائلة فقط حيث لا يقوم المعنى بدونها (الأسهم، علامة الصح، الإغلاق، النجمة، الطائرة).</span><span class="lang-en">The 2×2 block sits on 27 modules (3.016 of 81.553 units). One block mapped to 24 px makes the module 1.5 px, the stroke width, so symbols are built from orthogonal runs and right-angle steps on that module. Diagonals remain only where the sign cannot exist without them (arrows, check, close, star, plane).</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../vendor/gsap/gsap.92bb9a96.min.js"></script>
+  <script src="../vendor/gsap/ScrollTrigger.b0b14d67.min.js"></script>
+  <script src="../vendor/lenis/lenis.53195c97.min.js"></script>
+  <script src="../js/auto-theme-manager.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+  <script src="../js/brand-logo.js" data-base="../assets/brand/logo/"></script>
+  <script src="../js/theme-badge.js" data-sprite="../assets/icons/sprite.svg"></script>
+  <script src="../js/motion.js"></script>
+</body>
+</html>
