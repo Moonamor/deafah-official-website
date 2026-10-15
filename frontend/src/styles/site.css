@@ -361,8 +361,8 @@
   .site-header { position: sticky; top: 0; z-index: 60; background: var(--surface); border-bottom: 1.5px solid transparent; transition: background-color 200ms var(--ease-brand), border-color 200ms var(--ease-brand), transform 300ms var(--ease-brand); }
   .site-header.is-condensed { background: var(--raised); border-bottom-color: var(--border); }
   .site-header.is-hidden { transform: translateY(-100%); }
-  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 80px; transition: min-height 200ms var(--ease-brand); }
-  .site-header.is-condensed .wrap { min-height: 64px; }
+  /* header height = logo box + its free zone (0.42 × symbol height on all sides): 118 px expanded, 74 px condensed [مقترح] */
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
   .nav-links { display: flex; align-items: center; gap: 4px; }
   .nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; font-weight: 600; color: var(--ink); border-bottom: 1.5px solid transparent; transition: border-color 200ms var(--ease-brand), color 200ms var(--ease-brand); }
   .nav-link:hover, .nav-link:focus-visible { border-bottom-color: var(--accent); color: var(--accent-ink); }
@@ -374,8 +374,8 @@
   }
 
   /* brand logo mount points (brand-logo.js fills <img>) */
-  .brand-logo { display: inline-flex; align-items: center; }
-  .brand-logo img { width: auto; height: auto; max-width: 100%; }
+  .brand-logo { display: inline-flex; align-items: center; justify-content: flex-start; flex: none; box-sizing: content-box; }
+  .brand-logo img { display: block; flex: none; }
 
   /* Kufic field — whole 2×2 blocks only, ≥ 24 px inset, never cropped (kufic-field.js computes the count) */
   .kufic-field { position: relative; display: grid; gap: var(--kufic-gap, 8px); padding: 24px; justify-content: center; align-content: center; color: var(--pattern-ink); opacity: var(--pattern-opacity); pointer-events: none; overflow: hidden; }

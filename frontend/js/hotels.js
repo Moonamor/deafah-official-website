@@ -29,7 +29,20 @@
     return '<span class="stars" aria-label="' + stars + ' out of 5 stars">' + full + (dim ? '<span class="star-dim">' + dim + "</span>" : "") + "</span>";
   }
 
+  function fillCopy(data) {
+    var n = data.hotels.length, copy = data.copy || {};
+    function sub(str, lang) { return String(str || "").replace("{n}", lang === "ar" ? arHotels(n) : String(n)); }
+    document.querySelectorAll("[data-hotel-copy]").forEach(function (el) {
+      var c = copy[el.getAttribute("data-hotel-copy")]; if (!c) return;
+      var keep = el.querySelector("svg") ? el.querySelector("svg").outerHTML : "";
+      el.innerHTML = '<span class="lang-ar">' + sub(c.ar, "ar") + '</span><span class="lang-en">' + sub(c.en, "en") + "</span>" + keep;
+      if (c.subject) el.setAttribute("data-subject", c.subject);
+    });
+    window.DeafahHotelsCopy = { get: function (key, lang) { var c = copy[key]; return c ? sub(c[lang], lang) : ""; } };
+  }
+
   function render(data) {
+    fillCopy(data);
     var grid = document.getElementById("hotelGrid");
     var tpl = document.getElementById("hotelCardTpl");
     fillCounts(data.hotels.length);

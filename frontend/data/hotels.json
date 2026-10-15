@@ -1,6 +1,22 @@
 {
   "_source": "Roster = the six hotel cards present in index.html before the overhaul (approved 2026-10-15). Add or remove hotels here only.",
   "count": 6,
+  "copy": {
+    "_note": "UI copy that belongs to the roster. {n} = hotel count (Arabic words in ar, digits in en).",
+    "roster_note": {
+      "ar": "{n} حول المسجد الحرام، بإدارة واحدة.",
+      "en": "{n} hotels around Masjid Al Haram, one operator."
+    },
+    "group_cta": {
+      "ar": "استفسر عن حجز جماعي",
+      "en": "Ask about group booking",
+      "subject": "حجز جماعي"
+    },
+    "search_toast": {
+      "ar": "جاري البحث عن التوفر في {n}...",
+      "en": "Searching availability across {n} hotels…"
+    }
+  },
   "hotels": [
     {
       "slug": "zahrat-al-lavender",

@@ -1,5 +1,5 @@
 /* PRE-PAINT. This file is the source of truth for the inline <script> placed in every page's <head>
-   BEFORE any stylesheet (tools/qa-grep.mjs checks that the inline copy matches this file byte-for-byte).
+   BEFORE any stylesheet (the QA grep checks that the inline copy matches this file byte-for-byte).
    It reads the existing storage keys and sets the html attributes synchronously, so there is no light flash. */
 (function () {
   try {

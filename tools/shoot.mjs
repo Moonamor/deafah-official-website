@@ -33,7 +33,8 @@ async function openTab() {
 }
 
 async function shoot(opts) { log("shoot", opts.url, opts.width, opts.scheme, opts.palette); return shootInner(opts); }
-async function shootInner({ url, out, width = 1440, scheme = "light", palette = "default", lang = "ar", reduced = false, evalExpr, block, nojs }) {
+async function shootInner(opts) {
+  var { url, out, width = 1440, scheme = "light", palette = "default", lang = "ar", reduced = false, evalExpr, block, nojs } = opts;
   const { cdp, id } = await openTab(); log("tab open");
   await cdp.send("Page.enable"); await cdp.send("Runtime.enable"); await cdp.send("Log.enable"); await cdp.send("Network.enable");
   if (block) { await cdp.send("Network.setBlockedURLs", { urls: String(block).split(",").map((b) => "*" + b.trim() + "*") }); log("blocking", block); }
@@ -49,6 +50,24 @@ async function shootInner({ url, out, width = 1440, scheme = "light", palette = 
   // scroll through the page so reveal/scroll-triggered content is in its final state, then back to top
   log("scroll"); await cdp.send("Runtime.evaluate", { expression: `(async()=>{const h=document.documentElement.scrollHeight;for(let y=0;y<h;y+=500){window.scrollTo({top:y,behavior:"instant"});await new Promise(r=>setTimeout(r,80));}window.scrollTo({top:0,behavior:"instant"});})()`, awaitPromise: true, timeout: 10000 }); log("scrolled");
   await sleep(900);
+  if (opts && opts.cls) {
+    log("cls run");
+    const r = await cdp.send("Runtime.evaluate", { awaitPromise: true, returnByValue: true, timeout: 20000, expression: `(async () => {
+      let cls = 0; const po = new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) cls += e.value; }); po.observe({ type: "layout-shift", buffered: false });
+      const box = () => [...document.querySelectorAll("[data-logo]")].map((e) => { const r = e.getBoundingClientRect(); return { file: e.dataset.logoFile, box: e.dataset.logoBox, pad: e.dataset.logoPad, x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height) }; });
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms)); const steps = [];
+      const run = async (name, fn) => { const before = box(); const c0 = cls; fn(); await wait(700); steps.push({ name, cls: +(cls - c0).toFixed(4), before, after: box() }); };
+      await wait(300); cls = 0;
+      await run("scheme-dark", () => DeafahTheme.setScheme("dark")); await run("scheme-light", () => DeafahTheme.setScheme("light"));
+      for (const p of ["green", "red", "blue", "default"]) await run("palette-" + p, () => DeafahTheme.setPalette(p));
+      await run("lang-en", () => DeafahLang.set("en")); await run("lang-ar", () => DeafahLang.set("ar"));
+      window.scrollTo({ top: 400, behavior: "instant" }); await wait(500); steps.push({ name: "scroll-condensed-header", cls: 0, before: [], after: box() }); window.scrollTo({ top: 0, behavior: "instant" }); await wait(500);
+      return JSON.stringify({ total: +cls.toFixed(4), steps });
+    })()` });
+    const data = JSON.parse(r.result.value);
+    await httpJson(`http://127.0.0.1:${PORT}/json/close/${id}`).catch(() => {});
+    return data;
+  }
   log("inspect"); const info = (await cdp.send("Runtime.evaluate", { expression: `JSON.stringify({html: document.documentElement.outerHTML.slice(0,0), attrs: {lang: document.documentElement.lang, dir: document.documentElement.dir, scheme: document.documentElement.dataset.scheme, theme: document.documentElement.dataset.theme}, height: document.documentElement.scrollHeight, logos: [...document.querySelectorAll('[data-logo]')].map(e=>({lockup:e.dataset.logoLockup,file:e.dataset.logoFile,w:e.querySelector('img')?.getBoundingClientRect().width|0, h:e.querySelector('img')?.getBoundingClientRect().height|0, loaded: !!(e.querySelector('img')?.complete && e.querySelector('img')?.naturalWidth)})), hotels: document.querySelectorAll('.hotel-card').length, kufic: [...document.querySelectorAll('[data-kufic]')].map(e=>e.dataset.kuficCount||'-'), fonts: [...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family+' '+f.weight), bodyBg: getComputedStyle(document.body).backgroundColor, ink: getComputedStyle(document.body).color ${evalExpr ? `, extra: (${evalExpr})` : ""}})`, returnByValue: true })).result.value;
   const data = JSON.parse(info);
   const height = Math.min(data.height, 8000);
@@ -72,7 +91,7 @@ try {
     }
     writeFileSync(join(args.matrix, "matrix.json"), JSON.stringify(results, null, 2));
   } else {
-    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args.eval, block: args.block, nojs: !!args.nojs });
+    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args.eval, block: args.block, nojs: !!args.nojs, cls: !!args.cls });
     console.log(JSON.stringify(r, null, 2));
   }
 } catch (e) { console.error("shoot failed:", e.message); process.exitCode = 1; }

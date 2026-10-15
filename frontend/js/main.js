@@ -28,7 +28,11 @@
   function onScroll() {
     var y = window.scrollY;
     if (header) {
-      header.classList.toggle("is-condensed", y > 80);
+      var condensed = y > 80;
+      if (header.classList.contains("is-condensed") !== condensed) {
+        header.classList.toggle("is-condensed", condensed);
+        document.dispatchEvent(new CustomEvent("deafah:header", { detail: { condensed: condensed } }));
+      }
       var navOpen = document.querySelector(".nav-links:not([hidden])") && window.matchMedia("(max-width: 1023.98px)").matches;
       header.classList.toggle("is-hidden", y > 160 && y > lastY && !navOpen);
     }
@@ -84,8 +88,9 @@
   var booking = document.getElementById("bookingWidget");
   if (booking) booking.addEventListener("submit", function (e) {
     e.preventDefault();
-    var n = (window.DeafahHotels && window.DeafahHotels.count) || "";
-    window.DeafahEffects.showToast(isArabic() ? "جاري البحث عن التوفر في " + n + " فنادق..." : "Searching availability across " + n + " hotels…");
+    var lang = isArabic() ? "ar" : "en";
+    var msg = window.DeafahHotelsCopy ? window.DeafahHotelsCopy.get("search_toast", lang) : "";
+    window.DeafahEffects.showToast(msg || (isArabic() ? "جاري البحث عن التوفر..." : "Searching availability…"));
   });
 
   /* newsletter — demo */

@@ -7,18 +7,20 @@
     "build:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --minify",
     "watch:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --watch",
     "build:meta": "node tools/build-meta.mjs",
-    "build": "npm run build:css && npm run build:meta",
+    "build": "npm run build:css && npm run build:three && npm run build:meta",
     "qa:grep": "node tools/qa-grep.mjs",
     "qa:case": "node tools/qa-case.mjs",
     "qa:contrast": "node tools/contrast.mjs",
     "qa": "npm run qa:grep && npm run qa:case && npm run qa:contrast",
-    "shoot": "node tools/shoot.mjs"
+    "shoot": "node tools/shoot.mjs",
+    "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
+    "esbuild": "^0.25.12",
     "svgo": "4.1.0",
     "tailwindcss": "4.3.3"
   },
