@@ -53,6 +53,7 @@ async function shootInner(opts) {
   await cdp.send("Emulation.setDeviceMetricsOverride", { width: +width, height: 900, deviceScaleFactor: 1, mobile: +width < 700 });
   if (reduced) await cdp.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   if (opts.cpu) { await cdp.send("Emulation.setCPUThrottlingRate", { rate: +opts.cpu }); log("cpu throttle", opts.cpu + "x"); }
+  if (opts.net === "slow4g") { await cdp.send("Network.emulateNetworkConditions", { offline: false, latency: 150, downloadThroughput: 1.6 * 1024 * 1024 / 8, uploadThroughput: 750 * 1024 / 8 }); log("network: slow 4G"); }
   if (opts.prepaint) await cdp.send("Page.addScriptToEvaluateOnNewDocument", { source: PREPAINT_RECORDER });
   await cdp.send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem("deafah-theme",${JSON.stringify(scheme)});localStorage.setItem("deafah-theme-mode","manual");localStorage.setItem("deafah-theme-last-check",String(Date.now()));localStorage.setItem("deafah-palette",${JSON.stringify(palette)});localStorage.setItem("deafah-lang",${JSON.stringify(lang)});}catch(e){}` });
   log("navigate"); await cdp.send("Page.navigate", { url });
@@ -128,7 +129,7 @@ try {
     }
     writeFileSync(join(args.matrix, "matrix.json"), JSON.stringify(results, null, 2));
   } else {
-    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args["eval-file"] ? readFileSync(args["eval-file"], "utf8").trim() : args.eval, block: args.block, nojs: !!args.nojs, cls: !!args.cls, prepaint: !!args.prepaint, openBadge: !!args["open-badge"], viewport: !!args.viewport, cpu: args.cpu, scroll: args.scroll, scrollOffset: args["scroll-offset"], wiggle: !!args.wiggle });
+    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args["eval-file"] ? readFileSync(args["eval-file"], "utf8").trim() : args.eval, block: args.block, nojs: !!args.nojs, cls: !!args.cls, prepaint: !!args.prepaint, openBadge: !!args["open-badge"], viewport: !!args.viewport, cpu: args.cpu, net: args.net, scroll: args.scroll, scrollOffset: args["scroll-offset"], wiggle: !!args.wiggle });
     console.log(JSON.stringify(r, null, 2));
   }
 } catch (e) { console.error("shoot failed:", e.message); process.exitCode = 1; }

@@ -77,6 +77,9 @@
         if (split && split.lines.length) gsap.from(split.lines, { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.09, ease: "power3.out" });
       });
     }
+    /* site.css reserves the pin distance (margin-block-end: 60vh) before this script runs; hand it over to the
+       pin spacer in the same task, so the content below never moves (no load-time layout shift) */
+    section.style.marginBlockEnd = "0px";
     if (reduce || !gsap || !ST) return tracked({ kill: function () { if (split) split.revert(); } });
     var layers = Array.prototype.slice.call(section.querySelectorAll("[data-layer]"));
     var tl = gsap.timeline({ scrollTrigger: { trigger: section, start: function () { return "top " + headerH() + "px"; }, end: "+=60%", pin: true, pinSpacing: true, scrub: 0.8, invalidateOnRefresh: true } });

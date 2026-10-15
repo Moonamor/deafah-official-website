@@ -283,9 +283,9 @@
   :root:lang(ar) .t-label { letter-spacing: 0; font-weight: 700; }
   .eyebrow { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 8px; display: block; }
   :root:lang(ar) .eyebrow { letter-spacing: 0; font-weight: 700; font-size: 14px; }
-  .panel .eyebrow, .on-panel .eyebrow { color: var(--panel-accent-ink); }
+  .panel .eyebrow { color: var(--panel-accent-ink); }
   /* [مقترح] on raised surfaces (#F5F2EE) the gold accent is 4.06:1 → text accents use ink there; the accent stays on rules/borders */
-  .card .eyebrow, .raised .eyebrow, .bg-raised .eyebrow, .card .link, .raised .link, .bg-raised .link, .card .stat-number { color: var(--ink); }   /* accent-ink on raised is 4.06:1 (non-text only) */
+  .card .eyebrow, .bg-raised .eyebrow, .card .link, .bg-raised .link, .card .stat-number { color: var(--ink); }   /* accent-ink on raised is 4.06:1 (non-text only) */
   .panel .card .eyebrow { color: var(--panel-accent-ink); }
   .muted { color: var(--muted); }
   .rule { display: block; width: 64px; height: 2px; background: var(--accent); margin-block: 16px; }
@@ -499,8 +499,8 @@
 /* ------------------------------------------------------------------ */
 /* 5b. Scene overrides — UNLAYERED on purpose: they must beat Tailwind utilities (display/grid) */
 /* Lenis: it owns smooth scrolling; native smooth behaviour must be off */
-html.lenis, html.lenis-on { scroll-behavior: auto; }
-html.lenis body, html.lenis-on body { height: auto; }
+html.lenis { scroll-behavior: auto; }
+html.lenis body { height: auto; }
 
 /* motion recipes (motion.js) */
 .split-line { display: block; }
@@ -542,8 +542,8 @@ html.no-motion .tp3d { height: auto; } html.no-motion .tp3d__stage { position: r
 }
 
 /* Phase 6 — hotel / catering page components */
-.hp-hero { position: relative; }
-.hp-hero__stage { position: sticky; top: var(--header-h); height: calc(100vh - var(--header-h)); overflow: hidden; }
+/* hero-pin: reserve the pin distance (motion.js end: "+=60%") until ScrollTrigger's spacer takes it over → no load shift */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) { html:not(.no-motion) [data-scene="hero-pin"] { margin-block-end: 60vh; } }
 .hp-pinned { position: relative; }
 .hp-pinned > .tp3d { position: absolute; inset: 0; height: 100%; z-index: 0; }
 .hp-pinned > .tp3d .tp3d__stage { position: sticky; top: var(--header-h); height: calc(100vh - var(--header-h)); }
