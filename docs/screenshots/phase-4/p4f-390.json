@@ -1,0 +1,71 @@
+{
+  "reduce": false,
+  "lenis": true,
+  "lenisClass": false,
+  "triggers": 5,
+  "pinned": [
+    "hero-pin:pin"
+  ],
+  "horizontal": {
+    "isHorizontal": false,
+    "dir": null,
+    "transform": "none",
+    "trackWidth": 358,
+    "display": "grid"
+  },
+  "splitLines": 1,
+  "steps": "",
+  "header": {
+    "pos": "fixed",
+    "h": 64,
+    "condensed": false,
+    "bodyPad": "64px"
+  },
+  "logo": {
+    "file": "symbol-pos.svg",
+    "box": "40x40",
+    "freezone": "17",
+    "el": [
+      40,
+      40
+    ],
+    "img": [
+      39,
+      40
+    ],
+    "top": 12
+  },
+  "canvas": {
+    "frames": 1,
+    "avgMs": 0.1,
+    "recentAvgMs": 0.1,
+    "p95Ms": 0.1,
+    "maxMs": 0.1,
+    "blocks": [
+      "0x0"
+    ],
+    "dpr": 1
+  },
+  "scrollY": 0,
+  "htmlClass": "lenis",
+  "st": [
+    {
+      "id": "hero-pin",
+      "start": 0,
+      "end": 540,
+      "progress": 0,
+      "isActive": true
+    }
+  ],
+  "lenisScroll": 0,
+  "canvasRect": [
+    0,
+    0,
+    "absolute",
+    "0px",
+    "auto",
+    "none",
+    1,
+    1
+  ]
+}

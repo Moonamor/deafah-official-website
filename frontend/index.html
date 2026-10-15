@@ -45,7 +45,7 @@
 
   <header class="site-header" id="siteHeader">
     <div class="wrap relative">
-      <a href="index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-size="64" data-logo-mobile="symbol" data-logo-condensed="symbol" data-logo-size-symbol="40" aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
+      <a href="index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-width="200" data-logo-pad="outer" data-logo-mobile="symbol" data-logo-condensed="symbol" data-logo-size-symbol="40" data-logo-keep-box aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
 
       <nav class="nav-links" id="primaryNav" aria-label="التنقل الرئيسي">
         <a href="#top" class="nav-link is-active"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
@@ -85,7 +85,7 @@
         </picture>
       </div>
       <div class="veil" data-layer="veil" aria-hidden="true"></div>
-      <div class="kufic-field kufic-field--abs start-auto hidden md:grid" data-kufic data-cols="2" data-block="56" data-layer="pattern" data-depth="0.5" aria-hidden="true"></div>
+      <canvas class="kufic-canvas kufic-canvas--column hidden md:block" data-kufic-canvas data-block="56" data-gap="8" data-layer="pattern" data-depth="0.5" aria-hidden="true"></canvas>
 
       <div class="wrap relative z-10 min-h-[78vh] flex flex-col justify-end pb-16 pt-32">
         <div class="max-w-3xl" data-layer="copy" data-depth="0.8">
@@ -151,7 +151,7 @@
     </div>
 
     <!-- WHY -->
-    <section class="section" id="why" aria-labelledby="whyTitle">
+    <section class="section" id="why" aria-labelledby="whyTitle" data-scene="layers">
       <div class="wrap">
         <span class="eyebrow reveal"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></span>
         <h2 id="whyTitle" class="t-headline reveal mb-8"><span class="lang-ar">تميّز المجموعة في أربع نقاط</span><span class="lang-en">The group's difference, in four moves</span></h2>
@@ -190,7 +190,7 @@
     </section>
 
     <!-- HOTELS (rendered from data/hotels.json) -->
-    <section class="section bg-raised" id="hotels" aria-labelledby="hotelsTitle">
+    <section class="section bg-raised" id="hotels" aria-labelledby="hotelsTitle" data-scene="horizontal">
       <div class="wrap">
         <span class="eyebrow reveal"><span class="lang-ar">فنادقنا</span><span class="lang-en">Our Hotels</span></span>
         <h2 id="hotelsTitle" class="t-headline reveal mb-8"><span class="lang-ar">اختر إقامتك بالقرب من الحرم</span><span class="lang-en">Find your stay near the Haram</span></h2>
@@ -206,7 +206,7 @@
           <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">أكثر من 15 دقيقة</span><span class="lang-en">&gt; 15 min</span></button>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3" id="hotelGrid" aria-live="polite"></div>
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3" id="hotelGrid" data-track aria-live="polite"></div>
 
         <template id="hotelCardTpl">
           <article class="hotel-card card bg-surface p-0 overflow-hidden flex flex-col">
@@ -349,6 +349,8 @@
 
   <script src="vendor/gsap/gsap.min.js"></script>
   <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="vendor/gsap/SplitText.min.js"></script>
+  <script src="vendor/lenis/lenis.min.js"></script>
   <script src="js/auto-theme-manager.js"></script>
   <script src="js/main.js"></script>
   <script src="js/effects.js"></script>
@@ -358,7 +360,8 @@
   <script src="js/kufic-field.js" data-src="assets/brand/pattern/kufic-2x2.svg"></script>
   <script src="js/hotels.js" data-src="data/hotels.json" data-base=""></script>
   <script src="js/theme-badge.js" data-sprite="assets/icons/sprite.svg"></script>
-  <script src="js/animations.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/canvas-kufic.js" data-src="assets/brand/pattern/kufic-2x2.svg"></script>
   <script src="js/countries-data.js" defer></script>
   <script src="js/phone-input.js" defer></script>
   <script src="vendor/emailjs/email.min.js"></script>

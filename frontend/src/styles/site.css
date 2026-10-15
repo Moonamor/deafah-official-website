@@ -357,12 +357,16 @@
   .form-hint { font-size: 14px; color: var(--muted); min-height: 20px; }
   .form-hint.is-error { color: var(--accent-ink); font-weight: 700; }
 
-  /* header */
-  .site-header { position: sticky; top: 0; z-index: 60; background: var(--surface); border-bottom: 1.5px solid transparent; transition: background-color 200ms var(--ease-brand), border-color 200ms var(--ease-brand), transform 300ms var(--ease-brand); }
-  .site-header.is-condensed { background: var(--raised); border-bottom-color: var(--border); }
+  /* header — option B (approved): fixed, constant spacer on <body> so condensing causes no layout shift.
+     Expanded 96 px with the horizontal lockup at exactly 200 px; condensed 64 px with the 40 px symbol (BRAND_GAPS G21). */
+  :root { --header-h: 96px; }
+  @media (max-width: 639.98px) { :root { --header-h: 64px; } }
+  body { padding-top: var(--header-h); }
+  .site-header { position: fixed; top: 0; inset-inline: 0; z-index: 60; height: var(--header-h); background: var(--surface); border-bottom: 1.5px solid transparent; transition: height 200ms var(--ease-brand), background-color 200ms var(--ease-brand), border-color 200ms var(--ease-brand), transform 300ms var(--ease-brand); }
+  .site-header.is-condensed { height: 64px; background: var(--raised); border-bottom-color: var(--border); }
   .site-header.is-hidden { transform: translateY(-100%); }
-  /* header height = logo box + its free zone (0.42 × symbol height on all sides): 118 px expanded, 74 px condensed [مقترح] */
-  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
+  .site-header .brand-logo { margin-inline-end: 25px; } /* ≥ free-zone clearance (0.42 × 59 px symbol = 25 px) between logo and nav */
   .nav-links { display: flex; align-items: center; gap: 4px; }
   .nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; font-weight: 600; color: var(--ink); border-bottom: 1.5px solid transparent; transition: border-color 200ms var(--ease-brand), color 200ms var(--ease-brand); }
   .nav-link:hover, .nav-link:focus-visible { border-bottom-color: var(--accent); color: var(--accent-ink); }
@@ -453,7 +457,7 @@
   /* photo veil: the brand's only permitted gradient — 40 % black under text on photographs (Guidelines §5) */
   .veil { position: absolute; inset: 0; background: linear-gradient(to top, rgb(0 0 0 / 0.4), rgb(0 0 0 / 0)); pointer-events: none; }
 
-  /* reveal (motion.js / animations.js) */
+  /* reveal (motion.js) */
   .reveal { opacity: 0; transform: translateY(24px); }
   html.no-motion .reveal, .reveal.is-in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
@@ -484,6 +488,32 @@
   .pi-option[hidden] { display: none; }
   .pi-error { font-size: 13px; color: var(--accent-ink); font-weight: 700; min-height: 18px; margin-top: 4px; }
   .pi-error[hidden] { display: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 5b. Scene overrides — UNLAYERED on purpose: they must beat Tailwind utilities (display/grid) */
+/* Lenis: it owns smooth scrolling; native smooth behaviour must be off */
+html.lenis, html.lenis-on { scroll-behavior: auto; }
+html.lenis body, html.lenis-on body { height: auto; }
+
+/* motion recipes (motion.js) */
+.split-line { display: block; }
+[data-scene="horizontal"].is-horizontal { overflow: hidden; }
+[data-scene="horizontal"].is-horizontal [data-track] { display: flex; flex-wrap: nowrap; gap: 16px; width: max-content; will-change: transform; }
+[data-scene="horizontal"].is-horizontal .hotel-card { width: 360px; flex: none; }
+[data-scene="horizontal"].is-horizontal .hotel-card { animation: none; }
+[data-scene="sticky-media"] [data-step] { opacity: 0.7; transition: opacity 300ms var(--ease-brand); }
+[data-scene="sticky-media"] [data-step].is-active { opacity: 1; }
+html.no-motion [data-scene="sticky-media"] [data-step] { opacity: 1; }
+[data-media-for] { display: none; } [data-media-for].is-active { display: block; }
+.kufic-canvas { pointer-events: none; } /* display comes from the utilities (hidden md:block) */
+.kufic-canvas--column { position: absolute; top: 0; inset-inline-end: 0; width: 200px; height: 100%; } /* replaced element: height must be explicit */
+[data-split] > .lang-ar, [data-split] > .lang-en { display: block; }
+/* condensed header: transforms only (layout-shift API ignores transforms) → 96 px box shown as a 64 px band */
+@media (min-width: 640px) {
+  .site-header.is-condensed { height: var(--header-h); transform: translateY(-32px); }
+  .site-header.is-condensed .wrap { transform: translateY(16px); }
+  .site-header.is-condensed.is-hidden { transform: translateY(-100%); }
 }
 
 /* ------------------------------------------------------------------ */

@@ -52,6 +52,7 @@ async function shootInner(opts) {
   if (nojs) await cdp.send("Emulation.setScriptExecutionDisabled", { value: true });
   await cdp.send("Emulation.setDeviceMetricsOverride", { width: +width, height: 900, deviceScaleFactor: 1, mobile: +width < 700 });
   if (reduced) await cdp.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+  if (opts.cpu) { await cdp.send("Emulation.setCPUThrottlingRate", { rate: +opts.cpu }); log("cpu throttle", opts.cpu + "x"); }
   if (opts.prepaint) await cdp.send("Page.addScriptToEvaluateOnNewDocument", { source: PREPAINT_RECORDER });
   await cdp.send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem("deafah-theme",${JSON.stringify(scheme)});localStorage.setItem("deafah-theme-mode","manual");localStorage.setItem("deafah-theme-last-check",String(Date.now()));localStorage.setItem("deafah-palette",${JSON.stringify(palette)});localStorage.setItem("deafah-lang",${JSON.stringify(lang)});}catch(e){}` });
   log("navigate"); await cdp.send("Page.navigate", { url });
@@ -92,6 +93,16 @@ async function shootInner(opts) {
     await sleep(900);
   }
   if (opts && opts.openBadge) { await clickSelector(cdp, "#themeBadgeChip"); await sleep(400); log("badge opened"); }
+  if (opts && opts.scroll) {
+    const target = /^\d+$/.test(String(opts.scroll)) ? +opts.scroll : null;
+    await cdp.send("Runtime.evaluate", { expression: target !== null ? `window.scrollTo({ top: ${target}, behavior: "instant" })` : `(() => { const e = document.querySelector(${JSON.stringify(String(opts.scroll))}); const y = e ? e.getBoundingClientRect().top + window.scrollY + ${+(opts.scrollOffset || 0)} : 0; window.scrollTo({ top: y, behavior: "instant" }); })()` });
+    await sleep(1600); log("scrolled to", opts.scroll, opts.scrollOffset || 0);
+  }
+  if (opts && opts.wiggle) {
+    log("wiggle: pointer + scroll activity for 2.5 s");
+    for (let i = 0; i < 50; i++) { await cdp.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: 200 + (i % 10) * 90, y: 150 + (i % 7) * 80 }); if (i % 10 === 9) await cdp.send("Runtime.evaluate", { expression: `window.scrollBy({ top: ${i % 20 === 19 ? -120 : 60}, behavior: "instant" })` }); await sleep(50); }
+    await sleep(300);
+  }
   log("inspect"); const info = (await cdp.send("Runtime.evaluate", { expression: `JSON.stringify({html: document.documentElement.outerHTML.slice(0,0), attrs: {lang: document.documentElement.lang, dir: document.documentElement.dir, scheme: document.documentElement.dataset.scheme, theme: document.documentElement.dataset.theme}, height: document.documentElement.scrollHeight, logos: [...document.querySelectorAll('[data-logo]')].map(e=>({lockup:e.dataset.logoLockup,file:e.dataset.logoFile,w:e.querySelector('img')?.getBoundingClientRect().width|0, h:e.querySelector('img')?.getBoundingClientRect().height|0, loaded: !!(e.querySelector('img')?.complete && e.querySelector('img')?.naturalWidth)})), hotels: document.querySelectorAll('.hotel-card').length, kufic: [...document.querySelectorAll('[data-kufic]')].map(e=>e.dataset.kuficCount||'-'), fonts: [...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family+' '+f.weight), bodyBg: getComputedStyle(document.body).backgroundColor, ink: getComputedStyle(document.body).color ${evalExpr ? `, extra: (${evalExpr})` : ""}})`, returnByValue: true })).result.value;
   const data = JSON.parse(info);
   const height = opts.viewport ? 900 : Math.min(data.height, 8000);
@@ -115,7 +126,7 @@ try {
     }
     writeFileSync(join(args.matrix, "matrix.json"), JSON.stringify(results, null, 2));
   } else {
-    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args["eval-file"] ? readFileSync(args["eval-file"], "utf8").trim() : args.eval, block: args.block, nojs: !!args.nojs, cls: !!args.cls, prepaint: !!args.prepaint, openBadge: !!args["open-badge"], viewport: !!args.viewport });
+    const r = await shoot({ url: args.url, out: args.out, width: args.width, scheme: args.scheme, palette: args.palette, lang: args.lang, reduced: !!args.reduced, evalExpr: args["eval-file"] ? readFileSync(args["eval-file"], "utf8").trim() : args.eval, block: args.block, nojs: !!args.nojs, cls: !!args.cls, prepaint: !!args.prepaint, openBadge: !!args["open-badge"], viewport: !!args.viewport, cpu: args.cpu, scroll: args.scroll, scrollOffset: args["scroll-offset"], wiggle: !!args.wiggle });
     console.log(JSON.stringify(r, null, 2));
   }
 } catch (e) { console.error("shoot failed:", e.message); process.exitCode = 1; }

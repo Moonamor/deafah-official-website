@@ -1,8 +1,9 @@
-# Netlify — everything lives in the repo (dashboard untouched).
+# Netlify — fully self-contained (dashboard: base/build/publish left empty on purpose)
 [build]
-  publish = "frontend"
+  base = "/"
   command = "npm run build"
+  publish = "frontend"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "24"
   NPM_FLAGS = "--no-audit --no-fund"

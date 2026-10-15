@@ -57,13 +57,16 @@
   function dirOf() { return (document.documentElement.getAttribute("dir") || "rtl") === "ltr" ? "ltr" : "rtl"; }
 
   /* resolves (lockup, size) → { lockup, key, spec, boxW, boxH, imgW, imgH, pad } */
-  function resolve(lockup, size, ctx) {
-    var boxH = size, boxW = Math.ceil(boxH * BOX_RATIO[lockup]);
+  function resolve(lockup, size, ctx, width) {
+    var boxH, boxW;
+    if (width) { boxW = Math.round(width); boxH = Math.ceil(boxW / (lockup === "horizontal" ? 587.194 / 172 : BOX_RATIO[lockup])); } /* width-sized: box height = the TALLEST variant (RTL lockup) */
+    else { boxH = size; boxW = Math.ceil(boxH * BOX_RATIO[lockup]); }
     if (lockup !== "symbol" && boxW < MIN_WIDTH[lockup]) { lockup = "symbol"; boxH = Math.max(size, MIN_WIDTH.symbol); boxW = Math.ceil(boxH * BOX_RATIO.symbol); }
     if (lockup === "symbol" && boxH < MIN_WIDTH.symbol) { boxH = MIN_WIDTH.symbol; boxW = Math.ceil(boxH * BOX_RATIO.symbol); }
     var key = TABLE[ctx.scheme + "|" + ctx.dir + "|" + lockup];
     var spec = FILES[key];
-    var imgH = boxH, imgW = Math.round(imgH * spec.w / spec.h);
+    var imgW, imgH;
+    if (width) { imgW = boxW; imgH = Math.round(imgW * spec.h / spec.w); } else { imgH = boxH; imgW = Math.round(imgH * spec.w / spec.h); }
     var pad = Math.round(0.42 * imgH * SYM_RATIO[lockup]);
     return { lockup: lockup, key: key, spec: spec, boxW: boxW, boxH: boxH, imgW: imgW, imgH: imgH, pad: pad };
   }
@@ -71,29 +74,45 @@
   function mountLogo(el, opts) {
     opts = opts || {};
     var requested = opts.lockup || el.getAttribute("data-logo") || "horizontal";
+    var width = parseFloat(opts.width || (requested === (el.getAttribute("data-logo-base") || el.getAttribute("data-logo")) ? el.getAttribute("data-logo-width") : null)) || null;
     var size = parseFloat(opts.size || el.getAttribute("data-logo-size")) || DEFAULT_SIZE[requested] || 64;
     var ctx = { scheme: surfaceOf(el), dir: dirOf() };
-    var r = resolve(requested, size, ctx);
+    var r = resolve(requested, size, ctx, width);
+    var outerZone = el.getAttribute("data-logo-pad") === "outer"; /* the container provides the free zone (header) */
 
     var img = el.querySelector("img");
     if (!img) { img = document.createElement("img"); img.decoding = "async"; el.appendChild(img); }
     var src = BASE + r.spec.file;
     if (img.getAttribute("src") !== src) img.setAttribute("src", src);
-    img.setAttribute("width", r.imgW);
-    img.setAttribute("height", r.imgH);
-    img.style.width = r.imgW + "px";
-    img.style.height = r.imgH + "px";
     img.alt = ALT;
 
     el.classList.add("brand-logo");
     el.style.boxSizing = "content-box";
-    el.style.width = r.boxW + "px";
-    el.style.height = r.boxH + "px";
-    el.style.padding = r.pad + "px";
+    var keep = !!opts.keepBox && el.hasAttribute("data-logo-keep-box") && el.getAttribute("data-logo-base") && el.getAttribute("data-logo-base") !== r.lockup;
+    if (keep) {
+      /* variant lockup (condensed symbol) inside the base lockup's box: neither the box nor the <img> layout box changes,
+         the symbol is fitted with object-fit and scaled with a transform (transforms are invisible to the layout-shift API) */
+      var base = resolve(el.getAttribute("data-logo-base"), parseFloat(el.getAttribute("data-logo-size")) || DEFAULT_SIZE[el.getAttribute("data-logo-base")], ctx, parseFloat(el.getAttribute("data-logo-width")) || null);
+      el.style.width = base.boxW + "px"; el.style.height = base.boxH + "px";
+      el.setAttribute("data-logo-box", base.boxW + "x" + base.boxH);
+      img.setAttribute("width", base.boxW); img.setAttribute("height", base.boxH);
+      img.style.width = base.boxW + "px"; img.style.height = base.boxH + "px";
+      img.style.objectFit = "contain";
+      img.style.objectPosition = (ctx.dir === "rtl" ? "right" : "left") + " center";
+      img.style.transformOrigin = (ctx.dir === "rtl" ? "right" : "left") + " center";
+      img.style.transform = "scale(" + (r.imgH / base.boxH).toFixed(4) + ")";
+    } else {
+      el.style.width = r.boxW + "px"; el.style.height = r.boxH + "px";
+      img.setAttribute("width", r.imgW); img.setAttribute("height", r.imgH);
+      img.style.width = r.imgW + "px"; img.style.height = r.imgH + "px";
+      img.style.objectFit = ""; img.style.objectPosition = ""; img.style.transform = ""; img.style.transformOrigin = "";
+    }
+    el.style.padding = outerZone ? "0" : r.pad + "px";
+    el.setAttribute("data-logo-freezone", String(r.pad));
     el.setAttribute("data-logo-file", r.spec.file);
     el.setAttribute("data-logo-lockup", r.lockup);
-    el.setAttribute("data-logo-box", r.boxW + "x" + r.boxH);
-    el.setAttribute("data-logo-pad", String(r.pad));
+    if (!keep) el.setAttribute("data-logo-box", r.boxW + "x" + r.boxH);
+    el.setAttribute("data-logo-pad-px", String(r.pad));
     return img;
   }
 
@@ -105,15 +124,16 @@
     var base = el.getAttribute("data-logo-base") || el.getAttribute("data-logo");
     if (!el.hasAttribute("data-logo-base")) el.setAttribute("data-logo-base", base);
     var header = el.closest("#siteHeader");
-    if (mq.matches && el.hasAttribute("data-logo-mobile")) return el.getAttribute("data-logo-mobile");
-    if (header && header.classList.contains("is-condensed") && el.hasAttribute("data-logo-condensed")) return el.getAttribute("data-logo-condensed");
-    return base;
+    if (mq.matches && el.hasAttribute("data-logo-mobile")) return { lockup: el.getAttribute("data-logo-mobile"), source: "mobile" };
+    if (header && header.classList.contains("is-condensed") && el.hasAttribute("data-logo-condensed")) return { lockup: el.getAttribute("data-logo-condensed"), source: "condensed" };
+    return { lockup: base, source: "base" };
   }
   function mountAll() {
     document.querySelectorAll("[data-logo]").forEach(function (el) {
-      var lockup = currentLockup(el);
-      var sizeAttr = lockup === el.getAttribute("data-logo-base") ? el.getAttribute("data-logo-size") : (el.getAttribute("data-logo-size-" + lockup) || null);
-      mountLogo(el, { lockup: lockup, size: sizeAttr || (lockup !== el.getAttribute("data-logo-base") ? DEFAULT_SIZE[lockup] : null) });
+      var v = currentLockup(el), lockup = v.lockup;
+      var sizeAttr = v.source === "base" ? el.getAttribute("data-logo-size") : (el.getAttribute("data-logo-size-" + lockup) || null);
+      /* the condensed swap keeps the base box (zero layout shift while scrolling); the mobile variant has its own box */
+      mountLogo(el, { lockup: lockup, size: sizeAttr || (v.source !== "base" ? DEFAULT_SIZE[lockup] : null), keepBox: v.source === "condensed" });
     });
   }
 

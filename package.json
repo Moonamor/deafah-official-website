@@ -16,7 +16,7 @@
     "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
