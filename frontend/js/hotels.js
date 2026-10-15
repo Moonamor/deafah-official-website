@@ -6,6 +6,7 @@
   var script = document.currentScript;
   var src = (script && script.getAttribute("data-src")) || "data/hotels.json";
   var base = (script && script.getAttribute("data-base")) || "";
+  var exclude = (script && script.getAttribute("data-exclude")) || "";
 
   function ar(n) { return String(n).replace(/\d/g, function (d) { return AR[+d]; }); }
   function arMinutes(m) { return m === 1 ? "دقيقة واحدة سيرًا" : m === 2 ? "دقيقتان سيرًا" : m >= 3 && m <= 10 ? ar(m) + " دقائق سيرًا" : ar(m) + " دقيقة سيرًا"; }
@@ -49,7 +50,7 @@
     window.DeafahHotels = { count: data.hotels.length, hotels: data.hotels, bySlug: function (s) { return data.hotels.filter(function (h) { return h.slug === s; })[0] || null; } };
     if (!grid || !tpl) { document.dispatchEvent(new CustomEvent("deafah:hotels", { detail: window.DeafahHotels })); return; }
     grid.innerHTML = "";
-    data.hotels.forEach(function (h, i) {
+    data.hotels.filter(function (h) { return h.slug !== exclude; }).forEach(function (h, i) {
       var node = tpl.content.cloneNode(true);
       var card = node.querySelector(".hotel-card");
       card.setAttribute("data-slug", h.slug);

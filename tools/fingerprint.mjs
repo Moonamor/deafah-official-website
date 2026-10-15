@@ -22,7 +22,8 @@ const SKIP = new Set(["js/theme-boot.js"]); // source of the inline pre-paint sc
 
 function walk(dir, out = []) { for (const n of readdirSync(dir)) { const p = join(dir, n); if (n === "node_modules" || n === "src") continue; statSync(p).isDirectory() ? walk(p, out) : out.push(p); } return out; }
 const prev = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
-const originals = walk(ROOT).map((p) => ({ abs: p, rel: rel(p) })).filter((f) => !HASH_RE.test(basename(f.rel)));
+// sorted with a byte-order compare so the manifest (and the inline copy in every page) is identical on Windows and Linux
+const originals = walk(ROOT).map((p) => ({ abs: p, rel: rel(p) })).filter((f) => !HASH_RE.test(basename(f.rel))).sort((a, b) => (a.rel < b.rel ? -1 : a.rel > b.rel ? 1 : 0));
 const manifest = {};
 
 /* rewrite asset references in text; paths resolve relative to the file (or the site root for leading "/") */

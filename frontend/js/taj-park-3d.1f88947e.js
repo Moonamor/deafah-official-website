@@ -47,8 +47,9 @@ function makeMaterials() {
   return {
     stone: new MeshStandardMaterial({ color: T.beige, roughness: 0.85, metalness: 0 }),
     stoneLight: new MeshStandardMaterial({ color: T.grey, roughness: 0.9, metalness: 0 }),
-    glass: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.1, metalness: 0.92, envMapIntensity: 2.2 }),
-    podiumGlass: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.2, metalness: 0.6, envMapIntensity: 1.6, emissive: T.beige, emissiveIntensity: 0 }),
+    glass: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.05, metalness: 0.95, envMapIntensity: 3.2 }),
+    podiumGlass: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.08, metalness: 0.7, envMapIntensity: 2.0, transparent: true, opacity: 0.55, depthWrite: false }),
+    interior: new MeshStandardMaterial({ color: T.beige, roughness: 0.9, emissive: T.beige, emissiveIntensity: 0 }),
     glassCyl: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.06, metalness: 0.95, envMapIntensity: 2.4 }),
     lit: new MeshStandardMaterial({ color: T.black, roughness: 0.6, emissive: T.beige, emissiveIntensity: 0 }),
     band: new MeshStandardMaterial({ color: T.darkBlue, roughness: 0.2, metalness: 0.6, emissive: T.beige, emissiveIntensity: 0, transparent: true, opacity: 0.9 }),
@@ -107,17 +108,21 @@ export async function mount(section, opts = {}) {
   const kit = new Group(); world.add(kit);
   function makePodium() {
     const g = new Group();
-    g.add(new Mesh(extrudePlan(body, podiumH), mat.podiumGlass));
+    /* interior volumes behind the glass: floor slabs + a warm core (lit at night), then the transparent glass skin */
+    const insetPts = body.map(([e, n]) => [e * 0.93, n * 0.93]);
+    for (let f = 0; f <= M.podiumFloors; f++) { const sl = new Mesh(extrudePlan(insetPts, 0.35), mat.stone); sl.position.y = f * floorH; g.add(sl); }
+    const coreVol = new Mesh(extrudePlan(body.map(([e, n]) => [e * 0.72, n * 0.72]), podiumH - 0.4), mat.interior); coreVol.position.y = 0.4; g.add(coreVol);
+    const glassSkin = new Mesh(extrudePlan(body, podiumH), mat.podiumGlass); glassSkin.renderOrder = 2; g.add(glassSkin);
     const slab = new Mesh(extrudePlan(body, 0.5), mat.stone); slab.position.y = podiumH; g.add(slab);
     g.add(new Mesh(extrudePlan(body, 0.6), mat.stoneLight));
     /* entrance canopy at the base of the cylinder, facing the street (north-east) */
     const out = new Vector3(0.7, 0, -0.7).normalize();
     const canopy = new Group();
-    const slabC = new Mesh(new BoxGeometry(16, 0.45, 9), mat.stone); slabC.position.y = 5.2; canopy.add(slabC);
-    const edge = new Mesh(new BoxGeometry(16, 0.25, 0.3), mat.gold); edge.position.set(0, 5.0, 4.6); canopy.add(edge);
-    const sign = new Mesh(new BoxGeometry(9, 1.1, 0.25), mat.gold); sign.position.set(0, 6.4, 4.5); canopy.add(sign);
-    for (const sx of [-6.5, 6.5]) { const col = new Mesh(new CylinderGeometry(0.3, 0.3, 5.2, 12), mat.stoneLight); col.position.set(sx, 2.6, 3.8); canopy.add(col); }
-    canopy.position.copy(cylCentre).addScaledVector(out, cylR + 5.5); canopy.rotation.y = Math.atan2(out.x, out.z);
+    const slabC = new Mesh(new BoxGeometry(30, 0.6, 16), mat.stone); slabC.position.y = 6.2; canopy.add(slabC);
+    const edge = new Mesh(new BoxGeometry(30, 0.35, 0.4), mat.gold); edge.position.set(0, 5.9, 8.0); canopy.add(edge);
+    const sign = new Mesh(new BoxGeometry(14, 1.6, 0.3), mat.gold); sign.position.set(0, 7.9, 7.8); canopy.add(sign);
+    for (const sx of [-12, -4, 4, 12]) { const col = new Mesh(new CylinderGeometry(0.38, 0.38, 6.2, 12), mat.stoneLight); col.position.set(sx, 3.1, 7.0); canopy.add(col); }
+    canopy.position.copy(cylCentre).addScaledVector(out, cylR + 9); canopy.rotation.y = Math.atan2(out.x, out.z);
     g.add(canopy);
     return g;
   }
@@ -215,7 +220,7 @@ export async function mount(section, opts = {}) {
     litPlacements.forEach((p, i) => { o.position.set(p.e, p.y, -p.n); o.rotation.set(0, p.yaw, 0); o.scale.set(p.w, p.h, 1); o.updateMatrix(); mesh.setMatrixAt(i, o.matrix); });
     mesh.instanceMatrix.needsUpdate = true; return mesh;
   }
-  kit.add(makeLedEdges(), makeLitPanels());
+  const ledMesh = makeLedEdges(); kit.add(ledMesh, makeLitPanels());
 
   /* ---------- plaza, kerb, palms, lamps, context ---------- */
   function makePlaza() {
@@ -279,12 +284,13 @@ export async function mount(section, opts = {}) {
     mat.lit.emissiveIntensity = dark ? 0.55 : 0; mat.lit.color.setHex(dark ? T.black : T.darkBlue);
     mat.band.emissiveIntensity = dark ? 0.4 : 0; mat.band.color.setHex(dark ? T.black : T.darkBlue);
     mat.gold.emissiveIntensity = dark ? 0.9 : 0;
-    mat.podiumGlass.emissiveIntensity = dark ? 0.45 : 0; mat.podiumGlass.color.setHex(dark ? T.black : T.darkBlue);
+    mat.podiumGlass.color.setHex(dark ? T.black : T.darkBlue); mat.podiumGlass.opacity = dark ? 0.4 : 0.55;
+    mat.interior.emissiveIntensity = dark ? 0.6 : 0;
     mat.lampHead.emissiveIntensity = dark ? 1.0 : 0;
     mat.ground.color.setHex(dark ? T.black : T.borderDark);
     mat.context.color.setHex(dark ? T.borderDark : T.grey); mat.context.opacity = dark ? 0.6 : 0.55;
     mat.glass.color.setHex(dark ? T.black : T.darkBlue); mat.glassCyl.color.setHex(dark ? T.black : T.darkBlue);
-    mat.glass.envMapIntensity = dark ? 0.5 : 2.2; mat.glassCyl.envMapIntensity = dark ? 0.6 : 2.4;
+    mat.glass.envMapIntensity = dark ? 0.5 : 3.2; mat.glassCyl.envMapIntensity = dark ? 0.6 : 2.8;
     dirty = true;
   }
 
@@ -295,13 +301,25 @@ export async function mount(section, opts = {}) {
   };
   let scrollT = 0, azimuth = 0, azimuthGoal = 0, dragOffset = 0, visible = true;
   const cur = { polar: K.start.polar, radius: K.start.radius, target: K.start.target.clone() };
-  function goal(t) { const e = t * t * (3 - 2 * t); return { az: K.start.az + (K.end.az - K.start.az) * e * dir(), polar: MathUtils.lerp(K.start.polar, K.end.polar, e), radius: MathUtils.lerp(K.start.radius, K.end.radius, e), target: K.start.target.clone().lerp(K.end.target, e) }; }
+  /* keyframes: [{ t, az (deg from south), polar (deg), radius, target: [east offset from the cylinder, y, north offset] }] */
+  let keys = [{ t: 0, ...K.start }, { t: 1, ...K.end }];
+  function setKeyframes(list) {
+    keys = list.map((k) => ({ t: k.t, az: MathUtils.degToRad(k.az), polar: MathUtils.degToRad(k.polar), radius: k.radius, target: new Vector3(cylCentre.x + (k.target ? k.target[0] : 0), k.target ? k.target[1] : 40, cylCentre.z - (k.target ? k.target[2] : 0)) })).sort((a, b) => a.t - b.t);
+    if (typeof setScroll === "function") setScroll(scrollT);
+  }
+  function goal(t) {
+    let i = 0; while (i < keys.length - 2 && t > keys[i + 1].t) i++;
+    const a = keys[i], b = keys[i + 1], u = MathUtils.clamp((t - a.t) / Math.max(1e-6, b.t - a.t), 0, 1), e = u * u * (3 - 2 * u);
+    const base0 = keys[0].az;
+    return { az: base0 + (a.az - base0 + (b.az - a.az) * e) * dir(), polar: MathUtils.lerp(a.polar, b.polar, e), radius: MathUtils.lerp(a.radius, b.radius, e), target: a.target.clone().lerp(b.target, e) };
+  }
   function place() {
     const a = azimuth + dragOffset;
     camera.position.set(cur.target.x + cur.radius * Math.sin(cur.polar) * Math.sin(a), cur.target.y + cur.radius * Math.cos(cur.polar), cur.target.z + cur.radius * Math.sin(cur.polar) * Math.cos(a));
     camera.lookAt(cur.target);
   }
   function setScroll(t) { scrollT = MathUtils.clamp(t, 0, 1); azimuthGoal = goal(scrollT).az; dirty = true; }
+  try { const attr = section.getAttribute("data-camera-keys"); if (attr) setKeyframes(JSON.parse(attr)); } catch (e) { console.warn("[taj-park-3d] data-camera-keys ignored", e); }
   let controls = null;
   if (section.getAttribute("data-orbit") === "drag") {
     controls = new OrbitControls(camera, canvas);
@@ -331,6 +349,12 @@ export async function mount(section, opts = {}) {
       if (!dragging) place();
       const t0 = performance.now(); renderer.render(scene, camera);
       const ms = performance.now() - t0; stats.frames++; stats.total += ms; stats.last.push(ms); if (stats.last.length > 120) stats.last.shift(); if (ms > stats.max) stats.max = ms;
+      if (stats.frames === 31 && !section.hasAttribute("data-quality")) {
+        const avg = stats.last.slice(1, 31).reduce((s, v) => s + v, 0) / 30; /* the first frame is shader compilation, skipped */
+        if (avg > 12) { renderer.setPixelRatio(1); ledMesh.visible = false; section.setAttribute("data-quality", "reduced"); resize(); }
+        else section.setAttribute("data-quality", "full");
+        stats.adaptive = { avgFirst30: +avg.toFixed(2), quality: section.getAttribute("data-quality") };
+      }
       dirty = false;
       if (first) { first = false; performance.mark("tp3d:first-frame"); section.setAttribute("data-3d", "live"); canvas.hidden = false; }
     }
@@ -355,7 +379,7 @@ export async function mount(section, opts = {}) {
       renderer.render(scene, camera); hidden.forEach((m) => { m.visible = true; });
       return canvas.toDataURL("image/png");
     },
-    setScheme: applyScheme, setScroll, getStats, scene, camera, renderer, cylinder: { centre: cylCentre, radius: cylR, height: cylH }
+    setScheme: applyScheme, setScroll, setKeyframes, getStats: () => Object.assign(getStats(), { adaptive: stats.adaptive || null }), scene, camera, renderer, cylinder: { centre: cylCentre, radius: cylR, height: cylH }
   };
   window.DeafahTajPark3D = api;
   return api;

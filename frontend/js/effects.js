@@ -27,7 +27,8 @@ window.DeafahEffects = (function () {
   }
 
   function initStatCounters() {
-    var stats = document.querySelectorAll("[data-count-to]");
+    var stats = Array.prototype.filter.call(document.querySelectorAll("[data-count-to]"), function (s) { return !s.hasAttribute("data-count-observed"); });
+    stats.forEach(function (s) { s.setAttribute("data-count-observed", "1"); });
     if (!stats.length) return;
     if (!("IntersectionObserver" in window)) { stats.forEach(animateCount); return; }
     var io = new IntersectionObserver(function (entries) {
@@ -49,5 +50,5 @@ window.DeafahEffects = (function () {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initStatCounters);
   else initStatCounters();
 
-  return { showToast: showToast, localizeDigits: localizeDigits };
+  return { showToast: showToast, localizeDigits: localizeDigits, initStatCounters: initStatCounters };
 })();

@@ -27,7 +27,7 @@ for (const f of files) {
     const raw = (m[1] || m[2] || m[3] || "").trim();
     if (/^data:/.test(raw)) continue;
     for (const candidate of raw.split(",").map((s) => s.trim().split(/\s+/)[0]).filter(Boolean)) {
-      if (/^(https?:|mailto:|tel:|data:|\/\/|#|javascript:)/.test(candidate) || candidate.startsWith("{")) continue;
+      if (/^(https?:|mailto:|tel:|data:|\/\/|#|javascript:)/.test(candidate) || candidate.startsWith("{") || candidate.endsWith("/")) continue;
       // authored CSS under src/styles is compiled to dist/site.css, so its url() values resolve against dist/
       const baseDir = /src[\\/]styles/.test(f) ? join(ROOT, "dist") : dirname(f);
       const fromRoot = candidate.startsWith("/") ? join(ROOT, candidate) : resolve(baseDir, candidate);

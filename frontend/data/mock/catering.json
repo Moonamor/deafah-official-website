@@ -1,0 +1,37 @@
+{
+  "_notice": "TEST DATA — not real",
+  "headline": { "ar": "إعاشة ضيوف الرحمن بمعايير فندقية", "en": "Catering for pilgrims to hotel standards" },
+  "intro": { "ar": "مطابخ مركزية في مكة المكرمة تخدم الحملات والفنادق والمخيمات بوجبات ساخنة في مواعيدها، من الإفطار إلى السحور.", "en": "Central kitchens in Makkah serving campaigns, hotels and camps with hot meals on time, from breakfast to suhoor." },
+  "packages": [
+    { "id": "basic", "name": { "ar": "الباقة الأساسية", "en": "Essential" }, "price_sar": 65, "per": { "ar": "للشخص / اليوم", "en": "per person / day" }, "popular": false, "includes": { "ar": ["إفطار وعشاء", "مياه معبأة", "تغليف فردي", "توصيل داخل مكة"], "en": ["Breakfast and dinner", "Bottled water", "Individual packaging", "Delivery within Makkah"] } },
+    { "id": "full", "name": { "ar": "الباقة الكاملة", "en": "Full Board" }, "price_sar": 110, "per": { "ar": "للشخص / اليوم", "en": "per person / day" }, "popular": true, "includes": { "ar": ["ثلاث وجبات", "قهوة وشاي وتمور", "خيارات نباتية وصحية", "منسّق وجبات للحملة", "توصيل خلال 45 دقيقة"], "en": ["Three meals", "Coffee, tea and dates", "Vegetarian and light options", "Campaign meal coordinator", "Delivery within 45 minutes"] } },
+    { "id": "premium", "name": { "ar": "الباقة المميزة", "en": "Premium" }, "price_sar": 180, "per": { "ar": "للشخص / اليوم", "en": "per person / day" }, "popular": false, "includes": { "ar": ["قوائم بوفيه متغيرة", "أطباق إقليمية حسب الجنسية", "طاقم تقديم في الموقع", "معدات حفظ حرارة", "تقرير جودة يومي"], "en": ["Rotating buffet menus", "Regional dishes by nationality", "On-site serving staff", "Hot-holding equipment", "Daily quality report"] } }
+  ],
+  "menu": [
+    { "time": { "ar": "الإفطار", "en": "Breakfast" }, "items": { "ar": ["فول وبيض وجبن", "خبز طازج", "لبن وعصير"], "en": ["Fava beans, eggs, cheese", "Fresh bread", "Laban and juice"] } },
+    { "time": { "ar": "الغداء", "en": "Lunch" }, "items": { "ar": ["أرز بالدجاج", "سلطة خضراء", "تمر"], "en": ["Chicken rice", "Green salad", "Dates"] } },
+    { "time": { "ar": "العصر", "en": "Afternoon" }, "items": { "ar": ["شاي وقهوة", "معمول", "فاكهة"], "en": ["Tea and coffee", "Maamoul", "Fruit"] } },
+    { "time": { "ar": "العشاء", "en": "Dinner" }, "items": { "ar": ["لحم بالخضار", "شوربة", "خبز"], "en": ["Meat with vegetables", "Soup", "Bread"] } },
+    { "time": { "ar": "السحور", "en": "Suhoor" }, "items": { "ar": ["زبادي", "جبن وزيتون", "ماء وتمر"], "en": ["Yoghurt", "Cheese and olives", "Water and dates"] } }
+  ],
+  "counters": [
+    { "value": 12000, "suffix": "+", "label": { "ar": "وجبة في اليوم", "en": "meals a day" } },
+    { "value": 3, "suffix": "", "label": { "ar": "مطابخ مركزية", "en": "central kitchens" } },
+    { "value": 45, "suffix": "", "label": { "ar": "دقيقة للتوصيل", "en": "minutes to deliver" } },
+    { "value": 160, "suffix": "+", "label": { "ar": "طاهٍ ومساعد", "en": "chefs and assistants" } }
+  ],
+  "badges": [
+    { "ar": "نظام سلامة الغذاء HACCP (قيد الاعتماد)", "en": "HACCP food-safety system (certification pending)" },
+    { "ar": "ترخيص بلدية مكة المكرمة", "en": "Makkah municipality licence" },
+    { "ar": "سلسلة تبريد موثّقة", "en": "Documented cold chain" },
+    { "ar": "فحص جودة يومي", "en": "Daily quality inspection" }
+  ],
+  "gallery": [
+    { "image": "imgs/hotel-pics/taj-park-640.5000fe08.webp", "alt": { "ar": "مطبخ مركزي", "en": "Central kitchen" } },
+    { "image": "imgs/hotel-pics/amjad-640.f69e5351.webp", "alt": { "ar": "تجهيز الوجبات", "en": "Meal preparation" } },
+    { "image": "imgs/hotel-pics/bustan-640.e683a631.webp", "alt": { "ar": "التوصيل", "en": "Delivery" } },
+    { "image": "imgs/hotel-pics/diar-640.3f94bbc0.webp", "alt": { "ar": "قاعة طعام", "en": "Dining hall" } }
+  ],
+  "whatsapp": "+966125911110",
+  "phone": "+966125911110"
+}

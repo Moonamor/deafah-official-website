@@ -81,8 +81,7 @@
       "area_en": "Makkah",
       "stars": null,
       "price_from_sar": 180,
-      "details_url": null,
-      "_details_url_phase6": "hotels/taj-park.html",
+      "details_url": "hotels/taj-park.html",
       "image_dark": "assets/3d/taj-park-poster-dark.9bca4cb3.webp",
       "photo": "imgs/hotel-pics/taj-park-640.5000fe08.webp",
       "_image_note": "poster of the 3D model (Phase 5); the photograph stays in \"photo\" for the Phase 6 page"

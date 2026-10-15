@@ -8,7 +8,7 @@
      data-scene="hero-pin"      pinned hero; [data-layer][data-depth] layers move at different rates; [data-split] headline lines lift in
      data-scene="layers"        cards interleave (staggered lift while scrolling) and images reveal through a clip-path mask
      data-scene="horizontal"    pinned horizontal gallery of [data-track] children (≥ 1024 px), mirrored in RTL
-     data-scene="counter"       [data-count-to] count-ups (effects.0fa04b9f.js draws the digits, Arabic-Indic in Arabic)
+     data-scene="counter"       [data-count-to] count-ups (effects.9ff47c3b.js draws the digits, Arabic-Indic in Arabic)
      data-scene="sticky-media"  sticky [data-sticky-media] + [data-step] text steps; the active step is highlighted,
                                 optional [data-media-for="<step index>"] media swap
      .reveal                    entrance reveal (IntersectionObserver contract from Phase 1) */
@@ -179,7 +179,7 @@
         case "layers": buildLayers(section); break;
         case "horizontal": buildHorizontal(section); break;
         case "sticky-media": buildStickyMedia(section); break;
-        case "counter": break; /* effects.0fa04b9f.js */
+        case "counter": break; /* effects.9ff47c3b.js */
       }
     });
     if (ST) ST.refresh();
