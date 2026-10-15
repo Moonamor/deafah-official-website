@@ -1,0 +1,15 @@
+{
+  "_note": "Site settings read by tools/build-meta.mjs. site_url = canonical production origin: sitemap.xml, robots.txt, <link rel=canonical>, og:url and og:image are derived from it. Publication switch: Unpublished pages: removed from nav/footer (wrapped in <template>), noindex, out of the sitemap, reachable by direct URL only. Flip published to true and run npm run build.",
+  "site_url": "https://deafah.netlify.app",
+  "pages": [
+    {
+      "path": "hotels/taj-park.html",
+      "published": false,
+      "hotel": "taj-park"
+    },
+    {
+      "path": "catering.html",
+      "published": false
+    }
+  ]
+}

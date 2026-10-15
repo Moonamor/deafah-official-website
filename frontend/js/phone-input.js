@@ -77,12 +77,9 @@
     return digits.length > 1 && digits.charAt(0) === "0" ? digits.slice(1) : digits;
   }
 
-  function flagEmoji(iso2) {
-    return iso2
-      .toUpperCase()
-      .replace(/./g, function (ch) {
-        return String.fromCodePoint(127397 + ch.charCodeAt(0));
-      });
+  /* country marker: the ISO 3166 code as text (no flag emoji — the brief bans emoji; Windows renders flags as letters anyway) */
+  function countryCode(iso2) {
+    return iso2.toUpperCase();
   }
 
   function findCountry(iso2) {
@@ -157,17 +154,17 @@
       '<button type="button" class="pi-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="' + listboxId + '">' +
       '<span class="pi-flag" aria-hidden="true"></span>' +
       '<span class="pi-dial"></span>' +
-      '<i class="fa-solid fa-chevron-down pi-caret" aria-hidden="true"></i>' +
+      '<svg class="icon icon--sm pi-caret" aria-hidden="true"><use href="' + (window.__spriteHref || "assets/icons/sprite.svg") + '#chevron-down"></use></svg>' +
       "</button>" +
       '<input type="tel" inputmode="numeric" autocomplete="tel-national" dir="ltr" class="pi-number" id="' + idBase + '-number" aria-describedby="' + errorId + '">' +
       "</div>" +
       '<p class="pi-error" role="alert" aria-live="polite" id="' + errorId + '" hidden></p>' +
       '<div class="pi-panel-wrap" hidden>' +
-      '<div class="pi-panel glass glass--2" hidden>' +
+      '<div class="pi-panel" hidden>' +
       '<div class="pi-panel-head">' +
       '<input type="text" class="pi-search" role="combobox" aria-expanded="false" aria-controls="' + listboxId + '" aria-activedescendant="" autocomplete="off">' +
       '<button type="button" class="pi-panel-close" aria-label="Close">' +
-      '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+      '<svg class="icon icon--sm" aria-hidden="true"><use href="' + (window.__spriteHref || "assets/icons/sprite.svg") + '#close"></use></svg>' +
       "</button>" +
       "</div>" +
       '<ul class="pi-listbox" role="listbox" id="' + listboxId + '"></ul>' +
@@ -199,7 +196,7 @@
       li.setAttribute("aria-selected", "false");
       li.dataset.iso2 = c.iso2;
       li.innerHTML =
-        '<span class="pi-flag" aria-hidden="true">' + flagEmoji(c.iso2) + "</span>" +
+        '<span class="pi-flag" aria-hidden="true">' + countryCode(c.iso2) + "</span>" +
         '<span class="pi-option-name">' + (lang === "ar" ? c.arName : c.enName) + "</span>" +
         '<span class="pi-option-dial">' + c.dialCode + "</span>";
       listboxEl.appendChild(li);
@@ -244,7 +241,7 @@
     }
 
     function renderTrigger() {
-      flagEl.textContent = flagEmoji(state.country.iso2);
+      flagEl.textContent = countryCode(state.country.iso2);
       dialEl.textContent = state.country.dialCode;
       numberEl.placeholder = state.country.example;
       // +1 so a typed/pasted leading trunk zero isn't truncated by the
@@ -564,8 +561,8 @@
   // submit listener on #contactForm. This script is loaded with
   // `defer` BEFORE js/contact-form.js's own `defer` tag (see the HTML
   // integration), and defer scripts execute in document order before
-  // DOMContentLoaded — which is also before contact-form.js's jQuery
-  // ready handler runs (jQuery's ready fires ON DOMContentLoaded). So
+  // DOMContentLoaded — which is also before contact-form.js's own
+  // ready handler runs (it fires ON DOMContentLoaded). So
   // this listener always registers on #contactForm first, and same-
   // element listeners fire in registration order regardless of
   // capture/bubble — meaning an invalid phone number here calls

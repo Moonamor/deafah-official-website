@@ -1,195 +1,146 @@
-
-
-$(function () {
+/* Al Deafah — page behaviour (vanilla rewrite of the previous version).
+   Owns ONLY localStorage "deafah-lang" ("ar" | "en"). Scheme/palette belong to auto-theme-manager.js. */
+(function () {
   "use strict";
 
-  var $html = $("html");
-  var $header = $("#siteHeader");
-  var $themeToggle = $("#themeToggle");
-  var $langToggle = $("#langToggle");
-  var THEME_KEY = "deafah-theme";
+  var root = document.documentElement;
   var LANG_KEY = "deafah-lang";
 
-  function isArabic() {
-    return $html.attr("data-lang") !== "en";
-  }
-
-  function supportsBackdropFilter() {
-    return (
-      window.CSS &&
-      (CSS.supports("backdrop-filter", "blur(1px)") ||
-        CSS.supports("-webkit-backdrop-filter", "blur(1px)"))
-    );
-  }
-
-  var lowEndDevice =
-    (navigator.deviceMemory && navigator.deviceMemory <= 4) ||
-    (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
-
-  var saveData =
-    navigator.connection && navigator.connection.saveData === true;
-
-  if (!supportsBackdropFilter() || lowEndDevice || saveData) {
-    $html.addClass("glass-lite");
-  }
-
-  function applyTheme(theme) {
-    $html.attr("data-theme", theme);
-    localStorage.setItem(THEME_KEY, theme);
-  }
-
-  var savedTheme = localStorage.getItem(THEME_KEY);
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  }
-
-  $themeToggle.on("click", function () {
-    var current = $html.attr("data-theme") === "light" ? "light" : "dark";
-    applyTheme(current === "light" ? "dark" : "light");
-  });
+  function isArabic() { return root.getAttribute("data-lang") !== "en"; }
 
   function applyLang(lang) {
-    $html.attr("data-lang", lang);
-    $html.attr("lang", lang);
-    $html.attr("dir", lang === "ar" ? "rtl" : "ltr");
-    localStorage.setItem(LANG_KEY, lang);
+    root.setAttribute("data-lang", lang);
+    root.setAttribute("lang", lang);
+    root.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("deafah:langchange", { detail: { lang: lang } }));
   }
+  window.DeafahLang = { get: function () { return isArabic() ? "ar" : "en"; }, set: applyLang, isArabic: isArabic };
 
-  var savedLang = localStorage.getItem(LANG_KEY);
-  if (savedLang) {
-    applyLang(savedLang);
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("#langToggle, [data-lang-toggle]");
+    if (t) applyLang(isArabic() ? "en" : "ar");
+  });
+
+  /* header: condensed after 80 px, hidden on scroll-down, shown on scroll-up */
+  var header = document.getElementById("siteHeader");
+  var lastY = window.scrollY, ticking = false;
+  function onScroll() {
+    var y = window.scrollY;
+    if (header) {
+      var condensed = y > 80;
+      if (header.classList.contains("is-condensed") !== condensed) {
+        header.classList.toggle("is-condensed", condensed);
+        document.dispatchEvent(new CustomEvent("deafah:header", { detail: { condensed: condensed } }));
+      }
+      var navOpen = document.querySelector(".nav-links:not([hidden])") && window.matchMedia("(max-width: 1023.98px)").matches;
+      header.classList.toggle("is-hidden", y > 160 && y > lastY && !navOpen);
+    }
+    lastY = y; ticking = false;
   }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
 
-  $langToggle.on("click", function () {
-    applyLang(isArabic() ? "en" : "ar");
+  /* smooth anchors with header offset (Lenis takes over in Phase 4 when present) */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute("href");
+    if (id === "#" || id === "#top") return;
+    var target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var offset = (header ? header.offsetHeight : 0) + 16;
+    var top = target.getBoundingClientRect().top + window.scrollY - offset;
+    if (window.lenis && typeof window.lenis.scrollTo === "function") window.lenis.scrollTo(top);
+    else window.scrollTo({ top: top, behavior: root.classList.contains("no-motion") ? "auto" : "smooth" });
+    history.replaceState(null, "", id);
   });
 
-  var lastScroll = 0;
-
-  $(window).on("scroll", function () {
-    var current = $(window).scrollTop();
-    $header.toggleClass("is-condensed", current > 80);
-    lastScroll = current;
-  });
-
-  $('a[href^="#"]').on("click", function (e) {
-    var targetId = $(this).attr("href");
-    if (targetId === "#" || targetId === "#top") {
-      return;
-    }
-    var $target = $(targetId);
-    if ($target.length) {
-      e.preventDefault();
-      var headerHeight = $header.outerHeight() || 0;
-      $("html, body").animate(
-        { scrollTop: $target.offset().top - headerHeight - 16 },
-        380
-      );
-    }
-  });
-
+  /* guest stepper (booking demo) */
   var guestCount = 2;
-  var $guestCount = $("#guestCount");
-
+  var guestEl = document.getElementById("guestCount");
   function renderGuestCount() {
-    $guestCount.find(".lang-ar").text(guestCount + (guestCount === 1 ? " ضيف" : " ضيوف"));
-    $guestCount.find(".lang-en").text(guestCount + (guestCount === 1 ? " Guest" : " Guests"));
+    if (!guestEl) return;
+    var ar = guestEl.querySelector(".lang-ar"), en = guestEl.querySelector(".lang-en");
+    if (ar) ar.textContent = guestCount + (guestCount === 1 ? " ضيف" : " ضيوف");
+    if (en) en.textContent = guestCount + (guestCount === 1 ? " Guest" : " Guests");
   }
   renderGuestCount();
-
-  $("#guestStepper").on("click", ".stepper-btn", function () {
-    var action = $(this).data("action");
-    if (action === "increment" && guestCount < 12) {
-      guestCount += 1;
-    } else if (action === "decrement" && guestCount > 1) {
-      guestCount -= 1;
-    }
+  var stepper = document.getElementById("guestStepper");
+  if (stepper) stepper.addEventListener("click", function (e) {
+    var b = e.target.closest(".stepper-btn"); if (!b) return;
+    var action = b.getAttribute("data-action");
+    if (action === "increment" && guestCount < 12) guestCount += 1;
+    else if (action === "decrement" && guestCount > 1) guestCount -= 1;
     renderGuestCount();
   });
 
-  $(".filter-bar").on("click", ".chip", function () {
-    $(this).addClass("is-active").siblings(".chip").removeClass("is-active");
+  /* filter chips (visual only, as before) */
+  document.querySelectorAll(".filter-bar").forEach(function (bar) {
+    bar.addEventListener("click", function (e) {
+      var chip = e.target.closest(".chip"); if (!chip) return;
+      bar.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
+      chip.classList.add("is-active"); chip.setAttribute("aria-pressed", "true");
+    });
   });
 
-  $("#bookingWidget").on("submit", function (e) {
+  /* booking widget — demo */
+  var booking = document.getElementById("bookingWidget");
+  if (booking) booking.addEventListener("submit", function (e) {
     e.preventDefault();
-    window.DeafahEffects.showToast(
-      isArabic() ? "جاري البحث عن التوفر في 14 فندقًا..." : "Searching availability across 14 hotels…"
-    );
+    var lang = isArabic() ? "ar" : "en";
+    var msg = window.DeafahHotelsCopy ? window.DeafahHotelsCopy.get("search_toast", lang) : "";
+    window.DeafahEffects.showToast(msg || (isArabic() ? "جاري البحث عن التوفر..." : "Searching availability…"));
   });
 
-  $("#newsletterForm").on("submit", function (e) {
+  /* newsletter — demo */
+  var newsletter = document.getElementById("newsletterForm");
+  if (newsletter) newsletter.addEventListener("submit", function (e) {
     e.preventDefault();
-    var $input = isArabic() ? $("#newsletterEmail-ar") : $("#newsletterEmail-en");
-    var $hint = $("#newsletterHint");
-    var value = $input.val().trim();
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(value)) {
-      $input.addClass("is-invalid");
-      $hint.attr("class", "form-hint is-error").text(
-        isArabic() ? "يرجى إدخال بريد إلكتروني صحيح." : "Enter a valid email address."
-      );
+    var input = document.getElementById(isArabic() ? "newsletterEmail-ar" : "newsletterEmail-en");
+    var hint = document.getElementById("newsletterHint");
+    var value = (input.value || "").trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      input.classList.add("is-invalid");
+      hint.className = "form-hint is-error";
+      hint.textContent = isArabic() ? "يرجى إدخال بريد إلكتروني صحيح." : "Enter a valid email address.";
       return;
     }
-
-    $input.removeClass("is-invalid").val("");
-    $hint.attr("class", "form-hint is-success").text(
-      isArabic() ? "تم الاشتراك — شكرًا لك." : "Subscribed — thank you."
-    );
+    input.classList.remove("is-invalid"); input.value = "";
+    hint.className = "form-hint is-success";
+    hint.textContent = isArabic() ? "تم الاشتراك — شكرًا لك." : "Subscribed — thank you.";
     window.DeafahEffects.showToast(isArabic() ? "تم تسجيلك بنجاح." : "You're on the list.");
   });
 
-  var CONTACT_MSG_MIN = 100;
-  var CONTACT_MSG_MAX = 200;
-
-  function updateCharCount($textarea) {
-    var lang = $textarea.hasClass("lang-ar") ? "ar" : "en";
-    var length = $textarea.val().length;
-
-    $('.char-count-value[data-lang="' + lang + '"]').text(length);
-    $("#contactCharCount").toggleClass(
-      "is-invalid",
-      length > 0 && length < CONTACT_MSG_MIN
-    );
-  }
-
-  $(".contact-message").on("input", function () {
-    updateCharCount($(this));
+  /* contact message counter (contact-form.js does the sending) */
+  var MIN = 100;
+  document.querySelectorAll(".contact-message").forEach(function (ta) {
+    ta.addEventListener("input", function () {
+      var lang = ta.classList.contains("lang-ar") ? "ar" : "en";
+      var len = ta.value.length;
+      var out = document.querySelector('.char-count-value[data-lang="' + lang + '"]');
+      if (out) out.textContent = len;
+      var cc = document.getElementById("contactCharCount");
+      if (cc) cc.classList.toggle("is-invalid", len > 0 && len < MIN);
+    });
+  });
+  document.addEventListener("deafah:dialogopen", function (e) {
+    if (!e.detail || e.detail.id !== "contactModal") return;
+    var dlg = e.detail.dialog;
+    dlg.querySelectorAll(".contact-message").forEach(function (ta) { ta.value = ""; });
+    dlg.querySelectorAll(".char-count-value").forEach(function (el) { el.textContent = "0"; });
+    var cc = document.getElementById("contactCharCount"); if (cc) cc.classList.remove("is-invalid");
+    dlg.querySelectorAll("input, textarea").forEach(function (el) { el.classList.remove("is-invalid"); });
   });
 
-  $("#contactModal").on("show.bs.modal", function () {
-    $(this).find(".contact-message").val("");
-    $(this).find(".char-count-value").text("0");
-    $("#contactCharCount").removeClass("is-invalid");
-    $(this).find("input, textarea").removeClass("is-invalid");
+  /* demo ribbons (بيانات تجريبية) — dismiss per session */
+  document.querySelectorAll(".demo-ribbon").forEach(function (r) {
+    var key = "deafah-demo-ribbon-" + (r.getAttribute("data-ribbon") || "x");
+    try { if (sessionStorage.getItem(key)) r.hidden = true; } catch (e) {}
+    var btn = r.querySelector("[data-dismiss]");
+    if (btn) btn.addEventListener("click", function () { r.hidden = true; try { sessionStorage.setItem(key, "1"); } catch (e) {} });
   });
 
-  $("#contactForm").on("submit", function (e) {
-    e.preventDefault();
-
-    var $message = isArabic() ? $("#contactMessage-ar") : $("#contactMessage-en");
-    var length = $message.val().trim().length;
-
-    if (length < CONTACT_MSG_MIN || length > CONTACT_MSG_MAX) {
-      $message.addClass("is-invalid");
-      $("#contactCharCount").addClass("is-invalid");
-      return;
-    }
-
-    $message.removeClass("is-invalid");
-
-    var modalEl = document.getElementById("contactModal");
-    var modalInstance = bootstrap.Modal.getInstance(modalEl);
-    if (modalInstance) {
-      modalInstance.hide();
-    }
-
-    this.reset();
-    window.DeafahEffects.showToast(
-      isArabic() ? "تم إرسال رسالتك بنجاح." : "Your message has been sent."
-    );
-  });
-
-  $("#currentYear-ar, #currentYear-en").text(new Date().getFullYear());
-});
+  var y = String(new Date().getFullYear());
+  ["currentYear-ar", "currentYear-en"].forEach(function (id) { var el = document.getElementById(id); if (el) el.textContent = y; });
+})();

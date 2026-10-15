@@ -1,0 +1,9 @@
+{
+  "r1": "clicked #themeBadgeChip",
+  "r2": "clicked #themeBadgePanel [data-scheme=dark]",
+  "scheme": "dark",
+  "fog": "101820",
+  "mode": "manual",
+  "stored": "dark",
+  "bodyBg": "rgb(16, 24, 32)"
+}

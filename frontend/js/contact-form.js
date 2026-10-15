@@ -177,12 +177,13 @@
       var modalEl = document.querySelector(modalSelector);
       if (!modalEl) return;
 
-      if (window.bootstrap && window.bootstrap.Modal) {
-        var instance = window.bootstrap.Modal.getInstance(modalEl) || window.bootstrap.Modal.getOrCreateInstance(modalEl);
-        instance.hide();
+      // Native <dialog> (Phase 1 overhaul): the modal is a <dialog>; a generic close button is the fallback.
+      if (modalEl.tagName === "DIALOG") {
+        if (typeof modalEl.close === "function" && modalEl.open) modalEl.close();
+        else modalEl.removeAttribute("open");
         return;
       }
-      var dismissBtn = modalEl.querySelector('[data-bs-dismiss="modal"]');
+      var dismissBtn = modalEl.querySelector("[data-modal-close]");
       if (dismissBtn) dismissBtn.click();
     }
 
@@ -274,6 +275,9 @@
         page_url: location.href,
         submitted_at: new Date().toISOString()
       };
+      // optional subject (set by the opener, e.g. "إعاشة" on the catering page or a hotel name)
+      var subjectEl = form.querySelector("#contactSubject, input[name=subject]");
+      if (subjectEl && subjectEl.value) params.subject = subjectEl.value;
 
       window.emailjs
         .send(config.emailjs.serviceId, config.emailjs.templateId, params)

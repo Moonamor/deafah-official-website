@@ -1,0 +1,79 @@
+{
+  "reduce": false,
+  "lenis": true,
+  "lenisClass": false,
+  "triggers": 6,
+  "pinned": [
+    "hero-pin:pin",
+    "hotels:pin"
+  ],
+  "horizontal": {
+    "isHorizontal": true,
+    "dir": "rtl",
+    "transform": "matrix(1, 0, 0, 1, 496, 0)",
+    "trackWidth": 2240,
+    "display": "flex"
+  },
+  "splitLines": 1,
+  "steps": "",
+  "header": {
+    "pos": "fixed",
+    "h": 96,
+    "condensed": true,
+    "bodyPad": "96px"
+  },
+  "logo": {
+    "file": "symbol-pos.svg",
+    "box": "200x59",
+    "freezone": "17",
+    "el": [
+      200,
+      59
+    ],
+    "img": [
+      136,
+      40
+    ],
+    "top": -53
+  },
+  "canvas": {
+    "frames": 3,
+    "avgMs": 0.23,
+    "recentAvgMs": 0.23,
+    "p95Ms": 0.4,
+    "maxMs": 0.4,
+    "blocks": [
+      "2x10"
+    ],
+    "dpr": 1
+  },
+  "scrollY": 2600,
+  "htmlClass": "lenis",
+  "st": [
+    {
+      "id": "hero-pin",
+      "start": 0,
+      "end": 540,
+      "progress": 1,
+      "isActive": false
+    },
+    {
+      "id": "hotels",
+      "start": 2104,
+      "end": 3128,
+      "progress": 0.484,
+      "isActive": true
+    }
+  ],
+  "lenisScroll": 2600,
+  "canvasRect": [
+    200,
+    702,
+    "absolute",
+    "0px",
+    "0px",
+    "block",
+    200,
+    702
+  ]
+}

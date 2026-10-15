@@ -1,0 +1,463 @@
+{
+  "_notice": "TEST DATA — not real",
+  "slug": "taj-park",
+  "name": {
+    "ar": "فندق تاج بارك",
+    "en": "Taj Park Hotel"
+  },
+  "headline": {
+    "ar": "عشر دقائق سيرًا من المسجد الحرام",
+    "en": "Ten minutes' walk from Masjid Al Haram"
+  },
+  "intro": {
+    "ar": "برج زجاجي أسطواني وجناحان من الحجر الرملي في حي التيسير، مع حافلة مكوكية إلى الحرم على مدار الساعة.",
+    "en": "A cylindrical glass tower and two sandstone wings in At Taysir, with a round-the-clock shuttle to the Haram."
+  },
+  "facts": [
+    {
+      "key": "haram",
+      "icon": "haram-distance",
+      "value": "10",
+      "unit": {
+        "ar": "دقائق سيرًا إلى الحرم",
+        "en": "min walk to the Haram"
+      }
+    },
+    {
+      "key": "floors",
+      "icon": "elevator",
+      "value": "23",
+      "unit": {
+        "ar": "طابقًا (OpenStreetMap)",
+        "en": "floors (OpenStreetMap)"
+      }
+    },
+    {
+      "key": "rooms",
+      "icon": "rooms",
+      "value": "612",
+      "unit": {
+        "ar": "غرفة وجناح",
+        "en": "rooms and suites"
+      }
+    },
+    {
+      "key": "checkin",
+      "icon": "prayer-time",
+      "value": "15:00",
+      "unit": {
+        "ar": "تسجيل الوصول · المغادرة 12:00",
+        "en": "check-in · check-out 12:00"
+      }
+    }
+  ],
+  "rooms": [
+    {
+      "id": "standard",
+      "type": "room",
+      "name": {
+        "ar": "غرفة ستاندرد",
+        "en": "Standard Room"
+      },
+      "m2": 26,
+      "beds": {
+        "ar": "سريران مفردان أو سرير كبير",
+        "en": "Twin or king"
+      },
+      "view": "city",
+      "price_from_sar": 180,
+      "image": "assets/taj-park/taj-park-render-corner-800.fc1f11a9.webp"
+    },
+    {
+      "id": "deluxe",
+      "type": "room",
+      "name": {
+        "ar": "غرفة ديلوكس",
+        "en": "Deluxe Room"
+      },
+      "m2": 32,
+      "beds": {
+        "ar": "سرير كبير",
+        "en": "King"
+      },
+      "view": "city",
+      "price_from_sar": 240,
+      "image": "assets/taj-park/taj-park-street-corner-640.dc273b66.webp"
+    },
+    {
+      "id": "haram-view",
+      "type": "room",
+      "name": {
+        "ar": "غرفة بإطلالة على الحرم",
+        "en": "Haram View Room"
+      },
+      "m2": 32,
+      "beds": {
+        "ar": "سرير كبير",
+        "en": "King"
+      },
+      "view": "haram",
+      "price_from_sar": 320,
+      "image": "assets/taj-park/taj-park-render-dusk-wide-891.851ec833.webp"
+    },
+    {
+      "id": "junior-suite",
+      "type": "suite",
+      "name": {
+        "ar": "جناح جونيور",
+        "en": "Junior Suite"
+      },
+      "m2": 48,
+      "beds": {
+        "ar": "سرير كبير + أريكة",
+        "en": "King + sofa bed"
+      },
+      "view": "city",
+      "price_from_sar": 420,
+      "image": "assets/taj-park/taj-park-lobby-portrait-700.e997e2b9.webp"
+    },
+    {
+      "id": "haram-suite",
+      "type": "suite",
+      "name": {
+        "ar": "جناح بإطلالة على الحرم",
+        "en": "Haram View Suite"
+      },
+      "m2": 56,
+      "beds": {
+        "ar": "سرير كبير + غرفة معيشة",
+        "en": "King + living room"
+      },
+      "view": "haram",
+      "price_from_sar": 560,
+      "image": "assets/taj-park/taj-park-render-sheet-900.0174a01b.webp"
+    },
+    {
+      "id": "family",
+      "type": "family",
+      "name": {
+        "ar": "غرفة عائلية",
+        "en": "Family Room"
+      },
+      "m2": 44,
+      "beds": {
+        "ar": "سرير كبير + سريران مفردان",
+        "en": "King + two singles"
+      },
+      "view": "city",
+      "price_from_sar": 380,
+      "image": "assets/taj-park/taj-park-render-corner-800.fc1f11a9.webp"
+    }
+  ],
+  "packages": [
+    {
+      "id": "umrah-essential",
+      "name": {
+        "ar": "باقة العمرة الأساسية",
+        "en": "Umrah Essential"
+      },
+      "nights": 5,
+      "price_sar": 1450,
+      "popular": false,
+      "includes": {
+        "ar": [
+          "5 ليالٍ في غرفة ستاندرد",
+          "إفطار يومي",
+          "حافلة مكوكية إلى الحرم",
+          "استقبال في المطار"
+        ],
+        "en": [
+          "5 nights in a Standard Room",
+          "Daily breakfast",
+          "Shuttle to the Haram",
+          "Airport welcome"
+        ]
+      }
+    },
+    {
+      "id": "umrah-plus",
+      "name": {
+        "ar": "باقة العمرة بلس",
+        "en": "Umrah Plus"
+      },
+      "nights": 7,
+      "price_sar": 2650,
+      "popular": true,
+      "includes": {
+        "ar": [
+          "7 ليالٍ في غرفة ديلوكس",
+          "إفطار وعشاء",
+          "حافلة مكوكية على مدار الساعة",
+          "نقل من وإلى المطار",
+          "مرشد للعمرة"
+        ],
+        "en": [
+          "7 nights in a Deluxe Room",
+          "Breakfast and dinner",
+          "24-hour shuttle",
+          "Airport transfers",
+          "Umrah guide"
+        ]
+      }
+    },
+    {
+      "id": "family-haram",
+      "name": {
+        "ar": "باقة العائلة بإطلالة الحرم",
+        "en": "Family Haram View"
+      },
+      "nights": 7,
+      "price_sar": 4200,
+      "popular": false,
+      "includes": {
+        "ar": [
+          "7 ليالٍ في جناح بإطلالة على الحرم",
+          "وجبات كاملة",
+          "نقل خاص",
+          "زيارة المدينة المنورة"
+        ],
+        "en": [
+          "7 nights in a Haram View Suite",
+          "Full board",
+          "Private transfers",
+          "Madinah day trip"
+        ]
+      }
+    }
+  ],
+  "dining": [
+    {
+      "name": {
+        "ar": "مطعم الضيافة",
+        "en": "Al Deafah Restaurant"
+      },
+      "note": {
+        "ar": "بوفيه عالمي · الطابق الرابع من البرج الأسطواني",
+        "en": "International buffet · tower level 4"
+      },
+      "image": "assets/taj-park/taj-park-lobby-portrait-700.e997e2b9.webp"
+    },
+    {
+      "name": {
+        "ar": "مقهى البهو",
+        "en": "Lobby Café"
+      },
+      "note": {
+        "ar": "قهوة عربية وحلويات · على مدار الساعة",
+        "en": "Arabic coffee and pastries · 24 hours"
+      },
+      "image": "assets/taj-park/taj-park-render-corner-800.fc1f11a9.webp"
+    },
+    {
+      "name": {
+        "ar": "خدمة الغرف",
+        "en": "Room Service"
+      },
+      "note": {
+        "ar": "قائمة مختصرة · 24 ساعة",
+        "en": "Short menu · 24 hours"
+      },
+      "image": "assets/taj-park/taj-park-street-corner-640.dc273b66.webp"
+    }
+  ],
+  "amenities": [
+    {
+      "icon": "shuttle",
+      "ar": "حافلة إلى الحرم كل 30 دقيقة",
+      "en": "Shuttle to the Haram every 30 min"
+    },
+    {
+      "icon": "wifi",
+      "ar": "إنترنت مجاني في كل الغرف",
+      "en": "Free Wi-Fi in every room"
+    },
+    {
+      "icon": "restaurant",
+      "ar": "مطعم بوفيه ومقهى",
+      "en": "Buffet restaurant and café"
+    },
+    {
+      "icon": "prayer-time",
+      "ar": "مصلّى وإيقاظ للصلاة",
+      "en": "Prayer room and prayer wake calls"
+    },
+    {
+      "icon": "family",
+      "ar": "غرف عائلية متصلة",
+      "en": "Connecting family rooms"
+    },
+    {
+      "icon": "parking",
+      "ar": "مواقف سيارات",
+      "en": "Parking"
+    }
+  ],
+  "location": {
+    "address": {
+      "ar": "حي التيسير، شارع جرول 3، مكة المكرمة 24231",
+      "en": "At Taysir District, 3rd Jarwal Street, Makkah 24231"
+    },
+    "map_url": "https://www.openstreetmap.org/way/1489087118",
+    "steps": [
+      {
+        "icon": "haram-distance",
+        "title": {
+          "ar": "المسجد الحرام",
+          "en": "Masjid Al Haram"
+        },
+        "text": {
+          "ar": "حوالي 1.2 كم · 10 دقائق سيرًا أو 5 دقائق بالحافلة المكوكية",
+          "en": "About 1.2 km · 10 min walk or 5 min by shuttle"
+        }
+      },
+      {
+        "icon": "plane",
+        "title": {
+          "ar": "مطار الملك عبدالعزيز الدولي",
+          "en": "King Abdulaziz International Airport"
+        },
+        "text": {
+          "ar": "حوالي 95 كم · 70 دقيقة بالسيارة",
+          "en": "About 95 km · 70 min by car"
+        }
+      },
+      {
+        "icon": "shuttle",
+        "title": {
+          "ar": "محطة قطار الحرمين",
+          "en": "Haramain Station"
+        },
+        "text": {
+          "ar": "محطة مكة · 20 دقيقة بالسيارة",
+          "en": "Makkah station · 20 min by car"
+        }
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "image": "assets/taj-park/taj-park-street-corner-1000.798a9cf1.webp",
+      "alt": {
+        "ar": "واجهة البرج الأسطواني من الشارع",
+        "en": "The cylindrical tower from the street"
+      },
+      "w": 1000,
+      "h": 770
+    },
+    {
+      "image": "assets/taj-park/taj-park-render-corner-1280.5047f2cd.webp",
+      "alt": {
+        "ar": "تصور معماري للزاوية الرئيسية",
+        "en": "Architectural render of the main corner"
+      },
+      "w": 1280,
+      "h": 1109
+    },
+    {
+      "image": "assets/taj-park/taj-park-render-dusk-wide-891.851ec833.webp",
+      "alt": {
+        "ar": "الواجهة عند الغروب",
+        "en": "The façade at dusk"
+      },
+      "w": 891,
+      "h": 524
+    },
+    {
+      "image": "assets/taj-park/taj-park-render-sheet-1600.fa4b2b18.webp",
+      "alt": {
+        "ar": "لوحة التصورات المعمارية",
+        "en": "Architectural render sheet"
+      },
+      "w": 1600,
+      "h": 1132
+    },
+    {
+      "image": "assets/taj-park/taj-park-lobby-portrait-1200.affc0512.webp",
+      "alt": {
+        "ar": "الواجهة ليلًا",
+        "en": "The façade at night"
+      },
+      "w": 1200,
+      "h": 1804
+    }
+  ],
+  "guests": [
+    {
+      "name": "محمد س.",
+      "country": {
+        "ar": "مصر",
+        "en": "Egypt"
+      },
+      "text": {
+        "ar": "الحافلة إلى الحرم كانت في موعدها دائمًا، والغرفة نظيفة وهادئة.",
+        "en": "The shuttle to the Haram was always on time, and the room was clean and quiet."
+      }
+    },
+    {
+      "name": "Fatima R.",
+      "country": {
+        "ar": "المملكة المتحدة",
+        "en": "United Kingdom"
+      },
+      "text": {
+        "ar": "إطلالة الحرم من الجناح لا تُنسى.",
+        "en": "The Haram view from the suite is unforgettable."
+      }
+    },
+    {
+      "name": "Yusuf A.",
+      "country": {
+        "ar": "إندونيسيا",
+        "en": "Indonesia"
+      },
+      "text": {
+        "ar": "فريق الاستقبال ساعدنا في كل تفصيل، من المطار إلى المغادرة.",
+        "en": "The front desk helped with every detail, from the airport to checkout."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "كم تبعد الفندق عن المسجد الحرام؟",
+        "en": "How far is the hotel from Masjid Al Haram?"
+      },
+      "a": {
+        "ar": "حوالي 1.2 كم، أي 10 دقائق سيرًا، مع حافلة مكوكية مجانية كل 30 دقيقة على مدار الساعة.",
+        "en": "About 1.2 km, a 10-minute walk, with a free shuttle every 30 minutes around the clock."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل تتوفر غرف بإطلالة على الحرم؟",
+        "en": "Are Haram-view rooms available?"
+      },
+      "a": {
+        "ar": "نعم، غرف وأجنحة في الطوابق العليا بإطلالة جزئية أو كاملة على الحرم.",
+        "en": "Yes, rooms and suites on the upper floors with partial or full Haram views."
+      }
+    },
+    {
+      "q": {
+        "ar": "ما أوقات تسجيل الوصول والمغادرة؟",
+        "en": "What are the check-in and check-out times?"
+      },
+      "a": {
+        "ar": "تسجيل الوصول من الساعة 15:00 والمغادرة حتى 12:00. يمكن طلب وصول مبكر حسب التوفر.",
+        "en": "Check-in from 15:00, check-out by 12:00. Early check-in on request, subject to availability."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يوجد نقل من المطار؟",
+        "en": "Is airport transport available?"
+      },
+      "a": {
+        "ar": "نعم، نقل خاص من مطار الملك عبدالعزيز وإليه يُحجز عبر نموذج التواصل.",
+        "en": "Yes, private transfers to and from King Abdulaziz Airport can be arranged through the contact form."
+      }
+    }
+  ],
+  "whatsapp": "+966125911110",
+  "phone": "+966125911110"
+}

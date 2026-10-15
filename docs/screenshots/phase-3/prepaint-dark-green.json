@@ -1,0 +1,27 @@
+{
+  "attrSetAt": 10.3,
+  "injectedAt": 8.9,
+  "firstFrameAt": 93.2,
+  "firstFrameAttrs": {
+    "scheme": "dark",
+    "theme": "green",
+    "lang": "ar",
+    "dir": "rtl"
+  },
+  "firstFrameBodyBg": "rgb(19, 50, 43)",
+  "paints": [
+    {
+      "name": "first-paint",
+      "t": 140
+    },
+    {
+      "name": "first-contentful-paint",
+      "t": 140
+    }
+  ],
+  "finalBodyBg": "rgb(19, 50, 43)",
+  "finalAttrs": {
+    "scheme": "dark",
+    "theme": "green"
+  }
+}

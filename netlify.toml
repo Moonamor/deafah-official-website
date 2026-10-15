@@ -1,0 +1,13 @@
+# Netlify — fully self-contained (dashboard: base/build/publish left empty on purpose)
+[build]
+  base = "/"
+  command = "npm run build"
+  publish = "frontend"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# Serve the committed HTML byte-for-byte (the dashboard's "Pretty URLs" post-processing rewrote links and attribute quotes)
+[build.processing]
+  skip_processing = true

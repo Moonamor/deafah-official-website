@@ -1,3 +1,8 @@
 .claude
 metadata
 Sessions
+
+# reference-only brand folder — never served, never committed
+visualIdentityReferences/
+
+node_modules/

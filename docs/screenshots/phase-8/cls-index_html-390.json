@@ -1,0 +1,539 @@
+{
+  "steps": [
+    {
+      "name": "header toggle: scheme → dark",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "header toggle: scheme → light",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: open",
+      "cls": 0,
+      "rawShift": 0.0642,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: palette → green",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: palette → red",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: palette → blue",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: palette → default",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: scheme → dark",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: scheme → auto",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "badge: close (Esc)",
+      "cls": 0,
+      "rawShift": 0.0645,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "header toggle: lang → en",
+      "cls": 0,
+      "rawShift": 0.1563,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 16,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 16,
+          "y": 7070,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "header toggle: lang → ar",
+      "cls": 0,
+      "rawShift": 0.1563,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 16,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 16,
+          "y": 7070,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    },
+    {
+      "name": "scroll 400 px (condensed header)",
+      "cls": 0,
+      "rawShift": 0,
+      "before": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 12,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ],
+      "after": [
+        {
+          "file": "symbol-pos.svg",
+          "box": "40x40",
+          "x": 334,
+          "y": 348,
+          "w": 40,
+          "h": 40
+        },
+        {
+          "file": "logo-stacked-neg.svg",
+          "box": "160x130",
+          "x": 132,
+          "y": 7370,
+          "w": 242,
+          "h": 212
+        }
+      ]
+    }
+  ],
+  "totalCls": 0,
+  "totalRaw": 0.4413
+}

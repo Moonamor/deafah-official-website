@@ -1,0 +1,55 @@
+{
+  "reduce": false,
+  "lenis": true,
+  "lenisClass": false,
+  "triggers": 9,
+  "pinned": [],
+  "horizontal": null,
+  "splitLines": 0,
+  "steps": "0001",
+  "header": {
+    "pos": "fixed",
+    "h": 96,
+    "condensed": true,
+    "bodyPad": "96px"
+  },
+  "logo": {
+    "file": "symbol-pos.svg",
+    "box": "200x59",
+    "freezone": "17",
+    "el": [
+      200,
+      59
+    ],
+    "img": [
+      39,
+      40
+    ],
+    "top": -52
+  },
+  "canvas": {
+    "frames": 3,
+    "avgMs": 0.3,
+    "recentAvgMs": 0.3,
+    "p95Ms": 0.5,
+    "maxMs": 0.5,
+    "blocks": [
+      "2x8"
+    ],
+    "dpr": 1
+  },
+  "scrollY": 1402,
+  "htmlClass": "lenis",
+  "st": [],
+  "lenisScroll": 1402,
+  "canvasRect": [
+    200,
+    518,
+    "absolute",
+    "0px",
+    "0px",
+    "block",
+    200,
+    518
+  ]
+}

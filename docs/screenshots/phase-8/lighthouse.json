@@ -1,0 +1,178 @@
+{
+ "home": {
+  "before": {
+   "performance": 91,
+   "accessibility": 94,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.5\u00a0s",
+   "LCP": "2.9\u00a0s",
+   "TBT": "60\u00a0ms",
+   "CLS": "0.115",
+   "SI": "2.5\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:46:45.123Z"
+  },
+  "after": {
+   "performance": 89,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.2\u00a0s",
+   "LCP": "3.0\u00a0s",
+   "TBT": "30\u00a0ms",
+   "CLS": "0.115",
+   "SI": "3.8\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:53:19.663Z"
+  },
+  "final": {
+   "performance": 95,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.1\u00a0s",
+   "LCP": "2.8\u00a0s",
+   "TBT": "10\u00a0ms",
+   "CLS": "0",
+   "SI": "2.5\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T13:01:12.340Z"
+  }
+ },
+ "about": {
+  "before": {
+   "performance": 99,
+   "accessibility": 98,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.0\u00a0s",
+   "LCP": "2.0\u00a0s",
+   "TBT": "0\u00a0ms",
+   "CLS": "0.001",
+   "SI": "2.1\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/about.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:47:01.404Z"
+  },
+  "after": {
+   "performance": 97,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.4\u00a0s",
+   "LCP": "2.0\u00a0s",
+   "TBT": "110\u00a0ms",
+   "CLS": "0",
+   "SI": "3.1\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/about.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:53:37.245Z"
+  },
+  "final": {
+   "performance": 97,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 100,
+   "FCP": "1.5\u00a0s",
+   "LCP": "2.2\u00a0s",
+   "TBT": "60\u00a0ms",
+   "CLS": "0",
+   "SI": "3.1\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/about.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T13:01:28.318Z"
+  }
+ },
+ "hotel": {
+  "before": {
+   "performance": 68,
+   "accessibility": 93,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.7\u00a0s",
+   "LCP": "2.8\u00a0s",
+   "TBT": "1,410\u00a0ms",
+   "CLS": "0.041",
+   "SI": "3.6\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/hotels/taj-park.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:47:17.147Z"
+  },
+  "after": {
+   "performance": 95,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.3\u00a0s",
+   "LCP": "2.8\u00a0s",
+   "TBT": "40\u00a0ms",
+   "CLS": "0",
+   "SI": "3.3\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/hotels/taj-park.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:53:52.566Z"
+  },
+  "final": {
+   "performance": 95,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.2\u00a0s",
+   "LCP": "2.9\u00a0s",
+   "TBT": "0\u00a0ms",
+   "CLS": "0",
+   "SI": "2.2\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/hotels/taj-park.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T13:01:43.837Z"
+  }
+ },
+ "catering": {
+  "before": {
+   "performance": 78,
+   "accessibility": 98,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.2\u00a0s",
+   "LCP": "2.2\u00a0s",
+   "TBT": "0\u00a0ms",
+   "CLS": "0.464",
+   "SI": "2.2\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/catering.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:47:35.009Z"
+  },
+  "after": {
+   "performance": 98,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.6\u00a0s",
+   "LCP": "2.1\u00a0s",
+   "TBT": "60\u00a0ms",
+   "CLS": "0.001",
+   "SI": "2.2\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/catering.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T12:54:08.402Z"
+  },
+  "final": {
+   "performance": 99,
+   "accessibility": 100,
+   "best_practices": 100,
+   "seo": 66,
+   "FCP": "1.5\u00a0s",
+   "LCP": "2.1\u00a0s",
+   "TBT": "0\u00a0ms",
+   "CLS": "0",
+   "SI": "2.1\u00a0s",
+   "url": "https://overhaul-phase-1--deafah.netlify.app/catering.html",
+   "lighthouse": "12.8.2",
+   "fetchTime": "2026-10-15T13:01:59.953Z"
+  }
+ }
+}

@@ -1,0 +1,804 @@
+[
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "default",
+    "scheme": "light",
+    "width": 390,
+    "name": "hotels_taj-park-default-light-390.png",
+    "console": [
+      "warning THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+    ],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "default",
+    "scheme": "light",
+    "width": 1440,
+    "name": "hotels_taj-park-default-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "default",
+    "scheme": "dark",
+    "width": 390,
+    "name": "hotels_taj-park-default-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "default",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "hotels_taj-park-default-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "green",
+    "scheme": "light",
+    "width": 390,
+    "name": "hotels_taj-park-green-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "green",
+    "scheme": "light",
+    "width": 1440,
+    "name": "hotels_taj-park-green-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "green",
+    "scheme": "dark",
+    "width": 390,
+    "name": "hotels_taj-park-green-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "green",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "hotels_taj-park-green-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "red",
+    "scheme": "light",
+    "width": 390,
+    "name": "hotels_taj-park-red-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "red",
+    "scheme": "light",
+    "width": 1440,
+    "name": "hotels_taj-park-red-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "red",
+    "scheme": "dark",
+    "width": 390,
+    "name": "hotels_taj-park-red-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "red",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "hotels_taj-park-red-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "blue",
+    "scheme": "light",
+    "width": 390,
+    "name": "hotels_taj-park-blue-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "blue",
+    "scheme": "light",
+    "width": 1440,
+    "name": "hotels_taj-park-blue-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "blue",
+    "scheme": "dark",
+    "width": 390,
+    "name": "hotels_taj-park-blue-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "hotels/taj-park.html",
+    "palette": "blue",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "hotels_taj-park-blue-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 5
+  },
+  {
+    "page": "catering.html",
+    "palette": "default",
+    "scheme": "light",
+    "width": 390,
+    "name": "catering-default-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "default",
+    "scheme": "light",
+    "width": 1440,
+    "name": "catering-default-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "default",
+    "scheme": "dark",
+    "width": 390,
+    "name": "catering-default-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "default",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "catering-default-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "green",
+    "scheme": "light",
+    "width": 390,
+    "name": "catering-green-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "green",
+    "scheme": "light",
+    "width": 1440,
+    "name": "catering-green-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "green",
+    "scheme": "dark",
+    "width": 390,
+    "name": "catering-green-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "green",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "catering-green-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "red",
+    "scheme": "light",
+    "width": 390,
+    "name": "catering-red-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "red",
+    "scheme": "light",
+    "width": 1440,
+    "name": "catering-red-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "red",
+    "scheme": "dark",
+    "width": 390,
+    "name": "catering-red-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "red",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "catering-red-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "blue",
+    "scheme": "light",
+    "width": 390,
+    "name": "catering-blue-light-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "blue",
+    "scheme": "light",
+    "width": 1440,
+    "name": "catering-blue-light-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-pos.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "blue",
+    "scheme": "dark",
+    "width": 390,
+    "name": "catering-blue-dark-390.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "symbol",
+        "file": "symbol-pos.svg",
+        "w": 39,
+        "h": 40,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  },
+  {
+    "page": "catering.html",
+    "palette": "blue",
+    "scheme": "dark",
+    "width": 1440,
+    "name": "catering-blue-dark-1440.png",
+    "console": [],
+    "logos": [
+      {
+        "lockup": "horizontal",
+        "file": "logo-rtl-neg.svg",
+        "w": 200,
+        "h": 59,
+        "loaded": true
+      },
+      {
+        "lockup": "stacked",
+        "file": "logo-stacked-neg.svg",
+        "w": 160,
+        "h": 130,
+        "loaded": true
+      }
+    ],
+    "hotels": 0
+  }
+]

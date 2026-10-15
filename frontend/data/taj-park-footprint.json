@@ -1,0 +1,131 @@
+{
+  "_notice": "Building outline from OpenStreetMap — © OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright). Fetched ONCE at development time; never queried at runtime.",
+  "source": {
+    "osm_type": "way",
+    "osm_id": 1489087118,
+    "osm_version": 1,
+    "osm_timestamp": "2026-03-15T10:54:30Z",
+    "fetched_at": "2026-10-15T07:32:00+00:00",
+    "api": "https://api.openstreetmap.org/api/0.6/way/1489087118/full",
+    "geocoder": "nominatim.openstreetmap.org (en + ar name search, both resolved to this way)",
+    "tags": {
+      "building": "yes",
+      "building:levels": "23",
+      "height": "95",
+      "name": "فندق تاج بارك",
+      "name:ar": "فندق تاج بارك",
+      "name:en": "Taj Park Hotel",
+      "tourism": "hotel"
+    }
+  },
+  "centre": {
+    "lat": 21.4279272,
+    "lon": 39.8147116
+  },
+  "footprint": [
+    [
+      39.8150807,
+      21.4280625
+    ],
+    [
+      39.814784,
+      21.4279124
+    ],
+    [
+      39.8141815,
+      21.4281011
+    ],
+    [
+      39.8141535,
+      21.4282762
+    ],
+    [
+      39.8139318,
+      21.4282845
+    ],
+    [
+      39.8139273,
+      21.4282053
+    ],
+    [
+      39.8140203,
+      21.4278655
+    ],
+    [
+      39.8143183,
+      21.4275778
+    ],
+    [
+      39.814625,
+      21.4278186
+    ],
+    [
+      39.8146991,
+      21.4277449
+    ],
+    [
+      39.8147109,
+      21.4277019
+    ],
+    [
+      39.814726,
+      21.4276566
+    ],
+    [
+      39.8147414,
+      21.4276268
+    ],
+    [
+      39.8147672,
+      21.4276007
+    ],
+    [
+      39.8152006,
+      21.4279207
+    ],
+    [
+      39.8152109,
+      21.4279507
+    ],
+    [
+      39.8152117,
+      21.4279833
+    ],
+    [
+      39.8152024,
+      21.4280157
+    ],
+    [
+      39.8151801,
+      21.4280427
+    ],
+    [
+      39.8151529,
+      21.4280575
+    ],
+    [
+      39.8151181,
+      21.4280664
+    ]
+  ],
+  "massing": {
+    "_basis": "OSM: building:levels=23, height=95 m. Architecture from the group's own photos/renders (reference only, BRAND_GAPS G25): two rectilinear wings at an obtuse angle, cylindrical curtain-wall tower at the street corner (fitted to arc nodes 14–20 of the footprint) with a pergola crown, sandstone pier/spandrel grid with floor-high dark-blue glazing, pointed arches on the top floors under a frieze, glazed podium with canopy, lit restaurant band on the cylinder.",
+    "floors": 23,
+    "floorHeight": 4.0,
+    "podiumFloors": 3,
+    "bayWidth": 4.2,
+    "pierWidth": 0.9,
+    "spandrelHeight": 1.0,
+    "archFloors": 3,
+    "cylinderExtraFloors": 2,
+    "arcNodes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  }
+}

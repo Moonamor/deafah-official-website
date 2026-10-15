@@ -1,0 +1,21 @@
+PASS  tab order starts with skip link, then logo and nav  — a.sr-only.focus:not-sr-only «Skip to content» → a.brand-logo.shrink-0 «مجموعة الضيافة العالمية — ال» → a.nav-link.is-active «Home» → a.nav-link «About Us» → a.nav-link «Hotels» → a.nav-link «Why Deafah»
+PASS  focused element shows a visible focus ring
+PASS  theme badge chip reachable by Tab  — 44 more Tab presses
+PASS  Enter opens the badge panel and moves focus inside  — button.theme-badge__swatch «Default»
+PASS  arrow key moves between swatches, Enter applies the palette  — default → green via button.theme-badge__swatch «Green»
+PASS  Esc closes the badge and returns focus to the chip
+PASS  contact dialog opens from the keyboard  — a.nav-link «Contact»
+PASS  focus moves into the dialog  — button.btn.btn--icon «إغلاق»
+PASS  Tab stays inside the open dialog (40 presses)  — trapped
+PASS  phone input: Enter on the country button opens the list  — input.pi-search «»
+PASS  phone input: typing filters, ArrowDown + Enter selects  — EG +20
+PASS  Esc closes the dialog and returns focus to the opener  — a.nav-link «Contact»
+PASS  no console errors on the home walkthrough
+PASS  390 px: menu button reachable and Enter opens the nav
+PASS  390 px: keyboard open moves focus into the nav, next Tab stays in it  — a.nav-link «About Us»
+PASS  390 px: Esc closes the nav and returns focus to the button
+PASS  FAQ: summary reachable, Enter opens, Space closes  — 43 Tab presses
+PASS  no console errors on the hotel walkthrough
+
+18/18 keyboard checks passed (en)
+JSON [{"name":"tab order starts with skip link, then logo and nav","ok":true,"detail":"a.sr-only.focus:not-sr-only «Skip to content» → a.brand-logo.shrink-0 «مجموعة الضيافة العالمية — ال» → a.nav-link.is-active «Home» → a.nav-link «About Us» → a.nav-link «Hotels» → a.nav-link «Why Deafah»"},{"name":"focused element shows a visible focus ring","ok":true},{"name":"theme badge chip reachable by Tab","ok":true,"detail":"44 more Tab presses"},{"name":"Enter opens the badge panel and moves focus inside","ok":true,"detail":"button.theme-badge__swatch «Default»"},{"name":"arrow key moves between swatches, Enter applies the palette","ok":true,"detail":"default → green via button.theme-badge__swatch «Green»"},{"name":"Esc closes the badge and returns focus to the chip","ok":true},{"name":"contact dialog opens from the keyboard","ok":true,"detail":"a.nav-link «Contact»"},{"name":"focus moves into the dialog","ok":true,"detail":"button.btn.btn--icon «إغلاق»"},{"name":"Tab stays inside the open dialog (40 presses)","ok":true,"detail":"trapped"},{"name":"phone input: Enter on the country button opens the list","ok":true,"detail":"input.pi-search «»"},{"name":"phone input: typing filters, ArrowDown + Enter selects","ok":true,"detail":"EG +20"},{"name":"Esc closes the dialog and returns focus to the opener","ok":true,"detail":"a.nav-link «Contact»"},{"name":"no console errors on the home walkthrough","ok":true,"detail":""},{"name":"390 px: menu button reachable and Enter opens the nav","ok":true},{"name":"390 px: keyboard open moves focus into the nav, next Tab stays in it","ok":true,"detail":"a.nav-link «About Us»"},{"name":"390 px: Esc closes the nav and returns focus to the button","ok":true},{"name":"FAQ: summary reachable, Enter opens, Space closes","ok":true,"detail":"43 Tab presses"},{"name":"no console errors on the hotel walkthrough","ok":true,"detail":""}]
