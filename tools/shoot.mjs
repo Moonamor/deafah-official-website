@@ -17,7 +17,7 @@ const args = Object.fromEntries(process.argv.slice(2).map((a, i, arr) => a.start
 const BASE = args.base || "http://127.0.0.1:8787";
 
 const profile = join(process.env.TEMP || ".", "deafah-cdp-" + PORT);
-const chrome = spawn(CHROME, ["--headless=new", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-gpu", "--hide-scrollbars", "--remote-debugging-port=" + PORT, "--user-data-dir=" + profile, "about:blank"], { stdio: "ignore" });
+const chrome = spawn(CHROME, ["--headless=new", "--no-first-run", "--no-default-browser-check", "--disable-extensions"].concat(process.env.SHOOT_GPU ? [] : ["--disable-gpu"]).concat(["--hide-scrollbars", "--remote-debugging-port=" + PORT, "--user-data-dir=" + profile, "about:blank"]), { stdio: "ignore" });
 const log = (...a) => console.error(new Date().toISOString().slice(11, 19), ...a);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function ready() { for (let i = 0; i < 60; i++) { try { const v = await httpJson(`http://127.0.0.1:${PORT}/json/version`); if (v && v.Browser) return v; } catch {} await sleep(250); } throw new Error("chrome did not start"); }

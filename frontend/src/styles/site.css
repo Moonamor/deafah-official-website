@@ -574,7 +574,7 @@ html.no-motion .marquee { overflow-x: auto; } html.no-motion .marquee__track { t
 .slider { -webkit-appearance: none; appearance: none; width: 100%; height: 2px; background: var(--border); outline: none; }
 .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: var(--accent); border: 1.5px solid var(--surface); cursor: pointer; }
 .slider::-moz-range-thumb { width: 20px; height: 20px; background: var(--accent); border: 1.5px solid var(--surface); cursor: pointer; border-radius: 0; }
-.menu-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 1fr); gap: 16px; }
+.menu-track { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }   /* row grid below 1024 px (a column-flow grid forced a 1280 px document on phones) */
 [data-scene="horizontal"].is-horizontal .menu-track { display: flex; width: max-content; }
 [data-scene="horizontal"].is-horizontal .menu-track > * { flex: 0 0 360px; }
 

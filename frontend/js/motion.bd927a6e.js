@@ -23,9 +23,12 @@
   var lenis = null;
 
   /* ------------------------------------------------------------------ reveals (works without GSAP too) */
+  var revealIO = null;
   function initReveals() {
-    var els = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+    /* incremental: pages that render content later (hotel/catering mock data) call rebuild(), which re-runs this and observes only the new elements */
+    var els = Array.prototype.slice.call(document.querySelectorAll(".reveal:not([data-reveal-bound])"));
     if (!els.length) return;
+    els.forEach(function (el) { el.setAttribute("data-reveal-bound", "1"); });
     function show(el, i) {
       if (el.classList.contains("is-in")) return;
       el.classList.add("is-in");
@@ -33,14 +36,12 @@
       gsap.fromTo(el, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, delay: Math.min(i, 6) * 0.08, ease: "power3.out", overwrite: true, clearProps: "transform" });
     }
     if (reduce || !("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("is-in"); }); return; }
-    var io = new IntersectionObserver(function (entries) {
-      var batch = entries.filter(function (e) { return e.isIntersecting; }).map(function (e) { io.unobserve(e.target); return e.target; });
+    if (!revealIO) revealIO = new IntersectionObserver(function (entries) {
+      var batch = entries.filter(function (e) { return e.isIntersecting; }).map(function (e) { revealIO.unobserve(e.target); return e.target; });
       batch.forEach(show);
     }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
-    els.forEach(function (el) { io.observe(el); });
-    window.addEventListener("load", function () {
-      setTimeout(function () { els.forEach(function (el) { if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < window.innerHeight) show(el, 0); }); }, 4000);
-    });
+    els.forEach(function (el) { revealIO.observe(el); });
+    setTimeout(function () { els.forEach(function (el) { if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < window.innerHeight) show(el, 0); }); }, 4000);   /* safety net */
   }
 
   /* ------------------------------------------------------------------ Lenis ↔ ScrollTrigger bridge */
@@ -173,6 +174,7 @@
 
   /* ------------------------------------------------------------------ build / rebuild */
   function build() {
+    initReveals();                                   /* observe .reveal elements added since the last build */
     document.querySelectorAll("[data-scene]").forEach(function (section) {
       switch (section.getAttribute("data-scene")) {
         case "hero-pin": buildHeroPin(section); break;
