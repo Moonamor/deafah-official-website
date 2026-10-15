@@ -1,0 +1,45 @@
+PASS  [chromium (Chrome) 1440] theme badge opens, palette + scheme apply — green/dark
+PASS  [chromium (Chrome) 1440] contact dialog opens and closes with Esc
+PASS  [chromium (Chrome) 1440] horizontal hotel scene pins and moves — {"on":true,"moved":true,"b":"matrix(1, 0, 0, 1, 796, 0)"}
+PASS  [chromium (Chrome) 1440] no console errors on home
+PASS  [chromium (Chrome) 1440] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [chromium (Chrome) 1440] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [chromium (Chrome) 1440] no page errors on the hotel page
+PASS  [chromium (Chrome) 390] theme badge opens, palette + scheme apply — green/dark
+PASS  [chromium (Chrome) 390] contact dialog opens and closes with Esc
+PASS  [chromium (Chrome) 390] horizontal scene falls back to the grid on phones — {"on":false,"moved":false,"b":"none"}
+PASS  [chromium (Chrome) 390] no console errors on home
+PASS  [chromium (Chrome) 390] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [chromium (Chrome) 390] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [chromium (Chrome) 390] no page errors on the hotel page
+PASS  [firefox 1440] theme badge opens, palette + scheme apply — green/dark
+PASS  [firefox 1440] contact dialog opens and closes with Esc
+PASS  [firefox 1440] horizontal hotel scene pins and moves — {"on":true,"moved":true,"b":"matrix(1, 0, 0, 1, 796, 0)"}
+PASS  [firefox 1440] no console errors on home
+PASS  [firefox 1440] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [firefox 1440] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [firefox 1440] no page errors on the hotel page
+PASS  [firefox 390] theme badge opens, palette + scheme apply — green/dark
+PASS  [firefox 390] contact dialog opens and closes with Esc
+PASS  [firefox 390] horizontal scene falls back to the grid on phones — {"on":false,"moved":false,"b":"none"}
+PASS  [firefox 390] no console errors on home
+PASS  [firefox 390] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [firefox 390] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [firefox 390] no page errors on the hotel page
+PASS  [webkit (Safari engine) 1440] theme badge opens, palette + scheme apply — green/dark
+PASS  [webkit (Safari engine) 1440] contact dialog opens and closes with Esc
+PASS  [webkit (Safari engine) 1440] horizontal hotel scene pins and moves — {"on":true,"moved":true,"b":"matrix(1, 0, 0, 1, 796.000305, 0)"}
+PASS  [webkit (Safari engine) 1440] no console errors on home
+PASS  [webkit (Safari engine) 1440] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [webkit (Safari engine) 1440] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [webkit (Safari engine) 1440] no page errors on the hotel page
+PASS  [webkit (Safari engine) 390] theme badge opens, palette + scheme apply — green/dark
+PASS  [webkit (Safari engine) 390] contact dialog opens and closes with Esc
+PASS  [webkit (Safari engine) 390] horizontal scene falls back to the grid on phones — {"on":false,"moved":false,"b":"none"}
+PASS  [webkit (Safari engine) 390] no console errors on home
+PASS  [webkit (Safari engine) 390] 3D scene goes live, or shows the poster with a reason — {"state":"live","reason":null,"poster":"0"}
+PASS  [webkit (Safari engine) 390] reduced motion: 3D stays on the poster — poster/reduced-motion
+PASS  [webkit (Safari engine) 390] no page errors on the hotel page
+
+42/42 cross-browser checks passed
+JSON [{"b":"chromium (Chrome)","v":"1440","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"contact dialog opens and closes with Esc","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"horizontal hotel scene pins and moves","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"no console errors on home","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"chromium (Chrome)","v":"1440","name":"no page errors on the hotel page","ok":true},{"b":"chromium (Chrome)","v":"390","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"chromium (Chrome)","v":"390","name":"contact dialog opens and closes with Esc","ok":true},{"b":"chromium (Chrome)","v":"390","name":"horizontal scene falls back to the grid on phones","ok":true},{"b":"chromium (Chrome)","v":"390","name":"no console errors on home","ok":true},{"b":"chromium (Chrome)","v":"390","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"chromium (Chrome)","v":"390","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"chromium (Chrome)","v":"390","name":"no page errors on the hotel page","ok":true},{"b":"firefox","v":"1440","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"firefox","v":"1440","name":"contact dialog opens and closes with Esc","ok":true},{"b":"firefox","v":"1440","name":"horizontal hotel scene pins and moves","ok":true},{"b":"firefox","v":"1440","name":"no console errors on home","ok":true},{"b":"firefox","v":"1440","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"firefox","v":"1440","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"firefox","v":"1440","name":"no page errors on the hotel page","ok":true},{"b":"firefox","v":"390","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"firefox","v":"390","name":"contact dialog opens and closes with Esc","ok":true},{"b":"firefox","v":"390","name":"horizontal scene falls back to the grid on phones","ok":true},{"b":"firefox","v":"390","name":"no console errors on home","ok":true},{"b":"firefox","v":"390","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"firefox","v":"390","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"firefox","v":"390","name":"no page errors on the hotel page","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"contact dialog opens and closes with Esc","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"horizontal hotel scene pins and moves","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"no console errors on home","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"webkit (Safari engine)","v":"1440","name":"no page errors on the hotel page","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"theme badge opens, palette + scheme apply","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"contact dialog opens and closes with Esc","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"horizontal scene falls back to the grid on phones","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"no console errors on home","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"3D scene goes live, or shows the poster with a reason","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"reduced motion: 3D stays on the poster","ok":true},{"b":"webkit (Safari engine)","v":"390","name":"no page errors on the hotel page","ok":true}]

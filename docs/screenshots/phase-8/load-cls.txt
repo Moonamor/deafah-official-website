@@ -1,0 +1,8 @@
+index.html 412 {"pinSpacer":true,"total":0,"shifts":[{"v":0.0002,"t":2470,"src":["#text y 239>235 h 25>25","#text y 335>331 h 25>25","#text y 95>91 h 25>25","#text y 287>283 h 25>25","SPAN.lang-ar y 90>90 h 28>28"]}]}",
+index.html 1440 {"pinSpacer":true,"total":0.0016,"shifts":[{"v":0.0016,"t":1026,"src":["NAV.nav-links y 25>25 h 45>45"]}]}",
+about.html 412 {"pinSpacer":false,"total":0,"shifts":[]}",
+about.html 1440 {"pinSpacer":false,"total":0.0016,"shifts":[{"v":0.0016,"t":917,"src":["NAV.nav-links y 25>25 h 45>45"]}]}",
+catering.html 412 {"pinSpacer":false,"total":0.0244,"shifts":[{"v":0.0244,"t":1422,"src":["SECTION.section bg-raised y 878>0 h 22>0"]}]}",
+catering.html 1440 {"pinSpacer":true,"total":0,"shifts":[]}",
+hotels/taj-park.html 412 {"pinSpacer":false,"total":0,"shifts":[]}",
+hotels/taj-park.html 1440 {"pinSpacer":false,"total":0.0016,"shifts":[{"v":0.0016,"t":1000,"src":["NAV.nav-links y 25>25 h 45>45"]}]}",

@@ -1,0 +1,3718 @@
+[
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-ar-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-ar-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-ar-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-ar-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-ar-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-ar-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-ar-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-ar-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-ar-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-ar-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-ar-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-ar-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-ar-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-ar-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-ar-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8778,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-ar-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5189,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-ar-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-ar-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-ar-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-ar-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-ar-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-ar-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-ar-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-ar-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-ar-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-ar-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-ar-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-ar-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-ar-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-ar-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-ar-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8514,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-ar-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5448,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-ar-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-ar-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-ar-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-ar-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-ar-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-ar-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-ar-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-ar-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-ar-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-ar-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-ar-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-ar-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-ar-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-ar-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-ar-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6673,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-ar-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4725,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-ar-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [
+   "warning THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+  ],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-ar-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-ar-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-ar-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-ar-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-ar-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-ar-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-pos.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-ar-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 16234,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "ar",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-ar-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 9016,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-rtl-neg.svg",
+    "w": 200,
+    "h": 59,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-en-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-en-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-en-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-en-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-en-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-en-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-en-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-en-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-en-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-en-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-en-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-en-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "index-en-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "index-en-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "index-en-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8384,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "index.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "index-en-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5147,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 6
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-en-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-en-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-en-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-en-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-en-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-en-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-en-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-en-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-en-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-en-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-en-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-en-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "about-en-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "about-en-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "about-en-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 8665,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "about.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "about-en-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 5402,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-en-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-en-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-en-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-en-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-en-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-en-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-en-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-en-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-en-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-en-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-en-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-en-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "catering-en-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "catering-en-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "catering-en-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 6366,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "catering.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "catering-en-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 4646,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 0
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-en-default-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [
+   "warning THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+  ],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-en-default-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-en-default-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-en-default-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-en-green-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-en-green-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-en-green-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-en-green-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-en-red-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-en-red-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-en-red-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-en-red-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "name": "hotels_taj-park-en-blue-light-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "name": "hotels_taj-park-en-blue-light-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-pos.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "name": "hotels_taj-park-en-blue-dark-390.png",
+  "docW": 390,
+  "overflow": false,
+  "height": 15711,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "symbol",
+    "file": "symbol-pos.svg",
+    "w": 39,
+    "h": 40,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ },
+ {
+  "page": "hotels/taj-park.html",
+  "lang": "en",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "name": "hotels_taj-park-en-blue-dark-1440.png",
+  "docW": 1440,
+  "overflow": false,
+  "height": 8765,
+  "console": [],
+  "logos": [
+   {
+    "lockup": "horizontal",
+    "file": "logo-ltr-neg.svg",
+    "w": 200,
+    "h": 57,
+    "loaded": true
+   },
+   {
+    "lockup": "stacked",
+    "file": "logo-stacked-neg.svg",
+    "w": 160,
+    "h": 130,
+    "loaded": true
+   }
+  ],
+  "hotels": 5
+ }
+]
