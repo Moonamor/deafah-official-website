@@ -45,5 +45,5 @@ Branch `overhaul/phase-1` → `main`. Eight phases, each reviewed and approved b
   (details in `QA_REPORT.md`).
 
 ## Open before production
-Catering photography, real content for the two hidden pages, a WhatsApp-capable number, the production domain
-(see `BRAND_GAPS.md`, status **blocking**).
+Catering photography, real content for the two hidden pages, a WhatsApp-capable number (see `BRAND_GAPS.md`, status
+**blocking**). Production origin: `https://deafah.netlify.app`, set once in `data/pages.json`, with canonical and OG URLs derived from it.

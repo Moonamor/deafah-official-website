@@ -79,6 +79,27 @@ for (const c of checks) {
   violations += problems.length;
 }
 
+// one production origin (data/pages.json site_url): canonical, og:url, og:image, sitemap and robots all derive from it
+{
+  const SITE = JSON.parse(readFileSync(join(ROOT, "data", "pages.json"), "utf8")).site_url.replace(/\/+$/, "");
+  const problems = [];
+  const sitemap = readFileSync(join(ROOT, "sitemap.xml"), "utf8"), robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
+  for (const m of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!m[1].startsWith(SITE + "/")) problems.push("sitemap loc " + m[1]);
+  if (!robots.includes(`Sitemap: ${SITE}/sitemap.xml`)) problems.push("robots.txt Sitemap line");
+  for (const f of files.filter((f) => f.endsWith(".html") && !/[\\/]dev[\\/]/.test(f))) {
+    const me = relative(ROOT, f).replace(/\\/g, "/"), want = me === "index.html" ? SITE + "/" : `${SITE}/${me}`;
+    const h = readFileSync(f, "utf8");
+    if (!h.includes(`<link rel="canonical" href="${want}">`)) problems.push(me + " canonical");
+    if (!h.includes(`<meta property="og:url" content="${want}">`)) problems.push(me + " og:url");
+    const og = (h.match(/<meta property="og:image" content="([^"]+)">/) || [])[1] || "";
+    if (!og.startsWith(SITE + "/")) problems.push(me + " og:image not absolute on site_url");
+    else { try { statSync(join(ROOT, og.slice(SITE.length + 1))); } catch { problems.push(me + " og:image file missing " + og); } }
+  }
+  console.log(`${problems.length ? "FAIL" : "PASS"}  canonical / og:url / og:image / sitemap / robots derive from site_url (${SITE})`);
+  problems.slice(0, 12).forEach((x) => console.log("      " + x));
+  violations += problems.length;
+}
+
 // inline pre-paint script must equal js/theme-boot.js (minus its leading comment)
 const boot = readFileSync(join(ROOT, "js", "theme-boot.js"), "utf8").replace(/^\/\*[\s\S]*?\*\/\s*/, "").trim();
 for (const f of files.filter((f) => f.endsWith(".html"))) {

@@ -16,11 +16,14 @@ fingerprinted copies, `sitemap.xml`, `robots.txt`) is **committed**, so the comm
 
 ```sh
 npm ci
-npm run build                          # css → three → meta (sitemap, publication switch) → fingerprint
+npm run build                          # css → three → fingerprint → meta (site URL, sitemap, publication switch)
 python -m http.server 8787 -d frontend # http://127.0.0.1:8787/
 ```
 
-While editing styles: `npm run watch:css`, then `npm run build` before committing (fingerprinting must run last).
+While editing styles: `npm run watch:css`, then `npm run build` before committing.
+
+The production origin is set once, in `frontend/data/pages.json` → `"site_url"` (today `https://deafah.netlify.app`).
+Changing it and running `npm run build` updates every canonical link, `og:url`, `og:image`, the sitemap and robots.txt.
 
 ## Build steps
 
@@ -28,10 +31,10 @@ While editing styles: `npm run watch:css`, then `npm run build` before committin
 |---|---|
 | `build:css` | Tailwind v4 CLI: `frontend/src/styles/site.css` → `frontend/dist/site.css` (minified) |
 | `build:three` | esbuild bundle of Three.js core + GLTFLoader → `frontend/vendor/three.min.js` |
-| `build:meta` | applies `frontend/data/pages.json` (see *Publishing a page*), writes `sitemap.xml` and `robots.txt` |
+| `build:meta` | applies `frontend/data/pages.json`: `site_url` (canonical links, `og:url`, absolute `og:image`, `sitemap.xml`, `robots.txt`) and the publication switch (see *Publishing a page*); runs after fingerprinting so `og:image` names the current hashed file |
 | `build:fingerprint` | renames every referenced asset to `name.<sha256:8>.ext`, rewrites HTML/CSS/JS/JSON, writes `dist/asset-manifest.json`, prunes stale copies; idempotent |
 | `build:icons-sheet` | regenerates the icon contact sheet `frontend/dev/icons.html` from `assets/icons/sprite.svg` (run `build` afterwards) |
-| `build` | all of the above except the icon sheet, in order |
+| `build` | css → three → fingerprint → meta (the icon sheet is separate) |
 
 ## Publishing a page
 

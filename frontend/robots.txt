@@ -3,4 +3,4 @@ Allow: /
 Disallow: /vendor/
 Disallow: /data/mock/
 Disallow: /dev/
-Sitemap: https://www.deafah.com/sitemap.xml
+Sitemap: https://deafah.netlify.app/sitemap.xml

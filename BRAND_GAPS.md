@@ -4,12 +4,12 @@ Consolidated at Phase 8. Every row has one status:
 
 - **accepted** — approved by Badr (explicitly, or as part of an approved phase decision) or sourced from the brand folder.
 - **proposed** — my decision, shipped and visible in the phase reports, never explicitly confirmed; change it any time.
-- **blocking** — must be resolved before production. Today: G26, G33, G34, G35.
+- **blocking** — must be resolved before production. Today: G26, G34, G35.
 - **superseded** — replaced by a later row (kept for the trail).
 
 Nothing here changes a locked brand value.
 
-**Summary:** 37 items — accepted 18 · proposed 12 · blocking 4 · superseded 3.
+**Summary:** 37 items — accepted 19 · proposed 12 · blocking 3 · superseded 3.
 
 | # | Item | Status | Decision trail | Value in use | Where |
 |---|---|---|---|---|---|
@@ -45,7 +45,7 @@ Nothing here changes a locked brand value.
 | G30 | Country markers in the phone input | **proposed** | Phase 8 (emoji ban) | flag emoji replaced by the ISO 3166 code in a 1.5 px chip (Windows rendered the flags as letters anyway) | `js/phone-input.js`, `.pi-flag` |
 | G31 | Fallback font metrics | **proposed** | Phase 8 Lighthouse fix | `"Almarai Fallback"` = local Arial with `size-adjust: 127.89%`, `ascent-override: 70.77%`, `descent-override: 16.5%`, computed from both fonts' tables, so the swap to Almarai does not reflow | `site.css` §3 |
 | G32 | Hero pin reservation | **accepted** | Phase 8 CLS fix | with scripting and motion on, CSS reserves the 60 vh pin distance; `motion.js` hands it to ScrollTrigger's spacer in the same task. Home load CLS 0.115 → 0. | `site.css`, `js/motion.js` |
-| G33 | Production domain | **blocking** | open question | `sitemap.xml` / `robots.txt` use `https://www.deafah.com` (`SITE_URL` default) while the contact email is `info@deafahgroup.com`; the real production domain must be confirmed before launch | `tools/build-meta.mjs` |
+| G33 | Production domain | **accepted** | decision (Badr, Phase 8 approval) | canonical origin `https://deafah.netlify.app`, set once in `data/pages.json` → `site_url`; sitemap, robots.txt, `<link rel="canonical">`, `og:url` and the absolute `og:image` derive from it (QA-checked) | `data/pages.json`, `tools/build-meta.mjs` |
 | G34 | Real content for the two hidden pages | **blocking** | Badr, Phase 7 approval | everything in `data/mock/*.json` is test data (prices, rooms, packages, menu, counters, guests, FAQ, distances); pages stay unpublished until it is replaced | `data/mock/` |
 | G35 | WhatsApp and call numbers | **blocking** | open question | the floating WhatsApp/call buttons use `+966 12 591 11 10`, the group landline from the old site; a landline cannot receive WhatsApp, so a mobile/WhatsApp Business number is needed | `data/mock/*.json` |
 | G36 | Booking widget and newsletter | **proposed** | approved Q12 as demos | both still send nothing and carry the `بيانات تجريبية` ribbon; before production decide: connect them, or remove them | `index.html`, `about.html` |

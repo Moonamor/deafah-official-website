@@ -7,7 +7,7 @@
     "build:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --minify",
     "watch:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --watch",
     "build:meta": "node tools/build-meta.mjs",
-    "build": "npm run build:css && npm run build:three && npm run build:meta && npm run build:fingerprint",
+    "build": "npm run build:css && npm run build:three && npm run build:fingerprint && npm run build:meta",
     "qa:grep": "node tools/qa-grep.mjs",
     "qa:case": "node tools/qa-case.mjs",
     "qa:contrast": "node tools/contrast.mjs",

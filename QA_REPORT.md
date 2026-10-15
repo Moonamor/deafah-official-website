@@ -82,7 +82,7 @@ palette × scheme combinations, 104 pass. Lighthouse found one live failure the 
 PASS: no `visualIdentityReferences` reference · no Bootstrap classes/assets · no CDN · no jQuery / Font Awesome / icon fonts ·
 no physical-direction CSS · no hard-coded hex outside the token file · no emoji, dingbats or generated flag emoji · every
 `arrow-start`/`arrow-end` sits in an `.icon--flip` svg · no inline SVG drawings (sprite `<use>` only) · no glass/blur/glow ·
-no radius above 2 px · hotel cards are photographs (Taj Park = `taj-park-640` photo) · publication switch honoured · inline
+no radius above 2 px · canonical / og:url / og:image / sitemap / robots derive from `site_url` · hotel cards are photographs (Taj Park = `taj-park-640` photo) · publication switch honoured · inline
 pre-paint script equals `js/theme-boot.js` on all 6 pages · 637 references exist with matching case · 0 contrast failures.
 
 `npm run qa:served`: index, about, catering, hotels/taj-park, dev/3d, dev/icons, sitemap.xml, robots.txt, data/hotels.json,
@@ -151,6 +151,6 @@ Unused sprite symbols stay by design: kitchen, chef, tray, calendar, arrow-start
 
 ## 12. Open before production
 
-See `BRAND_GAPS.md` (status **blocking**): G26 catering photography, G33 production domain, G34 real content for the
-two hidden pages, G35 a WhatsApp-capable number. Also to decide/verify: G36 demo booking widget and newsletter, G37 EmailJS
+See `BRAND_GAPS.md` (status **blocking**): G26 catering photography, G34 real content for the two hidden pages, G35 a
+WhatsApp-capable number. The production domain (G33) is settled: `https://deafah.netlify.app` from `data/pages.json`. Also to decide/verify: G36 demo booking widget and newsletter, G37 EmailJS
 template prints `{{subject}}`, and a real-device Safari check.
