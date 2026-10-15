@@ -109,29 +109,23 @@
     ]
   ],
   "massing": {
-    "_basis": "building:levels=23 and height=95 m come from the OpenStreetMap way itself; the podium/tower split, the glazed corner (the curved lounge glazing) and the window rhythm come from the group's own photograph (imgs/hotel-pics/taj.JPG) — see BRAND_GAPS G24. No third-party imagery embedded.",
+    "_basis": "OSM: building:levels=23, height=95 m. Architecture from the group's own photos/renders (reference only, BRAND_GAPS G25): two rectilinear wings at an obtuse angle, cylindrical curtain-wall tower at the street corner (fitted to arc nodes 14–20 of the footprint) with a pergola crown, sandstone pier/spandrel grid with floor-high dark-blue glazing, pointed arches on the top floors under a frieze, glazed podium with canopy, lit restaurant band on the cylinder.",
     "floors": 23,
     "floorHeight": 4.0,
     "podiumFloors": 3,
-    "window": [
-      1.3,
-      1.8
-    ],
-    "windowPitch": 2.7,
-    "roofBox": [
-      12,
-      3.0,
-      9
-    ],
-    "cornerGlass": {
-      "x": 46,
-      "z": -7,
-      "width": 12,
-      "depth": 12,
-      "floors": 4
-    },
-    "tileMetres": 14.0,
-    "cameraStartDeg": -35,
-    "cameraRangeDeg": 80
+    "bayWidth": 4.2,
+    "pierWidth": 0.9,
+    "spandrelHeight": 1.0,
+    "archFloors": 3,
+    "cylinderExtraFloors": 2,
+    "arcNodes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
   }
 }

@@ -1,0 +1,23 @@
+{
+  "state": "live",
+  "reason": null,
+  "timings": {
+    "near": 398.5,
+    "importStart": 398.9,
+    "moduleReady": 443.1,
+    "firstFrame": 1673.3,
+    "ttiMs": 1274.8
+  },
+  "stats": {
+    "frames": 216,
+    "avgMs": 16.58,
+    "p95Ms": 14.3,
+    "maxMs": 1029.7
+  },
+  "canvasHidden": false,
+  "canvasSize": [
+    390,
+    836
+  ],
+  "webgl": true
+}
