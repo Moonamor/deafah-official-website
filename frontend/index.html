@@ -1,539 +1,366 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light" data-lang="ar">
+<html lang="ar" dir="rtl" data-lang="ar" data-theme="default" data-scheme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Al Deafah International Group — Hospitality Around the Haram</title>
-  <meta name="description" content="Al Deafah International Group — 14 hotels around Masjid Al Haram, Makkah. Book your Hajj and Umrah stay.">
-  <link rel="icon" href="imgs/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/liquid-glass.css">
-  <link rel="stylesheet" href="css/phone-input.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script id="theme-boot">(function () {
+  try {
+    var d = document.documentElement, ls = window.localStorage;
+    var scheme = ls.getItem("deafah-theme");            /* "light" | "dark" (existing key, owned by auto-theme-manager.js) */
+    var mode = ls.getItem("deafah-theme-mode");          /* "auto" | "manual" */
+    var palette = ls.getItem("deafah-palette");          /* "default" | "green" | "red" | "blue" (new) */
+    var lang = ls.getItem("deafah-lang");                /* "ar" | "en" (owned by main.js) */
+    if (!scheme || mode !== "manual") { var h = new Date().getHours(); scheme = h >= 6 && h < 18 ? "light" : "dark"; }
+    if (scheme !== "light" && scheme !== "dark") scheme = "light";
+    if (["default", "green", "red", "blue"].indexOf(palette) === -1) palette = "default";
+    if (lang !== "en") lang = "ar";
+    d.setAttribute("data-scheme", scheme);
+    d.setAttribute("data-theme", palette);
+    d.setAttribute("data-lang", lang);
+    d.setAttribute("lang", lang);
+    d.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("no-motion");
+  } catch (e) {}
+})();</script>
+  <title>مجموعة الضيافة العالمية — ضيافة مكية على خطوات من الحرم</title>
+  <meta name="description" content="Al Deafah International Group — six hotels within walking distance of Masjid Al Haram, Makkah, with transport, Umrah services and catering under one group.">
+  <link rel="icon" href="assets/brand/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/brand/favicon/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/brand/favicon/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/brand/favicon/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/brand/logo/symbol-black.svg" color="#101820">
+  <meta name="theme-color" content="#101820">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="مجموعة الضيافة العالمية — Al Deafah International Group">
+  <meta property="og:description" content="ضيافة مكية على خطوات من المسجد الحرام: فنادق، نقل، خدمات عمرة وإعاشة.">
+  <meta property="og:image" content="assets/brand/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preload" href="assets/fonts/Almarai-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Almarai-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="dist/site.css">
 </head>
 <body>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-[100] btn btn--sm"><span class="lang-ar">تجاوز إلى المحتوى</span><span class="lang-en">Skip to content</span></a>
 
-    <div class="ambient-background" id="ambientBg" aria-hidden="true">
-    <div class="blob blob-1" style="background-color: darkkhaki;"></div>
-    <div class="blob blob-2" style="background-color: green;"></div>
-    <div class="blob blob-3" style="background-color: darkorange;"></div>
-    <div class="blob blob-4" style="background-color: yellow;"></div>
-    <div class="grain-overlay"></div>
-  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap relative">
+      <a href="index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-width="220" data-logo-mobile="symbol" aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
 
-    <header class="nav site-header glass glass--1" id="siteHeader">
-    <div class="container header-inner navbar-expand-xl">
-      <a href="#top" class="brand">
-        <span class="nav-logo" role="img" aria-label="Al Deafah International Group"></span>
-      </a>
-
-            <nav class="primary-nav collapse navbar-collapse" id="primaryNav">
-        <a href="#top" class="nav-link is-active" data-bs-toggle="collapse" data-bs-target="#primaryNav">
-          <span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span>
-        </a>
-        <a href="about.html" class="nav-link" >
-          <span class="lang-ar">من نحن</span><span class="lang-en">About Us</span>
-        </a>
-        <a href="#hotels" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
-          <span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span>
-        </a>
-        <a href="#why" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
-          <span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span>
-        </a>
-        <a href="#services" class="nav-link" data-bs-toggle="collapse" data-bs-target="#primaryNav">
-          <span class="lang-ar">الخدمات</span><span class="lang-en">Services</span>
-        </a>
-        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
-          <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span>
-        </a>
-                <button class="btn btn-primary btn-pill mobile-nav-cta" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav">
-          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
-        </button>
+      <nav class="nav-links" id="primaryNav" aria-label="التنقل الرئيسي">
+        <a href="#top" class="nav-link is-active"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
+        <a href="about.html" class="nav-link"><span class="lang-ar">من نحن</span><span class="lang-en">About Us</span></a>
+        <a href="#hotels" class="nav-link"><span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span></a>
+        <a href="#why" class="nav-link"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
+        <a href="#services" class="nav-link"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
+        <a href="#contact" class="nav-link" data-modal-open="contactModal"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></a>
+        <a href="#hotels" class="btn btn--sm mt-2 lg:hidden"><span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span></a>
       </nav>
 
-      <div class="header-actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
-          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
-          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
+      <div class="flex items-center gap-1">
+        <button class="btn btn--icon" id="themeToggle" data-theme-toggle type="button" aria-label="تبديل الوضع الفاتح والداكن">
+          <svg class="icon only-light" aria-hidden="true"><use href="assets/icons/sprite.svg#moon"/></svg>
+          <svg class="icon only-dark" aria-hidden="true"><use href="assets/icons/sprite.svg#sun"/></svg>
         </button>
-        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <button class="btn btn--icon font-bold text-sm" id="langToggle" data-lang-toggle type="button" aria-label="Switch language / تبديل اللغة">
           <span class="lang-ar">EN</span><span class="lang-en">AR</span>
         </button>
-        <button class="btn btn-primary btn-pill header-cta" type="button">
-          <span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span>
-        </button>
-        <button class="icon-btn nav-toggle" id="navToggle" type="button"
-          data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav"
-          aria-label="Open menu" aria-expanded="false">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <a href="#hotels" class="btn btn--sm hidden lg:inline-flex"><span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span></a>
+        <button class="btn btn--icon lg:hidden" type="button" data-nav-toggle aria-controls="primaryNav" aria-expanded="false" aria-label="فتح القائمة" data-label-open="فتح القائمة" data-label-close="إغلاق القائمة">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#menu"/></svg>
         </button>
       </div>
     </div>
   </header>
-<header class="hero-section">
-    <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-    <section class="hero">
-      <div class="container hero-inner">
-              </div>
-    </section>
-  </div>
-</header>
+  <main id="main">
+    <div id="top"></div>
 
-  <main id="top">
-                  <div class="booking-widget-wrap reveal">
-        <form class="booking-widget glass glass--3" id="bookingWidget">
-          <div class="field">
-            <label for="destination-ar" class="lang-ar">الوجهة</label>
-            <label for="destination-en" class="lang-en">Destination</label>
-            <select id="destination-ar" name="destination" class="lang-ar">
-              <option>مكة المكرمة — جميع الفنادق</option>
-              <option>بالقرب من المسجد الحرام (أقل من 5 دقائق)</option>
-              <option>حي جرول</option>
-              <option>حي التيسير</option>
-            </select>
-            <select id="destination-en" name="destination" class="lang-en">
-              <option>Makkah — All Hotels</option>
-              <option>Near Masjid Al Haram (&lt; 5 min)</option>
-              <option>Jarwal District</option>
-              <option>Al Taysir District</option>
-            </select>
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field">
-            <label for="checkin"><span class="lang-ar">تاريخ الوصول</span><span class="lang-en">Check-in</span></label>
-            <input type="date" id="checkin" name="checkin">
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field">
-            <label for="checkout"><span class="lang-ar">تاريخ المغادرة</span><span class="lang-en">Check-out</span></label>
-            <input type="date" id="checkout" name="checkout">
-          </div>
-          <div class="field-divider" aria-hidden="true"></div>
-          <div class="field field-guests">
-            <label for="guests"><span class="lang-ar">الضيوف والغرف</span><span class="lang-en">Guests &amp; Rooms</span></label>
-            <div class="stepper" id="guestStepper">
-              <button type="button" class="stepper-btn" data-action="decrement"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
-              <span class="stepper-value" id="guestCount">
-                <span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span>
-              </span>
-              <button type="button" class="stepper-btn" data-action="increment"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-pill booking-submit">
-            <span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span>
-            <i class="fa-solid fa-chevron-right btn-chevron" aria-hidden="true"></i>
-          </button>
-        </form>
+    <!-- HERO — depth stack prepared for Phase 4 (data-scene="hero-pin"): kufic field · photo · veil · headline · CTA -->
+    <section class="panel relative overflow-hidden" data-scene="hero-pin" aria-labelledby="heroTitle">
+      <div class="absolute inset-0" data-layer="photo" data-depth="0.2">
+        <picture>
+          <source type="image/webp" srcset="imgs/hotel-pics/taj-park-640.webp 640w, imgs/hotel-pics/taj-park-1280.webp 1280w, imgs/hotel-pics/taj-park-1920.webp 1920w" sizes="100vw">
+          <img src="imgs/hotel-pics/taj-park-1280.webp" alt="" width="1280" height="960" class="h-full w-full object-cover opacity-50" fetchpriority="high">
+        </picture>
       </div>
+      <div class="veil" data-layer="veil" aria-hidden="true"></div>
+      <div class="kufic-field kufic-field--abs start-auto hidden md:grid" data-kufic data-cols="2" data-block="56" data-layer="pattern" data-depth="0.5" aria-hidden="true"></div>
 
-        <section class="section" id="why">
-      <div class="container">
-        <p class="eyebrow reveal"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></p>
-        <h2 class="section-title reveal">
-          <span class="lang-ar">تميّز المجموعة في أربع نقاط</span>
-          <span class="lang-en">The group's difference, in four moves</span>
-        </h2>
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
-          <div class="col">
-          <article class="why-card glass glass--2 reveal">
-            <span class="why-icon" aria-hidden="true">
-              <i class="fa-solid fa-person-walking"></i>
-            </span>
-            <h3><span class="lang-ar">خطوات من الحرم</span><span class="lang-en">Steps from the Haram</span></h3>
-            <p>
-              <span class="lang-ar">تقع جميع فنادقنا على مسافة قريبة يمكن الوصول إليها سيرًا من المسجد الحرام — وهذا هو المعيار الذي نلتزم به.</span>
-              <span class="lang-en">Every property is walking distance from Masjid Al Haram — our defining metric, not an afterthought.</span>
-            </p>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="why-card glass glass--2 reveal">
-            <span class="why-icon" aria-hidden="true">
-              <i class="fa-solid fa-hotel"></i>
-            </span>
-            <h3><span class="lang-ar">14 فندقًا، مجموعة واحدة</span><span class="lang-en">14 Hotels, One Group</span></h3>
-            <p>
-              <span class="lang-ar">مجموعة مختارة من الفنادق في مكة المكرمة، من الإقامات الاقتصادية إلى الأجنحة الفاخرة — بإدارة موثوقة واحدة.</span>
-              <span class="lang-en">A curated portfolio across Makkah, from economy stays to premium suites — one trusted operator.</span>
-            </p>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="why-card glass glass--2 reveal">
-            <span class="why-icon" aria-hidden="true">
-              <i class="fa-solid fa-tag"></i>
-            </span>
-            <h3><span class="lang-ar">أسعار تنافسية</span><span class="lang-en">Competitive Pricing</span></h3>
-            <p>
-              <span class="lang-ar">أسعار شفافة ومتدرجة حسب مستوى الفندق، دون أي تلاعب في العملة أو الوحدات.</span>
-              <span class="lang-en">Transparent, tiered rates across star levels — with no hidden currency or unit conversion tricks.</span>
-            </p>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="why-card glass glass--2 reveal">
-            <span class="why-icon" aria-hidden="true">
-              <i class="fa-regular fa-clock"></i>
-            </span>
-            <h3><span class="lang-ar">خدمة على مدار 24 ساعة</span><span class="lang-en">24-Hour Service</span></h3>
-            <p>
-              <span class="lang-ar">استقبال ودعم للضيوف على مدار الساعة، طوال أيام السنة.</span>
-              <span class="lang-en">Front desk, prayer wake calls, and guest support around the clock, every day of the year.</span>
-            </p>
-          </article>
+      <div class="wrap relative z-10 min-h-[78vh] flex flex-col justify-end pb-16 pt-32">
+        <div class="max-w-3xl" data-layer="copy" data-depth="0.8">
+          <span class="eyebrow reveal"><span class="lang-ar">ضيافة مكية منذ أكثر من ١٥ عامًا</span><span class="lang-en">Makkah hospitality for over 15 years</span></span>
+          <h1 id="heroTitle" class="t-display reveal" data-split="lines">
+            <span class="lang-ar">إقامة هادئة على خطوات من المسجد الحرام</span>
+            <span class="lang-en">A calm stay, steps from Masjid Al Haram</span>
+          </h1>
+          <span class="rule reveal" aria-hidden="true"></span>
+          <p class="t-body muted max-w-xl reveal">
+            <span class="lang-ar">فنادق قريبة من الحرم، وأسطول نقل خاص، وخدمات عمرة وإعاشة متكاملة، تديرها مجموعة واحدة من البداية إلى النهاية.</span>
+            <span class="lang-en">Hotels near the Haram, a private transport fleet, and integrated Umrah and catering services, run end to end by one group.</span>
+          </p>
+          <div class="flex flex-wrap gap-3 mt-8 reveal" data-layer="cta" data-depth="1">
+            <a href="#hotels" class="btn btn--lg"><span class="lang-ar">استعرض الفنادق</span><span class="lang-en">Browse Hotels</span><svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-end"/></svg></a>
+            <a href="#contact" class="btn btn--lg btn--secondary" data-modal-open="contactModal"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact Us</span></a>
           </div>
         </div>
       </div>
     </section>
 
-        <section class="section stats-section">
-      <div class="container">
-        <div class="stats-grid glass glass--1 row row-cols-1 row-cols-sm-3 g-3">
-          <div class="stat reveal col">
-            <span class="stat-number" data-count-to="15" data-suffix="+">0</span>
-            <span class="stat-label"><span class="lang-ar">سنوات من الخبرة</span><span class="lang-en">Years of Experience</span></span>
-          </div>
-          <div class="stat reveal col">
-            <span class="stat-number" data-count-to="10" data-suffix="M+">0</span>
-            <span class="stat-label"><span class="lang-ar">ضيف تمت استضافتهم</span><span class="lang-en">Guests Hosted</span></span>
-          </div>
-          <div class="stat reveal col">
-            <span class="stat-number" data-count-to="5" data-suffix="K+">0</span>
-            <span class="stat-label"><span class="lang-ar">غرفة في مكة المكرمة</span><span class="lang-en">Rooms Across Makkah</span></span>
+    <!-- BOOKING WIDGET (demo) -->
+    <div class="wrap -mt-10 relative z-20">
+      <div class="demo-ribbon mb-2" data-ribbon="booking" role="note">
+        <span><strong><span class="lang-ar">بيانات تجريبية</span><span class="lang-en">Test data</span></strong> <span class="lang-ar">— نموذج الحجز عرض توضيحي ولا يرسل طلبات بعد.</span><span class="lang-en">— the booking form is a demo and does not send requests yet.</span></span>
+        <button type="button" class="btn btn--icon" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#close"/></svg></button>
+      </div>
+      <form class="card card--outline bg-surface grid gap-4 p-4 md:grid-cols-[2fr_1fr_1fr_1fr_auto] md:items-end" id="bookingWidget" aria-label="نموذج الحجز">
+        <div class="field">
+          <label for="destination-ar" class="lang-ar">الوجهة</label>
+          <label for="destination-en" class="lang-en">Destination</label>
+          <select id="destination-ar" name="destination" class="lang-ar">
+            <option>مكة المكرمة — جميع الفنادق</option>
+            <option>بالقرب من المسجد الحرام (أقل من 5 دقائق)</option>
+            <option>حي جرول</option>
+            <option>حي التيسير</option>
+          </select>
+          <select id="destination-en" name="destination" class="lang-en">
+            <option>Makkah — All Hotels</option>
+            <option>Near Masjid Al Haram (&lt; 5 min)</option>
+            <option>Jarwal District</option>
+            <option>Al Taysir District</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="checkin"><span class="lang-ar">تاريخ الوصول</span><span class="lang-en">Check-in</span></label>
+          <input type="date" id="checkin" name="checkin">
+        </div>
+        <div class="field">
+          <label for="checkout"><span class="lang-ar">تاريخ المغادرة</span><span class="lang-en">Check-out</span></label>
+          <input type="date" id="checkout" name="checkout">
+        </div>
+        <div class="field">
+          <span class="label" id="guestsLabel"><span class="lang-ar">الضيوف</span><span class="lang-en">Guests</span></span>
+          <div class="flex items-center border-brand border-border min-h-12" id="guestStepper" role="group" aria-labelledby="guestsLabel">
+            <button type="button" class="stepper-btn btn btn--icon shrink-0" data-action="decrement" aria-label="إنقاص"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#minus"/></svg></button>
+            <span class="grow text-center font-bold" id="guestCount" aria-live="polite"><span class="lang-ar">٢ ضيوف</span><span class="lang-en">2 Guests</span></span>
+            <button type="button" class="stepper-btn btn btn--icon shrink-0" data-action="increment" aria-label="زيادة"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#plus"/></svg></button>
           </div>
         </div>
-      </div>
-    </section>
-
-        <section class="section" id="hotels">
-      <div class="container">
-        <p class="eyebrow reveal"><span class="lang-ar">فنادقنا</span><span class="lang-en">Our Hotels</span></p>
-        <h2 class="section-title reveal">
-          <span class="lang-ar">اختر إقامتك بالقرب من الحرم</span>
-          <span class="lang-en">Find your stay near the Haram</span>
-        </h2>
-
-        <div class="filter-bar glass glass--1 reveal">
-          <button class="chip is-active" type="button"><span class="lang-ar">الكل</span><span class="lang-en">All</span></button>
-          <button class="chip" type="button"><span class="lang-ar">★ اقتصادي</span><span class="lang-en">★ Economy</span></button>
-          <button class="chip" type="button"><span class="lang-ar">★★ متوسط</span><span class="lang-en">★★ Standard</span></button>
-          <button class="chip" type="button"><span class="lang-ar">★★★ مميز</span><span class="lang-en">★★★ Premium</span></button>
-          <span class="filter-divider" aria-hidden="true"></span>
-          <button class="chip" type="button"><span class="lang-ar">أقل من 5 دقائق سيرًا</span><span class="lang-en">&lt; 5 min walk</span></button>
-          <button class="chip" type="button"><span class="lang-ar">5–15 دقيقة</span><span class="lang-en">5–15 min</span></button>
-          <button class="chip" type="button"><span class="lang-ar">أكثر من 15 دقيقة</span><span class="lang-en">&gt; 15 min</span></button>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="hotelGrid">
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--1">
-              <span class="hotel-badge"><span class="lang-ar">5 دقائق سيرًا</span><span class="lang-en">5 min walk</span></span>
-              <img src="imgs/hotel-pics/lav.jpg" alt="Zahrat Al Lavender Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق زهرة اللافندر</span><span class="lang-en">Zahrat Al Lavender Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="2 out of 5 stars">★★<span class="star-dim">★★★</span></span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">طريق أم القرى، جرول</span><span class="lang-en">Umm Al Qura Rd, Jarwal</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 240<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--2">
-              <span class="hotel-badge"><span class="lang-ar">12 دقيقة سيرًا</span><span class="lang-en">12 min walk</span></span>
-              <img src="imgs/hotel-pics/Amjad.JPG" alt="Amjad Al Deafah Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق أمجاد الضيافة</span><span class="lang-en">Amjad Al Deafah Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="2 out of 5 stars">★★<span class="star-dim">★★★</span></span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">طريق االتيسير</span><span class="lang-en">AL Tiseer Rd</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 200<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--3">
-              <span class="hotel-badge"><span class="lang-ar">8 دقائق سيرًا</span><span class="lang-en">8 min walk</span></span>
-              <img src="imgs/hotel-pics/Saraya.JPG" alt="Saraya Al Deafah Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق سرايا الضيافة</span><span class="lang-en">Saraya Al Deafah Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="3 out of 5 stars">★★★</span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">منطقة إبراهيم الخليل</span><span class="lang-en">Ibrahim Al Khalil Area</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 320<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--4">
-              <span class="hotel-badge"><span class="lang-ar">18 دقيقة سيرًا</span><span class="lang-en">18 min walk</span></span>
-              <img src="imgs/hotel-pics/Diar.JPG" alt="Diyar Al Diyafah Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق ديار الضيافة</span><span class="lang-en">Diyar Al Diyafah Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="1 out of 5 stars">★<span class="star-dim">★★★★</span></span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">نفق جرول</span><span class="lang-en">Jarwal Tunnel</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 160<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--5">
-              <span class="hotel-badge"><span class="lang-ar">10 دقائق سيرًا</span><span class="lang-en">10 min walk</span></span>
-              <img src="imgs/hotel-pics/taj.JPG" alt="Taj Park Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق تاج بارك</span><span class="lang-en">Taj Park Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="rating pending"><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">مكة المكرمة</span><span class="lang-en">Makkah</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 180<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="col">
-          <article class="hotel-card glass glass--2 reveal">
-            <div class="hotel-media hotel-media--6">
-              <span class="hotel-badge"><span class="lang-ar">15 دقيقة سيرًا</span><span class="lang-en">15 min walk</span></span>
-              <img src="imgs/hotel-pics/Bustan.JPG" alt="Al Bostan Al Masi Hotel">
-            </div>
-            <div class="hotel-body">
-              <h3><span class="lang-ar">فندق البستان الماسي</span><span class="lang-en">Al Bostan Al Masi Hotel</span></h3>
-              <div class="hotel-meta">
-                <span class="stars" aria-label="1 out of 5 stars">★<span class="star-dim">★★★★</span></span>
-                <span class="dot">•</span>
-                <span><span class="lang-ar">التندباوي</span><span class="lang-en">At Tandabawi</span></span>
-              </div>
-              <div class="hotel-foot">
-                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small> SAR 150<small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
-                <button class="btn btn-ghost btn-sm" type="button"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span></button>
-              </div>
-            </div>
-          </article>
-          </div>
-
-        </div>
-
-        <div class="grid-footer">
-          <button class="btn btn-secondary btn-pill" type="button">
-            <span class="lang-ar">عرض جميع الفنادق (14)</span><span class="lang-en">View All 14 Hotels</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-        <section class="section" id="services">
-      <div class="container">
-        <div class="cta-band glass glass--2 reveal">
-          <div class="cta-text">
-            <p class="eyebrow"><span class="lang-ar">خدمات الحج والعمرة</span><span class="lang-en">Hajj &amp; Umrah Services</span></p>
-            <h2>
-              <span class="lang-ar">النقل والباقات وحجوزات وفود الحجاج</span>
-              <span class="lang-en">Transport, packages, and pilgrim-delegation booking</span>
-            </h2>
-            <p>
-              <span class="lang-ar">النقل من وإلى المطار، خدمة الغسيل، الحجوزات الجماعية، ومكتب استقبال على مدار الساعة — كل ذلك تديره المجموعة من البداية للنهاية.</span>
-              <span class="lang-en">Airport transfer, laundry, group booking, and a 24-hour desk — arranged end to end by the group.</span>
-            </p>
-          </div>
-          <button class="btn btn-primary btn-pill btn-lg" type="button">
-            <span class="lang-ar">استكشف الخدمات</span><span class="lang-en">Explore Services</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-    <footer class="site-footer glass glass--1" id="footer">
-    <div class="container footer-grid row g-4">
-      <div class="footer-col footer-brand col-12 col-md-5">
-        <a href="#top" class="brand">
-        <span class="nav-logo" role="img" aria-label="Al Deafah International Group"></span>
-        </a>
-        <p>
-          <span class="lang-ar">نحن شركة رائدة في إدارة وتشغيل الفنادق، نقدم حلول ضيافة متكاملة بمعايير عالمية تشمل إدارة وتشغيل المنشآت الفندقية، وخدمات الإعاشة، والنقل، وتأشيرات العمرة، لنصنع تجربة استثنائية تواكب أعلى معايير الجودة والاحترافية ورضا العملاء.</span>
-          <span class="lang-en">We are a leading company in hotel management and operations, providing integrated hospitality solutions with global standards, including hotel management and operations, catering services, transportation, and Umrah visa services, to create an exceptional experience that meets the highest standards of quality, professionalism, and customer satisfaction.</span>
-        </p>
-      </div>
-
-      <div class="footer-col col-6 col-md-2">
-        <h4><span class="lang-ar">استكشف</span><span class="lang-en">Explore</span></h4>
-        <a href="about.html"><span class="lang-ar">من نحن</span><span class="lang-en">About Us</span></a>
-        <a href="#hotels"><span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span></a>
-        <a href="#why"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
-        <a href="#services"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
-        <a href="#top"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
-      </div>
-
-      <div class="footer-col col-6 col-md-2">
-        <h4><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></h4>
-        <p>
-          <span class="lang-ar">حي التيسير، مبنى 3039<br>مكة المكرمة، المملكة العربية السعودية</span>
-          <span class="lang-en">Al Taysir District, Building 3039<br>Makkah, Saudi Arabia</span>
-        </p>
-        <p><a href="mailto:info@deafahgroup.com">info@deafahgroup.com</a></p>
-        <p><a href="tel:+966125911110">+966 12 591 11 10</a></p>
-      </div>
-
-      <div class="footer-col footer-newsletter col-12 col-md-3">
-        <h4><span class="lang-ar">ابقَ على اطلاع</span><span class="lang-en">Stay Updated</span></h4>
-        <p>
-          <span class="lang-ar">العروض والتوفر مباشرة إلى بريدك الإلكتروني.</span>
-          <span class="lang-en">Offers and availability, straight to your inbox.</span>
-        </p>
-        <form class="newsletter-form" id="newsletterForm" novalidate>
-          <input type="email" id="newsletterEmail-ar" name="email" class="lang-ar" placeholder="بريدك الإلكتروني" required>
-          <input type="email" id="newsletterEmail-en" name="email" class="lang-en" placeholder="Your email address" required>
-          <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">
-            <i class="fa-solid fa-chevron-right btn-chevron" aria-hidden="true"></i>
-          </button>
-        </form>
-        <p class="form-hint" id="newsletterHint" role="status" aria-live="polite"></p>
-      </div>
+        <button type="submit" class="btn"><span class="lang-ar">تحقق من التوفر</span><span class="lang-en">Check Availability</span></button>
+      </form>
     </div>
 
-    <div class="container footer-bottom">
-      <p>
-        <span class="lang-ar">&copy; جميع الحقوق محفوظة <span id="currentYear-ar"></span> مجموعة الضيافة العالمية.</span>
-        <span class="lang-en">&copy; <span id="currentYear-en"></span> Al Deafah International Group. All rights reserved.</span>
-      </p>
-      <div class="footer-legal">
-        <a href="#"><span class="lang-ar">الخصوصية</span><span class="lang-en">Privacy</span></a>
-        <a href="#"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></a>
-        <a href="#"><span class="lang-ar">السياسات</span><span class="lang-en">Policies</span></a>
+    <!-- WHY -->
+    <section class="section" id="why" aria-labelledby="whyTitle">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></span>
+        <h2 id="whyTitle" class="t-headline reveal mb-8"><span class="lang-ar">تميّز المجموعة في أربع نقاط</span><span class="lang-en">The group's difference, in four moves</span></h2>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="card reveal">
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#walk"/></svg></span>
+            <h3 class="t-title mb-2"><span class="lang-ar">خطوات من الحرم</span><span class="lang-en">Steps from the Haram</span></h3>
+            <p class="muted"><span class="lang-ar">تقع جميع فنادقنا على مسافة قريبة يمكن الوصول إليها سيرًا من المسجد الحرام، وهذا هو المعيار الذي نلتزم به.</span><span class="lang-en">Every property is walking distance from Masjid Al Haram. That is our defining metric, not an afterthought.</span></p>
+          </article>
+          <article class="card reveal">
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#hotel"/></svg></span>
+            <h3 class="t-title mb-2"><span class="lang-ar"><span data-hotel-count="ar-words">ستة فنادق</span>، مجموعة واحدة</span><span class="lang-en"><span data-hotel-count>6</span> Hotels, One Group</span></h3>
+            <p class="muted"><span class="lang-ar">مجموعة مختارة من الفنادق في مكة المكرمة، من الإقامات الاقتصادية إلى الأجنحة الفاخرة، بإدارة موثوقة واحدة.</span><span class="lang-en">A curated portfolio across Makkah, from economy stays to premium suites, under one trusted operator.</span></p>
+          </article>
+          <article class="card reveal">
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#tag"/></svg></span>
+            <h3 class="t-title mb-2"><span class="lang-ar">أسعار تنافسية</span><span class="lang-en">Competitive Pricing</span></h3>
+            <p class="muted"><span class="lang-ar">أسعار شفافة ومتدرجة حسب مستوى الفندق، دون أي تلاعب في العملة أو الوحدات.</span><span class="lang-en">Transparent, tiered rates across star levels, with no hidden currency or unit conversion tricks.</span></p>
+          </article>
+          <article class="card reveal">
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#clock"/></svg></span>
+            <h3 class="t-title mb-2"><span class="lang-ar">خدمة على مدار 24 ساعة</span><span class="lang-en">24-Hour Service</span></h3>
+            <p class="muted"><span class="lang-ar">استقبال ودعم للضيوف على مدار الساعة، طوال أيام السنة.</span><span class="lang-en">Front desk, prayer wake calls, and guest support around the clock, every day of the year.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section pt-0" aria-label="أرقام المجموعة" data-scene="counter">
+      <div class="wrap grid gap-8 sm:grid-cols-3">
+        <div class="stat reveal"><span class="stat-number" data-count-to="15" data-suffix="+">0</span><span class="muted"><span class="lang-ar">سنوات من الخبرة</span><span class="lang-en">Years of Experience</span></span></div>
+        <div class="stat reveal"><span class="stat-number" data-count-to="10" data-suffix="M+">0</span><span class="muted"><span class="lang-ar">ضيف تمت استضافتهم</span><span class="lang-en">Guests Hosted</span></span></div>
+        <div class="stat reveal"><span class="stat-number" data-count-to="5" data-suffix="K+">0</span><span class="muted"><span class="lang-ar">غرفة في مكة المكرمة</span><span class="lang-en">Rooms Across Makkah</span></span></div>
+      </div>
+    </section>
+
+    <!-- HOTELS (rendered from data/hotels.json) -->
+    <section class="section bg-raised" id="hotels" aria-labelledby="hotelsTitle">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="lang-ar">فنادقنا</span><span class="lang-en">Our Hotels</span></span>
+        <h2 id="hotelsTitle" class="t-headline reveal mb-8"><span class="lang-ar">اختر إقامتك بالقرب من الحرم</span><span class="lang-en">Find your stay near the Haram</span></h2>
+
+        <div class="filter-bar flex flex-wrap gap-2 mb-8 reveal" role="group" aria-label="تصفية الفنادق">
+          <button class="chip is-active" type="button" aria-pressed="true"><span class="lang-ar">الكل</span><span class="lang-en">All</span></button>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">★ اقتصادي</span><span class="lang-en">★ Economy</span></button>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">★★ متوسط</span><span class="lang-en">★★ Standard</span></button>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">★★★ مميز</span><span class="lang-en">★★★ Premium</span></button>
+          <span class="w-px self-stretch bg-border mx-2" aria-hidden="true"></span>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">أقل من 5 دقائق سيرًا</span><span class="lang-en">&lt; 5 min walk</span></button>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">5–15 دقيقة</span><span class="lang-en">5–15 min</span></button>
+          <button class="chip" type="button" aria-pressed="false"><span class="lang-ar">أكثر من 15 دقيقة</span><span class="lang-en">&gt; 15 min</span></button>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3" id="hotelGrid" aria-live="polite"></div>
+
+        <template id="hotelCardTpl">
+          <article class="hotel-card card bg-surface p-0 overflow-hidden flex flex-col">
+            <div class="hotel-media">
+              <span class="badge"><span class="lang-ar"></span><span class="lang-en"></span></span>
+              <img src="" alt="">
+            </div>
+            <div class="hotel-body p-6 flex flex-col gap-3 grow">
+              <h3 class="t-title"><span class="lang-ar"></span><span class="lang-en"></span></h3>
+              <div class="hotel-meta flex flex-wrap items-center gap-2 text-sm muted">
+                <span class="hotel-stars"></span>
+                <span class="dot opacity-50" aria-hidden="true">•</span>
+                <span class="hotel-area"><span class="lang-ar"></span><span class="lang-en"></span></span>
+              </div>
+              <div class="hotel-foot mt-auto flex items-center justify-between gap-4 pt-3 border-t border-brand border-border">
+                <span class="price"><small class="lang-ar">من</small><small class="lang-en">From</small><span class="price-value num"></span><small class="lang-ar">/ الليلة</small><small class="lang-en">/night</small></span>
+                <a class="btn btn--ghost btn--sm hotel-details" href="#"><span class="lang-ar">عرض التفاصيل</span><span class="lang-en">View Details</span><svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-end"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </template>
+
+        <div class="mt-8 flex flex-wrap items-center justify-between gap-4 reveal">
+          <p class="muted"><span class="lang-ar"><span data-hotel-count="ar-words">ستة فنادق</span> حول المسجد الحرام، بإدارة واحدة.</span><span class="lang-en"><span data-hotel-count>6</span> hotels around Masjid Al Haram, one operator.</span></p>
+          <a href="#contact" class="btn btn--secondary" data-modal-open="contactModal" data-subject="حجز جماعي"><span class="lang-ar">استفسر عن حجز جماعي</span><span class="lang-en">Ask about group booking</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-labelledby="servicesTitle">
+      <div class="wrap">
+        <div class="panel relative overflow-hidden p-8 md:p-16 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center reveal">
+          <div class="kufic-field kufic-field--abs start-auto hidden lg:grid" data-kufic data-cols="2" data-block="48" aria-hidden="true"></div>
+          <div class="relative z-10 max-w-2xl">
+            <span class="eyebrow"><span class="lang-ar">خدمات الحج والعمرة</span><span class="lang-en">Hajj &amp; Umrah Services</span></span>
+            <h2 id="servicesTitle" class="t-headline mb-4"><span class="lang-ar">النقل والباقات وحجوزات وفود الحجاج</span><span class="lang-en">Transport, packages, and pilgrim-delegation booking</span></h2>
+            <p class="muted"><span class="lang-ar">النقل من وإلى المطار، خدمة الغسيل، الحجوزات الجماعية، ومكتب استقبال على مدار الساعة، كل ذلك تديره المجموعة من البداية للنهاية.</span><span class="lang-en">Airport transfer, laundry, group booking, and a 24-hour desk, arranged end to end by the group.</span></p>
+          </div>
+          <a href="#contact" class="btn btn--lg relative z-10" data-modal-open="contactModal" data-subject="الخدمات"><span class="lang-ar">استكشف الخدمات</span><span class="lang-en">Explore Services</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="panel" id="footer">
+    <div class="wrap pt-16 pb-8 grid gap-12 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <a href="index.html" class="brand-logo -ms-[0.42em]" data-logo="stacked" data-logo-width="160" aria-label="مجموعة الضيافة العالمية"></a>
+        <p class="muted mt-4 max-w-md"><span class="lang-ar">نحن شركة رائدة في إدارة وتشغيل الفنادق، نقدم حلول ضيافة متكاملة بمعايير عالمية تشمل إدارة وتشغيل المنشآت الفندقية، وخدمات الإعاشة، والنقل، وتأشيرات العمرة.</span><span class="lang-en">A leading hotel management and operations company providing integrated hospitality solutions to global standards: hotel operations, catering services, transportation and Umrah visa services.</span></p>
+      </div>
+      <nav class="md:col-span-2 grid gap-2 content-start" aria-label="استكشف">
+        <h4 class="t-label mb-2"><span class="lang-ar">استكشف</span><span class="lang-en">Explore</span></h4>
+        <a href="about.html" class="muted hover:text-on-panel"><span class="lang-ar">من نحن</span><span class="lang-en">About Us</span></a>
+        <a href="#hotels" class="muted hover:text-on-panel"><span class="lang-ar">فنادقنا</span><span class="lang-en">Hotels</span></a>
+        <a href="#why" class="muted hover:text-on-panel"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
+        <a href="#services" class="muted hover:text-on-panel"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
+        <a href="#top" class="muted hover:text-on-panel"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
+      </nav>
+      <address class="md:col-span-2 not-italic grid gap-2 content-start">
+        <h4 class="t-label mb-2"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></h4>
+        <p class="muted"><span class="lang-ar">حي التيسير، مبنى 3039<br>مكة المكرمة، المملكة العربية السعودية</span><span class="lang-en">Al Taysir District, Building 3039<br>Makkah, Saudi Arabia</span></p>
+        <a href="mailto:info@deafahgroup.com" class="muted hover:text-on-panel">info@deafahgroup.com</a>
+        <a href="tel:+966125911110" class="muted hover:text-on-panel"><bdi dir="ltr">+966 12 591 11 10</bdi></a>
+      </address>
+      <div class="md:col-span-3">
+        <h4 class="t-label mb-2"><span class="lang-ar">ابقَ على اطلاع</span><span class="lang-en">Stay Updated</span></h4>
+        <p class="muted mb-3"><span class="lang-ar">العروض والتوفر مباشرة إلى بريدك الإلكتروني.</span><span class="lang-en">Offers and availability, straight to your inbox.</span></p>
+        <div class="demo-ribbon mb-2 bg-transparent! border-panel-muted!" data-ribbon="newsletter" role="note">
+          <span class="text-sm"><strong><span class="lang-ar">بيانات تجريبية</span><span class="lang-en">Test data</span></strong> <span class="lang-ar">— النشرة البريدية غير مفعّلة بعد.</span><span class="lang-en">— the newsletter is not live yet.</span></span>
+          <button type="button" class="btn btn--icon text-on-panel!" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#close"/></svg></button>
+        </div>
+        <form class="flex gap-2 field" id="newsletterForm" novalidate>
+          <label for="newsletterEmail-ar" class="sr-only lang-ar">بريدك الإلكتروني</label>
+          <label for="newsletterEmail-en" class="sr-only lang-en">Your email address</label>
+          <input type="email" id="newsletterEmail-ar" name="email" class="lang-ar bg-transparent! text-on-panel!" placeholder="بريدك الإلكتروني" required>
+          <input type="email" id="newsletterEmail-en" name="email" class="lang-en bg-transparent! text-on-panel!" placeholder="Your email address" required>
+          <button type="submit" class="btn shrink-0" aria-label="اشتراك"><svg class="icon icon--flip" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-end"/></svg></button>
+        </form>
+        <p class="form-hint text-panel-muted!" id="newsletterHint" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="wrap"><div class="kufic-field kufic-field--strip h-[104px]" data-kufic data-rows="1" data-block="40" aria-hidden="true"></div></div>
+    <div class="wrap py-6 border-t border-brand border-panel-muted/30 flex flex-wrap items-center justify-between gap-4 text-sm">
+      <p class="muted"><span class="lang-ar">&copy; جميع الحقوق محفوظة <span id="currentYear-ar"></span> مجموعة الضيافة العالمية.</span><span class="lang-en">&copy; <span id="currentYear-en"></span> Al Deafah International Group. All rights reserved.</span></p>
+      <div class="flex gap-6">
+        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">الخصوصية</span><span class="lang-en">Privacy</span></a>
+        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></a>
+        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">السياسات</span><span class="lang-en">Policies</span></a>
       </div>
     </div>
   </footer>
 
-    <div class="modal fade contact-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content glass glass--3">
-        <div class="modal-header">
-          <h5 class="modal-title" id="contactModalLabel">
-            <span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact Us</span>
-          </h5>
-          <button type="button" class="icon-btn" data-bs-dismiss="modal" aria-label="Close">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="field">
-              <label for="contactName-ar" class="lang-ar">الاسم الكامل</label>
-              <label for="contactName-en" class="lang-en">Full Name</label>
-              <input type="text" id="contactName-ar" class="lang-ar" placeholder="اسمك الكامل" autocomplete="name" required>
-              <input type="text" id="contactName-en" class="lang-en" placeholder="Your full name" autocomplete="name" required>
-            </div>
-
-            <div class="field">
-              <label for="contactEmail-ar" class="lang-ar">البريد الإلكتروني</label>
-              <label for="contactEmail-en" class="lang-en">Email Address</label>
-              <input type="email" id="contactEmail-ar" class="lang-ar" placeholder="بريدك الإلكتروني" autocomplete="email" required>
-              <input type="email" id="contactEmail-en" class="lang-en" placeholder="you@example.com" autocomplete="email" required>
-            </div>
-
-            <div class="field">
-              <label for="contactPhoneField-ar-number" class="lang-ar">رقم الجوال</label>
-              <label for="contactPhoneField-en-number" class="lang-en">Mobile Number</label>
-              <div class="lang-ar" id="contactPhoneField-ar"></div>
-              <div class="lang-en" id="contactPhoneField-en"></div>
-            </div>
-
-            <div class="field">
-              <label for="contactMessage-ar" class="lang-ar">رسالة مختصرة</label>
-              <label for="contactMessage-en" class="lang-en">Short Message</label>
-              <textarea id="contactMessage-ar" class="lang-ar contact-message" rows="4" minlength="100" maxlength="200" placeholder="اكتب رسالتك هنا... (100–200 حرف)" required></textarea>
-              <textarea id="contactMessage-en" class="lang-en contact-message" rows="4" minlength="100" maxlength="200" placeholder="Write your message here... (100–200 characters)" required></textarea>
-            </div>
-            <p class="char-count" id="contactCharCount">
-              <span class="lang-ar"><span class="char-count-value" data-lang="ar">0</span> / 200 حرف (الحد الأدنى 100)</span>
-              <span class="lang-en"><span class="char-count-value" data-lang="en">0</span> / 200 characters (100 min)</span>
-            </p>
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-pill" data-bs-dismiss="modal">
-            <span class="lang-ar">إلغاء</span><span class="lang-en">Cancel</span>
-          </button>
-          <button type="submit" form="contactForm" class="btn btn-primary btn-pill">
-            <span class="lang-ar">إرسال</span><span class="lang-en">Submit</span>
-          </button>
-        </div>
-      </div>
+  <!-- CONTACT DIALOG (ids/selectors required by config.json) -->
+  <dialog class="dialog" id="contactModal" aria-labelledby="contactModalLabel">
+    <div class="dialog-head">
+      <h2 class="t-title" id="contactModalLabel"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact Us</span></h2>
+      <button type="button" class="btn btn--icon" data-modal-close aria-label="إغلاق"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#close"/></svg></button>
     </div>
-  </div>
+    <div class="dialog-body">
+      <form class="contact-form grid gap-4" id="contactForm" novalidate>
+        <div class="field">
+          <label for="contactName-ar" class="lang-ar">الاسم الكامل</label>
+          <label for="contactName-en" class="lang-en">Full Name</label>
+          <input type="text" id="contactName-ar" class="lang-ar" placeholder="اسمك الكامل" autocomplete="name" required>
+          <input type="text" id="contactName-en" class="lang-en" placeholder="Your full name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="contactEmail-ar" class="lang-ar">البريد الإلكتروني</label>
+          <label for="contactEmail-en" class="lang-en">Email Address</label>
+          <input type="email" id="contactEmail-ar" class="lang-ar" placeholder="بريدك الإلكتروني" autocomplete="email" required>
+          <input type="email" id="contactEmail-en" class="lang-en" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="contactPhoneField-ar-number" class="lang-ar">رقم الجوال</label>
+          <label for="contactPhoneField-en-number" class="lang-en">Mobile Number</label>
+          <div class="lang-ar" id="contactPhoneField-ar"></div>
+          <div class="lang-en" id="contactPhoneField-en"></div>
+        </div>
+        <div class="field">
+          <label for="contactMessage-ar" class="lang-ar">رسالة مختصرة</label>
+          <label for="contactMessage-en" class="lang-en">Short Message</label>
+          <textarea id="contactMessage-ar" class="lang-ar contact-message" rows="4" minlength="100" maxlength="200" placeholder="اكتب رسالتك هنا... (100–200 حرف)" required></textarea>
+          <textarea id="contactMessage-en" class="lang-en contact-message" rows="4" minlength="100" maxlength="200" placeholder="Write your message here... (100–200 characters)" required></textarea>
+        </div>
+        <input type="hidden" id="contactSubject" name="subject" value="">
+        <p class="form-hint" id="contactCharCount">
+          <span class="lang-ar"><span class="char-count-value" data-lang="ar">0</span> / 200 حرف (الحد الأدنى 100)</span>
+          <span class="lang-en"><span class="char-count-value" data-lang="en">0</span> / 200 characters (100 min)</span>
+        </p>
+      </form>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn--secondary" data-modal-close><span class="lang-ar">إلغاء</span><span class="lang-en">Cancel</span></button>
+      <button type="submit" form="contactForm" class="btn"><span class="lang-ar">إرسال</span><span class="lang-en">Submit</span></button>
+    </div>
+  </dialog>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
+  <script src="vendor/gsap/gsap.min.js"></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js"></script>
   <script src="js/auto-theme-manager.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/effects.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/contact-modal.js"></script>
+  <script src="js/brand-logo.js" data-base="assets/brand/logo/"></script>
+  <script src="js/kufic-field.js" data-src="assets/brand/pattern/kufic-2x2.svg"></script>
+  <script src="js/hotels.js" data-src="data/hotels.json" data-base=""></script>
   <script src="js/animations.js"></script>
   <script src="js/countries-data.js" defer></script>
   <script src="js/phone-input.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="vendor/emailjs/email.min.js"></script>
   <script src="js/contact-form.js" defer></script>
 </body>
 </html>

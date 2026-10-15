@@ -1,0 +1,8 @@
+# Netlify — everything lives in the repo (dashboard untouched).
+[build]
+  publish = "frontend"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"

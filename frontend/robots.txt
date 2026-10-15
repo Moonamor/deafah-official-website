@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /vendor/
+Disallow: /data/mock/
+Sitemap: https://www.deafah.com/sitemap.xml

@@ -157,17 +157,17 @@
       '<button type="button" class="pi-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="' + listboxId + '">' +
       '<span class="pi-flag" aria-hidden="true"></span>' +
       '<span class="pi-dial"></span>' +
-      '<i class="fa-solid fa-chevron-down pi-caret" aria-hidden="true"></i>' +
+      '<svg class="icon icon--sm pi-caret" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>' +
       "</button>" +
       '<input type="tel" inputmode="numeric" autocomplete="tel-national" dir="ltr" class="pi-number" id="' + idBase + '-number" aria-describedby="' + errorId + '">' +
       "</div>" +
       '<p class="pi-error" role="alert" aria-live="polite" id="' + errorId + '" hidden></p>' +
       '<div class="pi-panel-wrap" hidden>' +
-      '<div class="pi-panel glass glass--2" hidden>' +
+      '<div class="pi-panel" hidden>' +
       '<div class="pi-panel-head">' +
       '<input type="text" class="pi-search" role="combobox" aria-expanded="false" aria-controls="' + listboxId + '" aria-activedescendant="" autocomplete="off">' +
       '<button type="button" class="pi-panel-close" aria-label="Close">' +
-      '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+      '<svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#close"></use></svg>' +
       "</button>" +
       "</div>" +
       '<ul class="pi-listbox" role="listbox" id="' + listboxId + '"></ul>' +
@@ -564,8 +564,8 @@
   // submit listener on #contactForm. This script is loaded with
   // `defer` BEFORE js/contact-form.js's own `defer` tag (see the HTML
   // integration), and defer scripts execute in document order before
-  // DOMContentLoaded — which is also before contact-form.js's jQuery
-  // ready handler runs (jQuery's ready fires ON DOMContentLoaded). So
+  // DOMContentLoaded — which is also before contact-form.js's own
+  // ready handler runs (it fires ON DOMContentLoaded). So
   // this listener always registers on #contactForm first, and same-
   // element listeners fire in registration order regardless of
   // capture/bubble — meaning an invalid phone number here calls
