@@ -37,7 +37,7 @@
     fill("address", bi(d.location.address));
     document.querySelectorAll("[data-map-link]").forEach(function (a) { a.href = d.location.map_url; });
     fill("location-steps", d.location.steps.map(function (s, i) { return '<div class="reveal" data-step><span class="icon-box" aria-hidden="true">' + icon(s.icon) + '</span><h3 class="t-title mb-1">' + bi(s.title) + '</h3><p class="muted">' + bi(s.text) + "</p></div>"; }).join(""));
-    fill("gallery", d.gallery.map(function (g) { return '<img src="' + asset(g.image) + '" alt="' + g.alt.en + '" loading="lazy" decoding="async">'; }).join(""));
+    fill("gallery", d.gallery.map(function (g) { return '<img src="' + asset(g.image) + '" alt="' + g.alt.en + '"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : "") + ' loading="lazy" decoding="async">'; }).join(""));
     fill("guests", d.guests.map(function (g) { return '<blockquote class="guest"><p class="mb-2">' + bi(g.text) + '</p><footer class="muted text-sm">' + g.name + " · " + bi(g.country) + "</footer></blockquote>"; }).join(""));
     fill("faq", d.faq.map(function (f) { return "<details><summary>" + bi(f.q) + icon("chevron-down", "icon--sm") + "</summary><div>" + bi(f.a) + "</div></details>"; }).join(""));
     document.querySelectorAll("[data-whatsapp]").forEach(function (a) { a.href = "https://wa.me/" + d.whatsapp.replace(/\D/g, ""); });

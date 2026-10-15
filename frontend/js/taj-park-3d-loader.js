@@ -30,10 +30,20 @@
         section.setAttribute("data-3d", "poster"); section.setAttribute("data-3d-reason", "error");
       });
     }
+    /* phones / touch screens: the scene (≈ 3.7 s of scripting at 4× CPU) starts on the first interaction, not at load;
+       the poster — a render of the same model — is shown until then. Desktop boots as soon as the section is near. */
+    var gate = window.matchMedia("(max-width: 1023px), (pointer: coarse)").matches;
+    function bootWhenAllowed() {
+      if (!gate) return boot();
+      section.setAttribute("data-3d", "on-interaction");
+      var evs = ["scroll", "wheel", "touchstart", "pointerdown", "keydown"];
+      function go() { evs.forEach(function (n) { window.removeEventListener(n, go, true); }); boot(); }
+      evs.forEach(function (n) { window.addEventListener(n, go, { capture: true, passive: true }); });
+    }
     if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); boot(); } }, { rootMargin: "100% 0px" });
+      var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); bootWhenAllowed(); } }, { rootMargin: "100% 0px" });
       io.observe(section);
-    } else boot();
+    } else bootWhenAllowed();
   });
 
   /* Pin scope (Phase 6 approval): inside .hp-pinned the scene stays pinned through the rooms section at ≥ 1024 px and full

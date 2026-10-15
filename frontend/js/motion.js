@@ -59,7 +59,7 @@
   function splitLines(el) {
     if (!SplitText) return null;
     var target = visibleLang(el);
-    try { return SplitText.create(target, { type: "lines", mask: "lines", linesClass: "split-line" }); } catch (e) { return null; }
+    try { return SplitText.create(target, { type: "lines", mask: "lines", linesClass: "split-line", aria: "none" }); } catch (e) { return null; }
   }
   function tracked(scene) { scenes.push(scene); return scene; }
 

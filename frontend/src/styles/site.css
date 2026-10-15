@@ -55,7 +55,7 @@
   --radius-chip: 2px;
 
   /* type */
-  --font-arabic: "Almarai", Arial, sans-serif;
+  --font-arabic: "Almarai", "Almarai Fallback", Arial, sans-serif;
   --font-latin: "Avenir Next", Arial, sans-serif; /* Avenir Next not bundled (licence gap) → Arial renders */
   --text-label: 12px;
   --text-label--line-height: 16px;
@@ -214,6 +214,8 @@
 /* ------------------------------------------------------------------ */
 /* 3. Fonts (self-hosted, OFL) — url() is relative to the COMPILED file in dist/ */
 /* ------------------------------------------------------------------ */
+/* metric-matched local fallback (Almarai 400 vs Arial: avg advance ×1.2789, hhea ascent/descent) — no reflow when Almarai swaps in */
+@font-face { font-family: "Almarai Fallback"; src: local("Arial"), local("ArialMT"); size-adjust: 127.89%; ascent-override: 70.77%; descent-override: 16.5%; line-gap-override: 0%; }
 @font-face { font-family: "Almarai"; font-weight: 300; font-style: normal; font-display: swap; src: url("../assets/fonts/Almarai-300.woff2") format("woff2"); }
 @font-face { font-family: "Almarai"; font-weight: 400; font-style: normal; font-display: swap; src: url("../assets/fonts/Almarai-400.woff2") format("woff2"); }
 @font-face { font-family: "Almarai"; font-weight: 700; font-style: normal; font-display: swap; src: url("../assets/fonts/Almarai-700.woff2") format("woff2"); }
@@ -283,7 +285,7 @@
   :root:lang(ar) .eyebrow { letter-spacing: 0; font-weight: 700; font-size: 14px; }
   .panel .eyebrow, .on-panel .eyebrow { color: var(--panel-accent-ink); }
   /* [مقترح] on raised surfaces (#F5F2EE) the gold accent is 4.06:1 → text accents use ink there; the accent stays on rules/borders */
-  .card .eyebrow, .raised .eyebrow, .card .link, .raised .link, .card .stat-number { color: var(--ink); }
+  .card .eyebrow, .raised .eyebrow, .bg-raised .eyebrow, .card .link, .raised .link, .bg-raised .link, .card .stat-number { color: var(--ink); }   /* accent-ink on raised is 4.06:1 (non-text only) */
   .panel .card .eyebrow { color: var(--panel-accent-ink); }
   .muted { color: var(--muted); }
   .rule { display: block; width: 64px; height: 2px; background: var(--accent); margin-block: 16px; }

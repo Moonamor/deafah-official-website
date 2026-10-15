@@ -15,7 +15,7 @@ const MANIFEST = join(ROOT, "dist", "asset-manifest.json");
 const HASH_RE = /\.([0-9a-f]{8})(\.[a-z0-9]+(?:\.[a-z0-9]+)?)$/i;
 const rel = (p) => relative(ROOT, p).split("\\").join("/");
 const sha = (buf) => createHash("sha256").update(buf).digest("hex").slice(0, 8);
-const hashedName = (name, h) => { const m = name.match(/^(.*?)(\.[a-z0-9]+(?:\.[a-z0-9]+)?)$/i); return m ? `${m[1]}.${h}${m[2]}` : `${name}.${h}`; };
+const hashedName = (name, h) => { const m = name.match(/^(.*?)((?:\.min)?\.[a-z0-9]+)$/i); return m ? `${m[1]}.${h}${m[2]}` : `${name}.${h}`; };
 const LEAF_DIRS = ["assets/", "imgs/", "vendor/"];
 const LEAF_EXT = new Set([".png", ".webp", ".jpg", ".jpeg", ".svg", ".ico", ".woff2", ".ttf", ".js"]);
 const SKIP = new Set(["js/theme-boot.js"]); // source of the inline pre-paint script; never loaded by URL

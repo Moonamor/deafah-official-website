@@ -28,7 +28,7 @@
     }
     var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg"), out = "";
     for (var i = 0; i < 5; i++) out += '<svg class="icon' + (i < stars ? "" : " star-dim") + '" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>';
-    return '<span class="stars" aria-label="' + stars + ' out of 5 stars">' + out + "</span>";
+    return '<span class="stars" role="img" aria-label="' + stars + ' out of 5 stars">' + out + "</span>";
   }
 
   function fillCopy(data) {
