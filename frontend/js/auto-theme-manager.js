@@ -110,6 +110,7 @@
     document.addEventListener("click", function (e) {
       var toggle = e.target.closest(TOGGLE_SELECTOR);
       if (!toggle) return;
+      if (!root.classList.contains("no-motion")) { root.classList.add("theme-anim"); setTimeout(function () { root.classList.remove("theme-anim"); }, 240); }
       setScheme(getScheme() === "light" ? "dark" : "light");
     });
   }
