@@ -89,6 +89,7 @@ export async function mount(section, opts = {}) {
   /* ---------- renderer / scene ---------- */
   const scene = new Scene();
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: "high-performance" });
+  renderer.debug.checkShaderErrors = false;   /* production: skip shader info-log checks (three.js docs); removes the ANGLE precision warning */
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.outputColorSpace = SRGBColorSpace;
   const camera = new PerspectiveCamera(36, 1, 1, 3000);
