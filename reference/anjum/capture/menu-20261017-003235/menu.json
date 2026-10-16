@@ -1,0 +1,278 @@
+{
+  "tool": "capture_menu.py",
+  "generatedAt": "2026-10-16T21:32:35.400116+00:00",
+  "url": "https://anjumhotels.com/ar/",
+  "viewport": "mobile 390x844",
+  "cookieDismissedWith": "only essential",
+  "M1_open": {
+    "nav.nav-level-0": {
+      "y": {
+        "from": 0,
+        "to": 96,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "w": {
+        "from": 0,
+        "to": 390,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "h": {
+        "from": 0,
+        "to": 698,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "visible": {
+        "from": 0,
+        "to": 1,
+        "startMs": 22,
+        "durationMs": 22
+      }
+    },
+    "label.menu-button .menu-icon": {
+      "w": {
+        "from": 16.812,
+        "to": 12,
+        "startMs": 22,
+        "durationMs": 22
+      }
+    },
+    "label.menu-button .menu-span": {
+      "x": {
+        "from": 48.812,
+        "to": 44,
+        "startMs": 22,
+        "durationMs": 22
+      }
+    },
+    ".nav-level-0 .main-menu-item:nth-child(1)": {
+      "x": {
+        "from": 0,
+        "to": 32,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "y": {
+        "from": 0,
+        "to": 128,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "w": {
+        "from": 0,
+        "to": 326,
+        "startMs": 22,
+        "durationMs": 22
+      },
+      "h": {
+        "from": 0,
+        "to": 42,
+        "startMs": 22,
+        "durationMs": 22
+      }
+    }
+  },
+  "M1_state": {
+    "checked": true,
+    "bodyOverflow": "hidden",
+    "htmlOverflow": "visible",
+    "panel": {
+      "x": 0,
+      "y": 96,
+      "w": 390,
+      "h": 698,
+      "bg": "rgba(255, 255, 255, 0.95)",
+      "z": "-1"
+    },
+    "items": [
+      "نظرة عامة على الفندق",
+      "الغرف والأجنحة",
+      "العروض",
+      "معالم مكة",
+      "المطاعم و المقاهي"
+    ],
+    "focus": "BODY.browser-safari browser-safari-604 social-media-png",
+    "ariaOnToggle": []
+  },
+  "M2_submenu_open": {
+    ".nav-level-0 .main-menu-item:not(.menu-single) .sub-menu": {
+      "h": {
+        "from": 0,
+        "to": 127.094,
+        "startMs": 55,
+        "durationMs": 237,
+        "easingFit": [
+          [
+            "ease",
+            0.1264
+          ],
+          [
+            "ease-out",
+            0.13808
+          ],
+          [
+            "linear",
+            0.22701
+          ]
+        ]
+      }
+    },
+    ".nav-level-0 .main-menu-item:not(.menu-single)": {
+      "h": {
+        "from": 42,
+        "to": 169.094,
+        "startMs": 55,
+        "durationMs": 237,
+        "easingFit": [
+          [
+            "ease",
+            0.1264
+          ],
+          [
+            "ease-out",
+            0.13808
+          ],
+          [
+            "linear",
+            0.22701
+          ]
+        ]
+      },
+      "classStates": [
+        "main-menu-item menu-1",
+        "main-menu-item menu-1 open"
+      ]
+    },
+    ".nav-level-0 .main-menu-item:not(.menu-single) ~ .main-menu-item": {
+      "y": {
+        "from": 170,
+        "to": 297.094,
+        "startMs": 55,
+        "durationMs": 237,
+        "easingFit": [
+          [
+            "ease",
+            0.1264
+          ],
+          [
+            "ease-out",
+            0.13808
+          ],
+          [
+            "linear",
+            0.22701
+          ]
+        ]
+      }
+    }
+  },
+  "M2_state": {
+    "liClass": "main-menu-item menu-1 open",
+    "subHeight": 130.375,
+    "subItems": [
+      "اتصل بنا",
+      "الوصول إلى هنا",
+      "معرض الصور",
+      "نبذة عن فندق أنجم مكة شركة عبداللطيف جميل للإستثمارات العقارية المحدودة"
+    ]
+  },
+  "M2_visibleControls": [],
+  "M3_submenu_close": null,
+  "M3_closedWith": "UNMEASURED: no tappable back/close control in the open submenu (Page.wait_for_function: Timeout 16500ms exceeded.)",
+  "M3_stateAfter": {
+    "menuOpen": false,
+    "submenuOpen": false
+  },
+  "M4_stateBefore": {
+    "menuOpen": true,
+    "submenuOpen": false
+  },
+  "M4_close": {
+    "nav.nav-level-0": {
+      "y": {
+        "from": 96,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "w": {
+        "from": 390,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "h": {
+        "from": 698,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "visible": {
+        "from": 1,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      }
+    },
+    "label.menu-button .menu-icon": {
+      "w": {
+        "from": 12,
+        "to": 16.812,
+        "startMs": 0,
+        "durationMs": 24
+      }
+    },
+    "label.menu-button .menu-span": {
+      "x": {
+        "from": 44,
+        "to": 48.812,
+        "startMs": 0,
+        "durationMs": 24
+      }
+    },
+    ".nav-level-0 .main-menu-item:nth-child(1)": {
+      "x": {
+        "from": 32,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "y": {
+        "from": 128,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "w": {
+        "from": 326,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      },
+      "h": {
+        "from": 42,
+        "to": 0,
+        "startMs": 0,
+        "durationMs": 24
+      }
+    }
+  },
+  "M4_state": {
+    "checked": false,
+    "focus": "BODY",
+    "bodyOverflow": "visible"
+  },
+  "escapeTest": {
+    "before": {
+      "menuOpen": true,
+      "submenuOpen": false
+    },
+    "after": {
+      "menuOpen": true,
+      "submenuOpen": false
+    },
+    "reloadsDuringTest": 0
+  }
+}

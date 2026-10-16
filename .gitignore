@@ -16,3 +16,4 @@ reference/anjum/capture/20261016-224154/screenshots/
 reference/anjum/*.log
 
 __pycache__/
+!reference/anjum/capture/menu-20261017-003235/
