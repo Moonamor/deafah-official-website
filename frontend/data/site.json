@@ -1,0 +1,61 @@
+{
+  "_note": "Site-wide settings rendered into every public page by tools/build-sections.mjs. Social: url null renders a non-navigating icon (aria-disabled); a filled url renders <a target=_blank rel=noopener>. Demo site: no real accounts.",
+  "social_title": {
+    "ar": "تابعنا",
+    "en": "Follow us"
+  },
+  "social_pending": {
+    "ar": "الحساب غير متاح بعد",
+    "en": "account not available yet"
+  },
+  "social": [
+    {
+      "id": "instagram",
+      "label": {
+        "ar": "إنستغرام",
+        "en": "Instagram"
+      },
+      "url": null
+    },
+    {
+      "id": "x",
+      "label": {
+        "ar": "إكس",
+        "en": "X"
+      },
+      "url": null
+    },
+    {
+      "id": "snapchat",
+      "label": {
+        "ar": "سناب شات",
+        "en": "Snapchat"
+      },
+      "url": null
+    },
+    {
+      "id": "tiktok",
+      "label": {
+        "ar": "تيك توك",
+        "en": "TikTok"
+      },
+      "url": null
+    },
+    {
+      "id": "youtube",
+      "label": {
+        "ar": "يوتيوب",
+        "en": "YouTube"
+      },
+      "url": null
+    },
+    {
+      "id": "linkedin",
+      "label": {
+        "ar": "لينكدإن",
+        "en": "LinkedIn"
+      },
+      "url": null
+    }
+  ]
+}

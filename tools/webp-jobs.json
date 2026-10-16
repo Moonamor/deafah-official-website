@@ -1,0 +1,9 @@
+{
+  "_note": "Jobs for tools/make_webp.py. Originals are read only. Outputs land under frontend/ and are fingerprinted by the build.",
+  "jobs": [
+    { "id": "rst", "src": "frontend/imgs/hotel-pics/RST/*.jpg", "out": "frontend/imgs/gallery/al-taj", "name": "al-taj-{stem}", "widths": [640, 1280, 1920] },
+    { "id": "taj-park-exterior", "src": "frontend/imgs/hotel-pics/Broushre (7).jpg", "out": "frontend/imgs/hotel-pics", "name": "taj-park-exterior", "widths": [640, 1280], "aspect": "4:3", "anchor_x": 1.0 },
+    { "id": "amjad-hero", "src": "archive/bootstrap-era/imgs/hotel-pics/Amjad.JPG", "out": "frontend/imgs/hotel-pics", "name": "amjad", "widths": [1920] },
+    { "id": "bustan-hero", "src": "archive/bootstrap-era/imgs/hotel-pics/bustan.JPG", "out": "frontend/imgs/hotel-pics", "name": "bustan", "widths": [1920] }
+  ]
+}

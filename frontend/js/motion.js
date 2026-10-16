@@ -49,6 +49,10 @@
     if (reduce || !Lenis || !gsap || !ST) return;
     lenis = new Lenis({ autoRaf: false, lerp: 0.1, smoothWheel: true, syncTouch: false });
     lenis.on("scroll", ST.update);                       /* Lenis drives the scroll position → ScrollTrigger reads it */
+    /* any open dialog (contact, lightbox) freezes the page: Lenis stops, and restarts when the last dialog closes */
+    var openDialogs = 0;
+    document.addEventListener("deafah:dialogopen", function () { openDialogs++; lenis.stop(); });
+    document.addEventListener("deafah:dialogclose", function () { openDialogs = Math.max(0, openDialogs - 1); if (!openDialogs) lenis.start(); });
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });  /* one clock: gsap.ticker calls lenis.raf */
     gsap.ticker.lagSmoothing(0);
     window.lenis = lenis; /* Lenis manages html.lenis / .lenis-scrolling classes itself */

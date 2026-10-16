@@ -60,5 +60,15 @@
     <symbol id="plane" viewBox="0 0 24 24"><path d="M3 15l18-9-6 15-3-6zM12 15l9-9"/></symbol>
     <symbol id="award" viewBox="0 0 24 24"><path d="M6 3h12v9h-1.5v1.5H15V15H9v-1.5H7.5V12H6zM9 15l-1.5 6 4.5-1.5 4.5 1.5L15 15M10.5 6h3v3h-3z"/></symbol>
     <symbol id="mail" viewBox="0 0 24 24"><path d="M3 4.5h18v15H3zM3 6h1.5v1.5H6V9h1.5v1.5H9V12h1.5v1.5h3V12H15v-1.5h1.5V9H18V7.5h1.5V6H21"/></symbol>
+    <!-- media controls -->
+    <symbol id="pause" viewBox="0 0 24 24"><path d="M7.5 4.5h3v15h-3zM13.5 4.5h3v15h-3z"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="M7.5 4.5v15L19.5 12z"/></symbol>
+    <!-- social platforms: simplified marks on the same 1.5 px module (not the platforms' own logo files) -->
+    <symbol id="instagram" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM7.5 7.5h9v9h-9zM16.5 4.5H18V6h-1.5z"/></symbol>
+    <symbol id="x" viewBox="0 0 24 24"><path d="M4.5 4.5h4.5l10.5 15H15zM19.5 4.5l-6.3 7.2M4.5 19.5l6.3-7.2"/></symbol>
+    <symbol id="snapchat" viewBox="0 0 24 24"><path d="M9 3h6v1.5h1.5V9H18v1.5h-1.5V12h1.5v1.5h1.5V15H16.5v1.5H13.5V18h-3v-1.5H7.5V15H4.5v-1.5H6V12h1.5v-1.5H6V9h1.5V4.5H9z"/></symbol>
+    <symbol id="tiktok" viewBox="0 0 24 24"><path d="M13.5 3v13.5H12V18H9v1.5H6V18H4.5v-3H6v-1.5h3V12h1.5M13.5 6h1.5v1.5h1.5V9h3"/></symbol>
+    <symbol id="youtube" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM10.5 9v6l4.5-3z"/></symbol>
+    <symbol id="linkedin" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM7.5 10.5v6M6.75 6.75h1.5v1.5h-1.5zM11.25 16.5v-6h4.5v6"/></symbol>
   </defs>
 </svg>

@@ -1,5 +1,21 @@
 # Phase 1 — target reconnaissance (no code changes)
 
+## Decisions (Badr, Phase 1 approval, 2026-10-17)
+
+| # | Decision |
+|---|---|
+| C1 | **Rejected.** The shipped header stays exactly as is (condenses at 80 px, 200 ms brand token). The Anjum header timing does not transfer; header rows are removed from the Phase 7 diff. |
+| C2 | **Approved.** The pinned horizontal hotels scene is replaced by the centred carousel: 500 ms slide (easing per MOTION_SPEC row 11), swipe + scroll-snap, advancing in the reading direction (RTL). |
+| C3 | **Approved.** The filter chips become real filters on the carousel (rating + walking time from `hotels.json`) with a 200 ms crossfade. Reported separately as a fix to a published defect. |
+| C4 | Build with the 6 hotels in the data; fully data-driven, so more hotels are a data-only change. No placeholder hotels. |
+| C6 | **Approved.** Lenis stops while any dialog is open and restarts on close. |
+| Reveal | **Approved.** New sections reuse `.reveal` (24 px / 700 ms / `power3.out` / 80 ms stagger, max 6), SplitText headings (900 ms / 90 ms) and the 900 ms image mask. No new reveal timings. |
+| Taj Park card | Must be a real photograph with the same 4:3 crop and treatment as the other cards; source named: `imgs/hotel-pics/Broushre (7).jpg` (WebP variants with clean names; the original is neither renamed nor moved). Never a render, screenshot or still of the 3D model. |
+| RST | The photos are «مطعم التاج / Al Taj Restaurant» at Taj Park Hotel; the gallery is titled accordingly. WebP 640 / 1280 / 1920 via a Pillow script committed under `tools/`; width/height written into the gallery data; filters by category (entrance, hall, table setup, buffet); Arabic + English alt text per photo. |
+| G26 | Demo site: the catering page is published now with the RST gallery + lightbox; every other mock item on it stays and is listed in the report. Taj Park stays hidden. |
+| Social | A social-links block with no real accounts: `url: null` renders a non-navigating element (`aria-disabled="true"`, not a link); a filled `url` renders `<a target="_blank" rel="noopener">` — data-only change. No third-party feed, no consent gate. |
+
+
 Branch `feature/anjum-patterns`. Companion to `MOTION_SPEC.md`. Everything below was read from the repo on 2026-10-17.
 
 ## 1. Repo map

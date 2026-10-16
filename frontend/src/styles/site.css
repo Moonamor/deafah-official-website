@@ -592,3 +592,141 @@ html.no-motion .marquee { overflow-x: auto; } html.no-motion .marquee__track { t
 @utility border-brand { border-width: 1.5px; }
 @utility text-balance { text-wrap: balance; }
 @utility num { unicode-bidi: isolate; direction: ltr; display: inline-block; }
+
+/* ------------------------------------------------------------------ */
+/* 7. Anjum patterns (feature/anjum-patterns) — theme tokens only.      */
+/*    Micro-interactions: 200 ms var(--ease-brand) (brand token).       */
+/*    Choreography: reference targets from reference/anjum/MOTION_SPEC.md */
+/*    (--ease-ref = CSS `ease`, the reference slick / fancybox curve).  */
+/* ------------------------------------------------------------------ */
+@layer components {
+  :root { --ease-ref: cubic-bezier(0.25, 0.1, 0.25, 1); --duration-micro: 200ms; }
+
+  /* hero slideshow (row 1): slides stacked inside the hero-pin photo layer; slideshow.js crossfades opacity */
+  .hero-slides { position: absolute; inset: 0; }
+  .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .hero-slide.is-current { opacity: 1; }
+  .hero-pause { position: absolute; z-index: 20; inset-block-end: 16px; inset-inline-end: 16px; color: var(--on-panel); background: var(--panel); border: 1.5px solid color-mix(in srgb, var(--on-panel) 40%, transparent); }
+  .hero-pause:hover { border-color: var(--panel-accent); color: var(--panel-accent-ink); }
+  .hero-pause .only-paused { display: none; }
+  .hero-pause.is-paused .only-paused { display: block; }
+  .hero-pause.is-paused .only-playing { display: none; }
+
+  /* highlights slider (row 7): image crossfade + text track, 300 ms reference ease */
+  .hl { display: grid; gap: 32px; }
+  @media (min-width: 1024px) { .hl { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
+  .hl__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--raised); }
+  .hl__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 300ms var(--ease-ref); }
+  .hl__img.is-current, .hl:not(.is-ready) .hl__img:first-child { opacity: 1; }
+  .hl__body { display: grid; gap: 32px; min-width: 0; }
+  .hl__viewport { overflow: hidden; }
+  .hl__track { display: flex; transition: transform 300ms var(--ease-ref); }
+  .hl__item { flex: 0 0 100%; min-width: 0; }
+  .hl:not(.is-ready) .hl__track { flex-direction: column; gap: 32px; }
+  .hl:not(.is-ready) .hl__nav { display: none; }
+  .hl__nav { display: flex; align-items: center; gap: 16px; }
+  .hl__nav .btn--icon { border: 1.5px solid var(--border); }
+  .hl__nav .btn--icon:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .hl__count { min-width: 5ch; text-align: center; font-weight: 700; }
+
+  /* statement on a pattern panel + quick-link tiles (row 10, hover = 200 ms brand) */
+  .statement { padding: 64px 32px; }
+  @media (min-width: 768px) { .statement { padding: 64px; } }
+  .statement__copy { max-width: 46rem; }
+  .statement__text { color: var(--on-panel); margin-bottom: 16px; }
+  .qtiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 1024px) { .qtiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .qtile { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--panel); color: var(--on-panel); }
+  .qtile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-micro) var(--ease-brand); }
+  .qtile__veil { position: absolute; inset: 0; background: rgb(0 0 0 / 0.4); opacity: 0; transition: opacity var(--duration-micro) var(--ease-brand); }   /* the brand photo veil (40 % black), the only allowed photo overlay */
+  @media (hover: hover) {
+    .qtiles:hover .qtile__veil { opacity: 1; }
+    .qtiles .qtile:hover .qtile__veil { opacity: 0; }
+    .qtile:hover .qtile__img { transform: scale(1.05); }
+  }
+  .qtile:focus-visible .qtile__veil { opacity: 0; }
+  .qtile__label { position: absolute; inset-inline: 0; inset-block-end: 0; display: flex; align-items: center; gap: 8px; padding: 16px; background: var(--panel); color: var(--on-panel); }
+  .qtile__icon { color: var(--panel-accent-ink); flex: none; }
+
+  /* Makkah teaser: text + facts on a pattern panel, no photograph (cultural-care rule) */
+  .makkah { display: grid; gap: 32px; padding: 64px 32px 32px; }
+  @media (min-width: 1024px) { .makkah { grid-template-columns: 1.2fr 1fr; padding: 64px 64px 32px; align-items: center; } }
+  .makkah h2 { color: var(--on-panel); }
+  .makkah__facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .makkah__fact { display: flex; align-items: center; gap: 16px; padding: 16px; border: 1.5px solid color-mix(in srgb, var(--on-panel) 25%, transparent); }
+  .makkah__fact .icon-box { margin-bottom: 0; border-color: var(--panel-accent); color: var(--panel-accent-ink); flex: none; }
+  .makkah__value { display: block; font-size: 32px; line-height: 36px; font-weight: 700; color: var(--panel-accent-ink); }
+  .makkah__fact .muted { color: var(--panel-muted); }
+  .makkah__pattern { grid-column: 1 / -1; }
+
+  /* hotels: filter tablists (row 12 = 200 ms brand crossfade) + centred carousel (row 11, 500 ms reference ease) */
+  .hfilters { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-bottom: 32px; }
+  .hfilters__group { display: grid; gap: 8px; }
+  .hfilters__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hcar { position: relative; }
+  .hcar__viewport { --hcard: min(85vw, 400px); display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-block: 4px; padding-inline: calc((100% - var(--hcard)) / 2); scrollbar-width: none; }
+  .hcar__viewport::-webkit-scrollbar { display: none; }
+  .hcar__viewport.is-animating { scroll-snap-type: none; }
+  .hcar__viewport:focus-visible { outline-offset: 4px; }
+  .hcar__viewport > .hotel-card { position: relative; flex: 0 0 var(--hcard); scroll-snap-align: center; }
+  .hcar__viewport > .hotel-card::after { content: ""; position: absolute; inset: 0; background: var(--raised); opacity: 0; pointer-events: none; transition: opacity 500ms var(--ease-ref); }
+  .hcar.is-ready .hcar__viewport > .hotel-card:not(.is-current)::after { opacity: 0.67; }
+  .hcar__nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
+  .hcar__nav .btn--icon { border: 1.5px solid var(--border); background: var(--surface); }
+  .hcar__nav .btn--icon:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-ink); }
+  .hcar__nav .btn--icon:disabled { opacity: 0.4; cursor: default; }
+  .hcar__status { min-width: 5ch; text-align: center; font-weight: 700; }
+  .hcar__empty { padding: 32px 0; text-align: center; }
+  .hcar.is-empty .hcar__nav, .hcar.is-empty .hcar__viewport { display: none; }
+
+  /* gallery grid (row 17 = 200 ms brand) */
+  .gallery-tabs { margin-bottom: 32px; }
+  .gallery-tabs .tab .num { font-weight: 400; margin-inline-start: 4px; }
+  .gallery-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
+  .gallery-thumb { position: relative; display: block; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; padding: 0; border: 0; background: var(--raised); cursor: zoom-in; }
+  .gallery-thumb__img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-micro) var(--ease-brand); }
+  .gallery-thumb__zoom { position: absolute; inset-block-end: 8px; inset-inline-end: 8px; display: grid; place-items: center; width: 32px; height: 32px; background: var(--surface); color: var(--ink); border: 1.5px solid var(--border); opacity: 0; transition: opacity var(--duration-micro) var(--ease-brand); }
+  @media (hover: hover) { .gallery-thumb:hover .gallery-thumb__img { transform: scale(1.05); } .gallery-thumb:hover .gallery-thumb__zoom { opacity: 1; } }
+  .gallery-thumb:focus-visible .gallery-thumb__zoom { opacity: 1; }
+
+  /* lightbox (rows 18–20): open / close 500 ms, image crossfade 366 ms, reference ease */
+  .lightbox { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: color-mix(in srgb, var(--panel) 94%, transparent); color: var(--on-panel); opacity: 0; transition: opacity 500ms var(--ease-ref); }
+  .lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+  .lightbox::backdrop { background: transparent; }
+  .lightbox.is-open { opacity: 1; }
+  .lightbox :focus-visible { outline-color: var(--panel-accent-ink); }
+  .lightbox .btn--icon { color: var(--on-panel); background: var(--panel); border: 1.5px solid color-mix(in srgb, var(--on-panel) 40%, transparent); }
+  .lightbox .btn--icon:hover:not(:disabled) { border-color: var(--panel-accent); color: var(--panel-accent-ink); }
+  .lightbox .btn--icon:disabled { opacity: 0.3; cursor: default; }
+  .lightbox__bar { display: flex; align-items: center; justify-content: space-between; padding: 16px; }
+  .lightbox__count { font-weight: 700; }
+  .lightbox__figure { margin: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; padding: 0 16px 32px; }
+  @media (min-width: 768px) { .lightbox__figure { padding: 0 96px 32px; } }
+  .lightbox__stage { position: relative; min-height: 0; transform: scale(0.96); transition: transform 500ms var(--ease-ref); touch-action: pan-y; }
+  .lightbox.is-open .lightbox__stage { transform: none; }
+  .lightbox__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 366ms var(--ease-ref); }
+  .lightbox__img.is-current { opacity: 1; }
+  .lightbox.is-instant .lightbox__img { transition: none; }
+  .lightbox__caption { padding-top: 16px; text-align: center; color: var(--on-panel); }
+  .lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); }
+  .lightbox__nav--prev { inset-inline-start: 16px; }
+  .lightbox__nav--next { inset-inline-end: 16px; }
+  @media (max-width: 767px) { .lightbox__nav { top: auto; bottom: 16px; transform: none; } }
+
+  /* social links (footer, every public page): url null = non-navigating icon */
+  .social { margin-top: 32px; }
+  .social__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .social__link { display: grid; place-items: center; width: 44px; height: 44px; color: var(--on-panel); border: 1.5px solid color-mix(in srgb, var(--on-panel) 35%, transparent); transition: background-color var(--duration-micro) var(--ease-brand), color var(--duration-micro) var(--ease-brand), border-color var(--duration-micro) var(--ease-brand); }
+  a.social__link:hover, a.social__link:focus-visible { background: var(--panel-accent); border-color: var(--panel-accent); color: var(--panel); }
+  a.social__link:focus-visible { outline-color: var(--panel-accent-ink); }
+  .social__link.is-pending { opacity: 0.6; cursor: not-allowed; }
+
+  /* reduced motion: every Anjum-pattern transition is instant */
+  @media (prefers-reduced-motion: reduce) {
+    .hl__img, .hl__track, .qtile__img, .qtile__veil, .hcar__viewport > .hotel-card::after, .gallery-thumb__img, .gallery-thumb__zoom, .lightbox, .lightbox__stage, .lightbox__img, .social__link { transition: none; }
+  }
+  html.no-motion :is(.hl__img, .hl__track, .qtile__img, .qtile__veil, .gallery-thumb__img, .gallery-thumb__zoom, .lightbox, .lightbox__stage, .lightbox__img, .social__link) { transition: none; }
+  html.no-motion .hcar__viewport > .hotel-card::after { transition: none; }
+}

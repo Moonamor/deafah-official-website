@@ -55,6 +55,9 @@
       var node = tpl.content.cloneNode(true);
       var card = node.querySelector(".hotel-card");
       card.setAttribute("data-slug", h.slug);
+      /* filter keys for the carousel tabs (js/carousel.js): rating and walking minutes straight from the data */
+      card.setAttribute("data-stars", h.stars === null || h.stars === undefined ? "none" : String(h.stars));
+      card.setAttribute("data-walk", String(h.walk_minutes));
       var img = node.querySelector("img");
       var dark = document.documentElement.getAttribute("data-scheme") === "dark";
       img.src = base + (dark && h.image_dark ? h.image_dark : h.image); if (h.srcset) img.srcset = h.srcset.split(",").map(function (s) { return base + s.trim(); }).join(", ");

@@ -19,7 +19,6 @@
     fill("menu", d.menu.map(function (m) { return '<article class="card bg-surface"><span class="eyebrow">' + bi(m.time) + '</span><ul class="list-rule grid gap-2">' + m.items.ar.map(function (x, i) { return "<li>" + bi({ ar: x, en: m.items.en[i] }) + "</li>"; }).join("") + "</ul></article>"; }).join(""));
     fill("counters", d.counters.map(function (c) { return '<div class="stat reveal"><span class="stat-number" data-count-to="' + c.value + '" data-suffix="' + c.suffix + '">0</span><span class="muted">' + bi(c.label) + "</span></div>"; }).join(""));
     fill("badges", d.badges.map(function (b) { return '<li class="chip">' + icon("check", "icon--sm") + bi(b) + "</li>"; }).join(""));
-    fill("gallery", d.gallery.map(function (g) { return '<img src="' + asset(g.image) + '" alt="' + g.alt.en + '"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : "") + ' loading="lazy" decoding="async">'; }).join(""));
     document.querySelectorAll("[data-whatsapp]").forEach(function (a) { a.href = "https://wa.me/" + d.whatsapp.replace(/\D/g, ""); });
     document.querySelectorAll("[data-phone]").forEach(function (a) { a.href = "tel:" + d.phone.replace(/\s/g, ""); });
     if (window.DeafahWidgets) window.DeafahWidgets.init();

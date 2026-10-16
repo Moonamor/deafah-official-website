@@ -7,7 +7,7 @@
     "build:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --minify",
     "watch:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --watch",
     "build:meta": "node tools/build-meta.mjs",
-    "build": "npm run build:css && npm run build:three && npm run build:fingerprint && npm run build:meta",
+    "build": "npm run build:sections && npm run build:css && npm run build:three && npm run build:fingerprint && npm run build:meta",
     "qa:grep": "node tools/qa-grep.mjs",
     "qa:case": "node tools/qa-case.mjs",
     "qa:contrast": "node tools/contrast.mjs",
@@ -16,7 +16,9 @@
     "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js",
     "build:fingerprint": "node tools/fingerprint.mjs",
     "qa:served": "node tools/qa-served.mjs",
-    "build:icons-sheet": "node tools/icons-sheet.mjs"
+    "build:icons-sheet": "node tools/icons-sheet.mjs",
+    "build:sections": "node tools/build-sections.mjs",
+    "build:webp": "python tools/make_webp.py"
   },
   "engines": {
     "node": ">=24"

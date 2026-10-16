@@ -1,0 +1,1218 @@
+[
+ {
+  "section": "hero",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "hero-default-light-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "highlights-default-light-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "explore-default-light-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "hotels-carousel-default-light-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "makkah-default-light-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "gallery-teaser-default-light-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "lightbox-default-light-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "social-default-light-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-gallery-default-light-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "default",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-lightbox-default-light-390.png"
+ },
+ {
+  "console": [],
+  "palette": "default",
+  "scheme": "light",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hero-default-dark-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "highlights-default-dark-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "explore-default-dark-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hotels-carousel-default-dark-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "makkah-default-dark-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "gallery-teaser-default-dark-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "lightbox-default-dark-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "social-default-dark-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-gallery-default-dark-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-lightbox-default-dark-390.png"
+ },
+ {
+  "console": [],
+  "palette": "default",
+  "scheme": "dark",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "hero-green-light-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "highlights-green-light-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "explore-green-light-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "hotels-carousel-green-light-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "makkah-green-light-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "gallery-teaser-green-light-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "lightbox-green-light-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "social-green-light-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-gallery-green-light-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "green",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-lightbox-green-light-390.png"
+ },
+ {
+  "console": [],
+  "palette": "green",
+  "scheme": "light",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hero-green-dark-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "highlights-green-dark-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "explore-green-dark-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hotels-carousel-green-dark-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "makkah-green-dark-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "gallery-teaser-green-dark-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "lightbox-green-dark-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "social-green-dark-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-gallery-green-dark-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-lightbox-green-dark-390.png"
+ },
+ {
+  "console": [],
+  "palette": "green",
+  "scheme": "dark",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "hero-red-light-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "highlights-red-light-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "explore-red-light-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "hotels-carousel-red-light-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "makkah-red-light-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "gallery-teaser-red-light-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "lightbox-red-light-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "social-red-light-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-gallery-red-light-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "red",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-lightbox-red-light-390.png"
+ },
+ {
+  "console": [],
+  "palette": "red",
+  "scheme": "light",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hero-red-dark-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "highlights-red-dark-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "explore-red-dark-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hotels-carousel-red-dark-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "makkah-red-dark-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "gallery-teaser-red-dark-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "lightbox-red-dark-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "social-red-dark-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-gallery-red-dark-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-lightbox-red-dark-390.png"
+ },
+ {
+  "console": [],
+  "palette": "red",
+  "scheme": "dark",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "hero-blue-light-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "highlights-blue-light-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "explore-blue-light-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "hotels-carousel-blue-light-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "makkah-blue-light-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "gallery-teaser-blue-light-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "lightbox-blue-light-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "social-blue-light-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-gallery-blue-light-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390,
+  "file": "catering-lightbox-blue-light-390.png"
+ },
+ {
+  "console": [],
+  "palette": "blue",
+  "scheme": "light",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hero-blue-dark-390.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "highlights-blue-dark-390.png"
+ },
+ {
+  "section": "explore",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "explore-blue-dark-390.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "hotels-carousel-blue-dark-390.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "makkah-blue-dark-390.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "gallery-teaser-blue-dark-390.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "lightbox-blue-dark-390.png"
+ },
+ {
+  "section": "social",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "social-blue-dark-390.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-gallery-blue-dark-390.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390,
+  "file": "catering-lightbox-blue-dark-390.png"
+ },
+ {
+  "console": [],
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 390
+ },
+ {
+  "section": "hero",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hero-default-light-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "highlights-default-light-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "explore-default-light-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hotels-carousel-default-light-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "makkah-default-light-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "gallery-teaser-default-light-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "lightbox-default-light-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "social-default-light-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-gallery-default-light-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-lightbox-default-light-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "default",
+  "scheme": "light",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hero-default-dark-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "highlights-default-dark-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "explore-default-dark-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hotels-carousel-default-dark-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "makkah-default-dark-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "gallery-teaser-default-dark-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "lightbox-default-dark-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "social-default-dark-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-gallery-default-dark-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-lightbox-default-dark-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "default",
+  "scheme": "dark",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hero-green-light-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "highlights-green-light-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "explore-green-light-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hotels-carousel-green-light-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "makkah-green-light-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "gallery-teaser-green-light-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "lightbox-green-light-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "social-green-light-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-gallery-green-light-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-lightbox-green-light-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "green",
+  "scheme": "light",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hero-green-dark-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "highlights-green-dark-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "explore-green-dark-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hotels-carousel-green-dark-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "makkah-green-dark-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "gallery-teaser-green-dark-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "lightbox-green-dark-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "social-green-dark-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-gallery-green-dark-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-lightbox-green-dark-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "green",
+  "scheme": "dark",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hero-red-light-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "highlights-red-light-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "explore-red-light-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hotels-carousel-red-light-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "makkah-red-light-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "gallery-teaser-red-light-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "lightbox-red-light-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "social-red-light-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-gallery-red-light-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-lightbox-red-light-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "red",
+  "scheme": "light",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hero-red-dark-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "highlights-red-dark-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "explore-red-dark-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hotels-carousel-red-dark-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "makkah-red-dark-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "gallery-teaser-red-dark-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "lightbox-red-dark-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "social-red-dark-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-gallery-red-dark-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-lightbox-red-dark-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "red",
+  "scheme": "dark",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hero-blue-light-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "highlights-blue-light-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "explore-blue-light-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "hotels-carousel-blue-light-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "makkah-blue-light-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "gallery-teaser-blue-light-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "lightbox-blue-light-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "social-blue-light-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-gallery-blue-light-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440,
+  "file": "catering-lightbox-blue-light-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "blue",
+  "scheme": "light",
+  "width": 1440
+ },
+ {
+  "section": "hero",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hero-blue-dark-1440.png"
+ },
+ {
+  "section": "highlights",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "highlights-blue-dark-1440.png"
+ },
+ {
+  "section": "explore",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "explore-blue-dark-1440.png"
+ },
+ {
+  "section": "hotels-carousel",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "hotels-carousel-blue-dark-1440.png"
+ },
+ {
+  "section": "makkah",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "makkah-blue-dark-1440.png"
+ },
+ {
+  "section": "gallery-teaser",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "gallery-teaser-blue-dark-1440.png"
+ },
+ {
+  "section": "lightbox",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "lightbox-blue-dark-1440.png"
+ },
+ {
+  "section": "social",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "social-blue-dark-1440.png"
+ },
+ {
+  "section": "catering-gallery",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-gallery-blue-dark-1440.png"
+ },
+ {
+  "section": "catering-lightbox",
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440,
+  "file": "catering-lightbox-blue-dark-1440.png"
+ },
+ {
+  "console": [],
+  "palette": "blue",
+  "scheme": "dark",
+  "width": 1440
+ }
+]
