@@ -22,7 +22,7 @@
    "target_ms": 7000,
    "measured_ms": 7000,
    "pass": true,
-   "note": "first change observed at 4613 ms after the sampler started"
+   "note": "first change observed at 4912 ms after the sampler started"
   },
   {
    "row": "7",
@@ -76,7 +76,7 @@
    "row": "11",
    "what": "hotels carousel slide (scroll tween)",
    "target_ms": 500,
-   "measured_ms": 466,
+   "measured_ms": 467,
    "pass": true,
    "note": ""
   },
@@ -84,7 +84,7 @@
    "row": "12",
    "what": "hotel filter fade-out (opacity)",
    "target_ms": 200,
-   "measured_ms": 186,
+   "measured_ms": 184,
    "pass": true,
    "note": ""
   },
@@ -100,7 +100,7 @@
    "row": "18",
    "what": "lightbox open (backdrop opacity)",
    "target_ms": 500,
-   "measured_ms": 484,
+   "measured_ms": 482,
    "pass": true,
    "note": ""
   },
@@ -110,7 +110,7 @@
    "target_ms": 366,
    "measured_ms": 366,
    "pass": true,
-   "note": "sampled 367 ms"
+   "note": "sampled 350 ms"
   },
   {
    "row": "20",
@@ -124,7 +124,7 @@
    "row": "A15",
    "what": "theme toast visible time",
    "target_ms": 2500,
-   "measured_ms": 2502,
+   "measured_ms": 2501,
    "pass": true,
    "note": ""
   }
