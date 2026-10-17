@@ -105,7 +105,7 @@
     /* site.css reserves the pin distance (margin-block-end: 60vh) before this script runs; hand it over to the
        pin spacer in the same task, so the content below never moves (no load-time layout shift) */
     section.style.marginBlockEnd = "0px";
-    if (reduce || !gsap || !ST) return tracked({ kill: function () { if (split) split.revert(); } });
+    if (reduce || !gsap || !ST) return tracked({ hero: section, kill: function () { if (split) split.revert(); } });
     var layers = Array.prototype.slice.call(section.querySelectorAll("[data-layer]"));
     var tl = gsap.timeline({ scrollTrigger: { trigger: section, start: function () { return "top " + headerH() + "px"; }, end: "+=60%", pin: true, pinSpacing: true, scrub: 0.8, invalidateOnRefresh: true } });
     layers.forEach(function (layer) {
@@ -115,7 +115,7 @@
       else if (kind === "veil") tl.to(layer, { opacity: 1, ease: "none" }, 0);
       else tl.to(layer, { y: -140 * depth, opacity: kind === "cta" || kind === "copy" ? 0 : 1, ease: "none" }, 0);
     });
-    return tracked({ kill: function () { tl.scrollTrigger && tl.scrollTrigger.kill(true); tl.kill(); if (split) split.revert(); } });
+    return tracked({ hero: section, kill: function () { tl.scrollTrigger && tl.scrollTrigger.kill(true); tl.kill(); if (split) split.revert(); } });
   }
 
   /* ------------------------------------------------------------------ layers */
@@ -252,7 +252,7 @@
     buildCatalogue();
     document.querySelectorAll("[data-scene]").forEach(function (section) {
       switch (section.getAttribute("data-scene")) {
-        case "hero-pin": buildHeroPin(section); break;
+        case "hero-pin": if (!scenes.some(function (sc) { return sc.hero === section; })) buildHeroPin(section); break;
         case "layers": buildLayers(section); break;
         case "horizontal": buildHorizontal(section); break;
         case "sticky-media": buildStickyMedia(section); break;
@@ -261,8 +261,15 @@
     });
     if (ST) ST.refresh();
   }
-  function teardown() { scenes.splice(0).forEach(function (s) { try { s.kill(); } catch (e) {} }); }
-  function rebuild() { teardown(); build(); }
+  /* teardown(true) kills everything (breakpoint change); a plain rebuild (hotel data, page data, language) keeps the
+     pinned hero, so the hero is never unpinned and re-pinned after load */
+  function teardown(all) {
+    var keep = [];
+    scenes.splice(0).forEach(function (sc) { if (sc.hero && !all) { keep.push(sc); return; } try { sc.kill(); } catch (e) {} });
+    Array.prototype.push.apply(scenes, keep);
+  }
+  function rebuild() { teardown(false); build(); }
+  function rebuildAll() { teardown(true); build(); }
 
   function init() {
     if (gsap && ST) gsap.registerPlugin(ST);
@@ -272,7 +279,7 @@
     build();
     document.addEventListener("deafah:hotels", function () { setTimeout(rebuild, 50); });        /* roster rendered → horizontal gallery */
     document.addEventListener("deafah:langchange", function () { setTimeout(rebuild, 50); });    /* direction flips → mirror */
-    var mq = window.matchMedia("(min-width: 1024px)"); mq.addEventListener("change", rebuild);
+    var mq = window.matchMedia("(min-width: 1024px)"); mq.addEventListener("change", rebuildAll);
     window.addEventListener("load", function () { if (ST) ST.refresh(); });
     document.fonts && document.fonts.ready.then(function () { if (ST) ST.refresh(); });
   }
