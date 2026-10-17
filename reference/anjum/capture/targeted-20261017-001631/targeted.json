@@ -1,0 +1,2024 @@
+{
+  "tool": "capture_targeted.py",
+  "generatedAt": "2026-10-16T21:16:31.320721+00:00",
+  "home": [
+    {
+      "viewport": "desktop",
+      "url": "https://anjumhotels.com/ar/",
+      "cookieDismissedWith": "only essential",
+      "libraryConfig": {
+        "jQuery": "1.12.4",
+        "flexslider": [
+          {
+            "el": "#gidm45740212406896",
+            "slides": 4,
+            "vars": {
+              "animation": "fade",
+              "easing": "swing",
+              "direction": "horizontal",
+              "reverse": false,
+              "animationLoop": true,
+              "smoothHeight": false,
+              "startAt": 0,
+              "slideshow": true,
+              "slideshowSpeed": 7000,
+              "animationSpeed": 1000,
+              "initDelay": 0,
+              "randomize": false,
+              "pauseOnAction": true,
+              "pauseOnHover": false,
+              "useCSS": true,
+              "touch": true,
+              "controlNav": false,
+              "directionNav": false,
+              "itemWidth": 0,
+              "minItems": 1,
+              "maxItems": 0
+            }
+          }
+        ],
+        "slick": [
+          {
+            "el": "#galslide_i1074348",
+            "classes": "gallery-slider-item-images slick-initialized slick-slider",
+            "slideCount": 4,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": true,
+              "asNavFor": "#galslide_t1074348",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": true,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "#galslide_t1074348",
+            "classes": "gallery-slider-item-contents slick-initialized slick-slider",
+            "slideCount": 4,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": false,
+              "asNavFor": "#galslide_i1074348",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "section.grp > div.grp-mem > div.room-slider > div.room-slider-items",
+            "classes": "room-slider-items room-slider-items-slick slick-initialized slick-slider",
+            "slideCount": 11,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": true,
+              "asNavFor": null,
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": true,
+              "centerPadding": "10%",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": false,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 500,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": true,
+              "responsive": [
+                {
+                  "breakpoint": 800,
+                  "settings": {
+                    "centerMode": true,
+                    "centerPadding": "10%",
+                    "adaptiveHeight": false
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "el": "#offer-images-1151285",
+            "classes": "offer-slider-container-images slick-initialized slick-slider",
+            "slideCount": 1,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": true,
+              "asNavFor": "#offer-texts-1151285",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": true,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "#offer-texts-1151285",
+            "classes": "offer-slider-container-texts slick-initialized slick-slider",
+            "slideCount": 1,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": false,
+              "asNavFor": "#offer-images-1151285",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          }
+        ],
+        "fancyboxDefaults": {
+          "animationEffect": "zoom",
+          "animationDuration": 500,
+          "transitionEffect": "fade",
+          "transitionDuration": 366,
+          "zoomOpacity": "auto",
+          "loop": false,
+          "keyboard": true,
+          "arrows": true,
+          "infobar": true,
+          "toolbar": true,
+          "buttons": [
+            "slideShow",
+            "fullScreen",
+            "thumbs",
+            "share",
+            "close"
+          ],
+          "touch": {
+            "vertical": true,
+            "momentum": true
+          },
+          "hash": null,
+          "thumbs": {
+            "autoStart": false,
+            "hideOnClose": true,
+            "parentEl": ".fancybox-container",
+            "axis": "y"
+          },
+          "idleTime": 3,
+          "backFocus": true,
+          "trapFocus": true,
+          "autoFocus": false,
+          "protect": false,
+          "baseClass": "",
+          "slideClass": ""
+        },
+        "fancyboxVersion": "3.2.10"
+      },
+      "hero": {
+        "found": {
+          "host": "#gidm45740212406896",
+          "slides": 4
+        },
+        "visibleSlideChangesAtSec": [
+          1.0,
+          7.5,
+          13.9,
+          20.3
+        ],
+        "intervalSec": 6.43,
+        "crossfade": [
+          {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.0,
+            "startMs": 2452,
+            "endMs": 3424,
+            "durationMs": 972,
+            "easingFit": [
+              [
+                "swing (jQuery)",
+                5e-05
+              ],
+              [
+                "ease-in-out",
+                0.00034
+              ],
+              [
+                "linear",
+                0.00475
+              ]
+            ]
+          },
+          {
+            "changed": true,
+            "from": 0.0,
+            "to": 1.0,
+            "startMs": 2452,
+            "endMs": 3424,
+            "durationMs": 972,
+            "easingFit": [
+              [
+                "swing (jQuery)",
+                5e-05
+              ],
+              [
+                "ease-in-out",
+                0.00034
+              ],
+              [
+                "linear",
+                0.00475
+              ]
+            ]
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          }
+        ],
+        "scaleOrMove": [
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          }
+        ]
+      },
+      "header": {
+        "atTop": {
+          "site": "site subnav-false",
+          "bar": {
+            "position": "relative",
+            "top": 30,
+            "height": 62,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "none",
+            "transition": "padding 0.7s"
+          },
+          "logo": {
+            "position": "absolute",
+            "top": 180,
+            "height": 293,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "matrix(1, 0, 0, 1, -100, 0)",
+            "transition": "all"
+          }
+        },
+        "thresholds": [
+          {
+            "scrollY": 100,
+            "siteClass": "site subnav-false scrolled"
+          },
+          {
+            "scrollY": 500,
+            "siteClass": "site subnav-false scrolled scrolled-midgallery"
+          }
+        ],
+        "scrolled": {
+          "site": "site subnav-false scrolled scrolled-midgallery",
+          "bar": {
+            "position": "fixed",
+            "top": 0,
+            "height": 61,
+            "background": "rgb(255, 255, 255)",
+            "transform": "none",
+            "transition": "padding 0.7s"
+          },
+          "logo": {
+            "position": "fixed",
+            "top": 0,
+            "height": 70,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transition": "all"
+          }
+        },
+        "onCross": {
+          "bar_ty": {
+            "changed": false,
+            "value": 0.0
+          },
+          "bar_opacity": {
+            "changed": false,
+            "value": 1.0
+          },
+          "logo_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "logo_opacity": {
+            "changed": false,
+            "value": 1.0
+          }
+        }
+      },
+      "rooms": {
+        "nextClick": {
+          "track_tx": {
+            "changed": true,
+            "from": 0.0,
+            "to": 1104.0,
+            "startMs": 61,
+            "endMs": 547,
+            "durationMs": 486,
+            "easingFit": [
+              [
+                "ease",
+                0.0002
+              ],
+              [
+                "ease-out",
+                0.00495
+              ],
+              [
+                "linear",
+                0.03978
+              ]
+            ]
+          },
+          "slide1_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.33,
+            "startMs": 61,
+            "endMs": 535,
+            "durationMs": 474,
+            "easingFit": [
+              [
+                "ease",
+                0.00022
+              ],
+              [
+                "ease-out",
+                0.00396
+              ],
+              [
+                "linear",
+                0.03638
+              ]
+            ]
+          },
+          "slide2_opacity": {
+            "changed": true,
+            "from": 0.33,
+            "to": 1.0,
+            "startMs": 61,
+            "endMs": 535,
+            "durationMs": 474,
+            "easingFit": [
+              [
+                "ease",
+                0.00022
+              ],
+              [
+                "ease-out",
+                0.00396
+              ],
+              [
+                "linear",
+                0.03638
+              ]
+            ]
+          }
+        },
+        "filters": [
+          {
+            "label": "جميع الخيارات",
+            "slidesBefore": 11,
+            "slidesAfter": 11,
+            "track_tx": {
+              "changed": false,
+              "value": 1104.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          },
+          {
+            "label": "الغرف",
+            "slidesBefore": 11,
+            "slidesAfter": 4,
+            "track_tx": {
+              "changed": false,
+              "value": 1104.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          },
+          {
+            "label": "الأجنحة",
+            "slidesBefore": 4,
+            "slidesAfter": 3,
+            "track_tx": {
+              "changed": false,
+              "value": 1104.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          },
+          {
+            "label": "الأجنحة الفاخرة",
+            "slidesBefore": 3,
+            "slidesAfter": 5,
+            "track_tx": {
+              "changed": false,
+              "value": 1104.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          },
+          {
+            "label": "جميع الخيارات",
+            "slidesBefore": 5,
+            "slidesAfter": 5,
+            "track_tx": {
+              "changed": false,
+              "value": 1104.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          }
+        ]
+      },
+      "featureSlider": {
+        "images_track_tx": {
+          "changed": false,
+          "value": 0.0
+        },
+        "texts_track_tx": {
+          "changed": true,
+          "from": 626.0,
+          "to": 1252.0,
+          "startMs": 59,
+          "endMs": 353,
+          "durationMs": 294,
+          "easingFit": [
+            [
+              "ease",
+              0.00046
+            ],
+            [
+              "ease-out",
+              0.00553
+            ],
+            [
+              "linear",
+              0.04079
+            ]
+          ]
+        },
+        "current_opacity": {
+          "changed": true,
+          "from": 1.0,
+          "to": 1.0,
+          "startMs": 32,
+          "endMs": 353,
+          "durationMs": 321
+        }
+      },
+      "socialWall": {
+        "requestsBeforeConsent": [],
+        "consentText": "يتم تعطيل ملفات الارتباط حتى يتم الضغط على \"تحميل\". عند الضغط على \"تحميل\" فإنك تقوم بتمكين الكوكيز (Curator.io)  لتعيين ملفات تعريف الارتباط على جهازك ولتتبع سلوك المستخدم الخاص بك. لمزيد من المعلومات حول سياسة الخصوصية الخاصة (Curator.io) يرجى زيارة: \nتحميل",
+        "requestsAfterClick": [
+          "https://api.curator.io/restricted/feeds/26e23163-e0a3-4c22-ae17-11acc084cc75/posts",
+          "https://cdn.curator.io/4.0/css/curator.css",
+          "https://cdn.curator.io/4.0/fonts/crt-icon.woff2",
+          "https://cdn.curator.io/4.0/js/curator.embed.min.js",
+          "https://cdn.curator.io/published-css/26e23163-e0a3-4c22-ae17-11acc084cc75.css",
+          "https://cdn.curator.io/published/26e23163-e0a3-4c22-ae17-11acc084cc75.js",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/143921594.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/143921594_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144354577.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144354577_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144354578.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144354578_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144576942.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/144576942_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/155527494.jpg"
+        ],
+        "cookiesBefore": 3,
+        "cookiesAfter": 3,
+        "layout": {
+          "container": "sm-wall",
+          "items": 0,
+          "firstItemWidth": null
+        }
+      },
+      "errors": {
+        "social": {
+          "error": "Locator.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n  - attempting scroll into view action\n    2 × waiting for eleme",
+          "at": [
+            "173: fn()",
+            "283: page.locator(\".sm-wall, [class*=crt-]\").first.screenshot(path=str(out_dir / f\"social_after_consent_{vp_name}.png\"))"
+          ],
+          "url": "https://anjumhotels.com/ar/"
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://anjumhotels.com/ar/",
+      "cookieDismissedWith": "only essential",
+      "libraryConfig": {
+        "jQuery": "1.12.4",
+        "flexslider": [
+          {
+            "el": "#gidm46742872381008",
+            "slides": 4,
+            "vars": {
+              "animation": "fade",
+              "easing": "swing",
+              "direction": "horizontal",
+              "reverse": false,
+              "animationLoop": true,
+              "smoothHeight": false,
+              "startAt": 0,
+              "slideshow": true,
+              "slideshowSpeed": 7000,
+              "animationSpeed": 1000,
+              "initDelay": 0,
+              "randomize": false,
+              "pauseOnAction": true,
+              "pauseOnHover": false,
+              "useCSS": true,
+              "touch": true,
+              "controlNav": false,
+              "directionNav": false,
+              "itemWidth": 0,
+              "minItems": 1,
+              "maxItems": 0
+            }
+          }
+        ],
+        "slick": [
+          {
+            "el": "#galslide_i1074348",
+            "classes": "gallery-slider-item-images slick-initialized slick-slider",
+            "slideCount": 4,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": true,
+              "asNavFor": "#galslide_t1074348",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": true,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "#galslide_t1074348",
+            "classes": "gallery-slider-item-contents slick-initialized slick-slider",
+            "slideCount": 4,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": false,
+              "asNavFor": "#galslide_i1074348",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "section.grp > div.grp-mem > div.room-slider > div.room-slider-items",
+            "classes": "room-slider-items room-slider-items-slick slick-initialized slick-slider",
+            "slideCount": 11,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": true,
+              "arrows": true,
+              "asNavFor": null,
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": false,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 500,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": true,
+              "responsive": [
+                {
+                  "breakpoint": 800,
+                  "settings": {
+                    "centerMode": true,
+                    "centerPadding": "10%",
+                    "adaptiveHeight": false
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "el": "#offer-images-1151285",
+            "classes": "offer-slider-container-images slick-initialized slick-slider",
+            "slideCount": 1,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": true,
+              "asNavFor": "#offer-texts-1151285",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": true,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          },
+          {
+            "el": "#offer-texts-1151285",
+            "classes": "offer-slider-container-texts slick-initialized slick-slider",
+            "slideCount": 1,
+            "options": {
+              "accessibility": true,
+              "adaptiveHeight": false,
+              "arrows": false,
+              "asNavFor": "#offer-images-1151285",
+              "autoplay": false,
+              "autoplaySpeed": 3000,
+              "centerMode": false,
+              "centerPadding": "50px",
+              "cssEase": "ease",
+              "dots": false,
+              "draggable": true,
+              "easing": "linear",
+              "fade": false,
+              "focusOnSelect": false,
+              "infinite": true,
+              "pauseOnHover": true,
+              "rtl": true,
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "speed": 300,
+              "swipe": true,
+              "swipeToSlide": false,
+              "touchMove": true,
+              "useCSS": true,
+              "useTransform": true,
+              "variableWidth": false,
+              "vertical": false,
+              "waitForAnimate": false,
+              "responsive": null
+            }
+          }
+        ],
+        "fancyboxDefaults": {
+          "animationEffect": "zoom",
+          "animationDuration": 500,
+          "transitionEffect": "fade",
+          "transitionDuration": 366,
+          "zoomOpacity": "auto",
+          "loop": false,
+          "keyboard": true,
+          "arrows": true,
+          "infobar": true,
+          "toolbar": true,
+          "buttons": [
+            "slideShow",
+            "fullScreen",
+            "thumbs",
+            "share",
+            "close"
+          ],
+          "touch": {
+            "vertical": true,
+            "momentum": true
+          },
+          "hash": null,
+          "thumbs": {
+            "autoStart": false,
+            "hideOnClose": true,
+            "parentEl": ".fancybox-container",
+            "axis": "y"
+          },
+          "idleTime": 3,
+          "backFocus": true,
+          "trapFocus": true,
+          "autoFocus": false,
+          "protect": false,
+          "baseClass": "",
+          "slideClass": ""
+        },
+        "fancyboxVersion": "3.2.10"
+      },
+      "hero": {
+        "found": {
+          "host": "#gidm46742872381008",
+          "slides": 4
+        },
+        "visibleSlideChangesAtSec": [
+          6.0,
+          12.4,
+          18.8
+        ],
+        "intervalSec": 6.4,
+        "crossfade": [
+          {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.001,
+            "startMs": 1008,
+            "endMs": 1956,
+            "durationMs": 948,
+            "easingFit": [
+              [
+                "ease",
+                0.00027
+              ],
+              [
+                "ease-out",
+                0.00354
+              ],
+              [
+                "linear",
+                0.03454
+              ]
+            ]
+          },
+          {
+            "changed": true,
+            "from": 0.0,
+            "to": 0.001,
+            "startMs": 1008,
+            "endMs": 8954,
+            "durationMs": 7946,
+            "easingFit": [
+              [
+                "ease",
+                451476.63248
+              ],
+              [
+                "ease-out",
+                451540.55709
+              ],
+              [
+                "linear",
+                451718.74466
+              ]
+            ]
+          },
+          {
+            "changed": true,
+            "from": 0.0,
+            "to": 0.999,
+            "startMs": 8003,
+            "endMs": 8954,
+            "durationMs": 951,
+            "easingFit": [
+              [
+                "ease",
+                0.00039
+              ],
+              [
+                "ease-out",
+                0.00335
+              ],
+              [
+                "linear",
+                0.03329
+              ]
+            ]
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          }
+        ],
+        "scaleOrMove": [
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          },
+          {
+            "changed": false,
+            "value": 0.0
+          }
+        ]
+      },
+      "header": {
+        "atTop": {
+          "site": "site subnav-false",
+          "bar": {
+            "position": "relative",
+            "top": 35,
+            "height": 61,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "none",
+            "transition": "padding 0.7s"
+          },
+          "logo": {
+            "position": "absolute",
+            "top": 40,
+            "height": 60,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "none",
+            "transition": "all"
+          }
+        },
+        "thresholds": [
+          {
+            "scrollY": 100,
+            "siteClass": "site subnav-false scrolled"
+          },
+          {
+            "scrollY": 400,
+            "siteClass": "site subnav-false scrolled scrolled-midgallery"
+          }
+        ],
+        "scrolled": {
+          "site": "site subnav-false scrolled scrolled-midgallery",
+          "bar": {
+            "position": "fixed",
+            "top": 0,
+            "height": 61,
+            "background": "rgb(255, 255, 255)",
+            "transform": "none",
+            "transition": "padding 0.7s"
+          },
+          "logo": {
+            "position": "fixed",
+            "top": 0,
+            "height": 70,
+            "background": "rgba(0, 0, 0, 0)",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transition": "all"
+          }
+        },
+        "onCross": {
+          "bar_ty": {
+            "changed": false,
+            "value": 0.0
+          },
+          "bar_opacity": {
+            "changed": false,
+            "value": 1.0
+          },
+          "logo_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "logo_opacity": {
+            "changed": false,
+            "value": 1.0
+          }
+        }
+      },
+      "rooms": {
+        "nextClick": {
+          "track_tx": {
+            "changed": true,
+            "from": 0.0,
+            "to": 353.0,
+            "startMs": 62,
+            "endMs": 551,
+            "durationMs": 489,
+            "easingFit": [
+              [
+                "ease",
+                0.00015
+              ],
+              [
+                "ease-out",
+                0.00491
+              ],
+              [
+                "linear",
+                0.03954
+              ]
+            ]
+          },
+          "slide1_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.33,
+            "startMs": 62,
+            "endMs": 540,
+            "durationMs": 478,
+            "easingFit": [
+              [
+                "ease",
+                0.0002
+              ],
+              [
+                "ease-out",
+                0.00403
+              ],
+              [
+                "linear",
+                0.03653
+              ]
+            ]
+          },
+          "slide2_opacity": {
+            "changed": true,
+            "from": 0.33,
+            "to": 1.0,
+            "startMs": 62,
+            "endMs": 540,
+            "durationMs": 478,
+            "easingFit": [
+              [
+                "ease",
+                0.0002
+              ],
+              [
+                "ease-out",
+                0.00403
+              ],
+              [
+                "linear",
+                0.03653
+              ]
+            ]
+          }
+        },
+        "filters": [
+          {
+            "label": "جميع الخيارات",
+            "slidesBefore": 11,
+            "slidesAfter": 11,
+            "track_tx": {
+              "changed": false,
+              "value": 353.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": true,
+              "from": 1.0,
+              "to": 1.0,
+              "startMs": 11,
+              "endMs": 531,
+              "durationMs": 520,
+              "easingFit": [
+                [
+                  "ease",
+                  678175.37627
+                ],
+                [
+                  "ease-out",
+                  678203.04659
+                ],
+                [
+                  "linear",
+                  678347.29576
+                ]
+              ]
+            }
+          },
+          {
+            "label": "الغرف",
+            "slidesBefore": 11,
+            "slidesAfter": 4,
+            "track_tx": {
+              "changed": false,
+              "value": 353.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": true,
+              "from": 1.0,
+              "to": 1.0,
+              "startMs": 0,
+              "endMs": 515,
+              "durationMs": 515,
+              "easingFit": [
+                [
+                  "ease",
+                  621387.40882
+                ],
+                [
+                  "ease-out",
+                  621410.71049
+                ],
+                [
+                  "linear",
+                  621544.7935
+                ]
+              ]
+            }
+          },
+          {
+            "label": "الأجنحة",
+            "slidesBefore": 4,
+            "slidesAfter": 3,
+            "track_tx": {
+              "changed": false,
+              "value": 353.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": true,
+              "from": 1.0,
+              "to": 1.0,
+              "startMs": 11,
+              "endMs": 540,
+              "durationMs": 529,
+              "easingFit": [
+                [
+                  "ease",
+                  688953.85385
+                ],
+                [
+                  "ease-out",
+                  688979.1603
+                ],
+                [
+                  "linear",
+                  689120.92219
+                ]
+              ]
+            }
+          },
+          {
+            "label": "الأجنحة الفاخرة",
+            "slidesBefore": 3,
+            "slidesAfter": 5,
+            "track_tx": {
+              "changed": false,
+              "value": 353.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": true,
+              "from": 1.0,
+              "to": 1.0,
+              "startMs": 11,
+              "endMs": 514,
+              "durationMs": 503,
+              "easingFit": [
+                [
+                  "ease",
+                  635830.14602
+                ],
+                [
+                  "ease-out",
+                  635851.65578
+                ],
+                [
+                  "linear",
+                  635986.30482
+                ]
+              ]
+            }
+          },
+          {
+            "label": "جميع الخيارات",
+            "slidesBefore": 5,
+            "slidesAfter": 5,
+            "track_tx": {
+              "changed": false,
+              "value": 353.0
+            },
+            "track_opacity": {
+              "changed": false,
+              "value": 1.0
+            },
+            "slide1_opacity": {
+              "changed": false,
+              "value": 0.33
+            },
+            "slide2_opacity": {
+              "changed": false,
+              "value": 1.0
+            }
+          }
+        ]
+      },
+      "featureSlider": {
+        "images_track_tx": {
+          "changed": false,
+          "value": 0.0
+        },
+        "texts_track_tx": {
+          "changed": true,
+          "from": 324.0,
+          "to": 648.0,
+          "startMs": 54,
+          "endMs": 351,
+          "durationMs": 297,
+          "easingFit": [
+            [
+              "ease",
+              0.00078
+            ],
+            [
+              "ease-out",
+              0.00649
+            ],
+            [
+              "linear",
+              0.04413
+            ]
+          ]
+        },
+        "current_opacity": {
+          "changed": true,
+          "from": 1.0,
+          "to": 1.0,
+          "startMs": 21,
+          "endMs": 351,
+          "durationMs": 330
+        }
+      },
+      "socialWall": {
+        "requestsBeforeConsent": [],
+        "consentText": "يتم تعطيل ملفات الارتباط حتى يتم الضغط على \"تحميل\". عند الضغط على \"تحميل\" فإنك تقوم بتمكين الكوكيز (Curator.io)  لتعيين ملفات تعريف الارتباط على جهازك ولتتبع سلوك المستخدم الخاص بك. لمزيد من المعلومات حول سياسة الخصوصية الخاصة (Curator.io) يرجى زيارة: \nتحميل",
+        "requestsAfterClick": [
+          "https://api.curator.io/restricted/feeds/26e23163-e0a3-4c22-ae17-11acc084cc75/posts",
+          "https://cdn.curator.io/4.0/css/curator.css",
+          "https://cdn.curator.io/4.0/fonts/crt-icon.woff2",
+          "https://cdn.curator.io/4.0/js/curator.embed.min.js",
+          "https://cdn.curator.io/published-css/26e23163-e0a3-4c22-ae17-11acc084cc75.css",
+          "https://cdn.curator.io/published/26e23163-e0a3-4c22-ae17-11acc084cc75.js",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/143921594.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/143921594_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/157125079.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/157125079_user_image.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/157713054.jpg",
+          "https://curator-assets.b-cdn.net/26e23163-e0a3-4c22-ae17-11acc084cc75/157713054_user_image.jpg"
+        ],
+        "cookiesBefore": 3,
+        "cookiesAfter": 3,
+        "layout": {
+          "container": "sm-wall",
+          "items": 0,
+          "firstItemWidth": null
+        }
+      },
+      "errors": {
+        "social": {
+          "error": "Locator.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n  - attempting scroll into view action\n    2 × waiting for eleme",
+          "at": [
+            "173: fn()",
+            "283: page.locator(\".sm-wall, [class*=crt-]\").first.screenshot(path=str(out_dir / f\"social_after_consent_{vp_name}.png\"))"
+          ],
+          "url": "https://anjumhotels.com/ar/"
+        }
+      }
+    }
+  ],
+  "gallery": [
+    {
+      "viewport": "desktop",
+      "url": "https://anjumhotels.com/ar/hotel-overview/gallery/",
+      "finalUrl": "https://anjumhotels.com/ar/hotel-overview/gallery/",
+      "cookieDismissedWith": "only essential",
+      "libraryConfig": {
+        "jQuery": "1.12.4",
+        "flexslider": [
+          {
+            "el": "#gidm46742873905296",
+            "slides": 4,
+            "vars": {
+              "animation": "fade",
+              "easing": "swing",
+              "direction": "horizontal",
+              "reverse": false,
+              "animationLoop": true,
+              "smoothHeight": false,
+              "startAt": 0,
+              "slideshow": true,
+              "slideshowSpeed": 7000,
+              "animationSpeed": 1000,
+              "initDelay": 0,
+              "randomize": false,
+              "pauseOnAction": true,
+              "pauseOnHover": false,
+              "useCSS": true,
+              "touch": true,
+              "controlNav": false,
+              "directionNav": false,
+              "itemWidth": 0,
+              "minItems": 1,
+              "maxItems": 0
+            }
+          }
+        ],
+        "slick": [],
+        "fancyboxDefaults": {
+          "animationEffect": "zoom",
+          "animationDuration": 500,
+          "transitionEffect": "fade",
+          "transitionDuration": 366,
+          "zoomOpacity": "auto",
+          "loop": false,
+          "keyboard": true,
+          "arrows": true,
+          "infobar": true,
+          "toolbar": true,
+          "buttons": [
+            "slideShow",
+            "fullScreen",
+            "thumbs",
+            "share",
+            "close"
+          ],
+          "touch": {
+            "vertical": true,
+            "momentum": true
+          },
+          "hash": null,
+          "thumbs": {
+            "autoStart": false,
+            "hideOnClose": true,
+            "parentEl": ".fancybox-container",
+            "axis": "y"
+          },
+          "idleTime": 3,
+          "backFocus": true,
+          "trapFocus": true,
+          "autoFocus": false,
+          "protect": false,
+          "baseClass": "",
+          "slideClass": ""
+        },
+        "fancyboxVersion": "3.2.10"
+      },
+      "rendering": {
+        "itemsInDom": 114,
+        "itemsInServerHtml": 114,
+        "filters": [
+          "الكل",
+          "معالم مكة",
+          "الفندق",
+          "تناول الطعام",
+          "الغرف والأجنحة"
+        ],
+        "firstItem": {
+          "tag": "DIV",
+          "cls": "main-gallery-image fancybox",
+          "href": null,
+          "dataSrc": "/%28cms%29/media/resize/1320x880f%2Cq70i/2026731",
+          "dataFancybox": "main-gal"
+        }
+      },
+      "filterClick": {
+        "label": "معالم مكة",
+        "item1_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "item1_scale": {
+          "changed": false,
+          "value": 0.0
+        },
+        "item2_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "item6_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "visibleAfter": 29
+      },
+      "lightbox": {
+        "navigatedAway": true,
+        "container_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "bg_opacity": {
+          "changed": true,
+          "from": 0.0,
+          "to": 0.869,
+          "startMs": 35,
+          "endMs": 497,
+          "durationMs": 462,
+          "easingFit": [
+            [
+              "ease",
+              0.00774
+            ],
+            [
+              "ease-out",
+              0.01514
+            ],
+            [
+              "linear",
+              0.06346
+            ]
+          ]
+        },
+        "image_scale": {
+          "changed": true,
+          "from": 0.0,
+          "to": 1.0,
+          "startMs": 299,
+          "endMs": 813,
+          "durationMs": 514,
+          "easingFit": [
+            [
+              "ease",
+              2.67727
+            ],
+            [
+              "ease-out",
+              2.84386
+            ],
+            [
+              "ease-in-out",
+              3.24561
+            ]
+          ]
+        },
+        "image_tx": {
+          "changed": true,
+          "from": 0.0,
+          "to": 110.0,
+          "startMs": 299,
+          "endMs": 813,
+          "durationMs": 514,
+          "easingFit": [
+            [
+              "ease",
+              17.39554
+            ],
+            [
+              "ease-out",
+              17.46959
+            ],
+            [
+              "linear",
+              18.12616
+            ]
+          ]
+        },
+        "toolbar_opacity": {
+          "changed": true,
+          "from": 0.0,
+          "to": 1.0,
+          "startMs": 35,
+          "endMs": 288,
+          "durationMs": 253,
+          "easingFit": [
+            [
+              "ease",
+              0.0005
+            ],
+            [
+              "ease-out",
+              0.00602
+            ],
+            [
+              "linear",
+              0.04109
+            ]
+          ]
+        },
+        "dom": {
+          "role": "dialog",
+          "ariaModal": null,
+          "counter": "1 / 57",
+          "caption": "المصلون يؤدون صلاة العشاء والتراويح في المسجد الحرم بمدينة مكة المكرمة 1/57",
+          "buttons": [
+            "Start slideshow",
+            "Full screen",
+            "Thumbnails",
+            "Share",
+            "Close",
+            "Previous",
+            "Next"
+          ],
+          "focusInside": false,
+          "bg": "rgb(30, 30, 30)",
+          "bgOpacity": "0.87"
+        },
+        "arrowRight": {
+          "current_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "current_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.999,
+            "startMs": 0,
+            "endMs": 320,
+            "durationMs": 320,
+            "easingFit": [
+              [
+                "ease-out",
+                85477.23078
+              ],
+              [
+                "ease",
+                85477.55873
+              ],
+              [
+                "linear",
+                85513.22763
+              ]
+            ]
+          },
+          "previous_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "previous_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.001,
+            "startMs": 41,
+            "endMs": 320,
+            "durationMs": 279,
+            "easingFit": [
+              [
+                "ease",
+                0.04669
+              ],
+              [
+                "ease-out",
+                0.06089
+              ],
+              [
+                "linear",
+                0.13466
+              ]
+            ]
+          },
+          "counterAfter": "2 / 57"
+        },
+        "escape": {
+          "container_opacity": {
+            "changed": false,
+            "value": 1.0
+          },
+          "bg_opacity": {
+            "changed": true,
+            "from": 0.87,
+            "to": 0.034,
+            "startMs": 34,
+            "endMs": 508,
+            "durationMs": 474,
+            "easingFit": [
+              [
+                "ease-in",
+                0.00042
+              ],
+              [
+                "linear",
+                0.02289
+              ],
+              [
+                "swing (jQuery)",
+                0.02564
+              ]
+            ]
+          },
+          "closed": true,
+          "focusReturnedTo": "browser-chrome browser-chrome-147 social-media-png"
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://anjumhotels.com/ar/hotel-overview/gallery/",
+      "finalUrl": "https://anjumhotels.com/ar/hotel-overview/gallery/",
+      "cookieDismissedWith": "only essential",
+      "libraryConfig": {
+        "jQuery": "1.12.4",
+        "flexslider": [
+          {
+            "el": "#gidm45740204486192",
+            "slides": 4,
+            "vars": {
+              "animation": "fade",
+              "easing": "swing",
+              "direction": "horizontal",
+              "reverse": false,
+              "animationLoop": true,
+              "smoothHeight": false,
+              "startAt": 0,
+              "slideshow": true,
+              "slideshowSpeed": 7000,
+              "animationSpeed": 1000,
+              "initDelay": 0,
+              "randomize": false,
+              "pauseOnAction": true,
+              "pauseOnHover": false,
+              "useCSS": true,
+              "touch": true,
+              "controlNav": false,
+              "directionNav": false,
+              "itemWidth": 0,
+              "minItems": 1,
+              "maxItems": 0
+            }
+          }
+        ],
+        "slick": [],
+        "fancyboxDefaults": {
+          "animationEffect": "zoom",
+          "animationDuration": 500,
+          "transitionEffect": "fade",
+          "transitionDuration": 366,
+          "zoomOpacity": "auto",
+          "loop": false,
+          "keyboard": true,
+          "arrows": true,
+          "infobar": true,
+          "toolbar": true,
+          "buttons": [
+            "slideShow",
+            "fullScreen",
+            "thumbs",
+            "share",
+            "close"
+          ],
+          "touch": {
+            "vertical": true,
+            "momentum": true
+          },
+          "hash": null,
+          "thumbs": {
+            "autoStart": false,
+            "hideOnClose": true,
+            "parentEl": ".fancybox-container",
+            "axis": "y"
+          },
+          "idleTime": 3,
+          "backFocus": true,
+          "trapFocus": true,
+          "autoFocus": false,
+          "protect": false,
+          "baseClass": "",
+          "slideClass": ""
+        },
+        "fancyboxVersion": "3.2.10"
+      },
+      "rendering": {
+        "itemsInDom": 114,
+        "itemsInServerHtml": 114,
+        "filters": [
+          "الكل",
+          "معالم مكة",
+          "الفندق",
+          "تناول الطعام",
+          "الغرف والأجنحة"
+        ],
+        "firstItem": {
+          "tag": "DIV",
+          "cls": "main-gallery-image fancybox",
+          "href": null,
+          "dataSrc": "/%28cms%29/media/resize/1320x880f%2Cq70i/2026731",
+          "dataFancybox": "main-gal"
+        }
+      },
+      "filterClick": {
+        "label": "معالم مكة",
+        "item1_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "item1_scale": {
+          "changed": false,
+          "value": 0.0
+        },
+        "item2_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "item6_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "visibleAfter": 29
+      },
+      "lightbox": {
+        "navigatedAway": true,
+        "container_opacity": {
+          "changed": false,
+          "value": 1.0
+        },
+        "bg_opacity": {
+          "changed": true,
+          "from": 0.0,
+          "to": 0.869,
+          "startMs": 41,
+          "endMs": 500,
+          "durationMs": 459,
+          "easingFit": [
+            [
+              "ease",
+              0.00832
+            ],
+            [
+              "ease-out",
+              0.01541
+            ],
+            [
+              "linear",
+              0.06401
+            ]
+          ]
+        },
+        "image_scale": {
+          "changed": false,
+          "value": 0.0
+        },
+        "image_tx": {
+          "changed": false,
+          "value": 0.0
+        },
+        "toolbar_opacity": {
+          "changed": true,
+          "from": 0.0,
+          "to": 1.0,
+          "startMs": 41,
+          "endMs": 290,
+          "durationMs": 249,
+          "easingFit": [
+            [
+              "ease",
+              0.00062
+            ],
+            [
+              "ease-out",
+              0.00524
+            ],
+            [
+              "linear",
+              0.03944
+            ]
+          ]
+        },
+        "dom": {
+          "role": "dialog",
+          "ariaModal": null,
+          "counter": "1 / 57",
+          "caption": "المصلون يؤدون صلاة العشاء والتراويح في المسجد الحرم بمدينة مكة المكرمة 1/57",
+          "buttons": [
+            "Start slideshow",
+            "Full screen",
+            "Thumbnails",
+            "Share",
+            "Close",
+            "Previous",
+            "Next"
+          ],
+          "focusInside": false,
+          "bg": "rgb(30, 30, 30)",
+          "bgOpacity": "0.87"
+        },
+        "arrowRight": {
+          "current_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "current_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.814,
+            "startMs": 1402,
+            "endMs": 1496,
+            "durationMs": 94,
+            "easingFit": [
+              [
+                "ease",
+                7.75124
+              ],
+              [
+                "ease-out",
+                7.88506
+              ],
+              [
+                "linear",
+                8.45612
+              ]
+            ]
+          },
+          "previous_tx": {
+            "changed": false,
+            "value": 0.0
+          },
+          "previous_opacity": {
+            "changed": true,
+            "from": 1.0,
+            "to": 0.001,
+            "startMs": 23,
+            "endMs": 303,
+            "durationMs": 280,
+            "easingFit": [
+              [
+                "ease",
+                0.04603
+              ],
+              [
+                "ease-out",
+                0.06003
+              ],
+              [
+                "linear",
+                0.1332
+              ]
+            ]
+          },
+          "counterAfter": "2 / 57"
+        },
+        "escape": {
+          "container_opacity": {
+            "changed": false,
+            "value": 1.0
+          },
+          "bg_opacity": {
+            "changed": true,
+            "from": 0.87,
+            "to": 0.034,
+            "startMs": 0,
+            "endMs": 495,
+            "durationMs": 495,
+            "easingFit": [
+              [
+                "ease-in",
+                0.00095
+              ],
+              [
+                "linear",
+                0.02609
+              ],
+              [
+                "swing (jQuery)",
+                0.02836
+              ]
+            ]
+          },
+          "closed": true,
+          "focusReturnedTo": "browser-safari browser-safari-604 social-media-png"
+        }
+      }
+    }
+  ]
+}

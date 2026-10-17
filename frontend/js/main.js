@@ -75,14 +75,6 @@
     renderGuestCount();
   });
 
-  /* filter chips (visual only, as before) */
-  document.querySelectorAll(".filter-bar").forEach(function (bar) {
-    bar.addEventListener("click", function (e) {
-      var chip = e.target.closest(".chip"); if (!chip) return;
-      bar.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
-      chip.classList.add("is-active"); chip.setAttribute("aria-pressed", "true");
-    });
-  });
 
   /* booking widget — demo */
   var booking = document.getElementById("bookingWidget");

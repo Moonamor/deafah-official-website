@@ -1,0 +1,454 @@
+{
+  "_note": "Homepage sections, rendered at build time into index.html by tools/build-sections.mjs. Every visible string has ar + en. Drafts or missing content carry \"todo\": \"TODO_CONTENT ...\" (listed in the phase report).",
+  "hero": {
+    "interval_ms": 7000,
+    "fade_ms": 1000,
+    "slides": [
+      {
+        "id": "taj-park-night",
+        "hotel": "taj-park",
+        "alt": {
+          "ar": "فندق تاج بارك ليلًا، واجهته الزجاجية مضاءة",
+          "en": "Taj Park Hotel at night, its glass façade lit"
+        },
+        "sizes": [
+          {
+            "src": "imgs/hotel-pics/taj-park-640.5000fe08.webp",
+            "width": 640,
+            "height": 480
+          },
+          {
+            "src": "imgs/hotel-pics/taj-park-1280.23c69761.webp",
+            "width": 1280,
+            "height": 960
+          },
+          {
+            "src": "imgs/hotel-pics/taj-park-1920.d69c2e45.webp",
+            "width": 1920,
+            "height": 1440
+          }
+        ],
+        "focus": {
+          "x": "45%",
+          "y": "45%"
+        }
+      },
+      {
+        "id": "amjad",
+        "hotel": "amjad-al-deafah",
+        "alt": {
+          "ar": "فندق أمجاد الضيافة من الأعلى بواجهته الزرقاء",
+          "en": "Amjad Al Deafah Hotel from above, with its blue façade"
+        },
+        "sizes": [
+          {
+            "src": "imgs/hotel-pics/amjad-640.f69e5351.webp",
+            "width": 640,
+            "height": 512
+          },
+          {
+            "src": "imgs/hotel-pics/amjad-1280.1c4def31.webp",
+            "width": 1280,
+            "height": 1024
+          },
+          {
+            "src": "imgs/hotel-pics/amjad-1920.d61e8dc5.webp",
+            "width": 1920,
+            "height": 1536
+          }
+        ],
+        "focus": {
+          "x": "50%",
+          "y": "38%"
+        }
+      },
+      {
+        "id": "bustan",
+        "hotel": "al-bostan-al-masi",
+        "alt": {
+          "ar": "واجهة فندق البستان الماسي بشرفاتها المنحنية",
+          "en": "The façade of Al Bostan Al Masi Hotel with its curved balconies"
+        },
+        "sizes": [
+          {
+            "src": "imgs/hotel-pics/bustan-640.e683a631.webp",
+            "width": 640,
+            "height": 512
+          },
+          {
+            "src": "imgs/hotel-pics/bustan-1280.ddc967d3.webp",
+            "width": 1280,
+            "height": 1024
+          },
+          {
+            "src": "imgs/hotel-pics/bustan-1920.ccf445d5.webp",
+            "width": 1920,
+            "height": 1536
+          }
+        ],
+        "focus": {
+          "x": "50%",
+          "y": "68%"
+        }
+      },
+      {
+        "id": "al-taj-hall",
+        "hotel": "taj-park",
+        "alt": {
+          "ar": "قاعة مطعم التاج بفندق تاج بارك",
+          "en": "The dining hall of Al Taj Restaurant, Taj Park Hotel"
+        },
+        "sizes": [
+          {
+            "src": "imgs/gallery/al-taj/al-taj-gv0a8088-640.8f26c313.webp",
+            "width": 640,
+            "height": 427
+          },
+          {
+            "src": "imgs/gallery/al-taj/al-taj-gv0a8088-1280.624ce44a.webp",
+            "width": 1280,
+            "height": 853
+          },
+          {
+            "src": "imgs/gallery/al-taj/al-taj-gv0a8088-1920.1dbdc598.webp",
+            "width": 1920,
+            "height": 1280
+          }
+        ],
+        "focus": {
+          "x": "40%",
+          "y": "60%"
+        }
+      }
+    ],
+    "_focus_note": "focus = object-position per slide (owner brief C2); checked at 390 and 1440 px"
+  },
+  "highlights": {
+    "eyebrow": {
+      "ar": "لماذا الضيافة",
+      "en": "Why Deafah"
+    },
+    "title": {
+      "ar": "تميّز المجموعة في أربع نقاط",
+      "en": "The group's difference, in four moves"
+    },
+    "items": [
+      {
+        "id": "walk",
+        "icon": "walk",
+        "title": {
+          "ar": "خطوات من الحرم",
+          "en": "Steps from the Haram"
+        },
+        "text": {
+          "ar": "تقع جميع فنادقنا على مسافة قريبة يمكن الوصول إليها سيرًا من المسجد الحرام، وهذا هو المعيار الذي نلتزم به.",
+          "en": "Every property is walking distance from Masjid Al Haram. That is our defining metric, not an afterthought."
+        },
+        "image": {
+          "alt": {
+            "ar": "واجهة فندق تاج بارك من الشارع",
+            "en": "Taj Park Hotel seen from the street"
+          },
+          "sizes": [
+            {
+              "src": "assets/taj-park/taj-park-street-corner-640.dc273b66.webp",
+              "width": 640,
+              "height": 493
+            },
+            {
+              "src": "assets/taj-park/taj-park-street-corner-1000.798a9cf1.webp",
+              "width": 1000,
+              "height": 770
+            }
+          ]
+        }
+      },
+      {
+        "id": "portfolio",
+        "icon": "hotel",
+        "title": {
+          "ar": "{n_words}، مجموعة واحدة",
+          "en": "{n} Hotels, One Group"
+        },
+        "text": {
+          "ar": "مجموعة مختارة من الفنادق في مكة المكرمة، من الإقامات الاقتصادية إلى الأجنحة الفاخرة، بإدارة موثوقة واحدة.",
+          "en": "A curated portfolio across Makkah, from economy stays to premium suites, under one trusted operator."
+        },
+        "image": {
+          "alt": {
+            "ar": "فندق أمجاد الضيافة",
+            "en": "Amjad Al Deafah Hotel"
+          },
+          "sizes": [
+            {
+              "src": "imgs/hotel-pics/amjad-640.f69e5351.webp",
+              "width": 640,
+              "height": 512
+            },
+            {
+              "src": "imgs/hotel-pics/amjad-1280.1c4def31.webp",
+              "width": 1280,
+              "height": 1024
+            }
+          ]
+        }
+      },
+      {
+        "id": "pricing",
+        "icon": "tag",
+        "title": {
+          "ar": "أسعار تنافسية",
+          "en": "Competitive Pricing"
+        },
+        "text": {
+          "ar": "أسعار شفافة ومتدرجة حسب مستوى الفندق، دون أي تلاعب في العملة أو الوحدات.",
+          "en": "Transparent, tiered rates across star levels, with no hidden currency or unit conversion tricks."
+        },
+        "image": {
+          "alt": {
+            "ar": "واجهة فندق البستان الماسي",
+            "en": "The façade of Al Bostan Al Masi Hotel"
+          },
+          "sizes": [
+            {
+              "src": "imgs/hotel-pics/bustan-640.e683a631.webp",
+              "width": 640,
+              "height": 512
+            },
+            {
+              "src": "imgs/hotel-pics/bustan-1280.ddc967d3.webp",
+              "width": 1280,
+              "height": 1024
+            }
+          ]
+        },
+        "todo": "TODO_CONTENT: the image is a hotel façade; a photo that speaks to pricing or value would fit better"
+      },
+      {
+        "id": "service",
+        "icon": "clock",
+        "title": {
+          "ar": "خدمة على مدار 24 ساعة",
+          "en": "24-Hour Service"
+        },
+        "text": {
+          "ar": "استقبال ودعم للضيوف على مدار الساعة، طوال أيام السنة.",
+          "en": "Front desk, prayer wake calls, and guest support around the clock, every day of the year."
+        },
+        "image": {
+          "alt": {
+            "ar": "مدخل فندق تاج بارك ليلًا",
+            "en": "Taj Park Hotel's entrance at night"
+          },
+          "sizes": [
+            {
+              "src": "assets/taj-park/taj-park-lobby-portrait-700.e997e2b9.webp",
+              "width": 700,
+              "height": 1052
+            },
+            {
+              "src": "assets/taj-park/taj-park-lobby-portrait-1200.affc0512.webp",
+              "width": 1200,
+              "height": 1804
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "statement": {
+    "text": {
+      "ar": "نُدير إقامتك كاملة، من الوصول إلى العودة.",
+      "en": "We run your whole stay, from arrival to return."
+    },
+    "sub": {
+      "ar": "الفنادق والنقل والإعاشة تحت إدارة واحدة.",
+      "en": "Hotels, transport and catering under one operator."
+    },
+    "todo": "TODO_CONTENT: draft statement copy, needs approval"
+  },
+  "quicklinks": {
+    "title": {
+      "ar": "اكتشف المجموعة",
+      "en": "Explore the group"
+    },
+    "items": [
+      {
+        "id": "about",
+        "href": "about.html",
+        "page": "about.html",
+        "icon": "info",
+        "label": {
+          "ar": "من نحن",
+          "en": "About Us"
+        },
+        "image": {
+          "sizes": [
+            {
+              "src": "imgs/hotel-pics/amjad-640.f69e5351.webp",
+              "width": 640,
+              "height": 512
+            },
+            {
+              "src": "imgs/hotel-pics/amjad-1280.1c4def31.webp",
+              "width": 1280,
+              "height": 1024
+            }
+          ]
+        }
+      },
+      {
+        "id": "hotels",
+        "href": "#hotels",
+        "icon": "hotel",
+        "label": {
+          "ar": "فنادقنا",
+          "en": "Our Hotels"
+        },
+        "image": {
+          "sizes": [
+            {
+              "src": "imgs/hotel-pics/lavender-640.2d5a02c2.webp",
+              "width": 640,
+              "height": 512
+            }
+          ]
+        }
+      },
+      {
+        "id": "catering",
+        "href": "catering.html",
+        "page": "catering.html",
+        "icon": "restaurant",
+        "label": {
+          "ar": "الإعاشة",
+          "en": "Catering"
+        },
+        "image": {
+          "sizes": [
+            {
+              "src": "imgs/gallery/al-taj/al-taj-gv0a8092-640.9addbcc3.webp",
+              "width": 640,
+              "height": 427
+            },
+            {
+              "src": "imgs/gallery/al-taj/al-taj-gv0a8092-1280.84300d89.webp",
+              "width": 1280,
+              "height": 853
+            }
+          ]
+        }
+      },
+      {
+        "id": "contact",
+        "href": "#contact",
+        "modal": "contactModal",
+        "icon": "phone",
+        "label": {
+          "ar": "تواصل معنا",
+          "en": "Contact Us"
+        },
+        "image": {
+          "sizes": [
+            {
+              "src": "assets/taj-park/taj-park-street-corner-640.dc273b66.webp",
+              "width": 640,
+              "height": 493
+            },
+            {
+              "src": "assets/taj-park/taj-park-street-corner-1000.798a9cf1.webp",
+              "width": 1000,
+              "height": 770
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "makkah": {
+    "eyebrow": {
+      "ar": "مكة المكرمة",
+      "en": "Makkah"
+    },
+    "title": {
+      "ar": "إقامتك في قلب مكة المكرمة",
+      "en": "Your stay in the heart of Makkah"
+    },
+    "text": {
+      "ar": "فنادق المجموعة في أحياء قريبة من المسجد الحرام، مع نقل من وإلى المطار ومحطة قطار الحرمين.",
+      "en": "The group's hotels sit in districts close to Masjid Al Haram, with transfers to and from the airport and the Haramain train station."
+    },
+    "facts": [
+      {
+        "id": "walk",
+        "icon": "walk",
+        "value_from": "hotels.min_walk",
+        "label": {
+          "ar": "دقائق سيرًا من أقرب فنادقنا إلى الحرم",
+          "en": "minutes' walk from our closest hotel to the Haram"
+        }
+      },
+      {
+        "id": "hotels",
+        "icon": "hotel",
+        "value_from": "hotels.count",
+        "label": {
+          "ar": "فنادق للمجموعة في مكة المكرمة",
+          "en": "group hotels in Makkah"
+        }
+      },
+      {
+        "id": "price",
+        "icon": "tag",
+        "value_from": "hotels.min_price",
+        "label": {
+          "ar": "ريالًا لليلة، أدنى سعر في المجموعة",
+          "en": "SAR a night, the group's lowest rate"
+        },
+        "hidden": true,
+        "_note": "hidden: hotel prices are unverified (Anjum Part A7)"
+      },
+      {
+        "id": "train",
+        "icon": "route",
+        "value": null,
+        "label": {
+          "ar": "إلى محطة قطار الحرمين",
+          "en": "to the Haramain train station"
+        },
+        "todo": "TODO_CONTENT: distance or time to the Haramain station",
+        "_note": "not rendered while value is null"
+      },
+      {
+        "id": "airport",
+        "icon": "plane",
+        "value": null,
+        "label": {
+          "ar": "إلى مطار الملك عبدالعزيز الدولي",
+          "en": "to King Abdulaziz International Airport"
+        },
+        "todo": "TODO_CONTENT: transfer time to the airport",
+        "_note": "not rendered while value is null"
+      }
+    ],
+    "todo": "TODO_CONTENT: draft teaser copy, needs approval"
+  },
+  "gallery_teaser": {
+    "_note": "Featured subset of data/gallery-al-taj.json shown on the homepage; the full gallery is on catering.html.",
+    "items": [
+      "gv0a8074",
+      "gv0a8076",
+      "gv0a8088",
+      "gv0a8079",
+      "gv0a8077",
+      "gv0a8092",
+      "gv0a8090",
+      "gv0a8085"
+    ],
+    "more_href": "catering.html#gallery",
+    "more_label": {
+      "ar": "المعرض كاملًا",
+      "en": "Full gallery"
+    }
+  }
+}

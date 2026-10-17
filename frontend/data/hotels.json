@@ -96,5 +96,89 @@
       "price_from_sar": 150,
       "details_url": null
     }
-  ]
+  ],
+  "filters": {
+    "_note": "Carousel filter groups; tools/build-sections.mjs renders a tab only when at least one hotel matches.",
+    "all": {
+      "ar": "الكل",
+      "en": "All"
+    },
+    "empty": {
+      "ar": "لا يوجد فندق يطابق هذا الاختيار.",
+      "en": "No hotel matches this choice."
+    },
+    "rating": {
+      "label": {
+        "ar": "التقييم",
+        "en": "Rating"
+      },
+      "options": [
+        {
+          "id": "1",
+          "stars": 1,
+          "label": {
+            "ar": "اقتصادي",
+            "en": "Economy"
+          }
+        },
+        {
+          "id": "2",
+          "stars": 2,
+          "label": {
+            "ar": "متوسط",
+            "en": "Standard"
+          }
+        },
+        {
+          "id": "3",
+          "stars": 3,
+          "label": {
+            "ar": "مميز",
+            "en": "Premium"
+          }
+        },
+        {
+          "id": "pending",
+          "stars": null,
+          "label": {
+            "ar": "قيد التقييم",
+            "en": "Rating pending"
+          }
+        }
+      ]
+    },
+    "walk": {
+      "label": {
+        "ar": "المشي إلى الحرم",
+        "en": "Walk to the Haram"
+      },
+      "options": [
+        {
+          "id": "near",
+          "max": 5,
+          "label": {
+            "ar": "حتى 5 دقائق",
+            "en": "Up to 5 min"
+          }
+        },
+        {
+          "id": "mid",
+          "min": 6,
+          "max": 15,
+          "label": {
+            "ar": "6–15 دقيقة",
+            "en": "6–15 min"
+          }
+        },
+        {
+          "id": "far",
+          "min": 16,
+          "label": {
+            "ar": "أكثر من 15 دقيقة",
+            "en": "Over 15 min"
+          }
+        }
+      ]
+    }
+  }
 }

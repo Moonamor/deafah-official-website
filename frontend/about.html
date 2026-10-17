@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow" data-unpublished-robots>
   <script id="theme-boot">(function () {
   try {
     var d = document.documentElement, ls = window.localStorage;
@@ -40,12 +41,12 @@
   <meta property="og:image:height" content="630">
   <link rel="preload" href="assets/fonts/Almarai-400.1a3d1e81.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Almarai-700.893574b8.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="dist/site.46fa4eec.css">
+  <link rel="stylesheet" href="dist/site.53a8f2b9.css">
 </head>
 <body>
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-[100] btn btn--sm"><span class="lang-ar">تجاوز إلى المحتوى</span><span class="lang-en">Skip to content</span></a>
 
-  <header class="site-header" id="siteHeader">
+  <header class="site-header panel" id="siteHeader">
     <div class="wrap relative">
       <a href="index.html" class="brand-logo shrink-0" data-logo="horizontal" data-logo-width="200" data-logo-pad="outer" data-logo-mobile="symbol" data-logo-condensed="symbol" data-logo-size-symbol="40" data-logo-keep-box aria-label="مجموعة الضيافة العالمية — الرئيسية"></a>
 
@@ -56,25 +57,26 @@
         <a href="index.html#why" class="nav-link"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
         <a href="index.html#services" class="nav-link"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
         <template data-unpublished="hotels/taj-park.html"><a href="hotels/taj-park.html" class="nav-link"><span class="lang-ar">تاج بارك</span><span class="lang-en">Taj Park</span></a></template>
-        <template data-unpublished="catering.html"><a href="catering.html" class="nav-link"><span class="lang-ar">الإعاشة</span><span class="lang-en">Catering</span></a></template>
+        <a href="catering.html" class="nav-link"><span class="lang-ar">الإعاشة</span><span class="lang-en">Catering</span></a>
         <a href="#contact" class="nav-link" data-modal-open="contactModal"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></a>
         <a href="index.html#hotels" class="btn btn--sm mt-2 lg:hidden"><span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span></a>
       </nav>
 
       <div class="flex items-center gap-1">
         <button class="btn btn--icon" id="themeToggle" data-theme-toggle type="button" aria-label="تبديل الوضع الفاتح والداكن">
-          <svg class="icon only-light" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#moon"/></svg>
-          <svg class="icon only-dark" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#sun"/></svg>
+          <svg class="icon only-light" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#moon"/></svg>
+          <svg class="icon only-dark" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#sun"/></svg>
         </button>
-        <button class="btn btn--icon font-bold text-sm" id="langToggle" data-lang-toggle type="button">
+        <button class="btn btn--icon font-bold text-sm gap-2 px-3" id="langToggle" data-lang-toggle type="button"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#language"/></svg>
           <span class="lang-ar">EN<span class="sr-only"> — English version</span></span><span class="lang-en">AR<span class="sr-only"> — النسخة العربية</span></span>
         </button>
         <a href="index.html#hotels" class="btn btn--sm hidden lg:inline-flex"><span class="lang-ar">احجز الآن</span><span class="lang-en">Book Now</span></a>
         <button class="btn btn--icon lg:hidden" type="button" data-nav-toggle aria-controls="primaryNav" aria-expanded="false" aria-label="فتح القائمة" data-label-open="فتح القائمة" data-label-close="إغلاق القائمة">
-          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#menu"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#menu"/></svg>
         </button>
       </div>
     </div>
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
   </header>
 
   <main id="main">
@@ -82,8 +84,8 @@
 
     <!-- PAGE HERO -->
     <section class="panel relative overflow-hidden" aria-labelledby="pageTitle">
-      <canvas class="kufic-canvas kufic-canvas--column hidden md:block" data-kufic-canvas data-block="48" data-gap="8" aria-hidden="true"></canvas>
-      <div class="kufic-static kufic-static--top md:hidden" aria-hidden="true"></div>
+      <canvas class="kufic-canvas kufic-canvas--column hidden lg:block" data-kufic-canvas data-block="48" data-gap="8" aria-hidden="true"></canvas>
+      <div class="kufic-static kufic-static--band lg:hidden" data-pattern-strip="x" aria-hidden="true"></div>
       <div class="wrap relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <nav class="text-sm muted mb-6 reveal" aria-label="breadcrumb">
           <a href="index.html" class="hover:text-on-panel"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
@@ -104,7 +106,7 @@
           <span class="eyebrow reveal"><span class="lang-ar">نبذة عنا</span><span class="lang-en">Overview</span></span>
           <h2 id="overviewTitle" class="t-headline mb-4 reveal"><span class="lang-ar">ضيافة مكية بخبرة تتجاوز 15 عامًا</span><span class="lang-en">Makkah hospitality, 15+ years in the making</span></h2>
           <p class="muted mb-8 reveal"><span class="lang-ar">مجموعة الضيافة العالمية مجموعة ضيافة مقرّها مكة المكرمة، تدير وتشغّل فنادق قريبة من المسجد الحرام، مدعومة بأسطول نقل خاص وذراع لخدمات المعتمرين وشراكة دولية، وخطوة موثّقة نحو فئة الخمس نجوم عبر مشروع «سويس إن» في مسار.</span><span class="lang-en">Al Deafah International Group is a Makkah-headquartered hospitality group managing hotels close to Al-Masjid al-Haram, supported by its own transport fleet, an Umrah-services arm, an international partner channel, and a publicly recorded step into five-star hospitality with the Masar Swiss Inn project.</span></p>
-          <a href="index.html#hotels" class="btn reveal"><span class="lang-ar">استعرض فنادقنا</span><span class="lang-en">Browse Our Hotels</span><svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#arrow-end"/></svg></a>
+          <a href="index.html#hotels" class="btn reveal"><span class="lang-ar">استعرض فنادقنا</span><span class="lang-en">Browse Our Hotels</span><svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#arrow-end"/></svg></a>
         </div>
         <div class="grid grid-cols-2 gap-8 reveal" data-scene="counter">
           <div class="stat"><span class="stat-number" data-count-to="15" data-suffix="+">0</span><span class="muted"><span class="lang-ar">سنوات خبرة</span><span class="lang-en">Years of Experience</span></span></div>
@@ -120,7 +122,7 @@
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <figure class="lg:sticky lg:top-28 relative overflow-hidden bg-surface border-brand border-border" data-sticky-media>
-            <div class="kufic-field kufic-field--abs bottom-auto end-auto hidden sm:grid" data-kufic data-cols="2" data-rows="2" data-block="40" aria-hidden="true"></div>
+            <div class="kufic-field is-surface kufic-field--abs bottom-auto end-auto hidden sm:grid" data-kufic data-cols="2" data-rows="2" data-block="40" aria-hidden="true"></div>
             <img src="imgs/chairman-ali-ayyash-806.acbb1ce5.webp" srcset="imgs/chairman-ali-ayyash-480.2cb3c891.webp 480w, imgs/chairman-ali-ayyash-806.acbb1ce5.webp 806w" sizes="(min-width: 1024px) 40vw, 100vw" alt="أ. علي عياش المزجاجي، رئيس مجلس الإدارة" width="806" height="604" class="relative z-10 w-full object-contain pt-8" loading="lazy">
           </figure>
         </div>
@@ -144,12 +146,12 @@
         <h2 id="vmTitle" class="t-headline mb-8 reveal"><span class="lang-ar">ما الذي يقودنا كل يوم</span><span class="lang-en">What guides us, every day</span></h2>
         <div class="grid gap-4 lg:grid-cols-2">
           <article class="card reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#eye"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#eye"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">رؤيتنا</span><span class="lang-en">Our Vision</span></h3>
             <p class="muted"><span class="lang-ar">أن نكون الاسم الأول في ضيافة مكة المكرمة لضيوف الرحمن، مجموعةً تضع كل حاجٍّ ومعتمرٍ حول الحرم وعلى مدار الساعة، وتحوّل قربَ المكان إلى طمأنينةٍ في القلب.</span><span class="lang-en">To be the first name in Makkah hospitality for the guests of the Most Merciful: a group whose hotels place every pilgrim around the Haram, around the hour, and whose service turns proximity into peace of mind.</span></p>
           </article>
           <article class="card reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#target"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#target"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">رسالتنا</span><span class="lang-en">Our Mission</span></h3>
             <p class="muted"><span class="lang-ar">ندير ونشغّل عائلةً متنامية من الفنادق وخدمات المعتمرين في العاصمة المقدسة، ونقدّم إقامةً آمنة مريحة كريمة على مقربة من المسجد الحرام، يحملها أسطول نقلنا الخاص، وخبرة أهلنا الطويلة، وشراكاتٌ ترافق ضيف الرحمن من بلده إلى الحرم ثم إلى دياره.</span><span class="lang-en">We manage and operate a growing family of hotels and pilgrim services in the Holy City, delivering safe, comfortable and dignified stays within reach of Al-Masjid al-Haram, carried by our own transport fleet, our people's long experience, and partnerships that accompany the pilgrim from home country to Haram and back.</span></p>
           </article>
@@ -164,27 +166,27 @@
         <h2 id="valuesTitle" class="t-headline mb-8 reveal"><span class="lang-ar">خمس قيم تشكّل كل قرار نتخذه</span><span class="lang-en">Five values behind every decision we make</span></h2>
         <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <article class="card bg-surface reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#care"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#care"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">الخدمة</span><span class="lang-en">Khidmah — Service</span></h3>
             <p class="muted"><span class="lang-ar">خدمة ضيوف الرحمن أمانةٌ لا صفقة.</span><span class="lang-en">Serving the guests of Allah as a sacred trust, not a transaction.</span></p>
           </article>
           <article class="card bg-surface reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#location"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#location"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">قربٌ لغاية</span><span class="lang-en">Proximity with Purpose</span></h3>
             <p class="muted"><span class="lang-ar"><span data-hotel-count="ar-words">ستة فنادق</span> اختيرت لتكون العبادة أولًا.</span><span class="lang-en"><span data-hotel-count>6</span> addresses chosen so worship comes first.</span></p>
           </article>
           <article class="card bg-surface reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#shield"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#shield"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">الموثوقية</span><span class="lang-en">Reliability</span></h3>
             <p class="muted"><span class="lang-ar">خمسة عشر عامًا وملايين الإقامات خلف كل حجز.</span><span class="lang-en">Fifteen years and millions of stays behind every reservation.</span></p>
           </article>
           <article class="card bg-surface reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#value"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#value"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">في متناول الجميع</span><span class="lang-en">Accessibility</span></h3>
             <p class="muted"><span class="lang-ar">راحةٌ كريمة تناسب كل الإمكانات، من الغرف الاقتصادية إلى عصر الخمس نجوم القادم.</span><span class="lang-en">Dignified comfort within every pilgrim's means, from economy rooms to the coming five-star era.</span></p>
           </article>
           <article class="card bg-surface reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#growth"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#growth"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">نموٌّ بأصالة</span><span class="lang-en">Growth with Integrity</span></h3>
             <p class="muted"><span class="lang-ar">نتوسّع صعودًا دون أن نغادر جذورنا في التيسير.</span><span class="lang-en">Expanding upward without leaving our roots in Tayseer.</span></p>
           </article>
@@ -197,7 +199,7 @@
       <div class="wrap">
         <div class="card card--outline p-8 md:p-12 reveal">
           <div class="flex items-center gap-4 mb-8">
-            <span class="icon-box mb-0!" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#route"/></svg></span>
+            <span class="icon-box mb-0!" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#route"/></svg></span>
             <h2 id="directionTitle" class="t-headline"><span class="lang-ar">أهدافنا</span><span class="lang-en">Our Direction</span></h2>
           </div>
           <div class="grid gap-x-12 gap-y-4 md:grid-cols-2">
@@ -222,17 +224,17 @@
         <h2 id="partnersTitle" class="t-headline mb-8 reveal"><span class="lang-ar">شراكاتٌ تمتد من مكة إلى العالم</span><span class="lang-en">Partnerships that reach from Makkah to the world</span></h2>
         <div class="grid gap-4 md:grid-cols-3">
           <article class="card reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#handshake"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#handshake"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">مسار — سويس إن</span><span class="lang-en">Masar — Swiss Inn</span></h3>
             <p class="muted"><span class="lang-ar">شراكة مع شركة أم القرى للتنمية والإعمار لتطوير وتشغيل فندق خمس نجوم داخل وجهة مسار بمكة المكرمة.</span><span class="lang-en">A partnership with Umm Al Qura Development &amp; Construction Company to develop and operate a five-star hotel inside the Masar destination in Makkah.</span></p>
           </article>
           <article class="card reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#globe"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#globe"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">الشريك الدولي — الهند</span><span class="lang-en">International Partner — India</span></h3>
             <p class="muted"><span class="lang-ar">قناة B2B مع Al Deafa International Pvt Ltd لخدمة معتمري ووكالات الهند بإقامة ونقل وباقات حج وعمرة.</span><span class="lang-en">A B2B channel with Al Deafa International Pvt Ltd serving Indian pilgrims and agencies with stays, transport, and Hajj/Umrah packages.</span></p>
           </article>
           <article class="card reveal">
-            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#plane"/></svg></span>
+            <span class="icon-box" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#plane"/></svg></span>
             <h3 class="t-title mb-2"><span class="lang-ar">ذراع خدمات المعتمرين</span><span class="lang-en">Umrah Services Arm</span></h3>
             <p class="muted"><span class="lang-ar">مكتب متخصص في جرول يقدّم باقات عمرة من الاقتصادية إلى VIP.</span><span class="lang-en">A dedicated office in Jarwal offering Umrah packages from economy to VIP.</span></p>
           </article>
@@ -245,7 +247,7 @@
       <div class="wrap">
         <div class="card bg-surface p-8 md:p-12 reveal">
           <div class="flex items-center gap-4 mb-8">
-            <span class="icon-box mb-0!" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.9d22f8b1.svg#award"/></svg></span>
+            <span class="icon-box mb-0!" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.09921cdb.svg#award"/></svg></span>
             <h2 id="advTitle" class="t-headline"><span class="lang-ar">مزايانا التنافسية</span><span class="lang-en">Competitive Advantages</span></h2>
           </div>
           <div class="grid gap-x-12 gap-y-4 md:grid-cols-2">
@@ -266,7 +268,7 @@
     <!-- CTA -->
     <section class="section" id="about-cta">
       <div class="wrap">
-        <div class="panel relative overflow-hidden p-8 md:p-16 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center reveal">
+        <div class="panel rounded-xl relative overflow-hidden p-8 md:p-16 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center reveal">
           <div class="kufic-field kufic-field--abs start-auto hidden lg:grid" data-kufic data-cols="2" data-block="48" aria-hidden="true"></div>
           <div class="relative z-10 max-w-2xl">
             <span class="eyebrow"><span class="lang-ar">ابدأ رحلتك</span><span class="lang-en">Start Your Journey</span></span>
@@ -281,9 +283,23 @@
 
   <footer class="panel" id="footer">
     <div class="wrap pt-16 pb-8 grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-5">
+      <div class="md:col-span-4">
         <a href="index.html" class="brand-logo" data-logo="stacked" data-logo-size="130" aria-label="مجموعة الضيافة العالمية"></a>
         <p class="muted mt-4 max-w-md"><span class="lang-ar">نحن شركة رائدة في إدارة وتشغيل الفنادق، نقدم حلول ضيافة متكاملة بمعايير عالمية تشمل إدارة وتشغيل المنشآت الفندقية، وخدمات الإعاشة، والنقل، وتأشيرات العمرة.</span><span class="lang-en">A leading hotel management and operations company providing integrated hospitality solutions to global standards: hotel operations, catering services, transportation and Umrah visa services.</span></p>
+        <!-- build:social -->
+    <div class="social">
+          <h3 class="t-label mb-2"><span class="lang-ar">تابعنا</span><span class="lang-en">Follow us</span></h3>
+          <ul class="social__list" role="list">
+            <li><a class="social__link" href="https://wa.me/966567855974?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%20%D8%A7%D9%84%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9" data-whatsapp data-href-ar="https://wa.me/966567855974?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%20%D8%A7%D9%84%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9" data-href-en="https://wa.me/966567855974?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20Al%20Deafah%20International%20Group%20services" data-label-ar="تواصل عبر واتساب" data-label-en="Chat on WhatsApp" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#whatsapp"/></svg></a></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="إنستغرام — الحساب غير متاح بعد" title="Instagram — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#instagram"/></svg></span></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="إكس — الحساب غير متاح بعد" title="X — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#x"/></svg></span></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="سناب شات — الحساب غير متاح بعد" title="Snapchat — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#snapchat"/></svg></span></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="تيك توك — الحساب غير متاح بعد" title="TikTok — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#tiktok"/></svg></span></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="يوتيوب — الحساب غير متاح بعد" title="YouTube — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#youtube"/></svg></span></li>
+            <li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="لينكدإن — الحساب غير متاح بعد" title="LinkedIn — account not available yet"><svg class="icon " aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#linkedin"/></svg></span></li>
+          </ul>
+        </div>
+    <!-- /build:social -->
       </div>
       <nav class="md:col-span-2 grid gap-2 content-start" aria-label="استكشف">
         <h3 class="t-label mb-2"><span class="lang-ar">استكشف</span><span class="lang-en">Explore</span></h3>
@@ -292,40 +308,42 @@
         <a href="index.html#why" class="muted hover:text-on-panel"><span class="lang-ar">لماذا الضيافة</span><span class="lang-en">Why Deafah</span></a>
         <a href="index.html#services" class="muted hover:text-on-panel"><span class="lang-ar">الخدمات</span><span class="lang-en">Services</span></a>
         <template data-unpublished="hotels/taj-park.html"><a href="hotels/taj-park.html" class="muted hover:text-on-panel"><span class="lang-ar">فندق تاج بارك</span><span class="lang-en">Taj Park Hotel</span></a></template>
-        <template data-unpublished="catering.html"><a href="catering.html" class="muted hover:text-on-panel"><span class="lang-ar">الإعاشة</span><span class="lang-en">Catering</span></a></template>
+        <a href="catering.html" class="muted hover:text-on-panel"><span class="lang-ar">الإعاشة</span><span class="lang-en">Catering</span></a>
         <a href="index.html#top" class="muted hover:text-on-panel"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a>
       </nav>
-      <address class="md:col-span-2 not-italic grid gap-2 content-start">
+      <address class="md:col-span-3 not-italic grid gap-2 content-start">
         <h3 class="t-label mb-2"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></h3>
-        <p class="muted"><span class="lang-ar">حي التيسير، مبنى 3039<br>مكة المكرمة، المملكة العربية السعودية</span><span class="lang-en">Al Taysir District, Building 3039<br>Makkah, Saudi Arabia</span></p>
-        <a href="mailto:info@deafahgroup.com" class="muted hover:text-on-panel">info@deafahgroup.com</a>
-        <a href="tel:+966125911110" class="muted hover:text-on-panel"><bdi dir="ltr">+966 12 591 11 10</bdi></a>
+        <p class="muted footer-line"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#location"/></svg><span><span class="lang-ar">حي التيسير، مبنى 3039<br>مكة المكرمة، المملكة العربية السعودية</span><span class="lang-en">Al Taysir District, Building 3039<br>Makkah, Saudi Arabia</span></span></p>
+        <a href="mailto:info@deafahgroup.com" class="muted hover:text-on-panel footer-line"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#mail"/></svg><span>info@deafahgroup.com</span></a>
+        <a href="tel:+966125911110" class="muted hover:text-on-panel footer-line"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#phone"/></svg><bdi dir="ltr">+966 12 591 11 10</bdi></a>
       </address>
       <div class="md:col-span-3">
         <h3 class="t-label mb-2"><span class="lang-ar">ابقَ على اطلاع</span><span class="lang-en">Stay Updated</span></h3>
         <p class="muted mb-3"><span class="lang-ar">العروض والتوفر مباشرة إلى بريدك الإلكتروني.</span><span class="lang-en">Offers and availability, straight to your inbox.</span></p>
-        <div class="demo-ribbon mb-2 bg-transparent! border-panel-muted!" data-ribbon="newsletter" role="note">
+        <div class="demo-ribbon mb-2 bg-transparent! border-panel-border!" data-ribbon="newsletter" role="note">
           <span class="text-sm"><strong><span class="lang-ar">بيانات تجريبية</span><span class="lang-en">Test data</span></strong> <span class="lang-ar">— النشرة البريدية غير مفعّلة بعد.</span><span class="lang-en">— the newsletter is not live yet.</span></span>
-          <button type="button" class="btn btn--icon text-on-panel!" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#close"/></svg></button>
+          <button type="button" class="btn btn--icon text-on-panel!" data-dismiss aria-label="إخفاء"><svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#close"/></svg></button>
         </div>
-        <form class="flex gap-2 field" id="newsletterForm" novalidate>
+        <form class="flex flex-row gap-2 field" id="newsletterForm" novalidate>
           <label for="newsletterEmail-ar" class="sr-only lang-ar">بريدك الإلكتروني</label>
           <label for="newsletterEmail-en" class="sr-only lang-en">Your email address</label>
           <input type="email" id="newsletterEmail-ar" name="email" class="lang-ar bg-transparent! text-on-panel!" placeholder="بريدك الإلكتروني" required>
           <input type="email" id="newsletterEmail-en" name="email" class="lang-en bg-transparent! text-on-panel!" placeholder="Your email address" required>
-          <button type="submit" class="btn shrink-0" aria-label="اشتراك"><svg class="icon icon--flip" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#arrow-end"/></svg></button>
+          <button type="submit" class="btn shrink-0" aria-label="اشتراك"><svg class="icon icon--flip" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#arrow-end"/></svg></button>
         </form>
         <p class="form-hint text-panel-muted!" id="newsletterHint" role="status" aria-live="polite"></p>
       </div>
     </div>
     <div class="wrap"><div class="kufic-field kufic-field--strip h-[104px]" data-kufic data-rows="1" data-block="40" aria-hidden="true"></div></div>
-    <div class="wrap py-6 border-t border-brand border-panel-muted/30 flex flex-wrap items-center justify-between gap-4 text-sm">
+    <div class="wrap py-6 border-t-[1.5px] border-panel-border flex flex-wrap items-center justify-between gap-4 text-sm">
       <p class="muted"><span class="lang-ar">&copy; جميع الحقوق محفوظة <span id="currentYear-ar"></span> مجموعة الضيافة العالمية.</span><span class="lang-en">&copy; <span id="currentYear-en"></span> Al Deafah International Group. All rights reserved.</span></p>
-      <div class="flex gap-6">
-        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">الخصوصية</span><span class="lang-en">Privacy</span></a>
-        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></a>
-        <a href="#" class="muted hover:text-on-panel"><span class="lang-ar">السياسات</span><span class="lang-en">Policies</span></a>
-      </div>
+      <!-- build:legal -->
+    <ul class="legal" role="list">
+        <li><span class="legal__link is-pending" aria-disabled="true" title="Privacy — page not available yet"><span class="lang-ar">الخصوصية</span><span class="lang-en">Privacy</span></span></li>
+        <li><span class="legal__link is-pending" aria-disabled="true" title="Terms — page not available yet"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></span></li>
+        <li><span class="legal__link is-pending" aria-disabled="true" title="Policies — page not available yet"><span class="lang-ar">السياسات</span><span class="lang-en">Policies</span></span></li>
+      </ul>
+    <!-- /build:legal -->
     </div>
   </footer>
 
@@ -333,31 +351,31 @@
   <dialog class="dialog" id="contactModal" aria-labelledby="contactModalLabel">
     <div class="dialog-head">
       <h2 class="t-title" id="contactModalLabel"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact Us</span></h2>
-      <button type="button" class="btn btn--icon" data-modal-close aria-label="إغلاق"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.9d22f8b1.svg#close"/></svg></button>
+      <button type="button" class="btn btn--icon" data-modal-close aria-label="إغلاق"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#close"/></svg></button>
     </div>
     <div class="dialog-body">
       <form class="contact-form grid gap-4" id="contactForm" novalidate>
         <div class="field">
-          <label for="contactName-ar" class="lang-ar">الاسم الكامل</label>
-          <label for="contactName-en" class="lang-en">Full Name</label>
+          <label for="contactName-ar" class="lang-ar ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#user"/></svg>الاسم الكامل</label>
+          <label for="contactName-en" class="lang-en ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#user"/></svg>Full Name</label>
           <input type="text" id="contactName-ar" class="lang-ar" placeholder="اسمك الكامل" autocomplete="name" required>
           <input type="text" id="contactName-en" class="lang-en" placeholder="Your full name" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="contactEmail-ar" class="lang-ar">البريد الإلكتروني</label>
-          <label for="contactEmail-en" class="lang-en">Email Address</label>
+          <label for="contactEmail-ar" class="lang-ar ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#mail"/></svg>البريد الإلكتروني</label>
+          <label for="contactEmail-en" class="lang-en ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#mail"/></svg>Email Address</label>
           <input type="email" id="contactEmail-ar" class="lang-ar" placeholder="بريدك الإلكتروني" autocomplete="email" required>
           <input type="email" id="contactEmail-en" class="lang-en" placeholder="you@example.com" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="contactPhoneField-ar-number" class="lang-ar">رقم الجوال</label>
-          <label for="contactPhoneField-en-number" class="lang-en">Mobile Number</label>
+          <label for="contactPhoneField-ar-number" class="lang-ar ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#phone"/></svg>رقم الجوال</label>
+          <label for="contactPhoneField-en-number" class="lang-en ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#phone"/></svg>Mobile Number</label>
           <div class="lang-ar" id="contactPhoneField-ar"></div>
           <div class="lang-en" id="contactPhoneField-en"></div>
         </div>
         <div class="field">
-          <label for="contactMessage-ar" class="lang-ar">رسالة مختصرة</label>
-          <label for="contactMessage-en" class="lang-en">Short Message</label>
+          <label for="contactMessage-ar" class="lang-ar ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#message"/></svg>رسالة مختصرة</label>
+          <label for="contactMessage-en" class="lang-en ico-label"><svg class="icon icon--xs" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#message"/></svg>Short Message</label>
           <textarea id="contactMessage-ar" class="lang-ar contact-message" rows="4" minlength="100" maxlength="200" placeholder="اكتب رسالتك هنا... (100–200 حرف)" required></textarea>
           <textarea id="contactMessage-en" class="lang-en contact-message" rows="4" minlength="100" maxlength="200" placeholder="Write your message here... (100–200 characters)" required></textarea>
         </div>
@@ -370,30 +388,30 @@
     </div>
     <div class="dialog-foot">
       <button type="button" class="btn btn--secondary" data-modal-close><span class="lang-ar">إلغاء</span><span class="lang-en">Cancel</span></button>
-      <button type="submit" form="contactForm" class="btn"><span class="lang-ar">إرسال</span><span class="lang-en">Submit</span></button>
+      <button type="submit" form="contactForm" class="btn"><svg class="icon icon--sm icon--flip" aria-hidden="true"><use href="assets/icons/sprite.09921cdb.svg#send"/></svg><span class="lang-ar">إرسال</span><span class="lang-en">Submit</span></button>
     </div>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script id="asset-manifest">window.__assetManifest={"assets/3d/taj-park-poster-dark.webp":"assets/3d/taj-park-poster-dark.9bca4cb3.webp","assets/3d/taj-park-poster-light.webp":"assets/3d/taj-park-poster-light.11649229.webp","assets/brand/favicon/apple-touch-icon.png":"assets/brand/favicon/apple-touch-icon.9051d596.png","assets/brand/favicon/favicon.ico":"assets/brand/favicon/favicon.1369d15a.ico","assets/brand/favicon/icon-16.png":"assets/brand/favicon/icon-16.b7955122.png","assets/brand/favicon/icon-192.png":"assets/brand/favicon/icon-192.fabe5385.png","assets/brand/favicon/icon-32.png":"assets/brand/favicon/icon-32.238d081b.png","assets/brand/favicon/icon-48.png":"assets/brand/favicon/icon-48.91f01e12.png","assets/brand/favicon/icon-512.png":"assets/brand/favicon/icon-512.46e59c04.png","assets/brand/logo/logo-ltr-neg.svg":"assets/brand/logo/logo-ltr-neg.afac2a0a.svg","assets/brand/logo/logo-ltr-pos.svg":"assets/brand/logo/logo-ltr-pos.ccb5a731.svg","assets/brand/logo/logo-rtl-neg.svg":"assets/brand/logo/logo-rtl-neg.95ca7d76.svg","assets/brand/logo/logo-rtl-pos.svg":"assets/brand/logo/logo-rtl-pos.cc2d1246.svg","assets/brand/logo/logo-stacked-neg.svg":"assets/brand/logo/logo-stacked-neg.6423f343.svg","assets/brand/logo/logo-stacked-pos.svg":"assets/brand/logo/logo-stacked-pos.e549d48f.svg","assets/brand/logo/symbol-black.svg":"assets/brand/logo/symbol-black.4c9a4e65.svg","assets/brand/logo/symbol-pos.svg":"assets/brand/logo/symbol-pos.bb49416c.svg","assets/brand/og-image.png":"assets/brand/og-image.c8248374.png","assets/brand/pattern/kufic-2x2.svg":"assets/brand/pattern/kufic-2x2.c79b4caa.svg","assets/fonts/Almarai-300.woff2":"assets/fonts/Almarai-300.54d04d53.woff2","assets/fonts/Almarai-400.woff2":"assets/fonts/Almarai-400.1a3d1e81.woff2","assets/fonts/Almarai-700.woff2":"assets/fonts/Almarai-700.893574b8.woff2","assets/fonts/Almarai-800.woff2":"assets/fonts/Almarai-800.129a4444.woff2","assets/icons/sprite.svg":"assets/icons/sprite.9d22f8b1.svg","assets/taj-park/taj-park-lobby-portrait-1200.webp":"assets/taj-park/taj-park-lobby-portrait-1200.affc0512.webp","assets/taj-park/taj-park-lobby-portrait-700.webp":"assets/taj-park/taj-park-lobby-portrait-700.e997e2b9.webp","assets/taj-park/taj-park-render-corner-1280.webp":"assets/taj-park/taj-park-render-corner-1280.5047f2cd.webp","assets/taj-park/taj-park-render-corner-800.webp":"assets/taj-park/taj-park-render-corner-800.fc1f11a9.webp","assets/taj-park/taj-park-render-dusk-wide-891.webp":"assets/taj-park/taj-park-render-dusk-wide-891.851ec833.webp","assets/taj-park/taj-park-render-sheet-1600.webp":"assets/taj-park/taj-park-render-sheet-1600.fa4b2b18.webp","assets/taj-park/taj-park-render-sheet-900.webp":"assets/taj-park/taj-park-render-sheet-900.0174a01b.webp","assets/taj-park/taj-park-street-corner-1000.webp":"assets/taj-park/taj-park-street-corner-1000.798a9cf1.webp","assets/taj-park/taj-park-street-corner-640.webp":"assets/taj-park/taj-park-street-corner-640.dc273b66.webp","imgs/chairman-ali-ayyash-480.webp":"imgs/chairman-ali-ayyash-480.2cb3c891.webp","imgs/chairman-ali-ayyash-806.webp":"imgs/chairman-ali-ayyash-806.acbb1ce5.webp","imgs/hotel-pics/amjad-1280.webp":"imgs/hotel-pics/amjad-1280.1c4def31.webp","imgs/hotel-pics/amjad-640.webp":"imgs/hotel-pics/amjad-640.f69e5351.webp","imgs/hotel-pics/bustan-1280.webp":"imgs/hotel-pics/bustan-1280.ddc967d3.webp","imgs/hotel-pics/bustan-640.webp":"imgs/hotel-pics/bustan-640.e683a631.webp","imgs/hotel-pics/diar-640.webp":"imgs/hotel-pics/diar-640.3f94bbc0.webp","imgs/hotel-pics/lavender-640.webp":"imgs/hotel-pics/lavender-640.2d5a02c2.webp","imgs/hotel-pics/saraya-640.webp":"imgs/hotel-pics/saraya-640.d73ee0fd.webp","imgs/hotel-pics/taj-park-1280.webp":"imgs/hotel-pics/taj-park-1280.23c69761.webp","imgs/hotel-pics/taj-park-1920.webp":"imgs/hotel-pics/taj-park-1920.d69c2e45.webp","imgs/hotel-pics/taj-park-640.webp":"imgs/hotel-pics/taj-park-640.5000fe08.webp","vendor/emailjs/email.min.js":"vendor/emailjs/email.052f6916.min.js","vendor/gsap/ScrollTrigger.min.js":"vendor/gsap/ScrollTrigger.b0b14d67.min.js","vendor/gsap/SplitText.min.js":"vendor/gsap/SplitText.419f7027.min.js","vendor/gsap/gsap.min.js":"vendor/gsap/gsap.92bb9a96.min.js","vendor/lenis/lenis.min.js":"vendor/lenis/lenis.53195c97.min.js","vendor/three.min.js":"vendor/three.d81d4031.min.js","dist/site.css":"dist/site.46fa4eec.css","js/auto-theme-manager.js":"js/auto-theme-manager.82cf1927.js","js/brand-logo.js":"js/brand-logo.4c9a5c6c.js","js/canvas-kufic.js":"js/canvas-kufic.8da75a5a.js","js/catering-page.js":"js/catering-page.d9c07bbf.js","js/contact-form.js":"js/contact-form.54cb0118.js","js/contact-modal.js":"js/contact-modal.31fd2570.js","js/countries-data.js":"js/countries-data.b64a34a1.js","js/effects.js":"js/effects.9ff47c3b.js","js/hotel-page.js":"js/hotel-page.6443a112.js","js/hotels.js":"js/hotels.1e46a87c.js","js/kufic-field.js":"js/kufic-field.d42b38e5.js","js/main.js":"js/main.f2b50a0e.js","js/motion.js":"js/motion.25ed01a4.js","js/nav.js":"js/nav.eae8acde.js","js/phone-input.js":"js/phone-input.42bbcc88.js","js/taj-park-3d-loader.js":"js/taj-park-3d-loader.b266abd7.js","js/taj-park-3d.js":"js/taj-park-3d.1cc26618.js","js/theme-badge.js":"js/theme-badge.8b05462e.js","js/widgets.js":"js/widgets.bd7c360a.js"};window.__asset=function(p){var b="",r=String(p).replace(/^\.\//,"");if(b&&r.indexOf(b)===0)r=r.slice(b.length);var m=window.__assetManifest[r];return m?b+m:p;};</script>
+  <script id="asset-manifest">window.__assetManifest={"assets/3d/taj-park-poster-dark.webp":"assets/3d/taj-park-poster-dark.9bca4cb3.webp","assets/3d/taj-park-poster-light.webp":"assets/3d/taj-park-poster-light.11649229.webp","assets/brand/favicon/apple-touch-icon.png":"assets/brand/favicon/apple-touch-icon.9051d596.png","assets/brand/favicon/favicon.ico":"assets/brand/favicon/favicon.1369d15a.ico","assets/brand/favicon/icon-16.png":"assets/brand/favicon/icon-16.b7955122.png","assets/brand/favicon/icon-192.png":"assets/brand/favicon/icon-192.fabe5385.png","assets/brand/favicon/icon-32.png":"assets/brand/favicon/icon-32.238d081b.png","assets/brand/favicon/icon-48.png":"assets/brand/favicon/icon-48.91f01e12.png","assets/brand/favicon/icon-512.png":"assets/brand/favicon/icon-512.46e59c04.png","assets/brand/logo/logo-ltr-black.svg":"assets/brand/logo/logo-ltr-black.5fea5869.svg","assets/brand/logo/logo-ltr-neg.svg":"assets/brand/logo/logo-ltr-neg.afac2a0a.svg","assets/brand/logo/logo-ltr-pos.svg":"assets/brand/logo/logo-ltr-pos.ccb5a731.svg","assets/brand/logo/logo-ltr-white.svg":"assets/brand/logo/logo-ltr-white.d31d4026.svg","assets/brand/logo/logo-rtl-black.svg":"assets/brand/logo/logo-rtl-black.d05f0b53.svg","assets/brand/logo/logo-rtl-neg.svg":"assets/brand/logo/logo-rtl-neg.95ca7d76.svg","assets/brand/logo/logo-rtl-pos.svg":"assets/brand/logo/logo-rtl-pos.cc2d1246.svg","assets/brand/logo/logo-rtl-white.svg":"assets/brand/logo/logo-rtl-white.6ce57ede.svg","assets/brand/logo/logo-stacked-black.svg":"assets/brand/logo/logo-stacked-black.b8ec1c94.svg","assets/brand/logo/logo-stacked-neg.svg":"assets/brand/logo/logo-stacked-neg.6423f343.svg","assets/brand/logo/logo-stacked-pos.svg":"assets/brand/logo/logo-stacked-pos.e549d48f.svg","assets/brand/logo/logo-stacked-white.svg":"assets/brand/logo/logo-stacked-white.e1ef4c8c.svg","assets/brand/logo/symbol-black.svg":"assets/brand/logo/symbol-black.4c9a4e65.svg","assets/brand/logo/symbol-pos.svg":"assets/brand/logo/symbol-pos.bb49416c.svg","assets/brand/logo/symbol-white.svg":"assets/brand/logo/symbol-white.0aac5fdf.svg","assets/brand/og-image.png":"assets/brand/og-image.c8248374.png","assets/brand/pattern/kufic-2x2.svg":"assets/brand/pattern/kufic-2x2.c79b4caa.svg","assets/fonts/Almarai-300.woff2":"assets/fonts/Almarai-300.54d04d53.woff2","assets/fonts/Almarai-400.woff2":"assets/fonts/Almarai-400.1a3d1e81.woff2","assets/fonts/Almarai-700.woff2":"assets/fonts/Almarai-700.893574b8.woff2","assets/fonts/Almarai-800.woff2":"assets/fonts/Almarai-800.129a4444.woff2","assets/icons/sprite.svg":"assets/icons/sprite.09921cdb.svg","assets/taj-park/taj-park-lobby-portrait-1200.webp":"assets/taj-park/taj-park-lobby-portrait-1200.affc0512.webp","assets/taj-park/taj-park-lobby-portrait-700.webp":"assets/taj-park/taj-park-lobby-portrait-700.e997e2b9.webp","assets/taj-park/taj-park-render-corner-1280.webp":"assets/taj-park/taj-park-render-corner-1280.5047f2cd.webp","assets/taj-park/taj-park-render-corner-800.webp":"assets/taj-park/taj-park-render-corner-800.fc1f11a9.webp","assets/taj-park/taj-park-render-dusk-wide-891.webp":"assets/taj-park/taj-park-render-dusk-wide-891.851ec833.webp","assets/taj-park/taj-park-render-sheet-1600.webp":"assets/taj-park/taj-park-render-sheet-1600.fa4b2b18.webp","assets/taj-park/taj-park-render-sheet-900.webp":"assets/taj-park/taj-park-render-sheet-900.0174a01b.webp","assets/taj-park/taj-park-street-corner-1000.webp":"assets/taj-park/taj-park-street-corner-1000.798a9cf1.webp","assets/taj-park/taj-park-street-corner-640.webp":"assets/taj-park/taj-park-street-corner-640.dc273b66.webp","imgs/chairman-ali-ayyash-480.webp":"imgs/chairman-ali-ayyash-480.2cb3c891.webp","imgs/chairman-ali-ayyash-806.webp":"imgs/chairman-ali-ayyash-806.acbb1ce5.webp","imgs/gallery/al-taj/al-taj-gv0a8074-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8074-1280.c5f836d6.webp","imgs/gallery/al-taj/al-taj-gv0a8074-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8074-1920.4d6e68c0.webp","imgs/gallery/al-taj/al-taj-gv0a8074-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8074-640.15440247.webp","imgs/gallery/al-taj/al-taj-gv0a8075-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8075-1280.c184880b.webp","imgs/gallery/al-taj/al-taj-gv0a8075-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8075-1920.20697e67.webp","imgs/gallery/al-taj/al-taj-gv0a8075-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8075-640.e9ef995a.webp","imgs/gallery/al-taj/al-taj-gv0a8076-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8076-1280.74854e56.webp","imgs/gallery/al-taj/al-taj-gv0a8076-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8076-1920.39606a1f.webp","imgs/gallery/al-taj/al-taj-gv0a8076-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8076-640.73dd3eba.webp","imgs/gallery/al-taj/al-taj-gv0a8077-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8077-1280.e1604d65.webp","imgs/gallery/al-taj/al-taj-gv0a8077-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8077-1920.e4e9fc19.webp","imgs/gallery/al-taj/al-taj-gv0a8077-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8077-640.24b4b15b.webp","imgs/gallery/al-taj/al-taj-gv0a8078-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8078-1280.8814e926.webp","imgs/gallery/al-taj/al-taj-gv0a8078-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8078-1920.dc34e481.webp","imgs/gallery/al-taj/al-taj-gv0a8078-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8078-640.3faed77c.webp","imgs/gallery/al-taj/al-taj-gv0a8079-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8079-1280.7f5a38ba.webp","imgs/gallery/al-taj/al-taj-gv0a8079-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8079-1920.95cca5e8.webp","imgs/gallery/al-taj/al-taj-gv0a8079-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8079-640.17ae1862.webp","imgs/gallery/al-taj/al-taj-gv0a8080-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8080-1280.288e9439.webp","imgs/gallery/al-taj/al-taj-gv0a8080-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8080-1920.2da2805e.webp","imgs/gallery/al-taj/al-taj-gv0a8080-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8080-640.bf7bfe2d.webp","imgs/gallery/al-taj/al-taj-gv0a8081-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8081-1280.711a2fad.webp","imgs/gallery/al-taj/al-taj-gv0a8081-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8081-1920.a922349d.webp","imgs/gallery/al-taj/al-taj-gv0a8081-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8081-640.8659081e.webp","imgs/gallery/al-taj/al-taj-gv0a8082-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8082-1280.f28510a1.webp","imgs/gallery/al-taj/al-taj-gv0a8082-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8082-1920.79b63cd2.webp","imgs/gallery/al-taj/al-taj-gv0a8082-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8082-640.45ac51db.webp","imgs/gallery/al-taj/al-taj-gv0a8083-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8083-1280.b2c81c65.webp","imgs/gallery/al-taj/al-taj-gv0a8083-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8083-1920.94c7ea05.webp","imgs/gallery/al-taj/al-taj-gv0a8083-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8083-640.12cb6bfb.webp","imgs/gallery/al-taj/al-taj-gv0a8084-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8084-1280.043a06db.webp","imgs/gallery/al-taj/al-taj-gv0a8084-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8084-1920.6665bbcb.webp","imgs/gallery/al-taj/al-taj-gv0a8084-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8084-640.18240996.webp","imgs/gallery/al-taj/al-taj-gv0a8085-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8085-1280.22216590.webp","imgs/gallery/al-taj/al-taj-gv0a8085-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8085-1920.b99eec1a.webp","imgs/gallery/al-taj/al-taj-gv0a8085-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8085-640.6ce26ca6.webp","imgs/gallery/al-taj/al-taj-gv0a8087-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8087-1280.937be5d9.webp","imgs/gallery/al-taj/al-taj-gv0a8087-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8087-1920.76e3f407.webp","imgs/gallery/al-taj/al-taj-gv0a8087-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8087-640.c601fc60.webp","imgs/gallery/al-taj/al-taj-gv0a8088-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8088-1280.624ce44a.webp","imgs/gallery/al-taj/al-taj-gv0a8088-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8088-1920.1dbdc598.webp","imgs/gallery/al-taj/al-taj-gv0a8088-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8088-640.8f26c313.webp","imgs/gallery/al-taj/al-taj-gv0a8089-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8089-1280.b4a34672.webp","imgs/gallery/al-taj/al-taj-gv0a8089-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8089-1920.5e4bff67.webp","imgs/gallery/al-taj/al-taj-gv0a8089-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8089-640.ea815238.webp","imgs/gallery/al-taj/al-taj-gv0a8090-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8090-1280.a9a8d7d0.webp","imgs/gallery/al-taj/al-taj-gv0a8090-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8090-1920.29689ce2.webp","imgs/gallery/al-taj/al-taj-gv0a8090-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8090-640.92f189bd.webp","imgs/gallery/al-taj/al-taj-gv0a8091-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8091-1280.a82896d5.webp","imgs/gallery/al-taj/al-taj-gv0a8091-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8091-1920.3549670d.webp","imgs/gallery/al-taj/al-taj-gv0a8091-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8091-640.3bc6ae4d.webp","imgs/gallery/al-taj/al-taj-gv0a8092-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8092-1280.84300d89.webp","imgs/gallery/al-taj/al-taj-gv0a8092-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8092-1920.4eff4c44.webp","imgs/gallery/al-taj/al-taj-gv0a8092-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8092-640.9addbcc3.webp","imgs/gallery/al-taj/al-taj-gv0a8093-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8093-1280.d9bf2cfc.webp","imgs/gallery/al-taj/al-taj-gv0a8093-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8093-1920.e958e404.webp","imgs/gallery/al-taj/al-taj-gv0a8093-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8093-640.d3da6680.webp","imgs/gallery/al-taj/al-taj-gv0a8094-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8094-1280.92516376.webp","imgs/gallery/al-taj/al-taj-gv0a8094-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8094-1920.735a5f0e.webp","imgs/gallery/al-taj/al-taj-gv0a8094-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8094-640.a786909e.webp","imgs/gallery/al-taj/al-taj-gv0a8096-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8096-1280.115dcfff.webp","imgs/gallery/al-taj/al-taj-gv0a8096-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8096-1920.de7da956.webp","imgs/gallery/al-taj/al-taj-gv0a8096-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8096-640.2f9c9b7c.webp","imgs/gallery/al-taj/al-taj-gv0a8097-1280.webp":"imgs/gallery/al-taj/al-taj-gv0a8097-1280.c34c92a7.webp","imgs/gallery/al-taj/al-taj-gv0a8097-1920.webp":"imgs/gallery/al-taj/al-taj-gv0a8097-1920.1e332fb8.webp","imgs/gallery/al-taj/al-taj-gv0a8097-640.webp":"imgs/gallery/al-taj/al-taj-gv0a8097-640.85de825d.webp","imgs/hotel-pics/amjad-1280.webp":"imgs/hotel-pics/amjad-1280.1c4def31.webp","imgs/hotel-pics/amjad-1920.webp":"imgs/hotel-pics/amjad-1920.d61e8dc5.webp","imgs/hotel-pics/amjad-640.webp":"imgs/hotel-pics/amjad-640.f69e5351.webp","imgs/hotel-pics/bustan-1280.webp":"imgs/hotel-pics/bustan-1280.ddc967d3.webp","imgs/hotel-pics/bustan-1920.webp":"imgs/hotel-pics/bustan-1920.ccf445d5.webp","imgs/hotel-pics/bustan-640.webp":"imgs/hotel-pics/bustan-640.e683a631.webp","imgs/hotel-pics/diar-640.webp":"imgs/hotel-pics/diar-640.3f94bbc0.webp","imgs/hotel-pics/lavender-640.webp":"imgs/hotel-pics/lavender-640.2d5a02c2.webp","imgs/hotel-pics/saraya-640.webp":"imgs/hotel-pics/saraya-640.d73ee0fd.webp","imgs/hotel-pics/taj-park-1280.webp":"imgs/hotel-pics/taj-park-1280.23c69761.webp","imgs/hotel-pics/taj-park-1920.webp":"imgs/hotel-pics/taj-park-1920.d69c2e45.webp","imgs/hotel-pics/taj-park-640.webp":"imgs/hotel-pics/taj-park-640.5000fe08.webp","imgs/hotel-pics/taj-park-exterior-640.webp":"imgs/hotel-pics/taj-park-exterior-640.cc44cd7d.webp","imgs/hotel-pics/taj-park-exterior-699.webp":"imgs/hotel-pics/taj-park-exterior-699.3e55c534.webp","vendor/emailjs/email.min.js":"vendor/emailjs/email.052f6916.min.js","vendor/gsap/ScrollTrigger.min.js":"vendor/gsap/ScrollTrigger.b0b14d67.min.js","vendor/gsap/SplitText.min.js":"vendor/gsap/SplitText.419f7027.min.js","vendor/gsap/gsap.min.js":"vendor/gsap/gsap.92bb9a96.min.js","vendor/lenis/lenis.min.js":"vendor/lenis/lenis.53195c97.min.js","vendor/three.min.js":"vendor/three.d81d4031.min.js","dist/site.css":"dist/site.53a8f2b9.css","js/auto-theme-manager.js":"js/auto-theme-manager.82cf1927.js","js/brand-logo.js":"js/brand-logo.ffce2159.js","js/canvas-kufic.js":"js/canvas-kufic.5705110a.js","js/carousel.js":"js/carousel.f35b92f3.js","js/catering-page.js":"js/catering-page.217a270a.js","js/contact-form.js":"js/contact-form.56c0d525.js","js/contact-modal.js":"js/contact-modal.68c4721c.js","js/countries-data.js":"js/countries-data.b64a34a1.js","js/effects.js":"js/effects.432b70dd.js","js/gallery.js":"js/gallery.6f40b21f.js","js/hotel-page.js":"js/hotel-page.f3af090d.js","js/hotels.js":"js/hotels.7d476ba2.js","js/kufic-field.js":"js/kufic-field.d42b38e5.js","js/main.js":"js/main.73a76387.js","js/motion.js":"js/motion.2add1a7e.js","js/nav.js":"js/nav.eae8acde.js","js/phone-input.js":"js/phone-input.3dc94fa7.js","js/slideshow.js":"js/slideshow.4afd6ea8.js","js/taj-park-3d-loader.js":"js/taj-park-3d-loader.b266abd7.js","js/taj-park-3d.js":"js/taj-park-3d.1cc26618.js","js/theme-badge.js":"js/theme-badge.8b05462e.js","js/widgets.js":"js/widgets.bd7c360a.js"};window.__asset=function(p){var b="",r=String(p).replace(/^\.\//,"");if(b&&r.indexOf(b)===0)r=r.slice(b.length);var m=window.__assetManifest[r];return m?b+m:p;};</script>
   <script src="vendor/gsap/gsap.92bb9a96.min.js"></script>
   <script src="vendor/gsap/ScrollTrigger.b0b14d67.min.js"></script>
   <script src="vendor/gsap/SplitText.419f7027.min.js"></script>
   <script src="vendor/lenis/lenis.53195c97.min.js"></script>
   <script src="js/auto-theme-manager.82cf1927.js"></script>
-  <script src="js/main.f2b50a0e.js"></script>
-  <script src="js/effects.9ff47c3b.js"></script>
+  <script src="js/main.73a76387.js"></script>
+  <script src="js/effects.432b70dd.js"></script>
   <script src="js/nav.eae8acde.js"></script>
-  <script src="js/contact-modal.31fd2570.js"></script>
-  <script src="js/brand-logo.4c9a5c6c.js" data-base="assets/brand/logo/"></script>
+  <script src="js/contact-modal.68c4721c.js"></script>
+  <script src="js/brand-logo.ffce2159.js" data-base="assets/brand/logo/"></script>
   <script src="js/kufic-field.d42b38e5.js" data-src="assets/brand/pattern/kufic-2x2.c79b4caa.svg"></script>
-  <script src="js/hotels.1e46a87c.js" data-src="data/hotels.json" data-base=""></script>
-  <script src="js/theme-badge.8b05462e.js" data-sprite="assets/icons/sprite.9d22f8b1.svg"></script>
-  <script src="js/motion.25ed01a4.js"></script>
-  <script src="js/canvas-kufic.8da75a5a.js" data-src="assets/brand/pattern/kufic-2x2.c79b4caa.svg"></script>
+  <script src="js/hotels.7d476ba2.js" data-src="data/hotels.json" data-base=""></script>
+  <script src="js/theme-badge.8b05462e.js" data-sprite="assets/icons/sprite.09921cdb.svg"></script>
+  <script src="js/motion.2add1a7e.js"></script>
+  <script src="js/canvas-kufic.5705110a.js" data-src="assets/brand/pattern/kufic-2x2.c79b4caa.svg"></script>
   <script src="js/countries-data.b64a34a1.js" defer></script>
-  <script src="js/phone-input.42bbcc88.js" defer></script>
+  <script src="js/phone-input.3dc94fa7.js" defer></script>
   <script src="vendor/emailjs/email.052f6916.min.js"></script>
-  <script src="js/contact-form.54cb0118.js" defer></script>
+  <script src="js/contact-form.56c0d525.js" defer></script>
 </body>
 </html>

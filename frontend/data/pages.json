@@ -9,7 +9,9 @@
     },
     {
       "path": "catering.html",
-      "published": false
+      "published": true
     }
-  ]
+  ],
+  "prototype_noindex": true,
+  "_prototype_note": "Prototype for the chairman preview: every page noindex,nofollow; robots.txt Disallow: /; X-Robots-Tag: noindex (frontend/_headers). REMOVE before the real site launches (BRAND_GAPS G41)."
 }

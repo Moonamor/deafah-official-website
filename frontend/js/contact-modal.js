@@ -51,6 +51,7 @@
     });
     dlg.addEventListener("close", function () {
       document.body.style.overflow = "";
+      document.dispatchEvent(new CustomEvent("deafah:dialogclose", { detail: { id: dlg.id, dialog: dlg } }));   /* motion.js restarts Lenis */
       if (opener && typeof opener.focus === "function") opener.focus();
       opener = null;
     });

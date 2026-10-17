@@ -1,0 +1,961 @@
+{
+  "$schema_version": "1.0",
+  "site": {
+    "name": "Anjum Hotel Makkah",
+    "nameAr": "فندق أنجم مكة",
+    "rating": "5-star",
+    "url": "https://anjumhotels.com/ar/",
+    "capturedOn": "2026-10-16",
+    "cms": {
+      "name": "Condeon",
+      "version": "2.5.2",
+      "vendor": "vioma GmbH",
+      "confidence": "Verified"
+    },
+    "languages": [
+      {
+        "code": "ar",
+        "label": "عربي",
+        "url": "https://anjumhotels.com/ar/",
+        "dir": "rtl"
+      },
+      {
+        "code": "en",
+        "label": "English",
+        "url": "https://anjumhotels.com/en/",
+        "dir": "ltr"
+      },
+      {
+        "code": "tr",
+        "label": "Türkçe",
+        "url": "https://anjumhotels.com/tr/",
+        "dir": "ltr"
+      },
+      {
+        "code": "id",
+        "label": "Bahasa Indonesia",
+        "url": "https://anjumhotels.com/id/",
+        "dir": "ltr"
+      }
+    ],
+    "meta": {
+      "title": "Home - Anjum Hotel Makkah",
+      "canonical": "https://anjumhotels.com/ar/",
+      "ogImage": "https://anjumhotels.com/(cms)/media/resize/1024x683c/2280521",
+      "twitterImage": "https://anjumhotels.com/(cms)/media/resize/1024x847c/2011519"
+    },
+    "imageCdnPattern": {
+      "pattern": "https://anjumhotels.com/(cms)/media/resize/{W}x{H}c/{MEDIA_ID}",
+      "note": "Server-side resize/crop endpoint ('c' = crop). Use it to request exact sizes per breakpoint.",
+      "confidence": "Verified"
+    }
+  },
+  "captureMethod": {
+    "performed": "Static HTML extraction of the Arabic homepage, a room detail page and the gallery URL (text, links, structure).",
+    "notPerformed": "Live Playwright run. The cloud workspace's network allowlist blocks anjumhotels.com, so JavaScript-driven behaviour (sliders, timings, easing, reveal, parallax, lightbox) could not be observed.",
+    "toComplete": "Run capture_anjum.py locally; its capture.json fills every field tagged RequiresLiveCapture.",
+    "confidenceLegend": {
+      "Verified": "Seen directly in the fetched page content.",
+      "Inferred": "Strong evidence in markup (e.g. empty src → lazy load), behaviour not observed.",
+      "RequiresLiveCapture": "Cannot be known without a real browser; filled by capture_anjum.py."
+    }
+  },
+  "globalElements": {
+    "topBar": {
+      "confidence": "Verified",
+      "items": [
+        {
+          "type": "link",
+          "label": "الخريطة",
+          "href": "https://anjumhotels.com/ar/hotel-overview/location/"
+        },
+        {
+          "type": "email",
+          "value": "info@anjumhotels.com"
+        },
+        {
+          "type": "phone",
+          "value": "+966 12 5100000",
+          "href": "tel:+966125100000"
+        },
+        {
+          "type": "search",
+          "placeholder": "ادخل عنوان البحث",
+          "button": "Search"
+        },
+        {
+          "type": "link",
+          "label": "منصة أنجم",
+          "href": "https://tapid.anjumhotels.com/"
+        },
+        {
+          "type": "link",
+          "label": "بانوراما وفيديوهات",
+          "href": "https://anjumhotels.com/ar/hotel-overview/gallery/"
+        },
+        {
+          "type": "languageSwitcher",
+          "options": [
+            "English",
+            "عربي",
+            "Türkçe",
+            "Bahasa Indonesia"
+          ]
+        }
+      ]
+    },
+    "mainNav": {
+      "confidence": "Verified",
+      "logo": {
+        "alt": "Anjum Hotel Makkah",
+        "href": "https://anjumhotels.com/ar/"
+      },
+      "items": [
+        {
+          "label": "نظرة عامة على الفندق",
+          "href": "https://anjumhotels.com/ar/hotel-overview/",
+          "children": [
+            {
+              "label": "اتصل بنا",
+              "href": "https://anjumhotels.com/ar/hotel-overview/contact-us/"
+            },
+            {
+              "label": "الوصول إلى هنا",
+              "href": "https://anjumhotels.com/ar/hotel-overview/location/"
+            },
+            {
+              "label": "معرض الصور",
+              "href": "https://anjumhotels.com/ar/hotel-overview/gallery/"
+            },
+            {
+              "label": "نبذة عن فندق أنجم مكة شركة عبداللطيف جميل للإستثمارات العقارية المحدودة",
+              "href": "https://anjumhotels.com/ar/hotel-overview/our-company/"
+            }
+          ]
+        },
+        {
+          "label": "الغرف والأجنحة",
+          "href": "https://anjumhotels.com/ar/rooms-suites/",
+          "children": [
+            {
+              "label": "الخدمة والمرافق",
+              "href": "https://anjumhotels.com/ar/rooms-suites/services-amenities/"
+            },
+            {
+              "label": "الحجز",
+              "href": "https://anjumhotels.com/ar/rooms-suites/booking/"
+            }
+          ]
+        },
+        {
+          "label": "العروض",
+          "href": "https://anjumhotels.com/ar/offers/",
+          "children": [
+            {
+              "label": "KSA DAY USE OFFER",
+              "href": "https://anjumhotels.com/ar/offers/ksa-day-use-offer/"
+            },
+            {
+              "label": "عرض شهر العسل",
+              "href": "https://anjumhotels.com/ar/offers/Honeymoon-Offer/"
+            }
+          ]
+        },
+        {
+          "label": "معالم مكة",
+          "href": "https://anjumhotels.com/ar/destination-makkah/"
+        },
+        {
+          "label": "المطاعم و المقاهي",
+          "href": "https://anjumhotels.com/ar/dining/",
+          "children": [
+            {
+              "label": "مطعم الحجاز",
+              "href": "https://anjumhotels.com/ar/dining/al-hijaz-restaurant/"
+            },
+            {
+              "label": "مطعم أم القرى",
+              "href": "https://anjumhotels.com/ar/dining/um-al-qura-restaurant/"
+            },
+            {
+              "label": "مقهى الشبيكة",
+              "href": "https://anjumhotels.com/ar/dining/al-shubaiikah-cafe/"
+            },
+            {
+              "label": "خدمة الغرف",
+              "href": "https://anjumhotels.com/ar/dining/room-service/"
+            }
+          ]
+        }
+      ],
+      "behaviour": {
+        "dropdownType": {
+          "value": null,
+          "confidence": "RequiresLiveCapture",
+          "captureField": "pages[].computedMotion / hoverEffects"
+        },
+        "stickyOrShrinkOnScroll": {
+          "value": null,
+          "confidence": "RequiresLiveCapture",
+          "captureField": "pages[].header.atTop vs header.scrolled"
+        },
+        "mobileMenu": {
+          "value": null,
+          "confidence": "RequiresLiveCapture",
+          "captureField": "mobile viewport screenshots + classChangeSummary"
+        }
+      }
+    },
+    "cookieConsent": {
+      "confidence": "Verified",
+      "title": "Privacy preferences",
+      "optionalTrackers": [
+        "Dailypoint Tracking",
+        "Google Tag Manager",
+        "Google Analytics 4 Signals"
+      ],
+      "defaultChecked": false,
+      "buttons": [
+        "Accept selected",
+        "Accept everything",
+        "Only essential cookies"
+      ],
+      "note": "Dialog text is English-only on the Arabic site."
+    },
+    "footer": {
+      "confidence": "Verified",
+      "address": "Anjum Hotel Makkah, Umm Al-Qura Road, P.O. Box 2067, Makkah 21955",
+      "addressNote": "Extracted in English form; take the exact Arabic wording from capture.json footer section.",
+      "contacts": {
+        "phones": [
+          "+966 12 5100000",
+          "+966 12 5629999"
+        ],
+        "fax": "+966 12 5100001",
+        "email": "info@anjumhotels.com"
+      },
+      "social": {
+        "instagram": "https://www.instagram.com/anjumhotelmakkah/",
+        "facebook": "https://www.facebook.com/AnjumHotelMakkah/",
+        "twitter": "https://twitter.com/anjumhotelmakka",
+        "pinterest": "https://www.pinterest.com/anjumhotelmakkah/",
+        "linkedin": "https://www.linkedin.com/company/anjum-hotel/",
+        "youtube": "https://www.youtube.com/channel/UCL8tvkicFccTQWRFH-xrvIg"
+      },
+      "columns": [
+        {
+          "title": "روابط سريعة",
+          "links": [
+            {
+              "label": "برنامج المكافآت",
+              "href": "https://anjumhotels.com/ar/rooms-suites/reward-program/"
+            },
+            {
+              "label": "المركز الاعلامي",
+              "href": "https://anjumhotels.com/ar/hotel-overview/media-center/"
+            },
+            {
+              "label": "الأسئلة الشائعة",
+              "href": "https://anjumhotels.com/ar/hotel-overview/faq/"
+            },
+            {
+              "label": "القائمة البريدية",
+              "href": "https://anjumhotels.com/ar/hotel-overview/newsletter/"
+            },
+            {
+              "label": "ردود الفعل",
+              "href": "https://anjumhotels.com/ar/hotel-overview/feedback/"
+            }
+          ]
+        },
+        {
+          "title": "نبذة عن فندق أنجم مكة",
+          "links": [
+            {
+              "label": "اتصل بنا",
+              "href": "https://anjumhotels.com/ar/hotel-overview/contact-us/"
+            },
+            {
+              "label": "موقع الفندق",
+              "href": "https://anjumhotels.com/ar/hotel-overview/location/"
+            },
+            {
+              "label": "مؤسستنا",
+              "href": "https://anjumhotels.com/ar/hotel-overview/our-company/"
+            },
+            {
+              "label": "الوظائف",
+              "href": "https://anjumhotels.com/ar/hotel-overview/careers/"
+            },
+            {
+              "label": "فرص الإيجار بأنجم مول",
+              "href": "https://anjumhotels.com/ar/hotel-overview/RentalOpportunities/"
+            },
+            {
+              "label": "السياحة في السعودية",
+              "href": "https://www.visitsaudi.com/ar"
+            }
+          ]
+        },
+        {
+          "title": "قانوني",
+          "links": [
+            {
+              "label": "شروط الاستخدام",
+              "href": "https://anjumhotels.com/ar/hotel-overview/terms-of-use/"
+            },
+            {
+              "label": "سياسة الخصوصية",
+              "href": "https://anjumhotels.com/ar/hotel-overview/privacy-policy/"
+            },
+            {
+              "label": "سياسة الجودة",
+              "href": "https://anjumhotels.com/ar/hotel-overview/quality-policy/"
+            }
+          ]
+        }
+      ],
+      "credit": {
+        "label": "vioma GmbH",
+        "href": "https://www.vioma.de/"
+      }
+    }
+  },
+  "homepage": {
+    "url": "https://anjumhotels.com/ar/",
+    "sections": [
+      {
+        "order": 1,
+        "id": "hero",
+        "type": "hero-slider",
+        "content": {
+          "tagline": "هنا حيث تلتقي الضيافة بالروحانية",
+          "headingLine1": "مرحبا بكم في",
+          "headingLine2": "فندق أنجم مكة ★★★★★",
+          "body": "نص ترحيبي عن إطلالات الحرم والضيافة الحجازية والفندق كأسلوب حياة (paraphrased; copy verbatim from capture.json sections[0].textExcerpt).",
+          "awardBadge": {
+            "image": "https://anjumhotels.com/media/87533/3149103.png",
+            "href": "https://anjumhotels.com/media/66565/3198779.pdf"
+          }
+        },
+        "media": {
+          "imageSlots": 4,
+          "srcInStaticHtml": "empty",
+          "confidence": "Verified"
+        },
+        "gallery": {
+          "type": "full-bleed image slideshow",
+          "confidence": "Inferred",
+          "evidence": "Four image links with empty src at the top of the page, before intro content."
+        },
+        "animation": {
+          "slideTransition": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "sliders[].trackTransition / autoplay.estimatedTransitionSec"
+          },
+          "autoplayIntervalSec": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "sliders[].autoplay.estimatedIntervalSec"
+          },
+          "kenBurnsOrZoom": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "introAnimations / computedMotion"
+          },
+          "headlineEntrance": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "introAnimations"
+          },
+          "controls": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "sliders[].controls"
+          }
+        }
+      },
+      {
+        "order": 2,
+        "id": "feature-highlights",
+        "type": "feature-blocks",
+        "items": [
+          {
+            "title": "بيازا الفريدة",
+            "summary": "تراس على السطح.",
+            "confidence": "Verified"
+          },
+          {
+            "title": "صالة حراء، ملاذك الهادئ",
+            "summary": "في الطابق 26 لضيوف الأجنحة التنفيذية، مع مشروبات مجانية ووجبات خفيفة.",
+            "confidence": "Verified"
+          },
+          {
+            "title": "نفق بتهوية خاصة للتنقل مباشرة من وإلى الحرم الشريف",
+            "summary": "الفندق على بعد 50 خطوة من بوابة الملك عبدالله الجديدة، مع نفق خاص.",
+            "confidence": "Verified"
+          },
+          {
+            "title": "موقف سيارات",
+            "summary": "260 موقفاً، 24 ساعة. 30 ريال/ساعة أو 140 ريال/يوم، وقد تتغير في المواسم.",
+            "confidence": "Verified"
+          }
+        ],
+        "layout": {
+          "value": "alternating image/text blocks or card row",
+          "confidence": "Inferred"
+        },
+        "animation": {
+          "revealOnScroll": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "scrollReveal + instrumentation.classChangeSummary"
+          },
+          "imageParallax": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "sections[].parallaxHints / scrollReveal.elementsChangedByScroll"
+          }
+        }
+      },
+      {
+        "order": 3,
+        "id": "stay-better-cta",
+        "type": "statement-banner",
+        "content": {
+          "heading": "اجعل إقامتك أفضل معنا"
+        },
+        "confidence": "Verified",
+        "animation": {
+          "value": null,
+          "confidence": "RequiresLiveCapture"
+        }
+      },
+      {
+        "order": 4,
+        "id": "hotel-overview",
+        "type": "quick-links-tiles",
+        "content": {
+          "heading": "نظرة عامة على الفندق",
+          "tiles": [
+            {
+              "label": "الغرف والأجنحة",
+              "href": "https://anjumhotels.com/ar/rooms-suites/"
+            },
+            {
+              "label": "المطاعم و المقاهي",
+              "href": "https://anjumhotels.com/ar/dining/"
+            },
+            {
+              "label": "المرافق",
+              "href": "https://anjumhotels.com/ar/rooms-suites/services-amenities/"
+            },
+            {
+              "label": "معالم مكة",
+              "href": "https://anjumhotels.com/ar/destination-makkah/"
+            }
+          ]
+        },
+        "confidence": "Verified",
+        "animation": {
+          "tileHover": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "hoverEffects"
+          }
+        }
+      },
+      {
+        "order": 5,
+        "id": "rooms-suites",
+        "type": "filterable-card-grid-or-carousel",
+        "content": {
+          "heading": "الغرف والأجنحة",
+          "filters": [
+            {
+              "label": "جميع الخيارات",
+              "value": "all"
+            },
+            {
+              "label": "الغرف",
+              "value": "rooms"
+            },
+            {
+              "label": "الأجنحة",
+              "value": "suites"
+            },
+            {
+              "label": "الأجنحة الفاخرة",
+              "value": "luxury-suites"
+            }
+          ],
+          "cards": [
+            {
+              "id": "single-room",
+              "nameAr": "غرفة فردية",
+              "category": "rooms",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15810.html",
+              "cmsObjectId": 15810,
+              "virtualTourUrl": "https://my.matterport.com/show/?m=4XMxkn7Rty9",
+              "ctas": [
+                "رؤية التفاصيل",
+                "جولة افتراضية"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "classic-double",
+              "nameAr": "غرفة مزدوجة كلاسيكية",
+              "category": "rooms",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15738.html",
+              "cmsObjectId": 15738,
+              "virtualTourUrl": "https://my.matterport.com/show/?m=ajLAw56KMF1",
+              "ctas": [
+                "رؤية التفاصيل",
+                "جولة افتراضية"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "luxury-double",
+              "nameAr": "غرفة مزدوجة فاخرة",
+              "category": "rooms",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15737.html",
+              "cmsObjectId": 15737,
+              "virtualTourUrl": "https://my.matterport.com/show/?m=aRsn1BDpTpX",
+              "ctas": [
+                "رؤية التفاصيل",
+                "جولة افتراضية"
+              ],
+              "notes": "family-friendly",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "junior-suite-haram-view",
+              "nameAr": "جناح الجونيور المطل على الحرم",
+              "category": "suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15742.html",
+              "cmsObjectId": 15742,
+              "virtualTourUrl": "https://my.matterport.com/show/?m=ujzTsEWUT8R",
+              "ctas": [
+                "رؤية التفاصيل",
+                "جولة افتراضية"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "executive-suite",
+              "nameAr": "الجناح التنفيذي",
+              "category": "suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15811.html",
+              "cmsObjectId": 15811,
+              "virtualTourUrl": "https://my.matterport.com/show/?m=E8LgLYKktLN",
+              "ctas": [
+                "رؤية التفاصيل",
+                "جولة افتراضية"
+              ],
+              "notes": "Hira Lounge access",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "diplomatic-suite",
+              "nameAr": "الجناح الدبلوماسي",
+              "category": "suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15745.html",
+              "cmsObjectId": 15745,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "anjum-one-bedroom-suite",
+              "nameAr": "جناح أنجم بغرفة نوم واحدة",
+              "category": "luxury-suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-16261.html",
+              "cmsObjectId": 16261,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": "Hira Lounge access",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "accessible-room",
+              "nameAr": "غرفة ذوي احتياجات خاصة",
+              "category": "rooms",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-17661.html",
+              "cmsObjectId": 17661,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "royal-suite",
+              "nameAr": "الجناح الملكي",
+              "category": "luxury-suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15812.html",
+              "cmsObjectId": 15812,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": "Hira Lounge access; 25th floor",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "presidential-suite",
+              "nameAr": "الجناح الرئاسي",
+              "category": "luxury-suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-15743.html",
+              "cmsObjectId": 15743,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": "Hira Lounge access",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "grand-presidential-suite",
+              "nameAr": "الجناح الرئاسي الكبير",
+              "category": "luxury-suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-16263.html",
+              "cmsObjectId": 16263,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": "Hira Lounge access",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "grand-royal-suite",
+              "nameAr": "الجناح الملكي الكبير",
+              "category": "luxury-suites",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-16265.html",
+              "cmsObjectId": 16265,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": null,
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            },
+            {
+              "id": "best-available-rate",
+              "nameAr": "أفضل أسعار الغرف المتاحة",
+              "category": "promo-card",
+              "detailUrl": "https://anjumhotels.com/ar/--obj-0-16271.html",
+              "cmsObjectId": 16271,
+              "virtualTourUrl": null,
+              "ctas": [
+                "رؤية التفاصيل"
+              ],
+              "notes": "price/offer card, not a room",
+              "image": {
+                "src": null,
+                "status": "lazy-loaded; empty src in static HTML",
+                "confidence": "Inferred"
+              }
+            }
+          ]
+        },
+        "confidence": "Verified",
+        "gallery": {
+          "type": "carousel vs grid not determinable from static HTML",
+          "confidence": "RequiresLiveCapture"
+        },
+        "animation": {
+          "filterTransition": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "click each filter while watching classChangeSummary / WAAPI"
+          },
+          "cardHover": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "hoverEffects"
+          },
+          "carouselBehaviour": {
+            "value": null,
+            "confidence": "RequiresLiveCapture",
+            "captureField": "sliders[]"
+          }
+        }
+      },
+      {
+        "order": 6,
+        "id": "destination-haram",
+        "type": "image-teaser",
+        "content": {
+          "heading": "المسجد الحرام",
+          "image": {
+            "alt": "المسجد الحرام",
+            "src": null
+          },
+          "cta": {
+            "label": "اقرأ المزيد",
+            "href": "https://anjumhotels.com/ar/destination-makkah/"
+          }
+        },
+        "confidence": "Verified",
+        "animation": {
+          "parallaxOrZoom": {
+            "value": null,
+            "confidence": "RequiresLiveCapture"
+          }
+        }
+      },
+      {
+        "order": 7,
+        "id": "social-wall",
+        "type": "third-party-feed",
+        "content": {
+          "heading": "#فندق_أنجم",
+          "provider": "Curator.io",
+          "placeholders": 2,
+          "consentGate": {
+            "button": "تحميل",
+            "behaviour": "feed and its cookies load only after the visitor clicks"
+          }
+        },
+        "confidence": "Verified",
+        "animation": {
+          "feedLayout": {
+            "value": null,
+            "confidence": "RequiresLiveCapture"
+          }
+        }
+      },
+      {
+        "order": 8,
+        "id": "footer",
+        "ref": "globalElements.footer",
+        "confidence": "Verified"
+      }
+    ]
+  },
+  "templates": {
+    "roomDetail": {
+      "sampleUrl": "https://anjumhotels.com/ar/--obj-0-15742.html",
+      "confidence": "Verified",
+      "structure": [
+        {
+          "block": "title",
+          "h1": "جناح الجونيور المطل على الحرم"
+        },
+        {
+          "block": "imageGallery",
+          "imageSlots": 4,
+          "src": "empty in static HTML (lazy)",
+          "type": {
+            "value": null,
+            "confidence": "RequiresLiveCapture"
+          }
+        },
+        {
+          "block": "description",
+          "text": "المساحة التي تتميز بها غرف الضيوف في جناح جونيور تجعلك تشعر بالراحة والاسترخاء مع اطلالة فريدة على الحرم المكي."
+        },
+        {
+          "block": "facts",
+          "view": "إطلالة كلية على الحرم المكي",
+          "sizeSqm": 46,
+          "occupancy": "2 بالغين وطفل أقل من 7 سنوات",
+          "layout": "غرفة نوم بسرير كينج، صالة مفتوحة مع كنبة سرير، حمامان"
+        },
+        {
+          "block": "amenities",
+          "items": [
+            "ساعة تنبيه",
+            "شاشة تلفاز ذكية 55\" بوصة - 4K",
+            "رداء للاستحمام",
+            "مرافق الحمام",
+            "لحاف ووسادة",
+            "ماكينة اعداد القهوة والشاي",
+            "مجفف الشعر",
+            "خزنة",
+            "مكواة",
+            "مرآة المكياج / الحلاقة",
+            "مياه معدنية",
+            "ثلاجة خاصة",
+            "موقف للسيارات",
+            "سجادة للصلاة",
+            "القرآن الكريم",
+            "جهاز تلميع الأحذية",
+            "هاتف",
+            "مقبس USB",
+            "وحدة قياس الوزن",
+            "واي فاي"
+          ],
+          "link": "https://anjumhotels.com/ar/rooms-suites/services-amenities/#room"
+        },
+        {
+          "block": "virtualTour",
+          "type": "external link (not embedded)",
+          "href": "https://my.matterport.com/show/?m=ujzTsEWUT8R"
+        },
+        {
+          "block": "bookingCta",
+          "label": "تحقق من الأسعار",
+          "href": null
+        }
+      ]
+    },
+    "galleryPage": {
+      "url": "https://anjumhotels.com/ar/hotel-overview/gallery/",
+      "status": "The static fetch of this URL returned homepage content. Either it redirects or the gallery is rendered client-side.",
+      "confidence": "Inferred",
+      "captureField": "pages[gallery].finalUrl / redirected / sliders / lightbox"
+    }
+  },
+  "galleriesSummary": [
+    {
+      "where": "homepage.hero",
+      "kind": "slideshow",
+      "images": 4,
+      "confidence": "Inferred"
+    },
+    {
+      "where": "homepage.rooms-suites",
+      "kind": "filterable cards (12 rooms + 1 offer card)",
+      "images": 13,
+      "confidence": "Verified"
+    },
+    {
+      "where": "homepage.social-wall",
+      "kind": "Curator.io feed (consent-gated)",
+      "images": "dynamic",
+      "confidence": "Verified"
+    },
+    {
+      "where": "templates.roomDetail",
+      "kind": "room photo gallery",
+      "images": 4,
+      "confidence": "Inferred"
+    },
+    {
+      "where": "templates.roomDetail / room cards",
+      "kind": "Matterport 3D tours (external links)",
+      "images": 5,
+      "confidence": "Verified"
+    },
+    {
+      "where": "templates.galleryPage",
+      "kind": "photos + panoramas + videos (per top-bar label 'بانوراما وفيديوهات')",
+      "images": null,
+      "confidence": "RequiresLiveCapture"
+    }
+  ],
+  "observedIssues": [
+    {
+      "issue": "Top-bar phone link points to the English contact page instead of tel: or the Arabic page.",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Room detail page shows four 'المزيد من عدد ظهور الاعلان' placeholder headings (ad placeholders leaking).",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Room detail heading order: an H2 with the room name appears before the H1.",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Booking CTA 'تحقق من الأسعار' has no href in static HTML (JS-only booking widget).",
+      "confidence": "Inferred"
+    },
+    {
+      "issue": "Amenity 'جهاز تلميع الأحذية' listed twice.",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Most images have empty alt text.",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Cookie dialog is English-only on Arabic pages.",
+      "confidence": "Verified"
+    },
+    {
+      "issue": "Gallery URL returned homepage content in a static fetch.",
+      "confidence": "Inferred"
+    }
+  ],
+  "animationInventory": {
+    "status": "pending live capture",
+    "howToFill": "Run capture_anjum.py; then map capture.json fields into each section's 'animation' object (captureField says where).",
+    "captureJsonFields": {
+      "libraries.globals": "Which slider/animation/lightbox libraries are loaded (Swiper, slick, AOS, GSAP, fancybox...).",
+      "cssMotion.keyframes": "All @keyframes definitions.",
+      "cssMotion.animRules": "CSS rules with transitions/animations, hover and reveal-state selectors.",
+      "computedMotion": "Every visible element that has a transition or animation, with duration/easing/delay.",
+      "introAnimations": "Animations running in the first 300ms (hero entrance).",
+      "scrollReveal": "Elements whose opacity/transform changed while scrolling + animations running at each scroll step.",
+      "instrumentation.classChangeSummary": "Classes added by JS during scroll (e.g. aos-animate, in-view) and at which scrollY.",
+      "instrumentation.intersectionObservers": "IntersectionObserver thresholds/rootMargin and their targets.",
+      "sliders[]": "Slide count, controls, autoplay interval, transition duration, next-button behaviour.",
+      "lightbox": "What opens when a gallery image is clicked (overlay classes, animation).",
+      "hoverEffects": "Before/after computed styles on hover for cards, buttons, images.",
+      "header": "Header styles at top vs after scrolling (sticky, shrink, shadow, blur)."
+    }
+  }
+}

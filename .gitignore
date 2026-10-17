@@ -6,3 +6,21 @@ Sessions
 visualIdentityReferences/
 
 node_modules/
+
+# reference capture runs (anjumhotels.com): only the cited evidence is committed
+reference/anjum/capture/*
+!reference/anjum/capture/20261016-224154/
+reference/anjum/capture/20261016-224154/videos/
+reference/anjum/capture/20261016-224154/screenshots/
+!reference/anjum/capture/targeted-20261017-001631/
+reference/anjum/*.log
+
+__pycache__/
+!reference/anjum/capture/menu-20261017-003235/
+
+# camera originals stay local (never committed, never published): only their WebP derivatives ship (tools/make_webp.py)
+frontend/imgs/hotel-pics/RST/
+frontend/imgs/hotel-pics/Broushre*
+
+# Anjum QA raw captures (contact sheets are committed)
+reference/anjum/qa/**/raw/

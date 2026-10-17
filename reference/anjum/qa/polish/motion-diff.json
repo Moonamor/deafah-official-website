@@ -1,0 +1,132 @@
+{
+ "base": "https://feature-anjum-patterns--deafah.netlify.app",
+ "excluded": [
+  "3",
+  "4 (header, decision C1)",
+  "5 (no dropdown in our nav)",
+  "13 (no looping arrow; button hover = A10)",
+  "14-16a (not built)"
+ ],
+ "rows": [
+  {
+   "row": "1",
+   "what": "hero fade (incoming slide opacity 0 → 1)",
+   "target_ms": 1000,
+   "measured_ms": 984,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "1",
+   "what": "hero interval (data-interval, timer)",
+   "target_ms": 7000,
+   "measured_ms": 7000,
+   "pass": true,
+   "note": "first change observed at 4912 ms after the sampler started"
+  },
+  {
+   "row": "7",
+   "what": "highlights slider track",
+   "target_ms": 300,
+   "measured_ms": 300,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "9",
+   "what": "gallery photo hover (scale)",
+   "target_ms": 200,
+   "measured_ms": 200,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "9",
+   "what": "card hover (lift)",
+   "target_ms": 200,
+   "measured_ms": 200,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "10",
+   "what": "overview tile hover (image)",
+   "target_ms": 200,
+   "measured_ms": 200,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "10",
+   "what": "overview tile hover (veil)",
+   "target_ms": 200,
+   "measured_ms": 200,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "A10",
+   "what": "button hover lift",
+   "target_ms": 200,
+   "measured_ms": 200,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "11",
+   "what": "hotels carousel slide (scroll tween)",
+   "target_ms": 500,
+   "measured_ms": 467,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "12",
+   "what": "hotel filter fade-out (opacity)",
+   "target_ms": 200,
+   "measured_ms": 184,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "17",
+   "what": "gallery filter fade-out (opacity)",
+   "target_ms": 200,
+   "measured_ms": 185,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "18",
+   "what": "lightbox open (backdrop opacity)",
+   "target_ms": 500,
+   "measured_ms": 482,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "19",
+   "what": "lightbox next (image crossfade)",
+   "target_ms": 366,
+   "measured_ms": 366,
+   "pass": true,
+   "note": "sampled 350 ms"
+  },
+  {
+   "row": "20",
+   "what": "lightbox close (backdrop opacity)",
+   "target_ms": 500,
+   "measured_ms": 493,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "row": "A15",
+   "what": "theme toast visible time",
+   "target_ms": 2500,
+   "measured_ms": 2501,
+   "pass": true,
+   "note": ""
+  }
+ ]
+}

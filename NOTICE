@@ -1,0 +1,28 @@
+Al Deafah International Group — website
+Third-party notices
+
+--------------------------------------------------------------------------------
+Font Awesome Free 7.3.1
+https://fontawesome.com — Copyright (c) 2026 Fonticons, Inc.
+
+Icons: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Full Font Awesome Free licence: https://fontawesome.com/license/free
+
+Use on this site: only the icons the pages reference are copied, unmodified in
+shape, from the npm package @fortawesome/fontawesome-free (svgs/solid and
+svgs/brands) into one SVG sprite at build time (tools/build-icons.mjs →
+frontend/assets/icons/sprite.svg). Each <symbol> keeps Font Awesome's licence
+comment. No Font Awesome CSS, JavaScript kit or webfont is shipped. Colour comes
+from CSS (currentColor); the only change to the source files is the removal of
+their fill attribute so the theme colour applies.
+
+Brand icons (Instagram, X, Snapchat, TikTok, YouTube, LinkedIn, WhatsApp) are
+trademarks of their respective owners and are used only to link to the group's
+own accounts.
+
+--------------------------------------------------------------------------------
+Other bundled components keep the notices that ship with them:
+GSAP, ScrollTrigger and SplitText (GreenSock standard licence), Lenis (MIT),
+three.js (MIT), EmailJS browser SDK, Almarai typeface (SIL Open Font License 1.1,
+frontend/assets/fonts/OFL.txt).

@@ -24,11 +24,13 @@
 
   function starsHTML(stars) {
     if (stars === null || stars === undefined) {
-      return '<span class="stars" aria-label="rating pending"><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>';
+      var sp = window.__spriteHref || (base + "assets/icons/sprite.svg");
+      return '<span class="rating"><svg class="icon icon--xs" aria-hidden="true"><use href="' + sp + '#star"></use></svg><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>';
     }
-    var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg"), out = "";
-    for (var i = 0; i < 5; i++) out += '<svg class="icon' + (i < stars ? "" : " star-dim") + '" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>';
-    return '<span class="stars" role="img" aria-label="' + stars + ' out of 5 stars">' + out + "</span>";
+    var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg");
+    /* one solid star + "n / 5": no outlined or faded stars (owner brief: no reduced-contrast text or icons) */
+    return '<span class="rating" role="img" aria-label="' + stars + ' / 5"><svg class="icon icon--xs" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>' +
+      '<span class="num" aria-hidden="true"><span class="lang-ar">' + ar(stars) + " / ٥</span><span class=\"lang-en\">" + stars + " / 5</span></span></span>";
   }
 
   function fillCopy(data) {
@@ -55,12 +57,15 @@
       var node = tpl.content.cloneNode(true);
       var card = node.querySelector(".hotel-card");
       card.setAttribute("data-slug", h.slug);
+      /* filter keys for the carousel tabs (js/carousel.js): rating and walking minutes straight from the data */
+      card.setAttribute("data-stars", h.stars === null || h.stars === undefined ? "none" : String(h.stars));
+      card.setAttribute("data-walk", String(h.walk_minutes));
       var img = node.querySelector("img");
       var dark = document.documentElement.getAttribute("data-scheme") === "dark";
       img.src = base + (dark && h.image_dark ? h.image_dark : h.image); if (h.srcset) img.srcset = h.srcset.split(",").map(function (s) { return base + s.trim(); }).join(", ");
       if (h.image_dark) { img.setAttribute("data-src-light", base + h.image); img.setAttribute("data-src-dark", base + h.image_dark); }
-      img.sizes = "(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw";
-      img.alt = h.name_en; img.loading = i < 3 ? "eager" : "lazy"; img.width = 640; img.height = 480;
+      img.sizes = "(min-width: 471px) 400px, 85vw";   /* carousel card = min(85vw, 400px) */
+      img.alt = h.name_en; img.loading = "lazy";   /* the roster sits below the fold: nothing here may compete with the hero photo */ img.width = 640; img.height = 480;
       node.querySelector(".badge .lang-ar").textContent = arMinutes(h.walk_minutes);
       node.querySelector(".badge .lang-en").textContent = h.walk_minutes + " min walk";
       node.querySelector("h3 .lang-ar").textContent = h.name_ar;

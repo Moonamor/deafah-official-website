@@ -1,0 +1,634 @@
+{
+  "_note": "Al Taj Restaurant (مطعم التاج), Taj Park Hotel — 22 photos from one shoot (2026-04-20). Rendered at build time by tools/build-sections.mjs; sizes from tools/webp-manifest.json.",
+  "id": "al-taj",
+  "title": {
+    "ar": "مطعم التاج",
+    "en": "Al Taj Restaurant"
+  },
+  "subtitle": {
+    "ar": "فندق تاج بارك — حي التيسير، مكة المكرمة",
+    "en": "Taj Park Hotel — Al Taysir, Makkah"
+  },
+  "intro": {
+    "ar": "قاعة الطعام والبوفيه في مطعم التاج بفندق تاج بارك.",
+    "en": "The dining hall and buffet of Al Taj Restaurant at Taj Park Hotel."
+  },
+  "categories": [
+    {
+      "id": "entrance",
+      "ar": "المدخل",
+      "en": "Entrance"
+    },
+    {
+      "id": "hall",
+      "ar": "القاعة",
+      "en": "Dining hall"
+    },
+    {
+      "id": "tables",
+      "ar": "تجهيز الطاولات",
+      "en": "Table setup"
+    },
+    {
+      "id": "buffet",
+      "ar": "البوفيه",
+      "en": "Buffet"
+    }
+  ],
+  "items": [
+    {
+      "id": "gv0a8074",
+      "category": "entrance",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "مدخل مطعم التاج: ممر رخامي بين نبتتين، ولافتة المطعم على الجدار",
+        "en": "Entrance to Al Taj Restaurant: a marble passage between two potted plants, with the restaurant sign on the wall"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8074-640.15440247.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8074-1280.c5f836d6.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8074-1920.4d6e68c0.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8074.jpg"
+    },
+    {
+      "id": "gv0a8075",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "قاعة الطعام من مكتب الاستقبال: صفوف طاولات بكراسٍ خضراء ورمادية",
+        "en": "The dining hall seen from the host desk: rows of tables with green and grey chairs"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8075-640.e9ef995a.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8075-1280.c184880b.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8075-1920.20697e67.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8075.jpg"
+    },
+    {
+      "id": "gv0a8076",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "منظر واسع للقاعة تحت إضاءة سقفية سداسية الشكل",
+        "en": "Wide view of the hall under hexagonal ceiling lights"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8076-640.73dd3eba.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8076-1280.74854e56.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8076-1920.39606a1f.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8076.jpg"
+    },
+    {
+      "id": "gv0a8077",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة مُعدّة أمام نافذة واسعة: مناديل بيضاء مطوية وكؤوس وزهرة حمراء",
+        "en": "A table set by a tall window: folded white napkins, glasses and a red rose"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8077-640.24b4b15b.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8077-1280.e1604d65.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8077-1920.e4e9fc19.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8077.jpg"
+    },
+    {
+      "id": "gv0a8078",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة مُعدّة بالأطباق والكؤوس بجوار ستائر النافذة",
+        "en": "A table set with plates and glasses beside the window curtains"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8078-640.3faed77c.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8078-1280.8814e926.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8078-1920.dc34e481.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8078.jpg"
+    },
+    {
+      "id": "gv0a8079",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "تجهيز طاولة عن قرب: أطباق بيضاء ومناديل مطوية وزهور حمراء وبيضاء",
+        "en": "Close-up of a table setting: white plates, folded napkins and red and white roses"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8079-640.17ae1862.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8079-1280.7f5a38ba.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8079-1920.95cca5e8.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8079.jpg"
+    },
+    {
+      "id": "gv0a8080",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة مُعدّة أمام جدار رخامي بخطوط داكنة",
+        "en": "A set table in front of a marble wall with dark bands"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8080-640.bf7bfe2d.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8080-1280.288e9439.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8080-1920.2da2805e.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8080.jpg"
+    },
+    {
+      "id": "gv0a8081",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة مُعدّة لأربعة أشخاص بجانب النافذة",
+        "en": "A table set for four beside the window"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8081-640.8659081e.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8081-1280.711a2fad.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8081-1920.a922349d.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8081.jpg"
+    },
+    {
+      "id": "gv0a8082",
+      "category": "tables",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة مُعدّة في المقدمة وخلفها صفوف الطاولات",
+        "en": "A set table in the foreground with rows of tables behind it"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8082-640.45ac51db.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8082-1280.f28510a1.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8082-1920.79b63cd2.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8082.jpg"
+    },
+    {
+      "id": "gv0a8083",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولات مُعدّة في أرجاء القاعة تحت الإضاءة السداسية",
+        "en": "Set tables across the hall under the hexagonal lights"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8083-640.12cb6bfb.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8083-1280.b2c81c65.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8083-1920.94c7ea05.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8083.jpg"
+    },
+    {
+      "id": "gv0a8084",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "ممر بين صفوف الطاولات على امتداد النوافذ",
+        "en": "An aisle between rows of tables along the windows"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8084-640.18240996.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8084-1280.043a06db.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8084-1920.6665bbcb.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8084.jpg"
+    },
+    {
+      "id": "gv0a8085",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "كراسٍ خضراء ورمادية حول طاولة طويلة في وسط القاعة",
+        "en": "Green and grey chairs around a long table in the middle of the hall"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8085-640.6ce26ca6.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8085-1280.22216590.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8085-1920.b99eec1a.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8085.jpg"
+    },
+    {
+      "id": "gv0a8087",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولات رخامية وكراسٍ خضراء ورمادية بجوار عمود مكسو بالفسيفساء",
+        "en": "Marble-top tables and green and grey chairs beside a mosaic-clad column"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8087-640.c601fc60.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8087-1280.937be5d9.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8087-1920.76e3f407.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8087.jpg"
+    },
+    {
+      "id": "gv0a8088",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "ركن جلوس بطاولات رخامية وكراسٍ خضراء",
+        "en": "A seating area with marble-top tables and green chairs"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8088-640.8f26c313.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8088-1280.624ce44a.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8088-1920.1dbdc598.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8088.jpg"
+    },
+    {
+      "id": "gv0a8089",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولات القاعة أمام نوافذ ذات ستائر",
+        "en": "Hall tables in front of curtained windows"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8089-640.ea815238.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8089-1280.b4a34672.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8089-1920.5e4bff67.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8089.jpg"
+    },
+    {
+      "id": "gv0a8090",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "محطة البوفيه الخشبية بجانب ممر القاعة",
+        "en": "The wooden buffet station beside the hall aisle"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8090-640.92f189bd.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8090-1280.a9a8d7d0.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8090-1920.29689ce2.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8090.jpg"
+    },
+    {
+      "id": "gv0a8091",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولة البوفيه الخشبية وخلفها القاعة",
+        "en": "The wooden buffet counter with the hall behind it"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8091-640.3bc6ae4d.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8091-1280.a82896d5.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8091-1920.3549670d.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8091.jpg"
+    },
+    {
+      "id": "gv0a8092",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "صف من أواني التسخين على طاولة البوفيه",
+        "en": "A row of chafing dishes on the buffet counter"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8092-640.9addbcc3.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8092-1280.84300d89.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8092-1920.4eff4c44.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8092.jpg"
+    },
+    {
+      "id": "gv0a8093",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "ركن البوفيه للأطباق والمشروبات",
+        "en": "The buffet corner for plates and drinks"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8093-640.d3da6680.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8093-1280.d9bf2cfc.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8093-1920.e958e404.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8093.jpg"
+    },
+    {
+      "id": "gv0a8094",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "طاولات القاعة ومحطة البوفيه على امتداد الممر",
+        "en": "Hall tables and the buffet station along the aisle"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8094-640.a786909e.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8094-1280.92516376.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8094-1920.735a5f0e.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8094.jpg"
+    },
+    {
+      "id": "gv0a8096",
+      "category": "buffet",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "القاعة الطويلة ومحطة البوفيه على جانبها",
+        "en": "The long hall with the buffet station along one side"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8096-640.2f9c9b7c.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8096-1280.115dcfff.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8096-1920.de7da956.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8096.jpg"
+    },
+    {
+      "id": "gv0a8097",
+      "category": "hall",
+      "hotel": "taj-park",
+      "alt": {
+        "ar": "منظر للقاعة من بين الكراسي الرمادية",
+        "en": "A view of the hall between grey chairs"
+      },
+      "sizes": [
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8097-640.85de825d.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8097-1280.c34c92a7.webp",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "src": "imgs/gallery/al-taj/al-taj-gv0a8097-1920.1e332fb8.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ],
+      "source": "RST/GV0A8097.jpg"
+    }
+  ]
+}

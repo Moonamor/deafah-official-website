@@ -122,9 +122,9 @@
     honeypot.style.opacity = "0";
     form.appendChild(honeypot);
 
-    function showStatus(message) {
+    function showStatus(message, tone) {
       if (window.DeafahEffects && typeof window.DeafahEffects.showToast === "function") {
-        window.DeafahEffects.showToast(message);
+        window.DeafahEffects.showToast(message, { tone: tone || "info" });
         return;
       }
       var live = document.getElementById("contactFormStatus");
@@ -140,17 +140,44 @@
       live.textContent = message;
     }
 
+    /* inline validation (owner brief F1): an icon + message under the field, ok / error, announced via the toast */
+    function fieldStatus(el) {
+      var field = el && el.closest(".field"); if (!field) return null;
+      var st = field.querySelector(".field-status");
+      if (!st) { st = document.createElement("p"); st.className = "field-status"; field.appendChild(st); }
+      return st;
+    }
+    function setFieldStatus(el, ok, message) {
+      var st = fieldStatus(el); if (!st) return;
+      var sprite = (document.querySelector("svg use[href*='sprite']") || { getAttribute: function () { return "assets/icons/sprite.svg"; } }).getAttribute("href").split("#")[0];
+      st.className = "field-status " + (ok ? "is-ok" : "is-error");
+      st.innerHTML = '<svg class="icon icon--xs" aria-hidden="true"><use href="' + sprite + (ok ? "#circle-check" : "#circle-exclamation") + '"></use></svg><span></span>';
+      st.lastChild.textContent = message || (ok ? (activeLang() === "en" ? "Looks good" : "صحيح") : "");
+    }
+    function clearFieldStatus(el) { var field = el && el.closest(".field"), st = field && field.querySelector(".field-status"); if (st) { st.className = "field-status"; st.innerHTML = ""; } }
+
     function markInvalid(el, message) {
       if (el) {
         el.classList.add("is-invalid");
+        el.setAttribute("aria-invalid", "true");
+        setFieldStatus(el, false, message);
         el.focus();
       }
-      showStatus(message);
+      showStatus(message, "error");
     }
 
     function clearInvalid(el) {
-      if (el) el.classList.remove("is-invalid");
+      if (el) { el.classList.remove("is-invalid"); el.removeAttribute("aria-invalid"); clearFieldStatus(el); }
     }
+
+    /* check a field when the user leaves it (only once something was typed) */
+    var BLUR_RULES = [["contactName", isValidName], ["contactEmail", isValidEmail], ["contactMessage", isValidMessage]];
+    form.addEventListener("focusout", function (e) {
+      var el = e.target; if (!el || !el.id || !el.value) return;
+      var rule = BLUR_RULES.filter(function (r) { return el.id.indexOf(r[0]) === 0; })[0]; if (!rule) return;
+      if (rule[1](el.value)) { el.classList.remove("is-invalid"); el.removeAttribute("aria-invalid"); setFieldStatus(el, true); }
+      else { el.classList.add("is-invalid"); el.setAttribute("aria-invalid", "true"); setFieldStatus(el, false, activeLang() === "en" ? "Please check this field" : "يرجى مراجعة هذا الحقل"); }
+    });
 
     function throttledRemainingMs(config) {
       try {
@@ -196,7 +223,7 @@
     function handleSubmit(config) {
       if (!config) {
         var lang = activeLang();
-        showStatus(FALLBACK_CONFIG_ERROR[lang]);
+        showStatus(FALLBACK_CONFIG_ERROR[lang], "error");
         return;
       }
 
@@ -206,13 +233,13 @@
         config.emailjs.serviceId === "REPLACE_ME" ||
         config.emailjs.templateId === "REPLACE_ME"
       ) {
-        showStatus(t(config, "configError"));
+        showStatus(t(config, "configError"), "error");
         console.error("[contact-form] EmailJS keys in config.json are still placeholders — see CONTACT-FORM-SETUP.md.");
         return;
       }
 
       if (honeypot.value) {
-        showStatus(t(config, "success"));
+        showStatus(t(config, "success"), "success");
         return;
       }
 
@@ -284,7 +311,7 @@
         .then(function () {
           markSent();
           form.reset();
-          showStatus(t(config, "success"));
+          showStatus(t(config, "success"), "success");
           if (config.form.closeModalOnSuccess) {
             window.setTimeout(function () {
               closeModal(config);
@@ -293,7 +320,7 @@
         })
         .catch(function (err) {
           console.error("[contact-form] EmailJS send failed.", err);
-          showStatus(t(config, "error"));
+          showStatus(t(config, "error"), "error");
         })
         .finally(function () {
           if (submitBtn) {

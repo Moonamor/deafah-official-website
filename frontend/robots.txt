@@ -1,6 +1,3 @@
+# Prototype (chairman preview): nothing is indexed. Remove before the real site launches (BRAND_GAPS G41).
 User-agent: *
-Allow: /
-Disallow: /vendor/
-Disallow: /data/mock/
-Disallow: /dev/
-Sitemap: https://deafah.netlify.app/sitemap.xml
+Disallow: /
