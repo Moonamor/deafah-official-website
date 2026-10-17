@@ -681,6 +681,7 @@ html.no-motion [data-scene="sticky-media"] [data-step] { opacity: 1; }
 .kufic-static--band-bottom { inset: auto 24px 24px; height: 48px; }
 .kufic-static--row { inset: 24px; -webkit-mask-position: center; mask-position: center; }
 .kufic-canvas--column { position: absolute; top: 0; inset-inline-end: 0; width: 200px; height: 100%; } /* replaced element: height must be explicit */
+[data-scene="hero-pin"] .kufic-canvas--column { height: calc(100% - 72px); } /* ends above the pause button (bottom inline-end): no control over the pattern */
 [data-split] > .lang-ar, [data-split] > .lang-en { display: block; }
 
 /* Taj Park 3D component (Phase 5): a tall section whose stage is sticky, so scrolling through it scrubs the orbit */

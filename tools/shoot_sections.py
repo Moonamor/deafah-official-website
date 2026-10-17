@@ -58,12 +58,13 @@ def main():
     ap.add_argument("--base", default="http://127.0.0.1:8787")
     ap.add_argument("--out", default="reference/anjum/qa/phase3")
     ap.add_argument("--lang", default="ar")
+    ap.add_argument("--sheets-only", action="store_true", help="rebuild the contact sheets from <out>/raw without shooting")
     a = ap.parse_args()
     out = Path(a.out); raw = out / "raw"; raw.mkdir(parents=True, exist_ok=True)
     report = []
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        for width in WIDTHS:
+        for width in ([] if a.sheets_only else WIDTHS):
             for palette in PALETTES:
                 for scheme in SCHEMES:
                     ctx = browser.new_context(viewport={"width": width, "height": 900 if width > 500 else 844},
@@ -97,7 +98,7 @@ def main():
                     print(f"{palette}-{scheme}-{width}: errors {len(errors)}", flush=True)
                     ctx.close()
         browser.close()
-    (out / "shots.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
+    if not a.sheets_only: (out / "shots.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
 
     # contact sheets: one per section, rows = 8 themes, columns = 390 | 1440 (scaled to a common row height)
     for _, sid, _, _ in SECTIONS:
@@ -108,7 +109,7 @@ def main():
                 for width in WIDTHS:
                     f = raw / f"{sid}-{palette}-{scheme}-{width}.png"
                     cells.append(Image.open(f).convert("RGB") if f.exists() else None)
-                rows.append((f"{palette} · {scheme}", cells))
+                rows.append((f"{palette} / {scheme}", cells))
         H = 360
         def fit(im):
             if im is None: return Image.new("RGB", (200, H), "white")
@@ -118,7 +119,7 @@ def main():
         W = 160 + sum(colw) + 16 * len(WIDTHS)
         sheet = Image.new("RGB", (W, 32 + len(rendered) * (H + 16)), (245, 242, 238))
         d = ImageDraw.Draw(sheet)
-        d.text((8, 8), f"{sid} — rows: palette · scheme, columns: " + " | ".join(f"{w}px" for w in WIDTHS), fill=(16, 24, 32))
+        d.text((8, 8), f"{sid} - rows: palette / scheme, columns: " + " | ".join(f"{w}px" for w in WIDTHS), fill=(16, 24, 32))
         for r, (label, cells) in enumerate(rendered):
             y = 32 + r * (H + 16); d.text((8, y + 8), label, fill=(16, 24, 32)); x = 160
             for i, c in enumerate(cells):

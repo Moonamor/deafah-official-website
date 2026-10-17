@@ -56,16 +56,16 @@ S["highlights"] = () => {
         <h2 id="whyTitle" class="t-headline mb-8" data-split="lines">${bi(h.title)}</h2>
         <div class="hl reveal" data-feature-slider aria-roledescription="carousel" aria-labelledby="whyTitle">
           <div class="hl__media">
-            ${h.items.map((it, i) => img(it.image.sizes, { alt: it.image.alt.ar, cls: `hl__img${i === 0 ? " is-current" : ""}`, sizesAttr: "(min-width: 1024px) 50vw, 100vw", extra: ` data-slide="${i}" data-alt-en="${esc(it.image.alt.en)}"` })).join("\n            ")}
+            ${h.items.map((it, i) => img(it.image.sizes, { alt: it.image.alt.ar, cls: `hl__img${i === 0 ? " is-current" : ""}`, sizesAttr: "(min-width: 1280px) 576px, (min-width: 1024px) calc(50vw - 64px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)", extra: ` data-slide="${i}" data-alt-en="${esc(it.image.alt.en)}"` })).join("\n            ")}
           </div>
           <div class="hl__body">
             <div class="hl__viewport">
               <div class="hl__track">
-                ${h.items.map((it, i) => `<article class="hl__item" data-slide="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} / ${n}">
+                ${h.items.map((it, i) => `<div class="hl__item" data-slide="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} / ${n}">
                   <span class="icon-box" aria-hidden="true">${icon(it.icon)}</span>
                   <h3 class="t-title mb-2">${bi(title(it.title))}</h3>
                   <p class="muted">${bi(it.text)}</p>
-                </article>`).join("\n                ")}
+                </div>`).join("\n                ")}
               </div>
             </div>
             <div class="hl__nav">
@@ -95,7 +95,7 @@ S["explore"] = () => {
         <h2 id="exploreTitle" class="t-title mt-16 mb-8 reveal">${bi(q.title)}</h2>
         <ul class="qtiles" role="list">
           ${items.map((it) => `<li class="reveal"><a class="qtile" href="${it.href}"${it.modal ? ` data-modal-open="${it.modal}"` : ""}>
-            ${img(it.image.sizes, { alt: "", cls: "qtile__img", sizesAttr: "(min-width: 1024px) 25vw, 50vw" })}
+            ${img(it.image.sizes, { alt: "", cls: "qtile__img", sizesAttr: "(min-width: 1280px) 292px, (min-width: 1024px) calc(25vw - 28px), (min-width: 768px) calc(50vw - 40px), calc(50vw - 24px)" })}
             <span class="qtile__veil" aria-hidden="true"></span>
             <span class="qtile__label">${icon(it.icon, "qtile__icon")}<span class="t-title">${bi(it.label)}</span></span>
           </a></li>`).join("\n          ")}
@@ -185,7 +185,7 @@ function galleryMarkup({ items, id, headingTag = "h2", full }) {
         <ul class="gallery-grid" id="${id}Grid" role="list" data-gallery="${id}">
           ${items.map((it) => `<li class="gallery-item" data-category="${it.category}">
             <button type="button" class="gallery-thumb" data-lightbox="${esc(it.id)}" aria-haspopup="dialog">
-              ${img(it.sizes, { alt: it.alt.ar, cls: "gallery-thumb__img", sizesAttr: "(min-width: 1024px) 25vw, 50vw", extra: ` data-alt-en="${esc(it.alt.en)}"` })}
+              ${img(it.sizes, { alt: it.alt.ar, cls: "gallery-thumb__img", sizesAttr: "(min-width: 1280px) 292px, (min-width: 1024px) calc(25vw - 28px), (min-width: 768px) calc(33vw - 32px), calc(50vw - 20px)", extra: ` data-alt-en="${esc(it.alt.en)}"` })}
               <span class="gallery-thumb__zoom" aria-hidden="true">${icon("plus")}</span>
             </button>
           </li>`).join("\n          ")}
