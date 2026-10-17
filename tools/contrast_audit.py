@@ -112,7 +112,7 @@ def hero_legibility(browser, base):
                   const lang = document.documentElement.getAttribute('data-lang');
                   return { headline: q('#heroTitle .lang-' + lang), body: q('[data-layer=copy] p .lang-' + lang), eyebrow: q('[data-layer=copy] .eyebrow .lang-' + lang) }; }""")
                 for i in range(n):
-                    page.evaluate("""(i) => { document.querySelectorAll('.hero-slide').forEach((s, k) => { s.classList.toggle('is-current', k === i); s.style.opacity = k === i ? '1' : '0'; s.style.transition = 'none'; });
+                    page.evaluate("""(i) => { document.querySelectorAll('.hero-slide').forEach((s, k) => { if (s.dataset.srcset) { s.srcset = s.dataset.srcset; s.removeAttribute('data-srcset'); } if (s.dataset.src) { s.src = s.dataset.src; s.removeAttribute('data-src'); } s.classList.toggle('is-current', k === i); s.style.opacity = k === i ? '1' : '0'; s.style.transition = 'none'; });
                         document.querySelectorAll('[data-layer=copy], [data-layer=cta], .hero-pause, .theme-badge, .to-top').forEach(e => e.style.visibility = 'hidden'); }""", i)
                     page.wait_for_function("(i) => { const s = document.querySelectorAll('.hero-slide')[i]; return s.complete && s.naturalWidth > 0; }", arg=i, timeout=15000)
                     page.wait_for_timeout(300)

@@ -21,7 +21,12 @@
     if (slides.length < 2) { if (btn) btn.hidden = true; return; }
     if (reduce()) { if (btn) btn.hidden = true; return; }
 
-    function ready(img) { return img.complete && img.naturalWidth ? Promise.resolve() : new Promise(function (r) { img.addEventListener("load", r, { once: true }); img.addEventListener("error", r, { once: true }); }); }
+    /* deferred slides (data-src / data-srcset): each one is attached just in time, 2.5 s before its turn, so the hidden
+       slides never compete with the first (LCP) photo */
+    var preloadTimer = null;
+    function attach(s) { if (s.hasAttribute("data-srcset")) { s.setAttribute("srcset", s.getAttribute("data-srcset")); s.removeAttribute("data-srcset"); } if (s.hasAttribute("data-src")) { s.setAttribute("src", s.getAttribute("data-src")); s.removeAttribute("data-src"); } }
+    function ready(img) {
+      attach(img); return img.complete && img.naturalWidth ? Promise.resolve() : new Promise(function (r) { img.addEventListener("load", r, { once: true }); img.addEventListener("error", r, { once: true }); }); }
     function show(n) {
       var cur = slides[i], nxt = slides[n];
       ready(nxt).then(function () {
@@ -34,7 +39,13 @@
         schedule();
       });
     }
-    function schedule() { clearTimeout(timer); if (!paused && visible && !document.hidden) timer = setTimeout(function () { show((i + 1) % slides.length); }, interval); }
+    function schedule() {
+      clearTimeout(timer); clearTimeout(preloadTimer);
+      if (!paused && visible && !document.hidden) {
+        timer = setTimeout(function () { show((i + 1) % slides.length); }, interval);
+        preloadTimer = setTimeout(function () { attach(slides[(i + 1) % slides.length]); }, Math.max(0, interval - 2500));
+      }
+    }
     function setPaused(p) {
       paused = p;
       if (btn) { btn.setAttribute("aria-pressed", p ? "true" : "false"); btn.setAttribute("aria-label", btn.getAttribute(p ? "data-label-play" : "data-label-pause")); btn.classList.toggle("is-paused", p); }
@@ -54,13 +65,17 @@
     var track = el.querySelector(".hl__track"), count = el.querySelector("[data-slide-count]");
     var n = items.length, i = 0;
     if (!n) return;
+    /* images 2..n (data-src / data-srcset) are attached when the slider comes within 300 px of the viewport, or on the
+       first move — they are hidden until then and must not load with the page */
+    function hydrate() { imgs.forEach(function (s) { if (s.hasAttribute("data-srcset")) { s.setAttribute("srcset", s.getAttribute("data-srcset")); s.removeAttribute("data-srcset"); } if (s.hasAttribute("data-src")) { s.setAttribute("src", s.getAttribute("data-src")); s.removeAttribute("data-src"); } }); }
+    if ("IntersectionObserver" in window) { var hio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { hydrate(); hio.disconnect(); } }, { rootMargin: "300px 0px" }); hio.observe(el); } else hydrate();
     function paint() {
       track.style.transform = "translateX(" + (i * 100 * (rtl() ? 1 : -1)) + "%)";
       items.forEach(function (it, k) { var on = k === i; it.setAttribute("aria-hidden", on ? "false" : "true"); if (on) it.removeAttribute("inert"); else it.setAttribute("inert", ""); });
       imgs.forEach(function (im, k) { im.classList.toggle("is-current", k === i); });
       if (count) count.innerHTML = '<span class="lang-ar">' + arDigits((i + 1) + " / " + n) + '</span><span class="lang-en">' + (i + 1) + " / " + n + "</span>";
     }
-    function go(d) { i = (i + d + n) % n; paint(); }
+    function go(d) { hydrate(); i = (i + d + n) % n; paint(); }
     el.querySelector("[data-slide-prev]").addEventListener("click", function () { go(-1); });
     el.querySelector("[data-slide-next]").addEventListener("click", function () { go(1); });
     var x0 = null;

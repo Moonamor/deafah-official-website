@@ -65,7 +65,7 @@
       img.src = base + (dark && h.image_dark ? h.image_dark : h.image); if (h.srcset) img.srcset = h.srcset.split(",").map(function (s) { return base + s.trim(); }).join(", ");
       if (h.image_dark) { img.setAttribute("data-src-light", base + h.image); img.setAttribute("data-src-dark", base + h.image_dark); }
       img.sizes = "(min-width: 471px) 400px, 85vw";   /* carousel card = min(85vw, 400px) */
-      img.alt = h.name_en; img.loading = i < 3 ? "eager" : "lazy"; img.width = 640; img.height = 480;
+      img.alt = h.name_en; img.loading = "lazy";   /* the roster sits below the fold: nothing here may compete with the hero photo */ img.width = 640; img.height = 480;
       node.querySelector(".badge .lang-ar").textContent = arMinutes(h.walk_minutes);
       node.querySelector(".badge .lang-en").textContent = h.walk_minutes + " min walk";
       node.querySelector("h3 .lang-ar").textContent = h.name_ar;

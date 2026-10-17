@@ -39,7 +39,10 @@ const S = {};
 S["hero-slides"] = () => {
   const h = home.hero;
   return `<div class="hero-slides" data-slideshow data-interval="${h.interval_ms}" data-fade="${h.fade_ms}">
-          ${h.slides.map((sl, i) => img(sl.sizes, { alt: "", cls: `hero-slide${i === 0 ? " is-current" : ""}`, priority: i === 0, extra: ` data-slide="${i}"${sl.focus ? ` style="--focus-x: ${sl.focus.x}; --focus-y: ${sl.focus.y}"` : ""}` })).join("\n          ")}
+          ${h.slides.map((sl, i) => { const tag = img(sl.sizes, { alt: "", cls: `hero-slide${i === 0 ? " is-current" : ""}`, priority: i === 0, extra: ` data-slide="${i}"${sl.focus ? ` style="--focus-x: ${sl.focus.x}; --focus-y: ${sl.focus.y}"` : ""}` });
+            /* slides 2..n are hidden (opacity 0) but inside the viewport, so lazy-loading would fetch them at once and they
+               would compete with the LCP photo: they carry data-src / data-srcset and slideshow.js attaches them after load */
+            return i === 0 ? tag : tag.replace(' src="', ' data-src="').replace(' srcset="', ' data-srcset="').replace(' loading="lazy"', ""); }).join("\n          ")}
         </div>`;
 };
 
@@ -56,7 +59,8 @@ S["highlights"] = () => {
         <h2 id="whyTitle" class="t-headline mb-8" data-split="lines">${bi(h.title)}</h2>
         <div class="hl reveal" data-feature-slider aria-roledescription="carousel" aria-labelledby="whyTitle">
           <div class="hl__media">
-            ${h.items.map((it, i) => img(it.image.sizes, { alt: it.image.alt.ar, cls: `hl__img${i === 0 ? " is-current" : ""}`, sizesAttr: "(min-width: 1280px) 576px, (min-width: 1024px) calc(50vw - 64px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)", extra: ` data-slide="${i}" data-alt-en="${esc(it.image.alt.en)}"` })).join("\n            ")}
+            ${h.items.map((it, i) => { const tag = img(it.image.sizes, { alt: it.image.alt.ar, cls: `hl__img${i === 0 ? " is-current" : ""}`, sizesAttr: "(min-width: 1280px) 576px, (min-width: 1024px) calc(50vw - 64px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)", extra: ` data-slide="${i}" data-alt-en="${esc(it.image.alt.en)}"` });
+              return i === 0 ? tag : tag.replace(' src="', ' data-src="').replace(' srcset="', ' data-srcset="').replace(' loading="lazy"', ""); }).join("\n            ")}
           </div>
           <div class="hl__body">
             <div class="hl__viewport">
