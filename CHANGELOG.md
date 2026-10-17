@@ -1,5 +1,16 @@
 # Changelog — visual overhaul v2
 
+## Anjum patterns + UI/UX polish (branch `feature/anjum-patterns`, approved by Badr 2026-10-17)
+- Data-driven home sections, hotels carousel with real filters, Al Taj gallery + lightbox, published catering page.
+- Themes regenerated from the owner's references (`tools/themes.mjs`, 0 contrast failures, no grey); owner overrides:
+  soft radius scale, full-strength patterns, white logo and pattern in Blue and Red, sky pattern in Blue light,
+  Font Awesome Free 7.3.1 build-time sprite (`NOTICE`).
+- Hero: one pattern strip / band, 0–75 % scrim, measured legibility; feedback, filters with live count, toasts,
+  scroll catalogue (`MOTION_SPEC.md`, owner-requested additions).
+- WhatsApp live: +966 56 785 5974, one entry in `data/site.json` feeds every WhatsApp link (pre-filled message per
+  language, new tab, `rel="noopener"`); the call button stays the landline.
+- Prototype: every page `noindex, nofollow`, `robots.txt` `Disallow: /`, `X-Robots-Tag` (BRAND_GAPS G41, remove at launch).
+
 Branch `overhaul/phase-1` → `main`. Eight phases, each reviewed and approved by Badr before the next.
 
 ## Foundation
@@ -45,5 +56,4 @@ Branch `overhaul/phase-1` → `main`. Eight phases, each reviewed and approved b
   (details in `QA_REPORT.md`).
 
 ## Open before production
-Catering photography, real content for the two hidden pages, a WhatsApp-capable number (see `BRAND_GAPS.md`, status
-**blocking**). Production origin: `https://deafah.netlify.app`, set once in `data/pages.json`, with canonical and OG URLs derived from it.
+Real content for the two hidden pages (see `BRAND_GAPS.md`, status **blocking**) and the prototype noindex (G41). Production origin: `https://deafah.netlify.app`, set once in `data/pages.json`, with canonical and OG URLs derived from it.

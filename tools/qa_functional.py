@@ -83,8 +83,8 @@ with sync_playwright() as p:
         ok(f"[{lang}] focus returns to the photo that opened it", pg.evaluate("() => document.activeElement && document.activeElement.matches('[data-lightbox]')"))
         ok(f"[{lang}] Lenis restarts after close", pg.evaluate("() => { const l = window.DeafahMotion && window.DeafahMotion.lenis(); return !l || !l.isStopped; }"))
         # social
-        soc = pg.evaluate("() => ({ links: document.querySelectorAll('.social a').length, pending: [...document.querySelectorAll('.social .is-pending')].filter(e => e.getAttribute('aria-disabled') === 'true' && !e.hasAttribute('href')).length })")
-        ok(f"[{lang}] social icons are non-navigating while url is null", soc["links"] == 0 and soc["pending"] == 6, str(soc))
+        soc = pg.evaluate("() => ({ links: [...document.querySelectorAll('.social a')].map(a => a.dataset.whatsapp !== undefined ? 'whatsapp' : a.href), pending: [...document.querySelectorAll('.social .is-pending')].filter(e => e.getAttribute('aria-disabled') === 'true' && !e.hasAttribute('href')).length })")
+        ok(f"[{lang}] social icons: WhatsApp live, the six accounts non-navigating while url is null", soc["links"] == ["whatsapp"] and soc["pending"] == 6, str(soc))
         ok(f"[{lang}] no console errors on home", not errs, " | ".join(errs[:2]))
         # polish: header, logo, toasts, scroll UI, legal links
         pk(f"[{lang}] header is a panel", pg.evaluate("() => document.getElementById('siteHeader').classList.contains('panel')"))
@@ -114,8 +114,12 @@ with sync_playwright() as p:
         ok(f"[{lang}] no console errors on catering", not errs, " | ".join(errs[:2]))
         pk(f"[{lang}] catering heading is the Part A2 title", t("#catTitle") in ("إعاشة الحجاج والمعتمرين", "Pilgrim Catering"), t("#catTitle"))
         pg.wait_for_timeout(800)
-        wa = pg.evaluate("() => { const a = document.querySelector('[data-whatsapp]'); const p = document.querySelector('[data-phone]'); return { wa: !!a && !a.hasAttribute('href') && a.getAttribute('aria-disabled') === 'true', tel: !!p && (p.getAttribute('href') || '').startsWith('tel:') }; }")
-        pk(f"[{lang}] WhatsApp is non-navigating and the call link stays tel: (Part A6)", wa["wa"] and wa["tel"], str(wa))
+        wa = pg.evaluate("(l) => { const all = [...document.querySelectorAll('a[data-whatsapp]')]; const p = document.querySelector('[data-phone]'); return { n: all.length, wa: all.length > 0 && all.every(a => (a.getAttribute('href') || '').startsWith('https://wa.me/966567855974?text=') && a.target === '_blank' && /noopener/.test(a.rel) && a.getAttribute('aria-label') === (l === 'ar' ? 'تواصل عبر واتساب' : 'Chat on WhatsApp')), tel: !!p && p.getAttribute('href') === 'tel:+966125911110' }; }", lang)
+        pk(f"[{lang}] WhatsApp links use the single site.json entry; the call link stays the tel: landline (decision 5)", wa["wa"] and wa["tel"] and wa["n"] >= 2, str(wa))
+        before = pg.evaluate("() => document.querySelector('.social a[data-whatsapp]').getAttribute('href')")
+        pg.evaluate("() => window.scrollTo(0, 0)"); pg.click("#langToggle"); pg.wait_for_timeout(700)
+        after = pg.evaluate("() => ({ href: document.querySelector('.social a[data-whatsapp]').getAttribute('href'), name: document.querySelector('.social a[data-whatsapp]').getAttribute('aria-label') })")
+        pk(f"[{lang}] switching the language swaps the WhatsApp message and accessible name", after["href"] != before and after["href"].startswith("https://wa.me/966567855974?text=") and after["name"] == ("Chat on WhatsApp" if lang == "ar" else "تواصل عبر واتساب"), after["name"])
         ctx.close()
     b.close()
 fails = [r for r in res if not r[1]]

@@ -458,7 +458,5 @@
       }
     }
   ],
-  "whatsapp": null,
-  "phone": "+966125911110",
-  "_whatsapp_note": "null until a WhatsApp-capable number exists (Anjum Part A6); phone stays a tel: link"
+  "phone": "+966125911110"
 }

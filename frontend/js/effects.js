@@ -136,9 +136,24 @@ window.DeafahEffects = (function () {
     }).observe(document.body, { childList: true, subtree: true });
   }
 
-  function init() { initStatCounters(); syncPressed(); initScrollUI(); initFades(); }
+  /* ---------------- WhatsApp: href + accessible name follow the page language ----------------
+     Built links carry data-href-ar / data-href-en / data-label-ar / data-label-en (tools/build-sections.mjs, single source
+     site.json). Links rendered at run time with a bare [data-whatsapp] copy them from the first built link. */
+  function syncWhatsApp() {
+    var src = document.querySelector("a[data-whatsapp][data-href-ar]"); if (!src) return;
+    var lang = isAr() ? "ar" : "en";
+    document.querySelectorAll("a[data-whatsapp]").forEach(function (a) {
+      ["data-href-ar", "data-href-en", "data-label-ar", "data-label-en"].forEach(function (k) { if (!a.hasAttribute(k)) a.setAttribute(k, src.getAttribute(k)); });
+      a.setAttribute("href", a.getAttribute("data-href-" + lang));
+      a.setAttribute("aria-label", a.getAttribute("data-label-" + lang));
+      a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
+    });
+  }
+  document.addEventListener("deafah:langchange", syncWhatsApp);
+
+  function init() { initStatCounters(); syncPressed(); initScrollUI(); initFades(); syncWhatsApp(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  return { showToast: showToast, localizeDigits: localizeDigits, initStatCounters: initStatCounters };
+  return { showToast: showToast, localizeDigits: localizeDigits, initStatCounters: initStatCounters, syncWhatsApp: syncWhatsApp };
 })();

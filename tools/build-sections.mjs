@@ -227,10 +227,24 @@ S["lightbox"] = () => {
   </dialog>`;
 };
 
+/* WhatsApp: one entry in site.json → every <a data-whatsapp> on every page (footer, floating buttons). The href carries
+   the pre-filled message in the page language; effects.js swaps href and accessible name when the language changes. */
+const WA = site.social.find((s) => s.id === "whatsapp");
+const waHref = (lang) => `${WA.url}?text=${encodeURIComponent(WA.message[lang])}`;
+function fillWhatsApp(html) {
+  if (!WA) return html;
+  return html.replace(/<a\b[^>]*\bdata-whatsapp\b[^>]*>/g, (tag) => {
+    const cls = (tag.match(/\bclass="([^"]*)"/) || [])[1];
+    return `<a${cls ? ` class="${cls}"` : ""} href="${esc(waHref("ar"))}" data-whatsapp data-href-ar="${esc(waHref("ar"))}" data-href-en="${esc(waHref("en"))}" data-label-ar="${esc(WA.label.ar)}" data-label-en="${esc(WA.label.en)}" target="_blank" rel="noopener" aria-label="${esc(WA.label.ar)}">`;
+  });
+}
+
 S["social"] = () => `<div class="social">
           <h3 class="t-label mb-2">${bi(site.social_title)}</h3>
           <ul class="social__list" role="list">
-            ${site.social.map((s) => s.url
+            ${site.social.map((s) => s.id === "whatsapp"
+              ? `<li><a class="social__link" data-whatsapp>${icon(s.id)}</a></li>`
+              : s.url
               ? `<li><a class="social__link" href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.label.ar)}">${icon(s.id)}</a></li>`
               : `<li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="${esc(s.label.ar)} — ${esc(site.social_pending.ar)}" title="${esc(s.label.en)} — ${esc(site.social_pending.en)}">${icon(s.id)}</span></li>`).join("\n            ")}
           </ul>
@@ -256,6 +270,7 @@ for (const f of FILES) {
     n++;
     return `<!-- build:${name} -->\n    ${S[name]()}\n    <!-- /build:${name} -->`;
   });
+  html = fillWhatsApp(html);
   total += n;
   if (html !== before) writeFileSync(path, html);
   console.log(`build-sections: ${f} → ${n} section(s)`);

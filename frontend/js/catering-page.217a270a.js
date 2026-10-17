@@ -21,12 +21,7 @@
     fill("menu", d.menu.map(function (m, i) { return '<article class="card bg-surface"><span class="eyebrow ico-label">' + icon(MEAL_ICON[i % MEAL_ICON.length], "icon--sm accent-icon") + "<span>" + bi(m.time) + '</span></span><ul class="list-rule grid gap-2">' + m.items.ar.map(function (x, i) { return "<li>" + bi({ ar: x, en: m.items.en[i] }) + "</li>"; }).join("") + "</ul></article>"; }).join(""));
     fill("counters", d.counters.map(function (c, i) { return '<div class="stat reveal"><span class="icon-box" aria-hidden="true">' + icon(COUNTER_ICON[i % COUNTER_ICON.length]) + '</span><span class="stat-number" data-count-to="' + c.value + '" data-suffix="' + c.suffix + '">0</span><span class="muted">' + bi(c.label) + "</span></div>"; }).join(""));
     fill("badges", d.badges.map(function (b) { return '<li class="chip">' + icon("certificate", "icon--xs accent-icon") + bi(b) + "</li>"; }).join(""));
-    document.querySelectorAll("[data-whatsapp]").forEach(function (a) {
-      if (d.whatsapp) { a.href = "https://wa.me/" + d.whatsapp.replace(/\D/g, ""); return; }
-      a.removeAttribute("href"); a.removeAttribute("target"); a.setAttribute("aria-disabled", "true"); a.setAttribute("role", "img"); a.classList.add("is-pending");
-      a.setAttribute("aria-label", "واتساب — الرقم غير متاح بعد");
-      a.setAttribute("title", "WhatsApp — " + (document.documentElement.getAttribute("data-lang") === "en" ? "number not available yet" : "الرقم غير متاح بعد"));
-    });
+    /* WhatsApp links are filled at build time from site.json (single source); effects.js keeps them in the page language */
     document.querySelectorAll("[data-phone]").forEach(function (a) { a.href = "tel:" + d.phone.replace(/\s/g, ""); });
     if (window.DeafahWidgets) window.DeafahWidgets.init();
     if (window.DeafahEffects && window.DeafahEffects.initStatCounters) window.DeafahEffects.initStatCounters();

@@ -31,7 +31,7 @@
         '<h3 class="t-title mb-2">' + bi(p.name) + '</h3><p class="pkg__price num">SAR ' + p.price_sar + '</p><p class="muted mb-4">' + biNum(p.nights, "ليالٍ", "nights") + "</p>" +
         '<p class="t-label mb-2">' + bi({ ar: "ماذا يشمل", en: "What's included" }) + '</p><ul class="list-rule grid gap-2 mb-6">' + p.includes.ar.map(function (x, i) { return "<li>" + bi({ ar: x, en: p.includes.en[i] }) + "</li>"; }).join("") + "</ul>" +
         '<div class="flex flex-wrap gap-2"><a href="#contact" class="btn" data-modal-open="contactModal" data-subject="' + p.name.ar + '">' + bi({ ar: "احجز", en: "Book" }) + '</a><a href="#faq" class="btn btn--secondary">' + bi({ ar: "التفاصيل", en: "Details" }) + "</a></div></article>";
-    }).join("") + '<article class="card card--outline flex flex-col justify-between gap-4"><div><h3 class="t-title mb-2">' + bi({ ar: "خصّص باقتك عبر واتساب", en: "Customise your package on WhatsApp" }) + '</h3><p class="muted">' + bi({ ar: "أخبرنا بعدد الأفراد والليالي والغرفة المطلوبة، ونرد عليك بعرض خلال ساعات العمل.", en: "Tell us the group size, nights and room type and we reply with an offer during working hours." }) + '</p></div><a class="btn btn--secondary" ' + (d.whatsapp ? 'href="https://wa.me/' + d.whatsapp.replace(/\D/g, "") + '" rel="noopener" target="_blank"' : 'aria-disabled="true"') + '>' + icon("whatsapp", "icon--sm") + bi({ ar: "واتساب", en: "WhatsApp" }) + "</a></article>");
+    }).join("") + '<article class="card card--outline flex flex-col justify-between gap-4"><div><h3 class="t-title mb-2">' + bi({ ar: "خصّص باقتك عبر واتساب", en: "Customise your package on WhatsApp" }) + '</h3><p class="muted">' + bi({ ar: "أخبرنا بعدد الأفراد والليالي والغرفة المطلوبة، ونرد عليك بعرض خلال ساعات العمل.", en: "Tell us the group size, nights and room type and we reply with an offer during working hours." }) + '</p></div><a class="btn btn--secondary" data-whatsapp target="_blank" rel="noopener">' + icon("whatsapp", "icon--sm") + bi({ ar: "واتساب", en: "WhatsApp" }) + "</a></article>");
     fill("dining", d.dining.map(function (x) { return '<article class="card bg-surface p-0 overflow-hidden" data-layer-card><div class="hotel-media"><img src="' + asset(x.image) + '" alt="' + x.name.en + '" width="640" height="480" loading="lazy"></div><div class="p-6"><h3 class="t-title mb-1">' + bi(x.name) + '</h3><p class="muted text-sm">' + bi(x.note) + "</p></div></article>"; }).join(""));
     fill("amenities", d.amenities.map(function (a) { return '<li class="flex items-start gap-4"><span class="icon-box !mb-0 shrink-0" aria-hidden="true">' + icon(a.icon) + '</span><span class="pt-3 font-semibold">' + bi(a) + "</span></li>"; }).join(""));
     fill("address", bi(d.location.address));
@@ -40,12 +40,8 @@
     fill("gallery", d.gallery.map(function (g) { return '<img src="' + asset(g.image) + '" alt="' + g.alt.en + '"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : "") + ' loading="lazy" decoding="async">'; }).join(""));
     fill("guests", d.guests.map(function (g) { return '<blockquote class="guest"><p class="mb-2">' + bi(g.text) + '</p><footer class="muted text-sm">' + g.name + " · " + bi(g.country) + "</footer></blockquote>"; }).join(""));
     fill("faq", d.faq.map(function (f) { return "<details><summary>" + bi(f.q) + icon("chevron-down", "icon--sm") + "</summary><div>" + bi(f.a) + "</div></details>"; }).join(""));
-    document.querySelectorAll("[data-whatsapp]").forEach(function (a) {
-      if (d.whatsapp) { a.href = "https://wa.me/" + d.whatsapp.replace(/\D/g, ""); return; }
-      a.removeAttribute("href"); a.removeAttribute("target"); a.setAttribute("aria-disabled", "true"); a.setAttribute("role", "img"); a.classList.add("is-pending");
-      a.setAttribute("aria-label", "واتساب — الرقم غير متاح بعد");
-      a.setAttribute("title", "WhatsApp — " + (document.documentElement.getAttribute("data-lang") === "en" ? "number not available yet" : "الرقم غير متاح بعد"));
-    });
+    /* WhatsApp: single source site.json; the package card's bare [data-whatsapp] copies the built link's data */
+    if (window.DeafahEffects && window.DeafahEffects.syncWhatsApp) window.DeafahEffects.syncWhatsApp();
     document.querySelectorAll("[data-phone]").forEach(function (a) { a.href = "tel:" + d.phone.replace(/\s/g, ""); });
     document.querySelectorAll("form[data-availability]").forEach(function (f) { f.setAttribute("data-hotel", d.name.ar); });
     if (window.DeafahWidgets) window.DeafahWidgets.init();

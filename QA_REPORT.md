@@ -151,6 +151,5 @@ Unused sprite symbols stay by design: kitchen, chef, tray, calendar, arrow-start
 
 ## 12. Open before production
 
-See `BRAND_GAPS.md` (status **blocking**): G26 catering photography, G34 real content for the two hidden pages, G35 a
-WhatsApp-capable number. The production domain (G33) is settled: `https://deafah.netlify.app` from `data/pages.json`. Also to decide/verify: G36 demo booking widget and newsletter, G37 EmailJS
+See `BRAND_GAPS.md` (status **blocking**): G34 real content for the two hidden pages. (G26 and G35 were settled after this report; WhatsApp went live on 2026-10-17.) The production domain (G33) is settled: `https://deafah.netlify.app` from `data/pages.json`. Also to decide/verify: G36 demo booking widget and newsletter, G37 EmailJS
 template prints `{{subject}}`, and a real-device Safari check.

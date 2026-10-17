@@ -1,5 +1,5 @@
 {
-  "_note": "Site-wide settings rendered into every public page by tools/build-sections.mjs. Social: url null renders a non-navigating icon (aria-disabled); a filled url renders <a target=_blank rel=noopener>. Demo site: no real accounts.",
+  "_note": "Site-wide settings rendered into every public page by tools/build-sections.mjs. Social: url null renders a non-navigating icon (aria-disabled); a filled url renders <a target=_blank rel=noopener>. Demo site: no real accounts. WhatsApp: the social entry id \"whatsapp\" is the single source for every WhatsApp link (footer, floating buttons, package cards).",
   "social_title": {
     "ar": "تابعنا",
     "en": "Follow us"
@@ -9,6 +9,20 @@
     "en": "account not available yet"
   },
   "social": [
+    {
+      "id": "whatsapp",
+      "label": {
+        "ar": "تواصل عبر واتساب",
+        "en": "Chat on WhatsApp"
+      },
+      "number": "966567855974",
+      "url": "https://wa.me/966567855974",
+      "message": {
+        "ar": "السلام عليكم، أرغب في الاستفسار عن خدمات مجموعة الضيافة العالمية",
+        "en": "Hello, I would like to ask about Al Deafah International Group services"
+      },
+      "_note": "The ONLY WhatsApp source (owner decision 2026-10-17). Every [data-whatsapp] link on the site is filled from this entry at build time (tools/build-sections.mjs): href = url + ?text= URL-encoded message in the page language, target _blank, rel noopener, accessible name = label. The call button stays the tel: landline."
+    },
     {
       "id": "instagram",
       "label": {
