@@ -104,7 +104,7 @@
     window.DeafahEffects.showToast(isArabic() ? "تم تسجيلك بنجاح." : "You're on the list.");
   });
 
-  /* contact message counter (contact-form.54cb0118.js does the sending) */
+  /* contact message counter (contact-form.56c0d525.js does the sending) */
   var MIN = 100;
   document.querySelectorAll(".contact-message").forEach(function (ta) {
     ta.addEventListener("input", function () {

@@ -3,7 +3,8 @@
    - Centred carousel: native horizontal scroll with scroll-snap (swipe / trackpad / keyboard); the prev / next buttons
      tween the scroll position over 500 ms with the reference easing (CSS `ease` = cubic-bezier(.25,.1,.25,1)).
    - "Next" follows the reading direction: DOM order, which runs right → left in RTL.
-   - Non-current cards are dimmed by an overlay (CSS), so text contrast is never reduced by opacity.
+   - Non-current cards scale to .94 and their photo is quieted (CSS); the text keeps full contrast.
+   - Live result count ("٤ فنادق", aria-live polite), progress dots (decorative, click to jump), empty state with a reset.
    - Filters: two ARIA tablists (rating, walking time) combine with AND; switching fades the set out and in with the
      200 ms brand token. Reduced motion: instant jumps, no fades. */
 (function () {
@@ -28,6 +29,8 @@
   function Carousel(el) {
     var vp = el.querySelector("[data-track]"), prev = el.querySelector("[data-carousel-prev]"), next = el.querySelector("[data-carousel-next]");
     var status = el.querySelector("[data-carousel-status]"), empty = el.querySelector("[data-carousel-empty]");
+    var dotsEl = el.querySelector("[data-carousel-dots]"), reset = el.querySelector("[data-carousel-reset]");
+    var countEl = (el.closest("section") || document).querySelector("[data-carousel-count-text]");
     var section = el.closest("section") || document;
     var tablists = Array.prototype.slice.call(section.querySelectorAll("[data-filter-group]"));
     var current = 0, tween = null, scrollTimer = null;
@@ -46,6 +49,10 @@
       vp.querySelectorAll(".hotel-card").forEach(function (c) { c.classList.remove("is-current"); });
       if (list[current]) list[current].classList.add("is-current");
       if (status) status.innerHTML = n ? '<span class="lang-ar">' + arDigits((current + 1) + " / " + n) + '</span><span class="lang-en">' + (current + 1) + " / " + n + "</span>" : "";
+      if (dotsEl) {
+        if (dotsEl.children.length !== n) { dotsEl.innerHTML = ""; for (var k = 0; k < n; k++) { var d = document.createElement("span"); d.className = "hcar__dot"; d.setAttribute("data-i", String(k)); dotsEl.appendChild(d); } }
+        Array.prototype.forEach.call(dotsEl.children, function (d, k) { d.classList.toggle("is-current", k === current); });
+      }
       if (prev) prev.disabled = current <= 0;
       if (next) next.disabled = current >= n - 1;
     }
@@ -100,6 +107,7 @@
         all.forEach(function (c) { var ok = matches(c); c.hidden = !ok; if (ok) shown++; });
         if (empty) empty.hidden = shown > 0;
         el.classList.toggle("is-empty", shown === 0);
+        count(shown);
         goTo(0, false);
       };
       if (reduce()) { swap(); return; }
@@ -129,6 +137,22 @@
       });
     });
 
+    function count(n) {
+      if (!countEl) return;
+      var arWord = n === 0 ? "لا فنادق" : n === 1 ? "فندق واحد" : n === 2 ? "فندقان" : n <= 10 ? arDigits(n) + " فنادق" : arDigits(n) + " فندقًا";
+      countEl.innerHTML = '<span class="lang-ar">' + arWord + '</span><span class="lang-en">' + n + (n === 1 ? " hotel" : " hotels") + "</span>";
+    }
+    if (dotsEl) dotsEl.addEventListener("click", function (e) { var d = e.target.closest(".hcar__dot"); if (d) goTo(+d.getAttribute("data-i"), true); });
+    if (reset) reset.addEventListener("click", function () {
+      tablists.forEach(function (tl) {
+        var tabs = tl.querySelectorAll("[role=tab]");
+        tabs.forEach(function (t, k) { var on = k === 0; t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1; t.classList.toggle("is-active", on); });
+        filters[tl.getAttribute("data-filter-group")] = tabs[0];
+      });
+      applyFilters();
+      var first = tablists[0] && tablists[0].querySelector("[role=tab]"); if (first) first.focus();
+    });
+    count(cards().length);
     function recentre() { goTo(current, false); }
     document.addEventListener("deafah:langchange", function () { setTimeout(recentre, 80); });   /* direction flipped */
     window.addEventListener("resize", function () { clearTimeout(scrollTimer); scrollTimer = setTimeout(recentre, 120); });

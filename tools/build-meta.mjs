@@ -31,14 +31,15 @@ const pages = [];
 const rel = (p) => relative(ROOT, p).replace(/\\/g, "/");
 
 /* ---- links + robots per page ---- */
-const ROBOTS = '<meta name="robots" content="noindex" data-unpublished-robots>';
+const PROTOTYPE = settings.prototype_noindex === true;   // chairman preview: nothing is indexed (pages.json)
+const ROBOTS = PROTOTYPE ? '<meta name="robots" content="noindex, nofollow" data-unpublished-robots>' : '<meta name="robots" content="noindex" data-unpublished-robots>';
 let wrapped = 0, unwrapped = 0;
 for (const file of pages) {
   const me = rel(file);
   let html = readFileSync(file, "utf8"), before = html;
   // undo everything first, then re-apply from the manifest → idempotent
   html = html.replace(/<template data-unpublished="[^"]*">(<a\b[\s\S]*?<\/a>)<\/template>/g, (m, a) => { unwrapped++; return a; });
-  html = html.replace(new RegExp("\\s*" + ROBOTS.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), "");
+  html = html.replace(/\s*<meta name="robots" content="[^"]*" data-unpublished-robots>/g, "");
   for (const target of unpublished) {
     html = html.replace(/<a\b[^>]*\bhref="([^"#?]+)"[\s\S]*?<\/a>/g, (a, href) => {
       const resolved = posix.normalize(posix.join(posix.dirname(me), href));
@@ -47,7 +48,7 @@ for (const file of pages) {
       return `<template data-unpublished="${target}">${a}</template>`;
     });
   }
-  if (unpublished.has(me)) html = html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n  ${ROBOTS}`);
+  if (PROTOTYPE || unpublished.has(me)) html = html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n  ${ROBOTS}`);
   // canonical + og:url from site_url; og:image absolute, pointing at the current fingerprinted file
   html = html.replace(/\s*<link rel="canonical"[^>]*>/g, "").replace(/\s*<meta property="og:url"[^>]*>/g, "");
   html = html.replace(/\n([ \t]*)(<meta property="og:type"[^>]*>)/, (m, ind, tag) => `\n${ind}<link rel="canonical" href="${pageUrl(me)}">\n${ind}<meta property="og:url" content="${pageUrl(me)}">\n${ind}${tag}`);
@@ -80,7 +81,9 @@ const urls = listed.map((p) => {
   return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority></url>`;
 });
 writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`);
-writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /vendor/\nDisallow: /data/mock/\nDisallow: /dev/\nSitemap: ${SITE}/sitemap.xml\n`);
+writeFileSync(join(ROOT, "robots.txt"), PROTOTYPE
+  ? `# Prototype (chairman preview): nothing is indexed. Remove before the real site launches (BRAND_GAPS G41).\nUser-agent: *\nDisallow: /\n`
+  : `User-agent: *\nAllow: /\nDisallow: /vendor/\nDisallow: /data/mock/\nDisallow: /dev/\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log(`sitemap: ${urls.length} pages →`, listed.map(rel).join(", "));
 console.log(`publication: unpublished = ${[...unpublished].join(", ") || "none"}; links hidden = ${wrapped}`);
 if (!existsSync(join(ROOT, "dist", "site.css"))) console.warn("warning: frontend/dist/site.css missing — run npm run build:css");

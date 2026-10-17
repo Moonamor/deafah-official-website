@@ -25,6 +25,7 @@ const num = (n) => `<span class="num"><span class="lang-ar">${AR_DIGITS(n)}</spa
 /* asset paths are written relative to each page (prefix "" for root pages, "../" for hotels/*) */
 let P = "";
 const url = (src) => P + src.replace(/^\//, "");
+const check = () => `<svg class="icon icon--xs tab-check" aria-hidden="true"><use href="${url("assets/icons/sprite.svg")}#check"/></svg>`;
 const icon = (id, cls = "") => `<svg class="icon ${cls}" aria-hidden="true"><use href="${url("assets/icons/sprite.svg")}#${id}"/></svg>`;
 function img(sizes, { alt = "", cls = "", sizesAttr = "100vw", loading = "lazy", priority = false, extra = "" } = {}) {
   const s = [...sizes].sort((a, b) => a.width - b.width);
@@ -37,8 +38,8 @@ const S = {};
 
 S["hero-slides"] = () => {
   const h = home.hero;
-  return `<div class="hero-slides opacity-50" data-slideshow data-interval="${h.interval_ms}" data-fade="${h.fade_ms}">
-          ${h.slides.map((sl, i) => img(sl.sizes, { alt: "", cls: `hero-slide${i === 0 ? " is-current" : ""}`, priority: i === 0, extra: ` data-slide="${i}"` })).join("\n          ")}
+  return `<div class="hero-slides" data-slideshow data-interval="${h.interval_ms}" data-fade="${h.fade_ms}">
+          ${h.slides.map((sl, i) => img(sl.sizes, { alt: "", cls: `hero-slide${i === 0 ? " is-current" : ""}`, priority: i === 0, extra: ` data-slide="${i}"${sl.focus ? ` style="--focus-x: ${sl.focus.x}; --focus-y: ${sl.focus.y}"` : ""}` })).join("\n          ")}
         </div>`;
 };
 
@@ -124,7 +125,7 @@ S["makkah"] = () => {
             <p class="muted max-w-xl">${bi(m.text)}</p>
           </div>
           <ul class="makkah__facts relative z-10" role="list">
-            ${m.facts.filter((f) => f.value_from || (f.value !== null && f.value !== undefined)).map(fact).join("\n            ")}
+            ${m.facts.filter((f) => !f.hidden && (f.value_from || (f.value !== null && f.value !== undefined))).map(fact).join("\n            ")}
           </ul>
           <div class="makkah__pattern kufic-field kufic-field--strip h-[104px]" data-kufic data-rows="1" data-block="40" aria-hidden="true"></div>
         </div>
@@ -144,23 +145,25 @@ S["hotel-filters"] = () => {
     return `<div class="hfilters__group">
             <span class="t-label" id="hf-${key}">${bi(g.label)}</span>
             <div class="hfilters__tabs" role="tablist" aria-labelledby="hf-${key}" data-filter-group="${key}">
-              <button type="button" class="chip is-active" role="tab" aria-selected="true" aria-controls="hotelGrid" data-filter="all">${bi(F.all)}</button>
-              ${opts.map((o) => `<button type="button" class="chip" role="tab" aria-selected="false" tabindex="-1" aria-controls="hotelGrid" data-filter="${o.id}" ${attrs(o)}>${key === "rating" && o.stars ? `<span class="stars" aria-hidden="true">${icon("star").repeat(o.stars)}</span>` : ""}${bi(o.label)}</button>`).join("\n              ")}
+              <button type="button" class="chip is-active" role="tab" aria-selected="true" aria-controls="hotelGrid" data-filter="all">${check()}${bi(F.all)}</button>
+              ${opts.map((o) => `<button type="button" class="chip" role="tab" aria-selected="false" tabindex="-1" aria-controls="hotelGrid" data-filter="${o.id}" ${attrs(o)}>${check()}${key === "rating" && o.stars ? `<span class="stars" aria-hidden="true">${icon("star", "icon--xs").repeat(o.stars)}</span>` : ""}${bi(o.label)}</button>`).join("\n              ")}
             </div>
           </div>`;
   };
   return `<div class="hfilters reveal">
           ${group("rating")}
           ${group("walk")}
+          <p class="hfilters__count" data-carousel-count aria-live="polite">${icon("hotel", "icon--sm accent-icon")}<span data-carousel-count-text></span></p>
         </div>
         <div class="hcar" data-carousel>
           <div class="hcar__viewport" id="hotelGrid" data-track tabindex="0" role="region" aria-roledescription="carousel" aria-label="فنادق المجموعة"></div>
-          <p class="muted hcar__empty" data-carousel-empty hidden>${bi(F.empty)}</p>
+          <div class="hcar__empty" data-carousel-empty hidden>${icon("circle-info")}<p>${bi(F.empty)}</p><button type="button" class="btn btn--secondary btn--sm" data-carousel-reset>${icon("reset", "icon--xs")}${bi({ ar: "إعادة ضبط التصفية", en: "Reset filters" })}</button></div>
           <div class="hcar__nav">
             <button type="button" class="btn btn--icon" data-carousel-prev aria-label="الفندق السابق">${icon("arrow-start", "icon--flip")}</button>
             <span class="hcar__status num" data-carousel-status aria-live="polite"></span>
             <button type="button" class="btn btn--icon" data-carousel-next aria-label="الفندق التالي">${icon("arrow-end", "icon--flip")}</button>
           </div>
+          <div class="hcar__dots" data-carousel-dots aria-hidden="true"></div>
         </div>`;
 };
 
@@ -176,8 +179,8 @@ function galleryMarkup({ items, id, headingTag = "h2", full }) {
         <${headingTag} id="${id}Title" class="t-headline mb-4" data-split="lines">${bi(g.title)}</${headingTag}>
         <p class="muted max-w-2xl mb-8 reveal">${bi(g.intro)}</p>
         <div class="tabs gallery-tabs reveal" role="tablist" aria-label="تصفية الصور" data-gallery-filters>
-          <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="${id}Grid" data-filter="all">${bi({ ar: "الكل", en: "All" })} <span class="muted">${num(items.length)}</span></button>
-          ${cats.map((c) => `<button type="button" class="tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="${id}Grid" data-filter="${c.id}">${bi(c)} <span class="muted">${num(count(c.id))}</span></button>`).join("\n          ")}
+          <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="${id}Grid" data-filter="all">${check()}${icon("images", "icon--xs")}${bi({ ar: "الكل", en: "All" })} <span class="muted">${num(items.length)}</span></button>
+          ${cats.map((c) => `<button type="button" class="tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="${id}Grid" data-filter="${c.id}">${check()}${bi(c)} <span class="muted">${num(count(c.id))}</span></button>`).join("\n          ")}
         </div>
         <ul class="gallery-grid" id="${id}Grid" role="list" data-gallery="${id}">
           ${items.map((it) => `<li class="gallery-item" data-category="${it.category}">
@@ -187,7 +190,7 @@ function galleryMarkup({ items, id, headingTag = "h2", full }) {
             </button>
           </li>`).join("\n          ")}
         </ul>
-        <p class="muted mt-4 gallery-empty" hidden>${bi({ ar: "لا توجد صور في هذه الفئة.", en: "No photos in this category." })}</p>
+        <div class="hcar__empty mt-4 gallery-empty" hidden>${icon("circle-info")}<p>${bi({ ar: "لا توجد صور في هذه الفئة.", en: "No photos in this category." })}</p><button type="button" class="btn btn--secondary btn--sm" data-gallery-reset>${icon("reset", "icon--xs")}${bi({ ar: "عرض كل الصور", en: "Show all photos" })}</button></div>
         ${more}
       </div>
     </section>`;
@@ -204,7 +207,7 @@ S["lightbox"] = () => {
   const data = gallery.items.map((it) => ({ id: it.id, category: it.category, alt: it.alt, sizes: it.sizes.map((s) => ({ src: url(s.src), width: s.width, height: s.height })) }));
   return `<dialog class="lightbox" id="lightbox" aria-modal="true" aria-labelledby="lightboxCaption" data-lightbox-dialog>
     <div class="lightbox__bar">
-      <span class="lightbox__count num" data-lightbox-count aria-live="polite"></span>
+      <span class="lightbox__count">${icon("images", "icon--sm")}<span class="num" data-lightbox-count aria-live="polite"></span></span>
       <button type="button" class="btn btn--icon lightbox__close" data-lightbox-close aria-label="إغلاق">${icon("close")}</button>
     </div>
     <figure class="lightbox__figure">
@@ -228,6 +231,14 @@ S["social"] = () => `<div class="social">
               : `<li><span class="social__link is-pending" aria-disabled="true" role="img" aria-label="${esc(s.label.ar)} — ${esc(site.social_pending.ar)}" title="${esc(s.label.en)} — ${esc(site.social_pending.en)}">${icon(s.id)}</span></li>`).join("\n            ")}
           </ul>
         </div>`;
+
+S["legal"] = () => `<ul class="legal" role="list">
+        ${site.legal.map((l) => l.url
+          ? `<li><a class="legal__link link" href="${esc(l.url)}">${bi(l.label)}</a></li>`
+          : `<li><span class="legal__link is-pending" aria-disabled="true" title="${esc(l.label.en)} — ${esc(site.legal_pending.en)}">${bi(l.label)}</span></li>`).join("\n        ")}
+      </ul>`;
+
+S["separator"] = () => `<div class="sep-band panel" aria-hidden="true"><div class="kufic-static kufic-static--row" data-pattern-strip="x"></div></div>`;
 
 /* ---------------------------------------------------------------- apply */
 const FILES = ["index.html", "about.html", "catering.html", "hotels/taj-park.html"];

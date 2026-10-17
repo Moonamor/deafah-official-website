@@ -69,6 +69,35 @@ computed style (pass A), not frame-sampled. **UNMEASURED**: no live evidence. **
 | 19 | Lightbox — next / previous | ArrowRight, arrows, swipe | `transitionEffect: fade`; counter `1 / 57 → 2 / 57`; caption from `data-caption` | 279 ms (outgoing slide only) | `transitionDuration` 366 | **366 ms** | — | `ease` (4.7e-2, weak) | — | B `gallery[].lightbox.arrowRight` |
 | 20 | Lightbox — close | Esc | backdrop `opacity 0.87 → 0`; image zooms back to the thumbnail on desktop | 474 ms | `animationDuration` 500 | **500 ms** | — | `ease-in` (4.2e-4) | — | B `gallery[].lightbox.escape` |
 
+## Owner-requested additions (Badr, UI/UX polish brief, 2026-10-17)
+
+Not in the reference site; requested by the owner. They are **not** part of the Phase 7 reference diff (rows A1–A19 have no
+reference measurement). Only `transform`, `opacity` and `clip-path` animate. Every row has a reduced-motion branch
+(`prefers-reduced-motion` or `html.no-motion`): the end state is shown at once. Each scroll entrance plays **once**:
+language / breakpoint rebuilds never replay it, and a theme switch never rebuilds anything.
+
+| # | Element | Trigger | Properties | **Target** | Easing | Delay / stagger | Reduced motion | Where |
+|---|---|---|---|---|---|---|---|---|
+| A1 | Section headings `[data-split]` | enters view (IO, −12 % bottom margin) | SplitText lines `yPercent 110 → 0`, `opacity 0 → 1` | 900 ms | power3.out | 90 ms per line | static | `motion.js` buildCatalogue |
+| A2 | Accent rule `.rule` | enters view | `scaleX 0 → 1` from the inline start (`transform-origin` per `dir`) | 600 ms | power3.out | — | static | `motion.js` initReveals |
+| A3 | Cards / blocks `.reveal` | enters view | `opacity`, `y 24 → 0` | 700 ms | power3.out | 80 ms, capped at 6 | static | `motion.js` initReveals (unchanged) |
+| A4 | Images in layer scenes | enters view (top 90 %) | `clip-path inset(0 0 100% 0) → inset(0)` + `scale 1.08 → 1` | 900 ms clip / 1200 ms scale | power3.out | — | static | `motion.js` buildLayers |
+| A5 | Pattern strips (hero band, separators, Makkah / footer strips, desktop column) | enters view | `opacity 0 → 1` + 24 px along the strip's axis (horizontal from the inline start, vertical from below) | 900 ms | power3.out | 120 ms | static | `motion.js` buildCatalogue |
+| A6 | Icons `.icon-box` | enters view | `scale .8 → 1`, `opacity 0 → 1` | 400 ms | power3.out | 60 ms per icon in the batch | static | `motion.js` buildCatalogue |
+| A7 | Counters `[data-count-to]` | 50 % in view | count up, Arabic-Indic digits in Arabic | 1200 ms | power2.out | — | final value at once | `effects.js` |
+| A8 | Hero CTAs | after the hero headline starts | `opacity 0 → 1`, `y 24 → 0` (the buttons, not the layer, so the pin timeline keeps the layer) | 600 ms | power3.out | 600 ms after the headline | static | `motion.js` buildHeroPin |
+| A9 | Hero photo | hero pin scroll (≥ 1024 px only) | parallax `yPercent 0 → −8`, scrubbed (layer runs 10 % below the hero, so no edge shows) | scrub 0.8 | none | — | off (also off on phones) | `motion.js` buildHeroPin |
+| A10 | Buttons `.btn` | hover / active / focus | hover `translateY(−2px)` + theme-tinted shadow; active `scale(.98)`; focus 2 px ring, 2 px offset | 200 ms | brand | — | instant | `site.css` |
+| A11 | Links `.link` | hover / focus | underline grows from the inline start | 200 ms | brand | — | instant | `site.css` |
+| A12 | Cards `.card` | hover | lift `−4px` + shadow; card image `scale 1.05` | 200 ms (image 600 ms) | brand | — | instant | `site.css` |
+| A13 | Filter chips / tabs | select | filled state + check icon; live result count («٤ فنادق», `aria-live` polite); empty state with icon + reset | 200 ms | brand | — | instant | `site.css`, `carousel.js`, `gallery.js` |
+| A14 | Hotel carousel neighbours | current card changes | neighbours `scale .94`, photo `opacity .55` (text keeps full contrast); progress dots `scale 1.5` on the current one | 500 ms (dots 200 ms) | reference `ease` (dots brand) | — | instant | `site.css`, `carousel.js` |
+| A15 | Theme / language switch | click | pressed state (`aria-pressed`) + polite toast | toast 2.5 s | brand | — | toast without slide | `effects.js` |
+| A16 | Form validation | field blur / submit | inline ok / error icon + message; success / error toasts | 200 ms | brand | — | instant | `contact-form.js` |
+| A17 | Lazy images | load | fade in over a themed placeholder (frame background), size held by width / height | 400 ms | brand | — | no fade | `effects.js` |
+| A18 | Scroll progress | scroll | accent bar under the header, `scaleX(progress)` from the inline start | per frame | none | — | still tracks (position feedback) | `effects.js` |
+| A19 | Back to top | scroll > one viewport | `opacity`, `y 8 → 0`; click scrolls to top (Lenis when running) | 200 ms | brand | — | instant, native jump | `effects.js` |
+
 ## Structure observed (homepage, top → bottom)
 
 hero slideshow + booking bar → feature blocks slider (image/text pairs) → statement «اجعل إقامتك أفضل معنا» + overview

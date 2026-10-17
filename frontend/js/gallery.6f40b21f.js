@@ -40,6 +40,8 @@
       apply(tab.getAttribute("data-filter"));
     }
     tl.addEventListener("click", function (e) { var t = e.target.closest("[role=tab]"); if (t) select(t, false); });
+    var resetBtn = section.querySelector("[data-gallery-reset]");
+    if (resetBtn) resetBtn.addEventListener("click", function () { select(tabs[0], true); });
     tl.addEventListener("keydown", function (e) {
       var i = tabs.indexOf(document.activeElement); if (i < 0) return;
       var fwd = rtl() ? "ArrowLeft" : "ArrowRight", back = rtl() ? "ArrowRight" : "ArrowLeft", d = 0;

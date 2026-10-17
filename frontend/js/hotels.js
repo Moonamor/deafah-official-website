@@ -24,11 +24,13 @@
 
   function starsHTML(stars) {
     if (stars === null || stars === undefined) {
-      return '<span class="stars" aria-label="rating pending"><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>';
+      var sp = window.__spriteHref || (base + "assets/icons/sprite.svg");
+      return '<span class="rating"><svg class="icon icon--xs" aria-hidden="true"><use href="' + sp + '#star"></use></svg><span class="lang-ar">التقييم قيد الإضافة</span><span class="lang-en">Rating pending</span></span>';
     }
-    var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg"), out = "";
-    for (var i = 0; i < 5; i++) out += '<svg class="icon' + (i < stars ? "" : " star-dim") + '" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>';
-    return '<span class="stars" role="img" aria-label="' + stars + ' out of 5 stars">' + out + "</span>";
+    var sprite = window.__spriteHref || (base + "assets/icons/sprite.svg");
+    /* one solid star + "n / 5": no outlined or faded stars (owner brief: no reduced-contrast text or icons) */
+    return '<span class="rating" role="img" aria-label="' + stars + ' / 5"><svg class="icon icon--xs" aria-hidden="true"><use href="' + sprite + '#star"></use></svg>' +
+      '<span class="num" aria-hidden="true"><span class="lang-ar">' + ar(stars) + " / ٥</span><span class=\"lang-en\">" + stars + " / 5</span></span></span>";
   }
 
   function fillCopy(data) {

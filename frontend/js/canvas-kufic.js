@@ -9,7 +9,7 @@
   var root = document.documentElement;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches || root.classList.contains("no-motion");
   var SRC = (document.currentScript && document.currentScript.getAttribute("data-src")) || "assets/brand/pattern/kufic-2x2.svg";
-  var INSET = 24, DRIFT = 8, MAX_ALPHA_SURFACE = 0.25, MAX_ALPHA_PANEL = 0.40;
+  var INSET = 24, DRIFT = 8, MAX_ALPHA_SURFACE = 1, MAX_ALPHA_PANEL = 1;   /* owner override 2 (2026-10-17): patterns at full strength */
   var paths = null, unit = 81.553;
   var instances = [];
   var stats = { frames: 0, totalMs: 0, maxMs: 0, last: [] };

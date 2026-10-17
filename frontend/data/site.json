@@ -57,5 +57,35 @@
       },
       "url": null
     }
-  ]
+  ],
+  "legal": [
+    {
+      "id": "privacy",
+      "label": {
+        "ar": "الخصوصية",
+        "en": "Privacy"
+      },
+      "url": null
+    },
+    {
+      "id": "terms",
+      "label": {
+        "ar": "الشروط",
+        "en": "Terms"
+      },
+      "url": null
+    },
+    {
+      "id": "policies",
+      "label": {
+        "ar": "السياسات",
+        "en": "Policies"
+      },
+      "url": null
+    }
+  ],
+  "legal_pending": {
+    "ar": "الصفحة غير متاحة بعد",
+    "en": "page not available yet"
+  }
 }

@@ -7,10 +7,10 @@
     "build:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --minify",
     "watch:css": "tailwindcss -i frontend/src/styles/site.css -o frontend/dist/site.css --watch",
     "build:meta": "node tools/build-meta.mjs",
-    "build": "npm run build:sections && npm run build:css && npm run build:three && npm run build:fingerprint && npm run build:meta",
+    "build": "npm run build:themes && npm run build:icons && npm run build:sections && npm run build:css && npm run build:three && npm run build:fingerprint && npm run build:meta",
     "qa:grep": "node tools/qa-grep.mjs",
     "qa:case": "node tools/qa-case.mjs",
-    "qa:contrast": "node tools/contrast.mjs",
+    "qa:contrast": "node tools/themes.mjs --check",
     "qa": "npm run qa:grep && npm run qa:case && npm run qa:contrast",
     "shoot": "node tools/shoot.mjs",
     "build:three": "esbuild frontend/src/js/three-entry.js --bundle --format=esm --minify --tree-shaking=true --legal-comments=none --target=es2020 --outfile=frontend/vendor/three.min.js",
@@ -18,12 +18,15 @@
     "qa:served": "node tools/qa-served.mjs",
     "build:icons-sheet": "node tools/icons-sheet.mjs",
     "build:sections": "node tools/build-sections.mjs",
-    "build:webp": "python tools/make_webp.py"
+    "build:webp": "python tools/make_webp.py",
+    "build:icons": "node tools/build-icons.mjs",
+    "build:themes": "node tools/themes.mjs"
   },
   "engines": {
     "node": ">=24"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "7.3.1",
     "@tailwindcss/cli": "4.3.3",
     "esbuild": "^0.25.12",
     "svgo": "4.1.0",

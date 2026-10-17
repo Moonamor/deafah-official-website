@@ -1,8 +1,8 @@
 {
   "_notice": "TEST DATA — not real",
   "headline": {
-    "ar": "إعاشة ضيوف الرحمن بمعايير فندقية",
-    "en": "Catering for pilgrims to hotel standards"
+    "ar": "إعاشة الحجاج والمعتمرين",
+    "en": "Pilgrim Catering"
   },
   "intro": {
     "ar": "مطابخ مركزية في مكة المكرمة تخدم الحملات والفنادق والمخيمات بوجبات ساخنة في مواعيدها، من الإفطار إلى السحور.",
@@ -277,6 +277,7 @@
       "h": 512
     }
   ],
-  "whatsapp": "+966125911110",
-  "phone": "+966125911110"
+  "whatsapp": null,
+  "phone": "+966125911110",
+  "_whatsapp_note": "null until a WhatsApp-capable number exists (Anjum Part A6); phone stays a tel: link"
 }

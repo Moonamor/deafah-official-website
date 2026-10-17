@@ -27,7 +27,11 @@
             "width": 1920,
             "height": 1440
           }
-        ]
+        ],
+        "focus": {
+          "x": "45%",
+          "y": "45%"
+        }
       },
       {
         "id": "amjad",
@@ -52,7 +56,11 @@
             "width": 1920,
             "height": 1536
           }
-        ]
+        ],
+        "focus": {
+          "x": "50%",
+          "y": "38%"
+        }
       },
       {
         "id": "bustan",
@@ -77,7 +85,11 @@
             "width": 1920,
             "height": 1536
           }
-        ]
+        ],
+        "focus": {
+          "x": "50%",
+          "y": "68%"
+        }
       },
       {
         "id": "al-taj-hall",
@@ -102,9 +114,14 @@
             "width": 1920,
             "height": 1280
           }
-        ]
+        ],
+        "focus": {
+          "x": "40%",
+          "y": "60%"
+        }
       }
-    ]
+    ],
+    "_focus_note": "focus = object-position per slide (owner brief C2); checked at 390 and 1440 px"
   },
   "highlights": {
     "eyebrow": {
@@ -387,7 +404,9 @@
         "label": {
           "ar": "ريالًا لليلة، أدنى سعر في المجموعة",
           "en": "SAR a night, the group's lowest rate"
-        }
+        },
+        "hidden": true,
+        "_note": "hidden: hotel prices are unverified (Anjum Part A7)"
       },
       {
         "id": "train",

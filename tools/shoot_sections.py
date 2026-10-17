@@ -4,7 +4,7 @@ shoot_sections.py — screenshots of the Anjum-pattern sections in all 8 themes 
 1440 px, plus one contact sheet per section (rows = themes, columns = widths).
 
 Dev tool (Playwright for Python + Pillow). Needs a local server:  python -m http.server 8787 -d frontend
-Usage:  python tools/shoot_sections.py [--base http://127.0.0.1:8787] [--out reference/anjum/qa/phase3] [--lang ar|en]
+Usage:  python tools/shoot_sections.py [--base http://127.0.0.1:8787] [--out reference/anjum/qa/polish/ar] [--lang ar|en]
 Raw PNGs go to <out>/raw/ (git-ignored); contact sheets (JPEG) to <out>/.
 """
 import argparse, json, time
@@ -17,13 +17,22 @@ SCHEMES = ["light", "dark"]
 WIDTHS = [390, 1440]
 SECTIONS = [  # (page, id, selector, mode)  mode: element | viewport-top | lightbox
     ("index.html", "hero", "[data-scene='hero-pin']", "viewport-top"),
+    ("index.html", "header", "#siteHeader", "element"),
+    ("index.html", "booking", "#bookingWidget", "element"),
     ("index.html", "highlights", "#why", "element"),
     ("index.html", "explore", "#explore", "element"),
     ("index.html", "hotels-carousel", "#hotels", "element"),
     ("index.html", "makkah", "#makkah", "element"),
     ("index.html", "gallery-teaser", "#gallery", "element"),
     ("index.html", "lightbox", "#gallery [data-lightbox]", "lightbox"),
-    ("index.html", "social", "#footer .social", "element"),
+    ("index.html", "separator", ".sep-band", "element"),
+    ("index.html", "services", "#services", "element"),
+    ("index.html", "footer", "#footer", "element"),
+    ("about.html", "about-hero", "main > section", "element"),
+    ("about.html", "about-values", "#values", "element"),
+    ("catering.html", "catering-hero", "main > section", "element"),
+    ("catering.html", "catering-packages", "#packages", "element"),
+    ("catering.html", "catering-capacity", "#capacity", "element"),
     ("catering.html", "catering-gallery", "#gallery", "element"),
     ("catering.html", "catering-lightbox", "#gallery [data-lightbox]", "lightbox"),
 ]

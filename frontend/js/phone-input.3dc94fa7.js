@@ -561,12 +561,12 @@
   // submit listener on #contactForm. This script is loaded with
   // `defer` BEFORE js/contact-form.js's own `defer` tag (see the HTML
   // integration), and defer scripts execute in document order before
-  // DOMContentLoaded — which is also before contact-form.54cb0118.js's own
+  // DOMContentLoaded — which is also before contact-form.56c0d525.js's own
   // ready handler runs (it fires ON DOMContentLoaded). So
   // this listener always registers on #contactForm first, and same-
   // element listeners fire in registration order regardless of
   // capture/bubble — meaning an invalid phone number here calls
-  // stopImmediatePropagation() and reliably blocks contact-form.54cb0118.js's
+  // stopImmediatePropagation() and reliably blocks contact-form.56c0d525.js's
   // handler from ever running, with zero changes to that file.
   function autoInit() {
     var mountAr = document.getElementById("contactPhoneField-ar");
