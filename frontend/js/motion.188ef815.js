@@ -8,7 +8,7 @@
      data-scene="hero-pin"      pinned hero; [data-layer][data-depth] layers move at different rates; [data-split] headline lines lift in
      data-scene="layers"        cards interleave (staggered lift while scrolling) and images reveal through a clip-path mask
      data-scene="horizontal"    pinned horizontal gallery of [data-track] children (≥ 1024 px), mirrored in RTL
-     data-scene="counter"       [data-count-to] count-ups (effects.8f8aaa63.js draws the digits, Arabic-Indic in Arabic)
+     data-scene="counter"       [data-count-to] count-ups (effects.02d8b4b0.js draws the digits, Arabic-Indic in Arabic)
      data-scene="sticky-media"  sticky [data-sticky-media] + [data-step] text steps; the active step is highlighted,
                                 optional [data-media-for="<step index>"] media swap
      .reveal                    entrance reveal (IntersectionObserver contract from Phase 1)
@@ -21,7 +21,7 @@
      layer images                    clip-path inset + scale 1.08 → 1 (900 / 1200 ms)
      pattern strips                  fade + 24 px along their own axis, 900 ms, 120 ms after the section enters
      .icon-box                       scale .8 → 1, 400 ms, 60 ms stagger
-     counters                        effects.8f8aaa63.js (1200 ms power2.out at 50 % in view, Arabic-Indic digits)
+     counters                        effects.02d8b4b0.js (1200 ms power2.out at 50 % in view, Arabic-Indic digits)
      hero CTAs                       fade-up 600 ms, starting 600 ms after the headline
      hero photo                      desktop only: parallax yPercent −8, scrubbed; off on phones and under reduced motion
    Only transform, opacity and clip-path are animated. */
@@ -256,7 +256,7 @@
         case "layers": buildLayers(section); break;
         case "horizontal": buildHorizontal(section); break;
         case "sticky-media": buildStickyMedia(section); break;
-        case "counter": break; /* effects.8f8aaa63.js */
+        case "counter": break; /* effects.02d8b4b0.js */
       }
     });
     if (ST) ST.refresh();

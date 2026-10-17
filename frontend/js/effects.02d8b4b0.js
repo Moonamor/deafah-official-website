@@ -121,7 +121,11 @@ window.DeafahEffects = (function () {
     img.__fadePrepared = true;
     if (img.complete && img.naturalWidth) return;                  /* already decoded: no flash */
     img.classList.add("is-pending");
-    var done = function () { img.classList.add("is-fading"); requestAnimationFrame(function () { img.classList.remove("is-pending"); }); };
+    var done = function () {
+      img.classList.add("is-fading");
+      requestAnimationFrame(function () { img.classList.remove("is-pending"); });
+      setTimeout(function () { img.classList.remove("is-fading"); }, 450);   /* hand the transition back to the component (hover scale etc.) */
+    };
     img.addEventListener("load", done, { once: true });
     img.addEventListener("error", done, { once: true });
   }
